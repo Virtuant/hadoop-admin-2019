@@ -1,0 +1,445 @@
+## Lab: HBase and Hive Integration
+
+**Objective**: Understand how HBase and Hive integrate. You will complete data storage in HBase from Hive table data.
+
+**Data directory**: `~/data/hbase/data`
+
+What opportunities exist for deeper integration? Currently, customers are putting together solutions leveraging HBase, Phoenix, Hive etc. to build bespoke a closed-loop system for operational data and SQL analytics. We feel there is an opportunity to provide out-of-the-box integration with ease of use and additional capabilities such as transactions, cross datacenter failover etc.
+
+So let's take a look at Hive -> HBase integration.
+
+----
+### What is ACID?
+
+ACID stands for:
+
+* Atomicity: a transaction should complete successfully or else it should fail completely i.e. it should not be left partially
+* Consistency: any transaction will bring the database from one valid state to another state
+* Isolation: every transaction should be independent of each other i.e. one transaction should not affect another
+* Durability: if a transaction is completed, it should be preserved in the database even if the machine state is lost or a system failure might occur
+
+These ACID properties are essential for a transaction and every transaction should ensure that these properties are met.
+
+### Transactions in Hive
+
+Transactions in Hive are introduced in Hive 0.13, but they only partially fulfill the ACID properties like atomicity, consistency, durability, at the partition level. Here, Isolation can be provided by turning on one of the locking mechanisms available with zookeeper or in memory.
+
+But in Hive 0.14, new API’s have been added to completely fulfill the ACID properties while performing any transaction.
+
+Transactions are provided at the row-level in Hive 0.14. The different row-level transactions available in Hive are as follows:
+
+- Insert
+- Delete
+- Update
+
+There are numerous limitations with the present transactions available in Hive.
+
+ORC is the file format supported by Hive transaction. It is now essential to have ORC file format for performing transactions in Hive. The table needs to be bucketed in order to support transactions.
+
+### Row-level Transactions Available
+
+Let’s perform some row-level transactions, but before creating a Hive table that supports transactions, the transaction features present in Hive needs to be turned on, as by default they are turned off:
+
+```console
+	CREATE TABLE iot_data  (id int, parameter string, value int, device_id string, datetime string)
+	CLUSTERED by (id) INTO 5 BUCKETS 
+	STORED AS ORC 
+	TBLPROPERTIES('transactional'='true');
+```
+
+The above syntax will create a table with name ‘iot_data’ and the columns present in the table are `id`, `parameter`, `value`, `device_id` and `datetime`. 
+
+We will be bucketing the table by ‘id’ and the table format is ORC, also we are enabling the transactions in the table by specifying it inside the TBLPROPERTIES as ‘transactional’=’true’.
+
+### Look at the Data
+
+Do a `more` to look at the data in `iot_data.csv`:
+
+```console
+	[centos@ip-10-0-0-237 data]$ more iot_data.csv 
+	_id,deviceParameter,deviceValue,deviceId,dateTime
+	ObjectId(5a81b5395882b86112555f70),Temperature,27,SBS05,2018-02-12 15:39:37.050 UTC
+	ObjectId(5a81b5395882b86112555f71),Humidity,59,SBS05,2018-02-12 15:39:37.801 UTC
+	ObjectId(5a81b53a5882b86112555f72),Sound,130,SBS04,2018-02-12 15:39:38.629 UTC
+	ObjectId(5a81b53b5882b86112555f73),Humidity,75,SBS05,2018-02-12 15:39:39.272 UTC
+	ObjectId(5a81b53b5882b86112555f74),Temperature,33,SBS02,2018-02-12 15:39:39.613 UTC
+	ObjectId(5a81b53c5882b86112555f75),Sound,102,SBS03,2018-02-12 15:39:40.363 UTC
+	ObjectId(5a81b53c5882b86112555f76),Temperature,18,SBS02,2018-02-12 15:39:40.663 UTC
+	ObjectId(5a81b53c5882b86112555f77),Flow,64,SBS05,2018-02-12 15:39:40.678 UTC
+	ObjectId(5a81b53d5882b86112555f78),Temperature,28,SBS04,2018-02-12 15:39:41.141 UTC
+```
+
+For bypassing any security issues, put the `iot_data.csv` table into the `tmp` directory in the Linux system:
+
+```console
+	cp iot_data.csv /tmp/.
+```
+
+Let's go ahead and create the anonymous user in HDFS:
+
+```console
+	sudo su hdfs
+	hdfs@host:~$ hdfs dfs -mkdir /user/anonymous
+	hdfs@host:~$ hdfs dfs -chown anonymous /user/anonymous
+```
+
+### Start Hive's Beeline Shell
+
+Enter `hive` and hit [return] unil you reach beeline:
+
+```console
+	[centos@ip-10-0-0-237 data]$ hive
+	SLF4J: Class path contains multiple SLF4J bindings.
+	SLF4J: Found binding in [jar:file:/usr/hdp/3.0.0.0-1634/hive/lib/log4j-slf4j-impl-2.10.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+	SLF4J: Found binding in [jar:file:/usr/hdp/3.0.0.0-1634/hadoop/lib/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+	SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+	SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+	Connecting to jdbc:hive2://master1.hdp.com:2181/default;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2
+	Enter username for jdbc:hive2://master1.hdp.com:2181/default: 
+	Enter password for jdbc:hive2://master1.hdp.com:2181/default: 
+	Error: org.apache.hive.jdbc.ZooKeeperHiveClientException: Unable to read HiveServer2 configs from ZooKeeper (state=,code=0)
+	Beeline version 3.1.0.3.0.0.0-1634 by Apache Hive
+	beeline> 
+```
+
+Now, connect to the data store:
+
+```console
+	beeline> !connect jdbc:hive2://master1.hdp.com:2181/;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2
+	Connecting to jdbc:hive2://master1.hdp.com:2181/;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2
+	Enter username for jdbc:hive2://master1.hdp.com:2181/: 
+	Enter password for jdbc:hive2://master1.hdp.com:2181/: 
+	18/08/14 13:49:38 [main]: INFO jdbc.HiveConnection: Connected to master1.hdp.com:10000
+	Connected to: Apache Hive (version 3.1.0.3.0.0.0-1634)
+	Driver: Hive JDBC (version 3.1.0.3.0.0.0-1634)
+	Transaction isolation: TRANSACTION_REPEATABLE_READ
+	0: jdbc:hive2://master1.hdp.com:2181/> 
+```
+
+>Note: You may need to get the URL from the main Hive page in Ambari:
+
+<img width="852" alt="screen shot 2018-08-14 at 9 52 42 am" src="https://user-images.githubusercontent.com/558905/44095996-2b4cd684-9fa8-11e8-8da8-e38758b510e3.png">
+
+
+### Create a Hive table and Load Data
+
+```console
+	CREATE TABLE iot_data  (id int, parameter string, value int, device_id string, datetime string)
+	CLUSTERED by (id) INTO 5 BUCKETS 
+	STORED AS ORC 
+	TBLPROPERTIES('transactional'='true');
+```
+
+CREATE EXTERNAL TABLE iot_data (rowkey INT, id int, parameter string, value int, device_id string, datetime string)  ROW FORMAT SERDE 'org.apache.hadoop.hive.hbase.HBaseSerDe' STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler' WITH SERDEPROPERTIES ("hbase.columns.mapping"=":key,RAW:id,RAW:param,RAW:value,RAW:device_id,RAW:datetime")  TBLPROPERTIES ("hbase.table.name"="iot_in");
+
+
+Validate the table in Hive
+
+```console
+	describe iot_data;
+	INFO  : Compiling command(queryId=hive_20180815000016_8eed1209-306c-4e5b-8e19-45fb250fae0a): describe iot_data
+	INFO  : Semantic Analysis Completed (retrial = false)
+	INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:col_name, type:string, comment:from deserializer), FieldSchema(name:data_type, type:string, comment:from deserializer), FieldSchema(name:comment, type:string, comment:from deserializer)], properties:null)
+	INFO  : Completed compiling command(queryId=hive_20180815000016_8eed1209-306c-4e5b-8e19-45fb250fae0a); Time taken: 0.03 seconds
+	INFO  : Executing command(queryId=hive_20180815000016_8eed1209-306c-4e5b-8e19-45fb250fae0a): describe iot_data
+	INFO  : Starting task [Stage-0:DDL] in serial mode
+	INFO  : Completed executing command(queryId=hive_20180815000016_8eed1209-306c-4e5b-8e19-45fb250fae0a); Time taken: 0.026 seconds
+	INFO  : OK
+	+------------+------------+----------+
+	|  col_name  | data_type  | comment  |
+	+------------+------------+----------+
+	| id         | int        |          |
+	| parameter  | string     |          |
+	| value      | int        |          |
+	| device_id  | string     |          |
+	| datetime   | string     |          |
+	+------------+------------+----------+
+	5 rows selected (0.291 seconds)
+```
+
+Create a lookup table in Hive:
+
+```console
+	CREATE TABLE iot_in (id int, parameter string, value int, device_id string, datetime string) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
+	INFO  : Compiling command(queryId=hive_20180815001622_c11aab09-a0aa-4210-a73f-7b0027b5d906): CREATE TABLE iot_in (id int, parameter string, value int, device_id string, datetime string) ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+	INFO  : Semantic Analysis Completed (retrial = false)
+	INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
+	INFO  : Completed compiling command(queryId=hive_20180815001622_c11aab09-a0aa-4210-a73f-7b0027b5d906); Time taken: 0.016 seconds
+	INFO  : Executing command(queryId=hive_20180815001622_c11aab09-a0aa-4210-a73f-7b0027b5d906): CREATE TABLE iot_in (id int, parameter string, value int, device_id string, datetime string) ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+	INFO  : Starting task [Stage-0:DDL] in serial mode
+	INFO  : Completed executing command(queryId=hive_20180815001622_c11aab09-a0aa-4210-a73f-7b0027b5d906); Time taken: 0.045 seconds
+	INFO  : OK
+	No rows affected (0.279 seconds)
+	0: jdbc:hive2://master1.hdp.com:2181/default> 
+```
+
+Now load data into the table:
+
+```console
+	LOAD DATA LOCAL INPATH '/tmp/iot_data.csv' OVERWRITE INTO TABLE iot_in;
+```
+
+Now print to make sure its loaded:
+
+```console
+	select * from iot_in limit 20;
+	INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:iot_in.id, type:int, comment:null), FieldSchema(name:iot_in.parameter, type:string, comment:null), FieldSchema(name:iot_in.value, type:int, comment:null), FieldSchema(name:iot_in.device_id, type:string, comment:null), FieldSchema(name:iot_in.datetime, type:string, comment:null)], properties:null)
+	INFO  : Completed compiling command(queryId=hive_20180815033623_dcb145d1-b7e7-4af6-b4bd-4c78b4f6ee15); Time taken: 0.209 seconds
+	INFO  : Executing command(queryId=hive_20180815033623_dcb145d1-b7e7-4af6-b4bd-4c78b4f6ee15): select * from iot_in limit 20
+	INFO  : Completed executing command(queryId=hive_20180815033623_dcb145d1-b7e7-4af6-b4bd-4c78b4f6ee15); Time taken: 0.001 seconds
+	INFO  : OK
+	+------------+-------------------+---------------+-------------------+------------------------------+
+	| iot_in.id  | iot_in.parameter  | iot_in.value  | iot_in.device_id  |       iot_in.datetime        |
+	+------------+-------------------+---------------+-------------------+------------------------------+
+	| NULL       | deviceParameter   | NULL          | deviceId          | dateTime                     |
+	| NULL       | Temperature       | 27            | SBS05             | 2018-02-12 15:39:37.050 UTC  |
+	| NULL       | Humidity          | 59            | SBS05             | 2018-02-12 15:39:37.801 UTC  |
+	| NULL       | Sound             | 130           | SBS04             | 2018-02-12 15:39:38.629 UTC  |
+	| NULL       | Humidity          | 75            | SBS05             | 2018-02-12 15:39:39.272 UTC  |
+	| NULL       | Temperature       | 33            | SBS02             | 2018-02-12 15:39:39.613 UTC  |
+	| NULL       | Sound             | 102           | SBS03             | 2018-02-12 15:39:40.363 UTC  |
+	| NULL       | Temperature       | 18            | SBS02             | 2018-02-12 15:39:40.663 UTC  |
+	| NULL       | Flow              | 64            | SBS05             | 2018-02-12 15:39:40.678 UTC  |
+	| NULL       | Temperature       | 28            | SBS04             | 2018-02-12 15:39:41.141 UTC  |
+	| NULL       | Humidity          | 69            | SBS03             | 2018-02-12 15:39:41.804 UTC  |
+	| NULL       | Temperature       | 19            | SBS04             | 2018-02-12 15:39:42.350 UTC  |
+	| NULL       | Temperature       | 28            | SBS05             | 2018-02-12 15:39:42.593 UTC  |
+	| NULL       | Temperature       | 31            | SBS04             | 2018-02-12 15:39:43.070 UTC  |
+	| NULL       | Sound             | 133           | SBS05             | 2018-02-12 15:39:43.961 UTC  |
+	| NULL       | Flow              | 99            | SBS02             | 2018-02-12 15:39:44.031 UTC  |
+	| NULL       | Humidity          | 65            | SBS04             | 2018-02-12 15:39:44.667 UTC  |
+	| NULL       | Humidity          | 90            | SBS05             | 2018-02-12 15:39:45.260 UTC  |
+	| NULL       | Flow              | 89            | SBS05             | 2018-02-12 15:39:45.460 UTC  |
+	| NULL       | Sound             | 140           | SBS03             | 2018-02-12 15:39:46.389 UTC  |
+	+------------+-------------------+---------------+-------------------+------------------------------+
+	20 rows selected (0.324 seconds)
+```
+
+Exit Hive by executing a `!q`:
+
+```console
+	!q
+	Closing: 0: jdbc:hive2://master1.hdp.com:2181/default;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2
+```
+
+### Validate the Table in HBase
+
+Enter HBase shell:
+
+	hbase shell
+
+Use LIST command to check:
+
+	hbase(main):005:0> list
+	TABLE
+	...
+	iot_in
+	...
+
+Validate the table in HBase:
+
+	hbase(main):003:0> describe 'iot_in'
+	Table iot_in is ENABLED                                                                                        
+	iot_in                                                                                                         
+	COLUMN FAMILIES DESCRIPTION                                                                                    
+	{NAME => 'RAW', VERSIONS => '1', EVICT_BLOCKS_ON_CLOSE => 'false', NEW_VERSION_BEHAVIOR => 'false', KEEP_DELETE
+	D_CELLS => 'FALSE', CACHE_DATA_ON_WRITE => 'false', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', MIN_VERSIO
+	NS => '0', REPLICATION_SCOPE => '0', BLOOMFILTER => 'ROW', CACHE_INDEX_ON_WRITE => 'false', IN_MEMORY => 'false
+	', CACHE_BLOOMS_ON_WRITE => 'false', PREFETCH_BLOCKS_ON_OPEN => 'false', COMPRESSION => 'NONE', BLOCKCACHE => '
+	true', BLOCKSIZE => '65536'}                                                                                   
+	1 row(s)
+	Took 0.1312 seconds 
+
+
+Now use SCAN to find if data exists:
+
+	hbase(main):004:0> scan 'iot_in'
+
+
+As it shows, there is no data in the table:
+
+	ROW                          COLUMN+CELL                                                                       
+	0 row(s)
+	Took 0.0559 seconds                                                                                            
+	hbase(main):005:0> 
+
+
+### Populate the Table in Hive with Tez
+
+Go back to Hive, and run below command to set Hive engine as Tez:
+
+	set hive.execution.engine=tez;
+
+Execute below HiveQL to populate the table
+
+	INSERT OVERWRITE TABLE iot_data 
+	SELECT iot_in.id, iot_in.id, iot_in.device_id, iot_in.parameter, iot_in.value, iot_in.datetime 
+	FROM iot_in WHERE iot_in.device_id='SBS05';
+
+you should see something like this:
+
+	Query ID = root_20140830123030_3fee9010-e712-4c44-89ec-1261c220e424
+	Total jobs = 1
+	Launching Job 1 out of 1
+	Status: Running (application id: application_1409394057604_0003)
+	Map 1: -/-
+	Map 1: 0/1
+	Map 1: 0/1
+	Map 1: 0/1
+	Map 1: 0/1
+	Map 1: 0/1
+	Map 1: 0/1
+	Map 1: 1/1
+	Status: Finished successfully
+	OK
+	Time taken: 24.005 seconds
+
+Now check the data in Hive:
+
+	select * from iot_data;
+
+now the table should have data.
+
+
+
+Now exit Hive session:
+
+	beeline> !q
+	[centos@ip-10-0-0-237 data]$ 
+
+
+### Verify the table data in HBase
+
+Enter HBase session:
+
+	hbase shell
+
+Use SCAN to view the data:
+
+	scan 'test_1'
+		
+and you should see:
+
+		ROW              COLUMN+CELL
+		16298100         column=cf1:val, timestamp=1409427074706, value=FNFG
+		16982800         column=cf1:val, timestamp=1409427074706, value=FNFG
+		23728300         column=cf1:val, timestamp=1409427074706, value=FNFG
+		26681300         column=cf1:val, timestamp=1409427074706, value=FNFG
+		4 row(s) in 0.1110 seconds
+
+Use DESCRIBE to find it table raw_data exists:
+
+		describe 'raw_data'
+		
+and the table does not exist:
+
+		ERROR: Unknown table raw_data
+
+Run below command to create the table:
+
+		hbase(main):003:0> create 'raw_data', 'trades'
+		...
+		0 row(s) in 4.6990 seconds
+		=> Hbase::Table - raw_data
+
+Verify the table:
+
+		hbase(main):002:0> describe 'raw_data'
+		DESCRIPTION                     ENABLED
+		'raw_data', {NAME => 'trades', DATA_BLOCK_ENCODING => 'NONE', BLOOMFILTER => 'ROW true', REPLICATION_SCOPE => '0', VERSIONS => '1', COMPRESSION => 'NONE', MIN_VERSIONS=> '0', TTL => '2147483647', KEEP_DELETED_CELLS => 'false', BLOCKSIZE => '65536', IN_MEMORY => 'false', BLOCKCACHE => 'true'}
+		1 row(s) in 0.1450 seconds
+
+### Populate Data in HBase
+
+Use PUT command to insert the data (hbase prompt missing to enable copying):
+
+		put 'raw_data', 'row1', 'trades:traderid', 'trader1'
+		put 'raw_data', 'row1', 'trades:symbol', 'stock1'
+		put 'raw_data', 'row1', 'trades:rating', 'High'
+		put 'raw_data', 'row2', 'trades:traderid', 'trader2'
+		put 'raw_data', 'row2', 'trades:symbol', 'stock1'
+		put 'raw_data', 'row2', 'trades:rating', 'Low'
+		put 'raw_data', 'row3', 'trades:traderid', 'trader2'
+		put 'raw_data', 'row3', 'trades:symbol', 'stock2'
+		put 'raw_data', 'row3', 'trades:rating', 'Low'
+		put 'raw_data', 'row4', 'trades:traderid', 'trader2'
+		put 'raw_data', 'row4', 'trades:symbol', 'stock4'
+		put 'raw_data', 'row4', 'trades:rating', 'High'
+		put 'raw_data', 'row5', 'trades:traderid', 'trader3'
+		put 'raw_data', 'row5', 'trades:symbol', 'stock3'
+		put 'raw_data', 'row5', 'trades:rating', 'Medium'
+		put 'raw_data', 'row6', 'trades:traderid', 'trader3'
+		put 'raw_data', 'row6', 'trades:symbol', 'stock4'
+		put 'raw_data', 'row6', 'trades:rating', 'High'
+
+Now use SCAN to view the data:
+
+		scan 'raw_data'
+		
+scan shows:
+
+		ROW               COLUMN+CELL
+		 row1             column=trades:rating, timestamp=1409515999581, value=High
+		 row1             column=trades:symbol, timestamp=1409515976501, value=stock1
+		 row1             column=trades:traderid, timestamp=1409515950335, value=trader1
+		 row2             column=trades:rating, timestamp=1409516016464, value=Low
+		 row2             column=trades:symbol, timestamp=1409516016441, value=stock1
+		...
+		6 row(s) in 0.2080 seconds
+
+Now, exit HBase session:
+
+		hbase(main):024:0> quit
+
+### Create a Hive Table to Integrate with HBase
+
+Start a Hive session:
+
+		hive
+
+Use DESCRIBE to make sure the hive table name hbase_raw_data does not exist:
+
+		hive> describe hbase_raw_data;
+		FAILED: SemanticException [Error 10001]: Table not found hbase_raw_data
+
+Execute the below command to create the table:
+
+		CREATE EXTERNAL TABLE hbase_raw_data
+		(key string, traderid string,symbol string,rating string)
+		STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
+		WITH SERDEPROPERTIES
+		("hbase.columns.mapping" = ":key,trades:traderid,trades:symbol,trades:rating")
+		TBLPROPERTIES ("hbase.table.name" = "raw_data");
+
+
+Verify the table structure:
+
+		describe hbase_raw_data;
+		
+shows:
+
+		OK
+		key                     string                  from deserializer
+		traderid                string                  from deserializer
+		symbol                  string                  from deserializer
+		rating                  string                  from deserializer
+		Time taken: 0.874 seconds, Fetched: 4 row(s)
+
+Now view the data in the hive table:
+
+		select * from hbase_raw_data;
+		OK
+		row1    trader1 stock1  High
+		row2    trader2 stock1  Low
+		row3    trader2 stock2  Low
+		row4    trader2 stock4  High
+		row5    trader3 stock3  Medium
+		row6    trader3 stock4  High
+		Time taken: 1.186 seconds, Fetched: 6 row(s)
+
+Exit Hive:
+
+		exit;
+		
+### Summary
+
