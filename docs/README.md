@@ -39,7 +39,7 @@ The lab guide is [here](https://virtuant.github.io/hadoop-overview-spark-hwx/lab
 #### Lab [16](https://virtuant.github.io/hadoop-overview-spark-hwx/spark-on-hbase.html) Spark on HBase [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/spark-on-hbase.pdf)
 
 
--- {% comment %}
+----
 
 #### Lab [20](https://virtuant.github.io/hadoop-overview-spark-hwx/salted-tables.html) Salted Tables and Rows [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/salted-tables.pdf)
 
@@ -125,4 +125,5 @@ The lab guide is [here](https://virtuant.github.io/hadoop-overview-spark-hwx/lab
 
 #### Lab [69](https://virtuant.github.io/hadoop-overview-spark-hwx/zookeeper.html) Using Zookeper [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/zookeeper.pdf)
 	
--- {% endcomment %}
+{% comment %}
+{% endcomment %}
