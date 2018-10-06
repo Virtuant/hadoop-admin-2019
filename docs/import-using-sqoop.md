@@ -1,6 +1,6 @@
 ## Lab: Sqoop Import- Importing Data From RDBMS to HDFS
 
-A tool, which we use for importing tables from RDBMS to HDFS is the Sqoop Import tool. Basically, here each row in a table is considered as a record in HDFS. 
+A tool, which we use for importing tables from RDBMS to HDFS is the Sqoop Import tool. Here each row in a table is considered as a record in HDFS. 
 Moreover, when we talk about text files all records are stored as text data. Whereas when we talk about Avro and sequence files all records are stored as binary data here. 
 We can say the Sqoop Import all tables as individual tables from RDBMS to HDFS.
 
@@ -13,7 +13,7 @@ There are two file formats in which we can import data. One is delimited text or
 
 The very advantage is we can type the sqoop import arguments in any order with respect to one another. However, when it comes to the Hadoop generic arguments, those must precede any import arguments only.
 
-Basically, here all the arguments are grouped into collections which are organized by function. However, some collections are present in several tools here. For example, the “common” arguments.
+First, here all the arguments are grouped into collections which are organized by function. However, some collections are present in several tools here. For example, the “common” arguments.
 
 | Argument	| Description |
 | ---- | ----|
@@ -68,7 +68,7 @@ For example:
 
 ### Selecting the Data to Import
 
-Basically, Sqoop imports data in a table-centric fashion. we generally use the –table argument while selecting the table to import. like, –table employees. However, this argument in a database can also identify a VIEW or other table-like entity.
+Sqoop imports data in a table-centric fashion. we generally use the –table argument while selecting the table to import. like, –table employees. However, this argument in a database can also identify a VIEW or other table-like entity.
 
 However, all the data is written to HDFS in its “natural order”. That is a table containing columns A, B, and C results in an import of data in Sqoop. Such as:
 
@@ -104,7 +104,7 @@ From most database sources, Sqoop imports data in parallel. Also, to perform the
 
 ### Controlling type mapping
 
-Basically, to map most SQL types to appropriate Java or Hive representatives, Sqoop is preconfigured. Although, here also the default mapping might not be suitable for everyone. Also, might be overridden. Either by –map-column-java (for changing the mapping to Java) or –map-column-hive (for changing Hive mapping).
+To map most SQL types to appropriate Java or Hive representatives, Sqoop is preconfigured. Although, here also the default mapping might not be suitable for everyone. Also, might be overridden. Either by –map-column-java (for changing the mapping to Java) or –map-column-hive (for changing Hive mapping).
 Sqoop is expecting the comma-separated list of mapping in the form <name of column>=<new type>. For example:
 
 	$ sqoop import … –map-column-java id=String,value=Integer
@@ -144,50 +144,50 @@ On the command line in the generic arguments, they can also be specified.  For e
 | –map-column-hive <map>	| Override default mapping from SQL type to Hive type for configured columns |
 
 
-Basically, we will understand how to use the import tool in a variety of situations by the following examples.
+We will understand how to use the import tool in a variety of situations by the following examples.
 
 In addition, a basic import of a table named EMPLOYEES in the corp database:
 
-	$ sqoop import –connect jdbc:mysql://db.foo.com/corp –table EMPLOYEES
+	$ sqoop import –connect jdbc:mysql://[your server name]/corp –table EMPLOYEES
 
 Also, a basic import requiring a login:
 
-	$ sqoop import –connect jdbc:mysql://db.foo.com/corp –table EMPLOYEES \
+	$ sqoop import –connect jdbc:mysql://[your server name]/corp –table EMPLOYEES \
 	–username SomeUser -P
 	Enter password: (hidden)
 
 So selecting specific columns from the EMPLOYEES table:
 
-	$ sqoop import –connect jdbc:mysql://db.foo.com/corp –table EMPLOYEES \
+	$ sqoop import –connect jdbc:mysql://[your server name]/corp –table EMPLOYEES \
 		–columns “employee_id,first_name,last_name,job_title”
 
 Controlling the import parallelism (using 8 parallel tasks):
 
-	$ sqoop import –connect jdbc:mysql://db.foo.com/corp –table EMPLOYEES -m 8
+	$ sqoop import –connect jdbc:mysql://[your server name]/corp –table EMPLOYEES -m 8
 
 Storing data in SequenceFiles, and setting the generated class name to com.foocorp.Employee:
 
-	$ sqoop import –connect jdbc:mysql://db.foo.com/corp –table EMPLOYEES \
+	$ sqoop import –connect jdbc:mysql://[your server name]/corp –table EMPLOYEES \
 		–class-name com.foocorp.Employee –as-sequencefile
 
 Also, specifying the delimiters to use in a text-mode import:
 
-	$ sqoop import –connect jdbc:mysql://db.foo.com/corp –table EMPLOYEES \
+	$ sqoop import –connect jdbc:mysql://[your server name]/corp –table EMPLOYEES \
 		–fields-terminated-by ‘\t’ –lines-terminated-by ‘\n’ \
 		–optionally-enclosed-by ‘\”‘
 
 Here, importing the data to Hive:
 
-	$ sqoop import –connect jdbc:mysql://db.foo.com/corp –table EMPLOYEES –hive-import
+	$ sqoop import –connect jdbc:mysql://[your server name]/corp –table EMPLOYEES –hive-import
 
 Also, here, only importing new employees:
 
-	$ sqoop import –connect jdbc:mysql://db.foo.com/corp –table EMPLOYEES \
+	$ sqoop import –connect jdbc:mysql://[your server name]/corp –table EMPLOYEES \
 		–where “start_date > ‘2010-01-01′”
 
 Afterwards, changing the splitting column from the default:
 
-	$ sqoop import –connect jdbc:mysql://db.foo.com/corp –table EMPLOYEES \
+	$ sqoop import –connect jdbc:mysql://[your server name]/corp –table EMPLOYEES \
 		–split-by dept_id
 
 Then, we are verifying that an import was successful:
@@ -207,12 +207,12 @@ Then, we are verifying that an import was successful:
 
 After having already imported the first 100,000 rows of a table, Here performing an incremental import of new data:
 
-	$ sqoop import –connect jdbc:mysql://db.foo.com/somedb –table sometable \
+	$ sqoop import –connect jdbc:mysql://[your server name]/somedb –table sometable \
 		–where “id > 100000” –target-dir /incremental_dataset –append
 
 In the corp database, there is an import of a table named EMPLOYEES. That uses validation to validate the import. By using the table row count and the number of rows copied into HDFS. 
 
-	$ sqoop import –connect jdbc:mysql://db.foo.com/corp –table EMPLOYEES –validate
+	$ sqoop import –connect jdbc:mysql://[your server name]/corp –table EMPLOYEES –validate
 
 ### Results
 
