@@ -146,6 +146,9 @@ On the command line in the generic arguments, they can also be specified.  For e
 
 We will understand how to use the import tool in a variety of situations by the following examples.
 
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h2>1. Put the Data in HDFS</h2>
+
 In addition, a basic import of a table named EMPLOYEES in the corp database:
 
 	$ sqoop import –connect jdbc:mysql://[your server name]/corp –table EMPLOYEES
@@ -156,19 +159,17 @@ Also, a basic import requiring a login:
 	–username SomeUser -P
 	Enter password: (hidden)
 
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h2>2. Select the Data to import into HDFS</h2>
+
 So selecting specific columns from the EMPLOYEES table:
 
 	$ sqoop import –connect jdbc:mysql://[your server name]/corp –table EMPLOYEES \
 		–columns “employee_id,first_name,last_name,job_title”
 
-Controlling the import parallelism (using 8 parallel tasks):
+Controlling the import parallelism (using 4 parallel tasks):
 
-	$ sqoop import –connect jdbc:mysql://[your server name]/corp –table EMPLOYEES -m 8
-
-Storing data in SequenceFiles, and setting the generated class name to com.foocorp.Employee:
-
-	$ sqoop import –connect jdbc:mysql://[your server name]/corp –table EMPLOYEES \
-		–class-name com.foocorp.Employee –as-sequencefile
+	$ sqoop import –connect jdbc:mysql://[your server name]/corp –table EMPLOYEES -m 4
 
 Also, specifying the delimiters to use in a text-mode import:
 
@@ -176,21 +177,33 @@ Also, specifying the delimiters to use in a text-mode import:
 		–fields-terminated-by ‘\t’ –lines-terminated-by ‘\n’ \
 		–optionally-enclosed-by ‘\”‘
 
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h2>3. Import the Data into Hive</h2>
+
 Here, importing the data to Hive:
 
 	$ sqoop import –connect jdbc:mysql://[your server name]/corp –table EMPLOYEES –hive-import
 
-Also, here, only importing new employees:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h2>4. Import partial Data into Hive</h2>
 
-	$ sqoop import –connect jdbc:mysql://[your server name]/corp –table EMPLOYEES \
+Now, here, only import new employees:
+
+	$ sqoop import –connect jdbc:mysql://[your server name]/corp –table EMPLOYEES –hive-import \
 		–where “start_date > ‘2010-01-01′”
 
-Afterwards, changing the splitting column from the default:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h2>5. Split the Data into Hive</h2>
 
-	$ sqoop import –connect jdbc:mysql://[your server name]/corp –table EMPLOYEES \
+And, changing the splitting column from the default:
+
+	$ sqoop import –connect jdbc:mysql://[your server name]/corp –table EMPLOYEES –hive-import \
 		–split-by dept_id
 
-Then, we are verifying that an import was successful:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h2>6. Verify the Data</h2>
+
+Now, let's verify that an import was successful:
 
 	$ hdfs dfs -ls EMPLOYEES
 	Found 5 items
@@ -205,10 +218,16 @@ Then, we are verifying that an import was successful:
 	1,jane,doe,marketing
 	…
 
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h2>7. Incrementally Import new Data</h2>
+
 After having already imported the first 100,000 rows of a table, Here performing an incremental import of new data:
 
 	$ sqoop import –connect jdbc:mysql://[your server name]/somedb –table sometable \
 		–where “id > 100000” –target-dir /incremental_dataset –append
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h2>8. Validate the new Data</h2>
 
 In the corp database, there is an import of a table named EMPLOYEES. That uses validation to validate the import. By using the table row count and the number of rows copied into HDFS. 
 
