@@ -6,7 +6,7 @@
 
 **Successful outcome:**	You will have added and deleted several files and folders in HDFS
 
-**File locations:**	`~/labs`
+**File locations:**	`~/data`
 
 ---
 ### Steps
@@ -140,7 +140,7 @@ Output:
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
 <h2>4. Upload a File to HDFS</h2>
 
-1\. Now put a file into the test folder. Change directories to the `labs` directory.
+1\. Now put a file into the test folder. Change directories to the `data` directory.
 
 
 2\. Notice this folder contains a file named `data.txt`:
@@ -162,8 +162,6 @@ hdfs dfs -ls test
 ```
 
 The output should look like the following:
-
-
 
 
 <!--STEP-->
@@ -285,7 +283,7 @@ ls
 
 **8a**<br>
 ```
-hdfs dfs -put ~labs/small_blocks.txt test/
+hdfs dfs -put ~data/small_blocks.txt test/
 ```
 
 **8c**<br>

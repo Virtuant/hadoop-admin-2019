@@ -1,7 +1,16 @@
 ## Lab: RDBMS and Performance
 
+MariaDB is a drop-in replacement for MySQL, the most used open source database for online applications. MariaDB falls into the category of the NewSQL products, 
+i.e. a product that provides unique NoSQL features together with the typical features available in relational databases. 
+Therefore, aspects like transaction management, durability and consistency are available together with schema or schema-less modeling, 
+full text storage and analysis and integration with other NoSQL technologies.
 
+MariaDB can be part of the database infrastructure for Big Data. It is not meant to be a replacement for Hadoop, but it can be a 
+technology used in conjunction with it. Hadoop is used in batch, ad-hoc analysis. In projects that require the processing of Terabytes or Petabytes of data, 
+Hadoop is definitely a good fit. The results can be queried and reported via a standard MySQL/MariaDB interface, which is compatible with virtually 
+all the BI tools and development frameworks available today.
 
+Let's take a detour to check out the differences.
 
 ----
 
@@ -383,7 +392,7 @@ What are the results now?
 
 ### Summary
 
-So we have seen where SQL databases (like MySQL) need to index a row by setting up an in-memory structure to make them perform better. In the next lab we'll see how NoSQL does a similar function but this time a little differently.
+So we have seen where SQL databases (like MariaDB/MySQL) need to index a row by setting up an in-memory structure to make them perform better. In the next lab we'll see how NoSQL does a similar function but this time a little differently.
 
 
 
