@@ -1,7 +1,7 @@
 
 ## Getting Started
 
-**Data directory**: `~/data/hbase/data`
+**Data directory**: `~/data`
 
 **HDFS paths**: `/user/centos`
 

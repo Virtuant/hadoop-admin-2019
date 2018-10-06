@@ -26,7 +26,7 @@ Using either Putty or your SSH client.
 Either get the several of latest years from [san francisco](https://transparentcalifornia.com/salaries/san-francisco/) or get some earlier ones from us:
 
 ```console
-   wget https://transcal.s3.amazonaws.com/public/export/san-francisco-2016.csv
+   wget https://transcal.s3.amazonaws.com/public/export/san-francisco-2017.csv
    wget https://transcal.s3.amazonaws.com/public/export/san-francisco-2016.csv
 ```
 
