@@ -4,8 +4,6 @@
 
 **Exercise directory**: `~/data`
 
-**Data directory**: `~/data/hbase/data`
-
 **HDFS paths:** `/user/[logged in user]`
 
 In this tutorial you will begin to get acquainted with Hadoop. You will manipulate files in HDFS, 
