@@ -147,7 +147,7 @@ On the command line in the generic arguments, they can also be specified.  For e
 We will understand how to use the import tool in a variety of situations by the following examples.
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h2>1. Put the Data in HDFS</h2>
+<h3>1. Put the Data in HDFS</h3>
 
 In addition, a basic import of a table named EMPLOYEES in the corp database:
 
@@ -160,7 +160,7 @@ Also, a basic import requiring a login:
 	Enter password: (hidden)
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h2>2. Select the Data to import into HDFS</h2>
+<h3>2. Select the Data to import into HDFS</h3>
 
 So selecting specific columns from the EMPLOYEES table:
 
@@ -178,14 +178,14 @@ Also, specifying the delimiters to use in a text-mode import:
 		–optionally-enclosed-by ‘\”‘
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h2>3. Import the Data into Hive</h2>
+<h3>3. Import the Data into Hive</h3>
 
 Here, importing the data to Hive:
 
 	$ sqoop import –connect jdbc:mysql://[your server name]/corp –table EMPLOYEES –hive-import
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h2>4. Import partial Data into Hive</h2>
+<h3>4. Import partial Data into Hive</h3>
 
 Now, here, only import new employees:
 
@@ -193,7 +193,7 @@ Now, here, only import new employees:
 		–where “start_date > ‘2010-01-01′”
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h2>5. Split the Data into Hive</h2>
+<h3>5. Split the Data into Hive</h3>
 
 And, changing the splitting column from the default:
 
@@ -201,7 +201,7 @@ And, changing the splitting column from the default:
 		–split-by dept_id
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h2>6. Verify the Data</h2>
+<h3>6. Verify the Data</h3>
 
 Now, let's verify that an import was successful:
 
@@ -219,15 +219,15 @@ Now, let's verify that an import was successful:
 	…
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h2>7. Incrementally Import new Data</h2>
+<h3>7. Incrementally Import new Data</h3>
 
 After having already imported the first 100,000 rows of a table, Here performing an incremental import of new data:
 
-	$ sqoop import –connect jdbc:mysql://[your server name]/somedb –table sometable \
+	$ sqoop import –connect jdbc:mysql://[your server name]/somedb –table sometable –hive-import \
 		–where “id > 100000” –target-dir /incremental_dataset –append
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h2>8. Validate the new Data</h2>
+<h3>8. Validate the new Data</h3>
 
 In the corp database, there is an import of a table named EMPLOYEES. That uses validation to validate the import. By using the table row count and the number of rows copied into HDFS. 
 
