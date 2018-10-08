@@ -1,7 +1,7 @@
 theme: jekyll-theme-cayman
 plugins:
   - jemoji
-title: Hadoop & Spark on Hortonworks
+title: Hadoop Ecosystem on Hortonworks
 description: Traveler's Insurance
 github:
   is_project_page: false
