@@ -15,7 +15,7 @@
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h2>1. View the `hdfs dfs` Command</h2>
+<h3>1. View the `hdfs dfs` Command</h3>
 
 1\. Open a Terminal window (if you do not have one open already).
 
@@ -32,7 +32,7 @@ hdfs dfs
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h2>2. Create a Directory in HDFS</h2>
+<h3>2. Create a Directory in HDFS</h3>
 
 1\. Enter the following `-ls` command to view the contents of the user’s root directory in HDFS, which is `/user/[user-name]`:
 
@@ -106,7 +106,7 @@ drwxr-xr-x	- root root	0	test/test2/test3
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h2>3. Delete a Directory</h2>
+<h3>3. Delete a Directory</h3>
 
 1\. Delete the `test2` folder (and recursively its subcontents) using the `-rm -R` command:
 
@@ -138,7 +138,7 @@ Output:
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h2>4. Upload a File to HDFS</h2>
+<h3>4. Upload a File to HDFS</h3>
 
 1\. Now put a file into the test folder. Change directories to the `data` directory.
 
@@ -167,7 +167,7 @@ The output should look like the following:
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h2>5. Copy a File in HDFS</h2>
+<h3>5. Copy a File in HDFS</h3>
 
 1\. Now copy the `data.txt` file in test to another folder in HDFS using the `-cp` command:
 
@@ -202,7 +202,7 @@ hdfs dfs -rm test/test1/data2.txt
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h2>6. View the Contents of a File in HDFS</h2>
+<h3>6. View the Contents of a File in HDFS</h3>
 
 1\. You can use the `-cat` command to view text files in HDFS.
 
@@ -224,7 +224,7 @@ hdfs dfs -tail test/data.txt
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h2>7. Getting a File from HDFS</h2>
+<h3>7. Getting a File from HDFS</h3>
 
 1\. See if you can figure out how to use the `get` command to copy `test/data.txt` from HDFS into your local `/tmp` folder.
 
@@ -233,7 +233,7 @@ hdfs dfs -tail test/data.txt
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h2>8. The `getmerge` Command</h2>
+<h3>8. The `getmerge` Command</h3>
 
 1\. Put the file `small_blocks.txt` into the `test` folder in HDFS. You should now have two files in test: `data.txt` and `small_blocks.txt`.
 
@@ -249,7 +249,7 @@ hdfs dfs -getmerge test /tmp/merged.txt
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h2>9. Specify the Block Size and Replication Factor</h2>
+<h3>9. Specify the Block Size and Replication Factor</h3>
 
 1\. Put `data.txt` into `/user/[user-name]` in HDFS, giving it a blocksize of “1m” (one megabyte). The blocksize is defined using the `dfs.blocksize` property on the command line:
 

@@ -9,14 +9,12 @@
 **File locations:** `whitehouse/visits.txt` in HDFS
 
 
----
-### Steps
-
+----
 
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h2>1. Load the White House Visitor Data</h2>
+<h3>1. Load the White House Visitor Data</h3>
 
 1\.  You will use the TextLoader to load the `visits.txt` file. Define the following `LOAD` relation:
 
@@ -27,7 +25,7 @@ grunt> A = LOAD '/user/[user-name]/whitehouse/' USING TextLoader();
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h2>2. Count the Number of Lines</h2>
+<h3>2. Count the Number of Lines</h3>
 
 1\. Define a new relation named `C` that is a group of all the records in `A`:
 
@@ -64,7 +62,7 @@ We can now conclude that there are `447,598` rows of text in `visits.txt`.
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h2>3. Analyze the Data's Contents</h2>
+<h3>3. Analyze the Data's Contents</h3>
 
 1\.  We now know how many records are in the data, but we still do not have a clear picture of what the records look like.
 
@@ -102,7 +100,7 @@ grunt> visits = LOAD '/user/[user-name]/whitehouse/' USING PigStorage(',');
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h2>4. Locate the POTUS (President of the United States of America)</h2>
+<h3>4. Locate the POTUS (President of the United States of America)</h3>
 
 1\.  There are 26 fields in each record, and one of them represents the *visitee* (the person being visited in the White House).
 
@@ -132,7 +130,7 @@ It is not necessarily obvious from the output, but field `$19` in the `visits` r
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h2>5. Count the POTUS Visitors</h2>
+<h3>5. Count the POTUS Visitors</h3>
 
 1\.  Let's discover how many people have visited the President. To do this, we need to count the number of records in visits where field $19 matches `POTUS`. See if you can write a Pig script to accomplish this. Use the potus relation from the previous step as a starting point. You will need to use `GROUP ALL`, and then a `FOREACH` projection that uses the `COUNT` function.
 
@@ -144,7 +142,7 @@ It is not necessarily obvious from the output, but field `$19` in the `visits` r
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h2>6. Finding People Who Visited the President</h2>
+<h3>6. Finding People Who Visited the President</h3>
 
 1\.  So far you have used DUMP to view the results of your Pig scripts. In this step, you will save the output to a file using the `STORE` command. Start by loading the data using `PigStorage(',')`, which you may already have defined:
 
@@ -211,7 +209,7 @@ CLOONEY,GEORGE,10/12/2010 14:47,POTUS
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h2>7. View the Pig Log Files</h2>
+<h3>7. View the Pig Log Files</h3>
 
 1\.  Each time you executed a `DUMP` or `STORE` command, a MapReduce job executed on your cluster. 
 You can view the log files of these jobs in the JobHistory UI. 

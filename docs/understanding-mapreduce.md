@@ -8,7 +8,7 @@
 
 **Related lesson:** The MapReduce Framework
 
-**Lab Files** `~/labs`
+**Lab Files** `~/data`
 
 ---
 ### Steps
@@ -17,7 +17,7 @@
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h2>1. Put the File into HDFS</h2>
+<h3>1. Put the File into HDFS</h3>
 
 
 1\. Use more to look at a file named `constitution.txt`. Press `q` to exit when finished.
@@ -36,7 +36,7 @@ hdfs dfs -put constitution.txt
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h2>2. Run the WordCount Job</h2>
+<h3>2. Run the WordCount Job</h3>
 
 1\.  The following command runs a wordcount job on the `constitution.txt` and writes the output to `wordcount/output`:
 
@@ -50,7 +50,7 @@ yarn jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-mapreduce-examples.jar 
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h2>3. View the Results</h2>
+<h3>3. View the Results</h3>
 
 1\.  View the contents of the `wordcount_output` folder:
 

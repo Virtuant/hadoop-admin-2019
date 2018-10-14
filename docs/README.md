@@ -12,23 +12,21 @@ The lab guide is [here](https://virtuant.github.io/hadoop-overview-spark-hwx/lab
 
 #### Lab [3](https://virtuant.github.io/hadoop-overview-spark-hwx/rdbms-concepts.html) RDBMS Concepts [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/rdbms-concepts.pdf)
 
-#### Lab [4](https://virtuant.github.io/hadoop-overview-spark-hwx/nosql-concepts.html) Concepts of NOSql [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/nosql-concepts.pdf)
+#### Lab [4](https://virtuant.github.io/hadoop-overview-spark-hwx/understanding-block-storage.html) Understanding Block Storage [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/understanding-block-storage.pdf)
 
-#### Lab [5](https://virtuant.github.io/hadoop-overview-spark-hwx/understanding-block-storage.html) Understanding Block Storage [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/understanding-block-storage.pdf)
+#### Lab [5](https://virtuant.github.io/hadoop-overview-spark-hwx/understanding-mapreduce.html) Understanding MapReduce [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/understanding-mapreduce.pdf)
 
-#### Lab [6](https://virtuant.github.io/hadoop-overview-spark-hwx/understanding-mapreduce.html) Understanding MapReduce [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/understanding-mapreduce.pdf)
+#### Lab [6](https://virtuant.github.io/hadoop-overview-spark-hwx/understanding-pig.html) Understanding Pig [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/understanding-pig.pdf)
 
-#### Lab [7](https://virtuant.github.io/hadoop-overview-spark-hwx/understanding-pig.html) Understanding Pig [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/understanding-pig.pdf)
+#### Lab [7](https://virtuant.github.io/hadoop-overview-spark-hwx/getting-started-with-apache-pig.html) Getting Started with Pig [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/getting-started-with-apache-pig.pdf)
 
-#### Lab [8](https://virtuant.github.io/hadoop-overview-spark-hwx/getting-started-with-apache-pig.html) Getting Started with Pig [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/getting-started-with-apache-pig.pdf)
+#### Lab [8](https://virtuant.github.io/hadoop-overview-spark-hwx/exploring-data-with-apache-pig.html) Exploring Data with Pig [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/exploring-data-with-apache-pig.pdf)
 
-#### Lab [9](https://virtuant.github.io/hadoop-overview-spark-hwx/exploring-data-with-apache-pig.html) Exploring Data with Pig [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/exploring-data-with-apache-pig.pdf)
+#### Lab [9](https://virtuant.github.io/hadoop-overview-spark-hwx/defining-a-pig-user-defined-function-in-python.html) Defining Pig with Python [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/defining-a-pig-user-defined-function-in-python.pdf)
 
-#### Lab [10](https://virtuant.github.io/hadoop-overview-spark-hwx/defining-a-pig-user-defined-function-in-python.html) Defining Pig with Python [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/defining-a-pig-user-defined-function-in-python.pdf)
+#### Lab [10](https://virtuant.github.io/hadoop-overview-spark-hwx/import-using-sqoop.html) Sqoop Import to Hive [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/import-using-sqoop.pdf)
 
-#### Lab [11](https://virtuant.github.io/hadoop-overview-spark-hwx/import-using-sqoop.html) Sqoop Import to Hive [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/import-using-sqoop.pdf)
-
-#### Lab [12](https://virtuant.github.io/hadoop-overview-spark-hwx/manipulating_data_with_hive.html) Manipulating Data with Hive [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/manipulating_data_with_hive.pdf)
+#### Lab [11](https://virtuant.github.io/hadoop-overview-spark-hwx/manipulating_data_with_hive.html) Manipulating Data with Hive [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/manipulating_data_with_hive.pdf)
 
 #### Lab [20](https://virtuant.github.io/hadoop-overview-spark-hwx/exploring-hbase-1.html) Exploring HBase 1 [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/exploring-hbase-1.pdf)
 
@@ -46,7 +44,9 @@ The lab guide is [here](https://virtuant.github.io/hadoop-overview-spark-hwx/lab
 
 #### Lab [27](https://virtuant.github.io/hadoop-overview-spark-hwx/optimizing-hbase.html) Optizmizing HBase [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/optimizing-hbase.pdf)
 
-#### Lab [28](https://virtuant.github.io/hadoop-overview-spark-hwx/zookeeper.html) Using Zookeper [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/zookeeper.pdf)
+#### Lab [28](https://virtuant.github.io/hadoop-overview-spark-hwx/nosql-concepts.html) Concepts of NOSql [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/nosql-concepts.pdf)
+
+#### Lab [29](https://virtuant.github.io/hadoop-overview-spark-hwx/zookeeper.html) Using Zookeper [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/zookeeper.pdf)
 	
 #### Lab [30](https://virtuant.github.io/hadoop-overview-spark-hwx/spark-on-hbase.html) Spark on HBase [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/spark-on-hbase.pdf)
 

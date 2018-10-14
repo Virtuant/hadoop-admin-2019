@@ -6,16 +6,14 @@
 
 **Successful outcome:** Your Pig script will invoke a Python UDF that computes the frequency distribution of a dataset of emails and outputs the top 5 words found in those emails
 
-**File locations:** `~/labs`
+**File locations:** `~/data`
 
----
-### Steps
-
+----
 
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h2>1. Open the UDFs Notebook</h2>
+<h3>1. Open the UDFs Notebook</h3>
 
 1\. Open your Web browser to the IPython Notebook/Jupyter.
 
@@ -30,7 +28,7 @@ It should look like the following:
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h2>2. Import the Modules</h2>
+<h3>2. Import the Modules</h3>
 
 1\.  You will be using the replace function from string, and the `parseaddr` function from `email.utils`.
 
@@ -45,7 +43,7 @@ from email.utils import parseaddr
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h2>3. Define the `getFromEmail` Function</h2>
+<h3>3. Define the `getFromEmail` Function</h3>
 
 1\.  In this step, you will write a Python function that takes in the "From" field of an email and parses out the email address.
 
@@ -73,11 +71,10 @@ return parseaddr(fromEmail)[1]
 ![defining-a-pig-user-defined-function-in-python-2](https://user-images.githubusercontent.com/21102559/40942632-d89bd736-681c-11e8-9365-0f3db800e451.png)
 
 
-
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h2>4. Write the `getTop5Words` Function</h2>
+<h3>4. Write the `getTop5Words` Function</h3>
 
 1\.  In this step, you will write a Python function that returns the top five words found in the body of a collection of emails.
 
@@ -169,7 +166,7 @@ return result
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h2>5. Test the Code Locally</h2>
+<h3>5. Test the Code Locally</h3>
 
 1\.  Try running the code in the cell of your UDFs Notebook. You will get a compiler error because `outputSchema` is not defined.
 Comment out these two lines of code and run the cell to verify that your Python code's syntax is valid.
@@ -191,7 +188,7 @@ This defines `outputSchema` as nothing when running locally, but the if statemen
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h2>6. Copy the Code to the VM</h2>
+<h3>6. Copy the Code to the VM</h3>
 
 > Note To change which directory Firefox saves files, press `alt+f` to display the Firefox menus.
 
@@ -206,7 +203,7 @@ This defines `outputSchema` as nothing when running locally, but the if statemen
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h2>7. Put the Data in HDFS</h2>
+<h3>7. Put the Data in HDFS</h3>
 
 1\.  Open a Terminal window on your VM
 
@@ -225,7 +222,7 @@ hdfs dfs -ls
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h2>8. Invoke the UDF from Pig</h2>
+<h3>8. Invoke the UDF from Pig</h3>
 
 1\.  Run the `pig` program from the `Lab7.1` folder to enter the `Grunt` shell.
 

@@ -6,17 +6,12 @@
 
 **During this Lab:**  Perform the following steps
 
-**File locations:** `~/labs`
+**File locations:** `~/data`
 
----
-Steps
------
-
-
-<!--STEP-->
+----
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h2>1. Start the Grunt Shell</h2>
+<h3>1. Start the Grunt Shell</h3>
 
 
 1\.  Review the contents of the file `pigdemo.txt`
@@ -39,7 +34,7 @@ pig
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h2>2. Make a New Directory</h2>
+<h3>2. Make a New Directory</h3>
 
 1\. Notice you can run HDFS commands easily from the Grunt shell. For example, run the `ls` command:
 
@@ -97,7 +92,7 @@ CO  Mark
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h2>3. Define a Relation</h2>
+<h3>3. Define a Relation</h3>
 
 1\.  Define the `employees` relation, using a schema:
 
@@ -137,7 +132,7 @@ grunt> DUMP employees;
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h2>4. Filter the Relation by a Field</h2>
+<h3>4. Filter the Relation by a Field</h3>
 
 1\.  Let's filter the employees whose state field equals CA:
 
@@ -158,7 +153,7 @@ grunt> DUMP ca_only;
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h2>5. Create a Group</h2>
+<h3>5. Create a Group</h3>
 
 1\.  Define a relation that groups the employees by the state field:
 
@@ -196,7 +191,7 @@ The output is:
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h2>6. The STORE Command</h2>
+<h3>6. The STORE Command</h3>
 
 1\.  The `DUMP` command dumps the contents of a relation to the console. The `STORE` command sends the output to a folder in HDFS. For example:
 
@@ -244,7 +239,7 @@ grunt > cat emp_group_csv/part-r-00000
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h2>7. Show All Aliases</h2>
+<h3>7. Show All Aliases</h3>
 
 1\.  The aliases command shows a list of currently defined aliases:
 
@@ -260,7 +255,7 @@ There will be a couple of additional numeric aliases created by the system for i
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h2>8. Monitor the Pig Jobs</h2>
+<h3>8. Monitor the Pig Jobs</h3>
 
 1\.  Point your browser to the JobHistory UI at `http://sandbox:19888`.
 
