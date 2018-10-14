@@ -4,13 +4,9 @@ Exercise directory: ~/data
 
 In this exercise, you will practice data processing in Hadoop using Hive.
 
-----
-
-Go to `movielens.sql` and verify everything looks good and then execute the following command:
-
-	$ sudo mysql < movieslens.sql
-
 The data sets for this exercise are the `movie` and `movierating` data imported from MySQL into Hadoop in the “Importing Data with Sqoop” exercise
+
+----
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
 <h3>1. Review the Data</h3>
@@ -31,15 +27,15 @@ Prepare the Hive tables for this exercise by performing the following steps:
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
 <h3>2. Invoke the Hive shell</h3>
 
- $ hive
+	$ hive
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
 <h3>3. Create the  movie table</h3>
 
-		hive> CREATE EXTERNAL TABLE movie
-			(id INT, name STRING, year INT)
-			ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
-			LOCATION '/user/[username]/movie';
+	hive> CREATE EXTERNAL TABLE movie
+		(id INT, name STRING, year INT)
+		ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
+		LOCATION '/user/[username]/movie';
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
 <h3>4. Create the movierating table</h3>
@@ -63,9 +59,9 @@ If you are unfamiliar with SQL, follow the steps below to learn how to use HiveS
 
 	hive> SHOW TABLES;
 
-	The list should include the tables you created in the previous steps.
+The list should include the tables you created in the previous steps.
 
-	>NOTE: By convention, SQL (and similarly HiveQL) keywords are shown in upper case. However, HiveQL is not case sensitive, and you may type the commands in any case you wish.
+>NOTE: By convention, SQL (and similarly HiveQL) keywords are shown in upper case. However, HiveQL is not case sensitive, and you may type the commands in any case you wish.
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
 <h3>7. View the metadata for the two tables you created previously</h3>
@@ -73,10 +69,11 @@ If you are unfamiliar with SQL, follow the steps below to learn how to use HiveS
 	hive> DESCRIBE movie;
 	hive> DESCRIBE movieratings;
 
-	>Hint: You can use the up and down arrow keys to see and edit your command history in the hive shell, just as you can in the Linux command shell.
+>Hint: You can use the up and down arrow keys to see and edit your command history in the hive shell, just as you can in the Linux command shell.
 
-The SELECT * FROM TABLENAME command allows you to query data from a table. Although it is very easy to select all the rows in a table, 
+The `SELECT * FROM TABLENAME` command allows you to query data from a table. Although it is very easy to select all the rows in a table, 
 Hadoop generally deals with very large tables, so it is best to limit how many you select. 
+
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
 <h3>8. Use LIMIT to view only the first N rows</h3>
 
@@ -98,9 +95,9 @@ The results now correctly include movies before 1930, but the list is unordered.
 
 Now let’s move on to the movierating table. List all the ratings by a particular user, e.g.:
 
- hive> SELECT * FROM movierating WHERE userid=149;
+	hive> SELECT * FROM movierating WHERE userid=149;
 
-SELECT * shows all the columns, but as we’ve already selected by userid, display the other columns but not that one:
+`SELECT *` shows all the columns, but as we’ve already selected by userid, display the other columns but not that one:
 
 	hive> SELECT movieid,rating FROM movierating WHERE  userid=149;
 
