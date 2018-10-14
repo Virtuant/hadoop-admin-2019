@@ -79,9 +79,10 @@ Hadoop generally deals with very large tables, so it is best to limit how many y
 
 	hive> SELECT * FROM movie LIMIT 10;
 
-Use the WHERE clause to select only rows that match certain criteria.
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h3>9. For example, select movies released before 1930</h3>
+<h3>9. Use the WHERE clause to select only rows that match certain criteria.</h3>
+
+For example, select movies released before 1930:
 
 	hive> SELECT * FROM movie WHERE year < 1930;
 
@@ -114,7 +115,8 @@ List each user who rated movies, the number of movies they’ve rated, and their
 
 	hive> SELECT userid, COUNT(userid),AVG(rating) FROM  movierating GROUP BY userid;
 
-Take that same data, and copy it into a new table called userrating:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h3>10. Take that same data, and copy it into a new table called `userrating`</h3>
 
 	hive> CREATE TABLE USERRATING (userid INT,
 		numratings INT, avgrating FLOAT);
@@ -124,6 +126,8 @@ Take that same data, and copy it into a new table called userrating:
 		COUNT(userid),
 		AVG(rating)
 		FROM movierating GROUP BY userid;
+
+	hive> select * from userrating;
 
 Now that you’ve explored HiveQL, you should be able to answer the questions below.
 
@@ -138,7 +142,7 @@ You can enter Hive commands interactively in the Hive shell:
 	. . .
 	hive>	Enter interactive commands here
 
-	Or you can execute text files containing Hive commands, or use Hue:
+Or you can execute text files containing Hive commands, or use Hue:
 
 	$ hive -f file_to_execute
 
