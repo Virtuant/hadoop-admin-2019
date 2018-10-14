@@ -117,12 +117,12 @@ Some additional properties which can be configured by modifying conf/sqoop-site.
 
 For example:
 
-	```xml
-	<property>
-		<name>property.name</name>
-		<value>property.value</value>
-	</property>
-	```
+```xml
+<property>
+	<name>property.name</name>
+	<value>property.value</value>
+</property>
+```
 	
 On the command line in the generic arguments, they can also be specified.  For example:
 
