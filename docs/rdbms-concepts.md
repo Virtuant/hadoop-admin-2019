@@ -17,7 +17,12 @@ Let's take a detour to check out the differences.
 
 ### RDBMS
 
-So now lets take a detour and look at a RDBMS. Since it's loaded we'll use MySQL (may be MariaDB also):
+So now lets take a detour and look at a RDBMS. 
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>1. Log in to MySQL DB</h4>
+
+Since it's loaded we'll use MySQL (may be MariaDB also):
 
 ```console
 [centos@ip-10-0-0-54 ~]$ mysql -u root -p
@@ -35,7 +40,9 @@ MariaDB [(none)]>
 >Note: password should be just [return]
 
 
-Now look at the databases:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>2. Now look at the databases</h4>
+
 
 ```sql
 MariaDB [(none)]> show databases;
@@ -51,7 +58,8 @@ MariaDB [(none)]> show databases;
 5 rows in set (0.00 sec)
 ```
 
-And create some database, and use it:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>2. And create some database, and use it</h4>
 
 ```sql
 MariaDB [(none)]> create database hbase_test;
@@ -62,7 +70,8 @@ Database changed
 MariaDB [hbase_test]>
 ```
 
-Let's create a table:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>3. Let's create a table</h4>
 
 ```sql
 MariaDB [hbase_test]> create table users(id int, name char(20), PRIMARY KEY(id));
@@ -76,7 +85,8 @@ MariaDB [hbase_test]> create table orders(id int, user_id int, order_info text, 
 Query OK, 0 rows affected (0.00 sec)
 ```
 
-Now insert a record:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>4. Now insert a record</h4>
 
 ```sql
 MariaDB [hbase_test]> insert into users (id, name) VALUES (1, 'bill');
@@ -107,7 +117,8 @@ MariaDB [hbase_test]> select * from users where id < 2;
 1 row in set (0.00 sec)
 ```
 
-So now, create a row in the related table:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>5. Create a row in the related table</h4>
 
 ```sql
 MariaDB [hbase_test]> insert into orders (id, user_id, order_info) VALUES (1,1,"something");
@@ -155,7 +166,8 @@ What has happened?
 
 ### RDBMS and Transactions
 
-This time we will do the same with an active transaction:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>6. Do the same with an active Transaction</h4>
 
 ```sql
 MariaDB [hbase_test]> start transaction;
@@ -201,7 +213,10 @@ MariaDB [hbase_test]> select * from orders;
 
 ### NOSql Performance Indicators
 
-So now let's do some performance testing. We have a `.sql` file called `users.sql` in the directory above. Import into MySQL:
+So now let's do some performance testing. We have a `.sql` file called `users.sql` in the directory above. :
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>7. Import into MySQL</h4>
 
 ```sql
 [centos@ip-10-0-0-54 data]$ mysql -u root -p < users.sql
@@ -245,7 +260,8 @@ MariaDB [user_data]> select count(*) from users;
 
 Rather large table, isn't it?
 
-Look at the data:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>8. Look at the Data</h4>
 
 ```sql
 MariaDB [user_data]> select * from users limit 1 \G
@@ -368,6 +384,9 @@ count(*): 15195
 
 Runtime is approximately `0.24` seconds.
 
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>9. Index the Column</h4>
+
 Now, what if we index that column:
 
 ```sql
@@ -390,7 +409,7 @@ count(*): 15195
 What are the results now?
 
 
-### Summary
+### Results
 
 So we have seen where SQL databases (like MariaDB/MySQL) need to index a row by setting up an in-memory structure to make them perform better. In the next lab we'll see how NoSQL does a similar function but this time a little differently.
 
