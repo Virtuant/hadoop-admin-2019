@@ -12,7 +12,8 @@ In this exercise you will use the HBase Shell to explore the `hbase:meta` table.
 
 ----
 
-### The HBase Shell
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h3>1. The HBase Shell</h3>
 
 Invoke the HBase shell and print the help menu:
 
@@ -62,7 +63,8 @@ Determine what user you are connected as. Use the whoami command:
 	root (auth:SIMPLE)
 ```
 
-### Getting Help
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h3>2. Getting Help</h3>
 
 Run the help command and view the output:
 
@@ -72,7 +74,8 @@ Run the help command and view the output:
 
 Type `help "COMMAND"`, (e.g. `help "get"` - the quotes are necessary) for help on a specific command. Commands are grouped. Type `help "COMMAND_GROUP"`, (e.g. `help "general"`) for help on a command group.
 
-### HBase Meta Table
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h3>3. HBase Meta Table</h3>
 
 Now scan the `hbase:meta` It will give information about the tables that HBase is serving (your results may vary):
 
@@ -92,7 +95,8 @@ Now scan the `hbase:meta` It will give information about the tables that HBase i
    
 The `hbase:meta` table contains information about the node that is serving the table. It also keeps track of the start and end keys for the region. Clients use this information to know which node or RegionServer to contact to access a row.
 
-### Create a Table
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h3>4. Create a Table</h3>
 
 Now let's create a new table (whatever name you wish):
 
@@ -125,7 +129,8 @@ Scan the `hbase:meta` table again:
 
 > Note that the `hbase:meta` information for the table has multiple regions and those regions have start and end row keys. Look at how HBase took the splits in the table creation command and made regions out of them.
 
-### Drop the Table
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h3>5. Drop the Table</h3>
 
 So now drop your table:
 
@@ -134,8 +139,8 @@ So now drop your table:
 	hbase> drop '[some name]'
 ```
 
-
-### Flushing Tables
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h3>6. Flushing Tables</h3>
 
 Put some data into hbase:
 
@@ -171,6 +176,9 @@ Quit the HBase shell:
 ```console
 	hbase> quit
 ```
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h3>7. Look at the table Information</h3>
 
 Get the full path in HDFS where the movie table's info column family's data is stored:
 
@@ -229,7 +237,8 @@ Using the path from the ls, run the following command and replace the user path 
 
 The above command allows you to see how HBase stores the HFiles. All row keys are stored in sorted order and all Column Descriptors are stored in sorted order.
 
-### clean
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h3>8. clean</h3>
 
 And to get rid of everything:
 
@@ -245,6 +254,6 @@ Options:
         --cleanAll  cleans hbase related data from both zookeeper and hdfs.
 ```
 
-### Summary
+### Results
 
 Well, you did it! You can see where the command line gives you lots of usability.

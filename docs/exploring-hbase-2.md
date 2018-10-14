@@ -30,7 +30,8 @@ be displayed by typing:
 
 So let's do a couple of these.
 
-### Create the Table
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h3>1. Create the Table</h3>
 
 Enter HBase Shell:
 
@@ -59,7 +60,10 @@ Verify the new table:
 	'[some name]', {NAME => 'address', DATA_BLOCK_ENCODING => 'NONE', BLOOMFILTER => 'ROW', REPLICATI true ON_SCOPE => '0', VERSIONS => '1', COMPRESSION => 'NONE', MIN_VERSIONS => '0', TTL => '2147483647', KEEP_DELETED_CELLS => 'false', BLOCKSIZE => '65536', IN_MEMORY => 'false', BLOCKCACHE => 'true'}
 	1 row(s) in 0.0750 seconds
 ```
-    
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h3>2. PUT Something in the Table</h3>
+
 Review the output and notice the column ('address'), parameter properties such as COMPRESSION, DATA_BLOCK_ENCODING, 
 whether is kept in memory...
 
@@ -104,7 +108,8 @@ Use the `count` command to determine the number of rows in a table:
 	=> 2
 ```
 
-Retrieve data using GET:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h3>3. Retrieve data using GET</h3>
 
 ```console
 	hbase(main):012:0> get '[some name]','row1'
@@ -122,7 +127,8 @@ Use GET command to check on row2:
 	1 row(s) in 0.0110 seconds
 ```
 
-Now use PUT command on row2:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h3>4. Now use PUT command on row2</h3>
 
 ```console
 	hbase(main):004:0> put '[some name]','row2','address','value2'
@@ -143,7 +149,8 @@ Test the row counts:
 	=> 2
 ```
 
-Run the delete command:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h3>5. Run the delete command</h3>
 
 ```console
 	hbase(main):020:0> delete '[some name]','row1','address'
@@ -158,6 +165,9 @@ We can verify the data using SCAN command:
 	row2         column=address:, timestamp=1409577011732, value=value2
 	1 row(s) in 0.0750 seconds
 ```
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h3>6. Disable</h3>
 
 Before we disable the table, let's run a count on the table:
 
@@ -202,6 +212,9 @@ Check the table again:
 	[some name]
 	...
 ```
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h3>7. Drop</h3>
 
 Now use the DROP command to get rid of the table:
 

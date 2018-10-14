@@ -19,7 +19,7 @@ Now view the table:
 
 ----
 
-## Data Definition Language
+### Data Definition Language
 
 This command will display the currently used HBase version:
 
@@ -102,7 +102,6 @@ Checks whether the named table exists or not
 ### alter
 
 
-
 Alters the column family schema. You can pass table name and a dictionary specifying new column family schema.
 
 Examples:
@@ -128,7 +127,7 @@ the updated schema pass table name
 
 	alter_status '[table name]' 
 
-## Data manipulation commands
+### Data manipulation commands
 
 ### count
 
@@ -244,7 +243,7 @@ TIMERANGE, FILTER, LIMIT, STARTROW, STOPROW, TIMESTAMP, MAXLENGTH etc:
 	hbase(main):24:0> scan  'iot_data'
 
 
-## Cluster Replication Commands
+### Cluster Replication Commands
 
 ### add_peer
 
