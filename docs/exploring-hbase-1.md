@@ -46,7 +46,9 @@ You can also get a detailed status by adding `detailed` to the status command:
 	0	regionsInTransition master coprocessors: [ ]
 	1	live servers
 	sandbox.hortonworks.com:60020 1390046418833 requestsPerSecond=0.0, numberOfOnlineRegions=4,
-	usedHeapMB=102, maxHeapMB=1004, numberOfStores=4, numberOfStorefiles=4, storefileUncompressedSizeMB=14, storefileSizeMB=14, compressionRatio=1.0000, memstoreSizeMB=0, storefileIndexSizeMB=0, readRequestsCount=1231, writeRequestsCount=46, rootIndexSizeKB=16, totalStaticIndexSizeKB=8, totalStaticBloomSizeKB=64, totalCompactingKVs=37, 
+	usedHeapMB=102, maxHeapMB=1004, numberOfStores=4, numberOfStorefiles=4, storefileUncompressedSizeMB=14, storefileSizeMB=14, 
+	compressionRatio=1.0000, memstoreSizeMB=0, storefileIndexSizeMB=0, readRequestsCount=1231, writeRequestsCount=46, rootIndexSizeKB=16, 
+	totalStaticIndexSizeKB=8, totalStaticBloomSizeKB=64, totalCompactingKVs=37, 
 	...
 ```
 
@@ -197,20 +199,20 @@ Results:
 
 ```console
     2015-03-05 18:44:00,210 INFO [main] Configuration.deprecation: hadoop.native.lib is deprecated. Instead, use io.native.lib.available
-		2015-03-05 18:44:00,580 INFO [main] util.ChecksumType: Checksum using org.apache.hadoop.util.PureJavaCrc32
+	2015-03-05 18:44:00,580 INFO [main] util.ChecksumType: Checksum using org.apache.hadoop.util.PureJavaCrc32
     2015-03-05 18:44:00,581 INFO [main] util.ChecksumType: Checksum can use org.apache.hadoop.util.PureJavaCrc32C
     2015-03-05 18:44:02,680 INFO [main] Configuration.deprecation:  fs.default.name is deprecated. Instead, use fs.defaultFS
     2015-03-05 18:44:03,056 INFO [main] hfile.CacheConfig: Allocating LruBlockCache with maximum size 396.7 M
     K: 1/info:average/1425593979703/Put/vlen=4/mvcc=0 V: 4.15 
-		K: 1/info:count/1425593979703/Put/vlen=4/mvcc=0 V: 2077
+	K: 1/info:count/1425593979703/Put/vlen=4/mvcc=0 V: 2077
     K: 10/info:average/1425593979703/Put/vlen=4/mvcc=0 V: 3.54 
-		K: 10/info:count/1425593979703/Put/vlen=3/mvcc=0 V: 888
+	K: 10/info:count/1425593979703/Put/vlen=3/mvcc=0 V: 888
     K: 100/info:average/1425593979703/Put/vlen=4/mvcc=0 V: 3.06 
-		K: 100/info:count/1425593979703/Put/vlen=3/mvcc=0 V: 128
+	K: 100/info:count/1425593979703/Put/vlen=3/mvcc=0 V: 128
     K: 1000/info:average/1425593979703/Put/vlen=4/mvcc=0 V: 3.05 
-		K: 1000/info:count/1425593979703/Put/vlen=2/mvcc=0 V: 20
+	K: 1000/info:count/1425593979703/Put/vlen=2/mvcc=0 V: 20
     K: 1002/info:average/1425593979703/Put/vlen=4/mvcc=0 V: 4.25
-		K: 1002/info:count/1425593979703/Put/vlen=1/mvcc=0 V: 8
+	K: 1002/info:count/1425593979703/Put/vlen=1/mvcc=0 V: 8
     K: 1003/info:average/1425593979703/Put/vlen=4/mvcc=0 V: 2.94
     ...
 ```
@@ -249,9 +251,9 @@ And to get rid of everything:
 ```console
 Usage: hbase clean (--cleanZk|--cleanHdfs|--cleanAll)
 Options:
-        --cleanZk   cleans hbase related data from zookeeper.
-        --cleanHdfs cleans hbase related data from hdfs.
-        --cleanAll  cleans hbase related data from both zookeeper and hdfs.
+    --cleanZk   cleans hbase related data from zookeeper.
+    --cleanHdfs cleans hbase related data from hdfs.
+    --cleanAll  cleans hbase related data from both zookeeper and hdfs.
 ```
 
 ### Results
