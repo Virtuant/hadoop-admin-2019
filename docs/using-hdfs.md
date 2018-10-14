@@ -21,7 +21,8 @@ Using either Putty or your SSH client.
 
 > Note: if you’re on AWS or VMware or Azure, insert your appropriate IP address in place of 127.0.0.1. Azure users will need to replace port 2222 with 22
 
-#### Copy and Paste Sample Data
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h2>1. Copy and Paste Sample Data</h2>
 
 Either get the several of latest years from [san francisco](https://transparentcalifornia.com/salaries/san-francisco/) or get some earlier ones from us:
 
@@ -38,7 +39,9 @@ Either get the several of latest years from [san francisco](https://transparentc
 * Explore Two Advanced Features
 * Use Help Command to Access Hadoop Command Manual
 
-### Create a Directory in HDFS
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h2>2. Create a Directory in HDFS</h2>
 
 Let’s learn by writing the syntax. You will be able to copy and paste the following example commands into your terminal. Let’s login under hdfs user, so we can give `root` user permission to perform file operations:
 
@@ -67,7 +70,8 @@ Type the following exit command, so we can switch back to the root user. We can 
    exit
 ```
 
-### Make a HDFS Directory
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h2>3. Make a HDFS Directory</h2>
 
 Takes the path URI’s as an argument and creates a directory or multiple directories:
 
@@ -82,7 +86,9 @@ Do the following:
    hdfs dfs -mkdir /user/[logged in user]/salaries
 ```
 
-### Now Copy Data into HDFS
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h2>4. Now Copy Data into HDFS</h2>
 
 Copies single src file or multiple src files from local file system to the Hadoop Distributed File System (HDFS).
 
@@ -97,7 +103,9 @@ Do the following:
    hdfs dfs -put [source file 2].csv /user/[logged in user]/salaries/[source file 2].csv
 ```
 
-### Now List the Directory
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h2>5. Now List the Directory</h2>
 
 Lists the contents of a directory - for a file, returns stats of a file.
 
@@ -132,7 +140,8 @@ And now exit the `hadoop` user:
    exit
 ```
 
-### Find Out Space Utilization in A HDFS Directory
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h2>6. Find Out Space Utilization in A HDFS Directory</h2>
 
 Displays size of files and directories contained in the given directory or the size of a file if its just a file.
 
@@ -146,7 +155,9 @@ Now do:
    hdfs dfs -du  /user/[logged in user]/ /user/[logged in user]/salaries/[source file].csv
 ```
 
-### Now Download files from HDFS to the Local File System
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h2>7. Now Download files from HDFS to the Local File System</h2>
 
 This copies/downloads files from HDFS to the local file system:
 
@@ -161,7 +172,9 @@ So do it:
    hdfs dfs -get /user/[logged in user]/salaries/[source file].csv /home/
 ```
 
-### Advanced Features
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h2>8. Advanced Features</h2>
 
 Takes a source directory file or files as input and concatenates files in src into the local destination file. It concatenates files in the same directory or from multiple directories as long as we specify their location and outputs them to the local file system, as can be seen in the usage below.
 
@@ -181,7 +194,9 @@ Let’s concatenate the San Francisco salaries from two separate directories and
 
 Merges the files in your input files to output.csv in the root directory of the local filesystem. In our example, the first file contained about 120,000+ rows and the second file contained almost 30,000 rows. This file operation is important because it will save you time from having to manually concatenate them.
 
-#### Recursive Copying
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h2>9. Recursive Copying</h2>
 
 Copy file or directories recursively, all the directory’s files and subdirectories to the bottom of the directory tree are copied.
 
@@ -207,7 +222,9 @@ Now, verify the files or directories successfully copied to the destination fold
 
 Visual result of distcp file operation. Notice that both src1 and src2 directories and their contents were copied to the dest directory.
 
-### Other Commands
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h2>10. Other Commands</h2>
 
 There are several other commands associated with the FsShell subsystem which let you perform most common filesystem manipulations: `rm, rm -r (recursive rm), mv, cp, mkdir`, etc.
 
