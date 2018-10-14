@@ -142,6 +142,7 @@ Retrieve multiple versions of the cells for rowkey 1 by asking for them:
     b:temperature	timestamp=1396035310760, value=92
     b:temperature	timestamp=1396035206632, value=87
 ```
+
 ### Look at the HBase Master UI
 
 Let's look at the Ambari view of things. Go to the main HBase page on Ambari. Look at the menu at the right:

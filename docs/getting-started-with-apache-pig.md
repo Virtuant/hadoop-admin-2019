@@ -15,7 +15,7 @@
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
 <h4>1. View the Raw Data</h4>
 
-2\.  View the contents of the file `whitehouse_visits.txt`:
+View the contents of the file `whitehouse_visits.txt`:
 
 ```
 tail whitehouse_visits.txt
@@ -30,25 +30,25 @@ tail whitehouse_visits.txt
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
 <h4>2. Load the Data into HDFS</h4>
 
-1\.  Start the Grunt shell:
+Start the Grunt shell:
 
 ```
 pig
 ```
 
-2\.  From the Grunt shell, make a new directory in HDFS named `whitehouse`:
+From the Grunt shell, make a new directory in HDFS named `whitehouse`:
 
 ```
 grunt> mkdir whitehouse
 ```
 
-3\.  Use the copyFromLocal command in the Grunt shell to copy the `whitehouse_visits.txt` file to the whitehouse folder in HDFS, renaming the file `visits.txt`. (Be sure to enter this command on a single line):
+Use the copyFromLocal command in the Grunt shell to copy the `whitehouse_visits.txt` file to the whitehouse folder in HDFS, renaming the file `visits.txt`. (Be sure to enter this command on a single line):
 
 ```
 grunt> copyFromLocal whitehouse_visits.txt whitehouse/visits.txt
 ```
 
-4\.  Use the ls command to verify the file was uploaded successfully:
+Use the ls command to verify the file was uploaded successfully:
 ```
 grunt> ls whitehouse 
 
@@ -62,34 +62,35 @@ hdfs://[your ip]:8020/user/[user-name]/whitehouse/visits.txt<r 3>183292235
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
 <h4>3. Define a Relation</h4>
 
-1\.  You will use the TextLoader to load the `visits.txt` file.
+You will use the TextLoader to load the `visits.txt` file.
 
 > Note  TextLoader simply creates a tuple for each line of text , and it uses a single chararray field that contains the entire line. It allows you to load lines of text and not worry about the format or schema yet.
 
-2\.  Define the following `LOAD` relation:
+Define the following `LOAD` relation:
 
 ```
 grunt> A = LOAD '/user/[user-name]/whitehouse/' USING TextLoader();
 ```
 
-3\.  Use `DESCRIBE` to notice that `A` does not have a schema:
+Use `DESCRIBE` to notice that `A` does not have a schema:
+
 ```
 grunt> DESCRIBE A; 
 Schema for A unknown.
 ```
 
-4\.  We want to get a sense of what this data looks like. Use the `LIMIT` operator to define a new relation named `A_limit` that is limited to 10 records of `A`.
+We want to get a sense of what this data looks like. Use the `LIMIT` operator to define a new relation named `A_limit` that is limited to 10 records of `A`.
 
 ```
 grunt> A_limit = LIMIT a 10;
 ```
 
-5\.  Use the `DUMP` operator to view `A_limit relation`. Each row in the output will look similar to the following and should be 10 arbitrary rows from `visits.txt`:
+Use the `DUMP` operator to view `A_limit relation`. Each row in the output will look similar to the following and should be 10 arbitrary rows from `visits.txt`:
 
 ```
 grunt> DUMP A_limit;
-```
-```
+
+...
 (WHITLEY,KRISTY,J,U45880,,VA,,,,,10/7/2010 5:51,10/9/2010 10:30,10/9/2010
 23:59,,294,B3,WIN,10/7/2010 5:51,B3,OFFICE,VISITORS,WH,RES,OFFICE,VISITORS,GROUP TOUR ,1/28/2011,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
 ```
@@ -99,7 +100,7 @@ grunt> DUMP A_limit;
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
 <h4>4. Define a Schema</h4>
 
-1\.  Load the White House data again, but this time use the PigStorage loader and also define a partial schema:
+Load the White House data again, but this time use the PigStorage loader and also define a partial schema:
 
 ```
 grunt> B = LOAD '/user/[user-name]/whitehouse/visits.txt' USING PigStorage(',') AS ( 
@@ -112,7 +113,7 @@ state:chararray,
 arrival:chararray );
 ```
 
-2\.  Use the `DESCRIBE` command to view the schema:
+Use the `DESCRIBE` command to view the schema:
 
 ```
 grunt> describe B;
@@ -120,35 +121,33 @@ B: {lname: chararray,fname: chararray,mname: chararray,id: chararray,status: cha
  
 ```
 
-
-
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h4>5\. The `STORE` Command</h4>
+<h4>5. The `STORE` Command</h4>
 
-1\.  Enter the following `STORE` command, which stores the `B` relation into a folder named `whouse_tab` and separates the fields of each record with tabs:
+Enter the following `STORE` command, which stores the `B` relation into a folder named `whouse_tab` and separates the fields of each record with tabs:
+
 ```
 grunt> store B into 'whouse_tab' using PigStorage('\t');
 ```
 
-2\.  Verify the `whouse_tab` folder was created:
+Verify the `whouse_tab` folder was created:
+
 ```
 grunt> ls whouse_tab
 ```
 
 You should see two map output files.
 
-3\.  View one of the output files to verify they contain the `B` relation in a `tab-delimited` format:
+View one of the output files to verify they contain the `B` relation in a `tab-delimited` format:
 
 ```
 grunt> fs -tail whouse_tab/part-m-00000
 ```
 
-4\.  Each record should contain 7 fields. 
+Each record should contain 7 fields. 
 What happened to the rest of the fields from the raw data that was loaded from `whitehouse/visits.txt`?
-
-
 
 
 <!--STEP-->
@@ -156,24 +155,30 @@ What happened to the rest of the fields from the raw data that was loaded from `
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
 <h4>6. Use a Different Storer</h4>
 
-1\.  In the previous step, you stored a relation using PigStorage with a tab delimiter. Enter the following command, which stores the same relation but in a JSON format:
+In the previous step, you stored a relation using PigStorage with a tab delimiter. Enter the following command, which stores the same relation but in a JSON format:
+
 ```
 grunt> store B into 'whouse_json' using JsonStorage();
 ```
 
-2\.  Verify the `whouse_json` folder was created:
+Verify the `whouse_json` folder was created:
+
 ```
 grunt> ls whouse_json
 ```
 
-3\.  View one of the output files:
+View one of the output files:
+
 ```
 grunt> fs -tail whouse_json/part-m-00000
 ```
 
-> Note  that the schema you defined for the B relation was used to create the format of each JSON entry:
+>Note  that the schema you defined for the B relation was used to create the format of each JSON entry:
+
 ```
-{"lname":"MATTHEWMAN","fname":"ROBIN","mname":"H","id":"U81961","status":"735 74","state":"VA","arrival":"2/10/2011 11:14"} {"lname":"MCALPINEDILEM","fname":"JENNIFER","mname":"J","id":"U81961","status ":"78586","state":"VA","arrival":"2/10/2011 10:49"}
+{"lname":"MATTHEWMAN","fname":"ROBIN","mname":"H","id":"U81961","status":"735 74","state":"VA","arrival":"2/10/2011 11:14"} 
+{"lname":"MCALPINEDILEM","fname":"JENNIFER","mname":"J","id":"U81961","status ":"78586","state":"VA","arrival":"2/10/2011 10:49"}
+...
 ```
 
 ### Result
