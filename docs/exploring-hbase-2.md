@@ -19,6 +19,9 @@ Now view the table:
 
 ----
 
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h4>1. Do the Following</h4>
+
 ### Data Definition Language
 
 This command will display the currently used HBase version:
@@ -238,7 +241,7 @@ This command scans entire table and displays the table contents. You can pass ta
 a dictionary of scanner specifications. 
 
 Scanner specifications may include one or more of: 
-TIMERANGE, FILTER, LIMIT, STARTROW, STOPROW, TIMESTAMP, MAXLENGTH etc:
+`TIMERANGE`, `FILTER`, `LIMIT`, `STARTROW`, `STOPROW`, `TIMESTAMP`, `MAXLENGTH` etc:
 
 	hbase(main):24:0> scan  'iot_data'
 
@@ -324,7 +327,7 @@ Shows all access permissions for the current user for a given table:
 
 	user_permission <table>
 
-### Summary
+### Results
 
 You're getting the hang of it! Not too bad!
 
