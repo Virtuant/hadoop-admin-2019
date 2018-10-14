@@ -10,11 +10,12 @@ Go to `movielens.sql` and verify everything looks good and then execute the foll
 
 	$ sudo mysql < movieslens.sql
 
-The data sets for this exercise are the movie and movierating data imported from MySQL into Hadoop in the “Importing Data with Sqoop” exercise
+The data sets for this exercise are the `movie` and `movierating` data imported from MySQL into Hadoop in the “Importing Data with Sqoop” exercise
 
-Review the Data
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h3>1. Review the Data</h3>
 
-1.	Make sure you’ve completed the “Importing Data with Sqoop” exercise. Review the data you already loaded into HDFS in that exercise:
+Make sure you’ve completed the “Importing Data with Sqoop” exercise. Review the data you already loaded into HDFS in that exercise:
 
 	$ hdfs dfs -cat movie/part-m-00000 | head
 	...
@@ -27,24 +28,27 @@ For Hive data sets, you create tables, which attach field names and data types t
 
 Prepare the Hive tables for this exercise by performing the following steps:
 
-
-2.	Invoke the Hive shell.
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h3>2. Invoke the Hive shell</h3>
 
  $ hive
 
-3.	Create the  movie table:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h3>3. Create the  movie table</h3>
 
 		hive> CREATE EXTERNAL TABLE movie
 			(id INT, name STRING, year INT)
 			ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
 			LOCATION '/user/[username]/movie';
 
-4.	Create the movierating table:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h3>4. Create the movierating table</h3>
 
 	hive> 
 	CREATE EXTERNAL TABLE movierating (userid INT, movieid INT, rating INT) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' LOCATION '/user/[username]/movierating';
 
-5.	Quit the Hive shell:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h3>5. Quit the Hive shell</h3>
 
 	hive> QUIT;
 
@@ -54,9 +58,8 @@ If you are familiar with SQL, most of what you already know is applicably to Hiv
 
 If you are unfamiliar with SQL, follow the steps below to learn how to use HiveSQL to solve problems.
 
-1.	Start the Hive shell.
-
-2.	Show the list of tables in Hive:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h3>6. Start the Hive shell and show the list of tables in Hive</h3>
 
 	hive> SHOW TABLES;
 
@@ -64,53 +67,57 @@ If you are unfamiliar with SQL, follow the steps below to learn how to use HiveS
 
 	>NOTE: By convention, SQL (and similarly HiveQL) keywords are shown in upper case. However, HiveQL is not case sensitive, and you may type the commands in any case you wish.
 
-3.	View the metadata for the two tables you created previously:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h3>7. View the metadata for the two tables you created previously</h3>
 
 	hive> DESCRIBE movie;
 	hive> DESCRIBE movieratings;
 
 	>Hint: You can use the up and down arrow keys to see and edit your command history in the hive shell, just as you can in the Linux command shell.
 
-4.	The SELECT * FROM TABLENAME command allows you to query data from a table. Although it is very easy to select all the rows in a table, Hadoop generally deals with very large tables, so it is best to limit how many you select. Use LIMIT to view only the first N rows:
+The SELECT * FROM TABLENAME command allows you to query data from a table. Although it is very easy to select all the rows in a table, 
+Hadoop generally deals with very large tables, so it is best to limit how many you select. 
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h3>8. Use LIMIT to view only the first N rows</h3>
 
 	hive> SELECT * FROM movie LIMIT 10;
 
-5.	Use the WHERE clause to select only rows that match certain criteria. For example, select movies released before 1930:
+Use the WHERE clause to select only rows that match certain criteria.
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h3>9. For example, select movies released before 1930</h3>
 
 	hive> SELECT * FROM movie WHERE year < 1930;
 
-6.	The results include movies whose year field is 0, meaning that the year is unknown or unavailable. Exclude those movies from the results:
+The results include movies whose year field is 0, meaning that the year is unknown or unavailable. Exclude those movies from the results:
 
 	hive> SELECT * FROM movie WHERE year < 1930 AND year != 0;
 
-7.	The results now correctly include movies before 1930, but the list is unordered. Order them alphabetically by title:
+The results now correctly include movies before 1930, but the list is unordered. Order them alphabetically by title:
 
-	hive> SELECT * FROM movie WHERE year < 1930 AND year != 0 			ORDER BY name;
+	hive> SELECT * FROM movie WHERE year < 1930 AND year != 0 ORDER BY name;
 
-8.	Now let’s move on to the movierating table. List all the ratings by a particular user, e.g.
+Now let’s move on to the movierating table. List all the ratings by a particular user, e.g.:
 
  hive> SELECT * FROM movierating WHERE userid=149;
 
-9.	SELECT * shows all the columns, but as we’ve already selected by userid, display the other columns but not that one:
+SELECT * shows all the columns, but as we’ve already selected by userid, display the other columns but not that one:
 
-	hive> SELECT movieid,rating FROM movierating WHERE  		userid=149;
+	hive> SELECT movieid,rating FROM movierating WHERE  userid=149;
 
-10.	Use the JOIN function to display data from both tables. For example, include the name of the movie (from the movie table) in the list of a user’s ratings:
+Use the JOIN function to display data from both tables. For example, include the name of the movie (from the movie table) in the list of a user’s ratings:
 
 	hive> select movieid,rating,name from movierating join
 		movie on movierating.movieid=movie.id where userid=149;
 
-11.	How tough a rater is user 149? Find out by calculating the average rating she gave to all movies using the AVG function:
+How tough a rater is user 149? Find out by calculating the average rating she gave to all movies using the AVG function:
 
 	hive> SELECT AVG(rating) FROM movierating WHERE  userid=149;
 
-
-12.	List each user who rated movies, the number of movies they’ve rated, and their average rating.
+List each user who rated movies, the number of movies they’ve rated, and their average rating:
 
 	hive> SELECT userid, COUNT(userid),AVG(rating) FROM  movierating GROUP BY userid;
 
-
-13. Take that same data, and copy it into a new table called userrating.
+Take that same data, and copy it into a new table called userrating:
 
 	hive> CREATE TABLE USERRATING (userid INT,
 		numratings INT, avgrating FLOAT);
