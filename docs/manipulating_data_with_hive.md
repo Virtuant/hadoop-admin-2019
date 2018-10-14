@@ -9,7 +9,7 @@ The data sets for this exercise are the `movie` and `movierating` data imported 
 ----
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h3>1. Review the Data</h3>
+<h4>1. Review the Data</h4>
 
 Make sure you’ve completed the “Importing Data with Sqoop” exercise. Review the data you already loaded into HDFS in that exercise:
 
@@ -25,12 +25,12 @@ For Hive data sets, you create tables, which attach field names and data types t
 Prepare the Hive tables for this exercise by performing the following steps:
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h3>2. Invoke the Hive shell</h3>
+<h4>2. Invoke the Hive shell</h4>
 
 	$ hive
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h3>3. Create the  movie table</h3>
+<h4>3. Create the  movie table</h4>
 
 	hive> CREATE EXTERNAL TABLE movie
 		(id INT, name STRING, year INT)
@@ -38,13 +38,13 @@ Prepare the Hive tables for this exercise by performing the following steps:
 		LOCATION '/user/[username]/movie';
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h3>4. Create the movierating table</h3>
+<h4>4. Create the movierating table</h4>
 
 	hive> 
 	CREATE EXTERNAL TABLE movierating (userid INT, movieid INT, rating INT) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' LOCATION '/user/[username]/movierating';
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h3>5. Quit the Hive shell</h3>
+<h4>5. Quit the Hive shell</h4>
 
 	hive> QUIT;
 
@@ -55,7 +55,7 @@ If you are familiar with SQL, most of what you already know is applicably to Hiv
 If you are unfamiliar with SQL, follow the steps below to learn how to use HiveSQL to solve problems.
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h3>6. Start the Hive shell and show the list of tables in Hive</h3>
+<h4>6. Start the Hive shell and show the list of tables in Hive</h4>
 
 	hive> SHOW TABLES;
 
@@ -64,7 +64,7 @@ The list should include the tables you created in the previous steps.
 >NOTE: By convention, SQL (and similarly HiveQL) keywords are shown in upper case. However, HiveQL is not case sensitive, and you may type the commands in any case you wish.
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h3>7. View the metadata for the two tables you created previously</h3>
+<h4>7. View the metadata for the two tables you created previously</h4>
 
 	hive> DESCRIBE movie;
 	hive> DESCRIBE movieratings;
@@ -75,12 +75,12 @@ The `SELECT * FROM TABLENAME` command allows you to query data from a table. Alt
 Hadoop generally deals with very large tables, so it is best to limit how many you select. 
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h3>8. Use LIMIT to view only the first N rows</h3>
+<h4>8. Use LIMIT to view only the first N rows</h4>
 
 	hive> SELECT * FROM movie LIMIT 10;
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h3>9. Use the WHERE clause to select only rows that match certain criteria.</h3>
+<h4>9. Use the WHERE clause to select only rows that match certain criteria.</h4>
 
 For example, select movies released before 1930:
 
@@ -116,7 +116,7 @@ List each user who rated movies, the number of movies they’ve rated, and their
 	hive> SELECT userid, COUNT(userid),AVG(rating) FROM  movierating GROUP BY userid;
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h3>10. Take that same data, and copy it into a new table called `userrating`</h3>
+<h4>10. Take that same data, and copy it into a new table called `userrating`</h4>
 
 	hive> CREATE TABLE USERRATING (userid INT,
 		numratings INT, avgrating FLOAT);

@@ -31,7 +31,7 @@ be displayed by typing:
 So let's do a couple of these.
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h3>1. Create the Table</h3>
+<h4>1. Create the Table</h4>
 
 Enter HBase Shell:
 
@@ -62,7 +62,7 @@ Verify the new table:
 ```
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h3>2. PUT Something in the Table</h3>
+<h4>2. PUT Something in the Table</h4>
 
 Review the output and notice the column ('address'), parameter properties such as COMPRESSION, DATA_BLOCK_ENCODING, 
 whether is kept in memory...
@@ -109,7 +109,7 @@ Use the `count` command to determine the number of rows in a table:
 ```
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h3>3. Retrieve data using GET</h3>
+<h4>3. Retrieve data using GET</h4>
 
 ```console
 	hbase(main):012:0> get '[some name]','row1'
@@ -128,7 +128,7 @@ Use GET command to check on row2:
 ```
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h3>4. Now use PUT command on row2</h3>
+<h4>4. Now use PUT command on row2</h4>
 
 ```console
 	hbase(main):004:0> put '[some name]','row2','address','value2'
@@ -150,7 +150,7 @@ Test the row counts:
 ```
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h3>5. Run the delete command</h3>
+<h4>5. Run the delete command</h4>
 
 ```console
 	hbase(main):020:0> delete '[some name]','row1','address'
@@ -167,7 +167,7 @@ We can verify the data using SCAN command:
 ```
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h3>6. Disable</h3>
+<h4>6. Disable</h4>
 
 Before we disable the table, let's run a count on the table:
 
@@ -214,7 +214,7 @@ Check the table again:
 ```
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h3>7. Drop</h3>
+<h4>7. Drop</h4>
 
 Now use the DROP command to get rid of the table:
 
