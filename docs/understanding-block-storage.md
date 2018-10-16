@@ -13,15 +13,15 @@
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>1. Put the File into HDFS</h4>
 
-1\.  If not already done, open a Terminal.
+If not already done, open a Terminal.
 
-2\.  Use less to view the contents of the `stocks.csv` file. Press `q` when you are finished to exit less.
+Use less (or more) to view the contents of the `stocks.csv` file. Press `q` when you are finished to exit.
 
 ```
 less stocks.csv
 ```
 
-4\.  Try putting the file into HDFS with a block size of 30 bytes:
+Try putting the file into HDFS with a block size of 30 bytes:
 
 ```
 hdfs dfs -D dfs.blocksize=30 -put stocks.csv
@@ -33,7 +33,7 @@ hdfs dfs -D dfs.blocksize=30 -put stocks.csv
 put: Specified block size is less than configured minimum value (dfs.namenode.fs-limits.min-block-size): 30 < 1048576
 ```
 
-5\.  Try the put again, but use a block size of 2,000,000:
+Try the put again, but use a block size of 2,000,000:
 
 ```
 hdfs dfs -D dfs.blocksize=2000000 -put stocks.csv
@@ -41,19 +41,20 @@ hdfs dfs -D dfs.blocksize=2000000 -put stocks.csv
 
 > Note that 2,000,000 is not a valid blocksize because it is not a multiple of 512 (the checksum size)
 
-6\.  Try the put again, but this time use 1,048,576 for the blocksize:
+
+Try the put again, but this time use 1,048,576 for the blocksize:
 
 ```
 hdfs dfs -D dfs.blocksize=1048576 -put stocks.csv
 ```
 
-7\.  This time the put command should have worked. Use ls to verify that the file is in HDFS in the `/user/[user-name]` folder:
+This time the put command should have worked. Use ls to verify that the file is in HDFS in the `/user/[user-name]` folder:
 
 ```
 hdfs dfs -ls 
 ```
 
-Output:
+So now you should see something like this:
 
 ```
 Found 1 items
@@ -65,13 +66,13 @@ Found 1 items
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>2. View the Number of Blocks</h4>
 
-1\.  Run the following command to view the number of blocks that were created for `stocks.csv`:
+Run the following command to view the number of blocks that were created for `stocks.csv`:
 
 ```
 hdfs fsck /user/[user-name]/stocks.csv
 ```
 
-2\.  There are four blocks. Look for the following line in the output:
+There are four blocks. Look for the following line in the output:
 
 ```
 Total blocks (validated):4 (avg. block size 903299 B)
@@ -83,7 +84,7 @@ Total blocks (validated):4 (avg. block size 903299 B)
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>3. Find the Actual Blocks</h4>
 
-1\.  Enter the same `fsck` command as before, but add the `-files` and `-blocks` options:
+Enter the same `fsck` command as before, but add the `-files` and `-blocks` options:
 
 ```
 hdfs fsck /user/[user-name]/stocks.csv -files -blocks
@@ -91,7 +92,7 @@ hdfs fsck /user/[user-name]/stocks.csv -files -blocks
 
 > Note  the output contains the block IDs, which are coincidentally the names of the files on the DataNodes
 
-2\.  Run the command again, but this time add the -locations flag:
+Run the command again, but this time add the -locations flag:
 
 ```
 hdfs fsck /user/[user-name]/stocks.csv -files -blocks -locations
@@ -99,7 +100,7 @@ hdfs fsck /user/[user-name]/stocks.csv -files -blocks -locations
 
 > Note  in the output that the IP address of the DataNode appear next to each block.
 
-3\.  Change directories to the following:
+Change directories to the following:
 
 ```
 cd /hadoop/hdfs/data/current/BP-xxx/current/finalized/
@@ -107,7 +108,7 @@ cd /hadoop/hdfs/data/current/BP-xxx/current/finalized/
 
 Replace `BP-xxx` with the actual folder name. To finish this, use the `TAB` key to complete the filename once you have typed `B`. Then finish typing the rest of the directory path.
 
-4\.  Try and find the folder that contains the blocks you are looking for and change directories into that folder. The easiest way is to look at the timestamps and find the most recently changed folder. You can use the `stat \*` command to view the contents of the directory, then use `ll` to list the contents of that directory.
+Try and find the folder that contains the blocks you are looking for and change directories into that folder. The easiest way is to look at the timestamps and find the most recently changed folder. You can use the `stat \*` command to view the contents of the directory, then use `ll` to list the contents of that directory.
 
 ```
 stat *
@@ -123,7 +124,7 @@ ll
 
 If the results of the `ll` command are additional subdirectories rather than block information (as shown in the next lab step), repeat the process above to once again find the newest directory created , change to it, and list its contents.
 
-1\.  Confirm that the actual blocks appear in this folder. Look for files that are exactly 1,048,576 bytes. These are three of the blocks.
+Confirm that the actual blocks appear in this folder. Look for files that are exactly 1,048,576 bytes. These are three of the blocks.
 
 ```
 -rw-r--r--	1	hdfs	hdfs	1048576	blk_1073742090
@@ -136,7 +137,7 @@ If the results of the `ll` command are additional subdirectories rather than blo
 
 > Note  that the fourth block is smaller: 467,470 bytes.
 
-2\.  You can view the contents of a block (although this is not a typical task in Hadoop). Here is the tail of the second block:
+You can view the contents of a block (although this is not a typical task in Hadoop). Here is the tail of the second block:
 
 ```
 tail blk_1073741905
@@ -157,7 +158,7 @@ NYSE,XKK,2007-08-08,9.45,9.90,9.45,9.66,6000,7.28
 NYSE,XKK,2007-08-07,9.25,9.50,9.25,9.40
 ```
 
-> Note  the last record in this file is not complete and spills over to the next block, a common occurrence in HDFS.
+>Note: the last record in this file is not complete and spills over to the next block, a common occurrence in HDFS.
 
 
 ### Result
