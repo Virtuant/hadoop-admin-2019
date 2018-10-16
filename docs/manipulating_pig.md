@@ -11,12 +11,22 @@ For the sake of completeness, data in the three files is briefly described here.
 **Lab files**: We will use MovieLens dataset for analysis with Pig. If needed, the data is available from 
 [here](https://grouplens.org/datasets/movielens).
 
+----
 
+### The Data
+
+```
 ratings.dat–>userid::movieid:rating::timestamp
+```
 
-userid ranges from 1 to 6040, movieid ranges from 1 to 3952, rating is made on a five-star discrete scale (whole-star rating only) and timestamp is in seconds.
+* userid ranges from 1 to 6040
+* movieid ranges from 1 to 3952
+* rating is made on a five-star discrete scale (whole-star rating only)
+* timestamp is in seconds.
 
+```
 users.dat–>userid::gender::age::occupation::zipcode
+```
 
 gender is M or F; age is categorized as 1, 18, 25, 35,45, 50, 56. The meanings are: 1: <18; 18: 18-24; 25: 25-34; 35: 35-44; 45: 45-49; 50: 50-55; 56 is 56+.
 
