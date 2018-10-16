@@ -82,15 +82,13 @@ mv movies.txt movies.dat
 mv ratings.txt ratings.dat
 ```
 
-### Copy files to Hadoop system
-
-# Delete any earlier movie folder on hadoop
+### Delete any earlier movie folder on hadoop
 
 ```
 hdfs dfs -rmr movie
 ```
 
-# Copy movie folder to hdfs
+### Copy movie folder to hdfs
 
 ```
 hdfs dfs -put movie
@@ -102,6 +100,8 @@ Pig can be started from logged in user’s command shell as below. If you are on
 $ pig
 grunt> 
 ```
+
+### Load and Do Pig
 
 Using load statement, load user.dat file into pig. In fact, nothing is loaded immediately. Only syntax is checked. Whether file exists is also not found out at this stage.
 
