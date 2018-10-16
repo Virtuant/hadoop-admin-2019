@@ -28,36 +28,41 @@ ratings.dat–>userid::movieid:rating::timestamp
 users.dat–>userid::gender::age::occupation::zipcode
 ```
 
-gender is M or F; age is categorized as 1, 18, 25, 35,45, 50, 56. The meanings are: 1: <18; 18: 18-24; 25: 25-34; 35: 35-44; 45: 45-49; 50: 50-55; 56 is 56+.
-
-occupation is one of these: 0: other, 1: academic/educator ; 2: artist ; 3: clerical/admin ; 4: college/grad student ; 5: customer service ; 6: doctor/health care ; 7: executive/managerial ; 8: farmer ; 9: homemaker ; 10: K-12 student ; 11: lawyer ; 12: programmer ; 13: retired ; 14: sales/marketing ; 15: scientist ; 16: self-employed ; 17: technician/engineer ; 18: tradesman/craftsman ; 19: unemployed ; 20: writer
+* gender is M or F
+* age is categorized as 1, 18, 25, 35,45, 50, 56
+* The meanings are: 1: <18; 18: 18-24; 25: 25-34; 35: 35-44; 45: 45-49; 50: 50-55; 56 is 56+
+* occupation is one of these: 
+	0: other
+	1: academic/educator
+	2: artist
+	3: clerical/admin
+	4: college/grad student
+	5: customer service
+	6: doctor/health care
+	7: executive/managerial
+	8: farmer
+	9: homemaker
+	10: K-12 student
+	11: lawyer
+	12: programmer
+	13: retired
+	14: sales/marketing
+	15: scientist
+	16: self-employed
+	17: technician/engineer
+	18: tradesman/craftsman
+	19: unemployed
+	20: writer
 
 movies.dat–>movieID::title::genres
 
-Titles are movie titles and genres are pipe-separated and are selected from the following genres: Action, Adventure, Animation, Children’s, Comedy, Crime, Documentary, Drama, Fantasy, Film-Noir, Horror, Musical, Mystery, Romance, Sci-Fi, Thriller, War, Western
+Titles are movie titles and genres are pipe-separated and are selected from the following genres: 
 
-Field separators are double colon. We substitute them with semicolon. And then copy the whole directory to hadoop folder. The following shell script does the preparatory work of inserting semicolon as field separator and copying the whole movie folder to hadoop. Our machine has Cloudera installed.
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-	
+* Action, Adventure, Animation, Children’s, Comedy, Crime, Documentary, Drama, Fantasy, Film-Noir, Horror, Musical, Mystery, Romance, Sci-Fi, Thriller, War, Western
+
+Field separators are double colon. We substitute them with semicolon. And then copy the whole directory to hadoop folder. The following shell script does the preparatory work of inserting semicolon as field separator and copying the whole movie folder to hadoop.
+
+```bash
 #!/bin/bash
 #
 #
@@ -72,43 +77,37 @@ sed 's/\:\:/;/g' ratings.dat > ratings.txt
 mv users.txt users.dat
 mv movies.txt movies.dat
 mv ratings.txt ratings.dat
- 
+```
+
 # Copy files to hadoop system
+
 # Delete any earlier movie folder on hadoop
+
+```
 hdfs dfs -rmr /user/ashokharnal/movie
+```
+
 # Copy movie folder to hdfs
+
+```
 hdfs dfs -put movie /user/ashokharnal
+```
 
 Pig can be started from logged in user’s command shell as below. If you are on Cloudera system, you may have to export Classpath of hadoop libraries. After a few messages (grunts), pig shell prompt ‘grunt’ appears. We will execute pig commands in this shell.
-1
-2
-3
-	
+
+```	
 $ export HADOOP_CLASSPATH="/usr/lib/hadoop/*:/usr/lib/hadoop/client-0.20/*:$HADOOP_CLASSPATH"
 $ pig
 grunt> 
+```
 
 Using load statement, load user.dat file into pig. In fact, nothing is loaded immediately. Only syntax is checked. Whether file exists is also not found out at this stage.
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
+
 	
-/* Load users.dat file. 'user' on the left is not a variable but an alias
-for the load command. While loading, we also: <strong>a. </strong>indicate the field
-separator, <strong>b.</strong> specify proposed field names, and <strong>c.</strong> specify their data-types.
-The default field separator is tab. */
+Load users.dat file. 'user' on the left is not a variable but an alias for the load command. 
+While loading, we also: <strong>a. </strong>indicate the field separator, <strong>b.</strong> specify proposed field names, and <strong>c.</strong> specify their data-types. The default field separator is tab.
  
+```
 user = load '/user/ashokharnal/movie/users.dat' using PigStorage(';') as (userid:int, gender:chararray, age:int, occupation:int, zip:chararray) ;
  
 /* for every row in the user, generate columnar data as follows.
