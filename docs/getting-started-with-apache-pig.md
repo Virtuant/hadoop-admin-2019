@@ -55,8 +55,6 @@ grunt> ls whitehouse
 hdfs://[your ip]:8020/user/[user-name]/whitehouse/visits.txt<r 3>183292235
 ```
 
-
-
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
@@ -64,7 +62,7 @@ hdfs://[your ip]:8020/user/[user-name]/whitehouse/visits.txt<r 3>183292235
 
 You will use the TextLoader to load the `visits.txt` file.
 
-> Note  TextLoader simply creates a tuple for each line of text , and it uses a single chararray field that contains the entire line. It allows you to load lines of text and not worry about the format or schema yet.
+> Note: textLoader simply creates a tuple for each line of text , and it uses a single chararray field that contains the entire line. It allows you to load lines of text and not worry about the format or schema yet.
 
 Define the following `LOAD` relation:
 
