@@ -54,7 +54,9 @@ users.dat–>userid::gender::age::occupation::zipcode
 	19: unemployed
 	20: writer
 
+```
 movies.dat–>movieID::title::genres
+```
 
 Titles are movie titles and genres are pipe-separated and are selected from the following genres: 
 
@@ -66,7 +68,6 @@ Field separators are double colon. We substitute them with semicolon. And then c
 #!/bin/bash
 #
 #
-cd /home/ashokharnal
 unzip ml-1m.zip 
 mv ml-1m movie
 # Unfortunately PigStorage does not work with :: as separators
@@ -79,47 +80,53 @@ mv movies.txt movies.dat
 mv ratings.txt ratings.dat
 ```
 
-# Copy files to hadoop system
+### Copy files to Hadoop system
 
 # Delete any earlier movie folder on hadoop
 
 ```
-hdfs dfs -rmr /user/ashokharnal/movie
+hdfs dfs -rmr movie
 ```
 
 # Copy movie folder to hdfs
 
 ```
-hdfs dfs -put movie /user/ashokharnal
+hdfs dfs -put movie
 ```
 
 Pig can be started from logged in user’s command shell as below. If you are on Cloudera system, you may have to export Classpath of hadoop libraries. After a few messages (grunts), pig shell prompt ‘grunt’ appears. We will execute pig commands in this shell.
 
-```	
-$ export HADOOP_CLASSPATH="/usr/lib/hadoop/*:/usr/lib/hadoop/client-0.20/*:$HADOOP_CLASSPATH"
+```
 $ pig
 grunt> 
 ```
 
 Using load statement, load user.dat file into pig. In fact, nothing is loaded immediately. Only syntax is checked. Whether file exists is also not found out at this stage.
 
-	
 Load users.dat file. 'user' on the left is not a variable but an alias for the load command. 
 While loading, we also: <strong>a. </strong>indicate the field separator, <strong>b.</strong> specify proposed field names, and <strong>c.</strong> specify their data-types. The default field separator is tab.
  
 ```
-user = load '/user/ashokharnal/movie/users.dat' using PigStorage(';') as (userid:int, gender:chararray, age:int, occupation:int, zip:chararray) ;
- 
-/* for every row in the user, generate columnar data as follows.
-This statement, in effect, projects named columns */
+user = load '/user/ashokharnal/movie/users.dat' using PigStorage(';') as 
+	(userid:int, gender:chararray, age:int, occupation:int, zip:chararray) ;
+```
+
+For every row in the user, generate columnar data as follows. This statement, in effect, projects named columns
+
+```
 udata = foreach user generate userid , gender , age ,occupation , zip ;
+ ```
  
-/* Dump output to screen but limit it to five rows */
+Dump output to screen but limit it to five rows
+
+```
 lt = limit udata 5 ;
 dump lt ;
+```
 
 In pig, function names and alias are case sensitive. The pig latin statements are not case sensitive.
 While executing load, foreach and limit statements, pig will merely check the syntax. Only when dump (or store) statement is encountered, these statements are fully executed and output produced.
+
 Let us now get the distribution of gender in the data. We will first group by gender using group statement and then run a foreach statement (followed by dump) to see some columns. (Note: In pig a comment can be written in c-style or after two dashes (–) on a line.
 1
 2
