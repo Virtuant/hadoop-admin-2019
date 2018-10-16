@@ -13,7 +13,7 @@
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>1. Start the Grunt Shell</h4><br>
 
-Review the contents of the file `pigdemo.txt` - if there is no file just pick a `*.txt` what's in this file doesn't matter.
+Review the contents of the file `pigdemo.txt` - if you need to you may get it [here](https://github.com/HortonworksUniversity/DevPH_Rev4/blob/master/labs/demos/pigdemo.txt).
 
 Now, start the Grunt shell:
 
