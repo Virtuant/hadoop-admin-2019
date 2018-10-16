@@ -62,26 +62,26 @@ MariaDB [(none)]> show databases;
 <h4>2. And create some database, and use it</h4>
 
 ```sql
-MariaDB [(none)]> create database hbase_test;
+MariaDB [(none)]> create database class_test;
 Query OK, 1 row affected (0.00 sec)
 
-MariaDB [(none)]> use hbase_test;
+MariaDB [(none)]> use class_test;
 Database changed
-MariaDB [hbase_test]>
+MariaDB [class_test]>
 ```
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>3. Let's create a table</h4>
 
 ```sql
-MariaDB [hbase_test]> create table users(id int, name char(20), PRIMARY KEY(id));
+MariaDB [class_test]> create table users(id int, name char(20), PRIMARY KEY(id));
 Query OK, 0 rows affected (0.00 sec)
 ```
 
 And another table - this one will be related to the `users` table by the FOREIGN KEY `user_id`:
 
 ```sql
-MariaDB [hbase_test]> create table orders(id int, user_id int, order_info text, PRIMARY KEY(id), FOREIGN KEY (user_id) REFERENCES users(id));
+MariaDB [class_test]> create table orders(id int, user_id int, order_info text, PRIMARY KEY(id), FOREIGN KEY (user_id) REFERENCES users(id));
 Query OK, 0 rows affected (0.00 sec)
 ```
 
@@ -89,14 +89,14 @@ Query OK, 0 rows affected (0.00 sec)
 <h4>4. Now insert a record</h4>
 
 ```sql
-MariaDB [hbase_test]> insert into users (id, name) VALUES (1, 'bill');
+MariaDB [class_test]> insert into users (id, name) VALUES (1, 'bill');
 Query OK, 1 row affected (0.00 sec)
 ```
 
 Select the table:
 
 ```sql
-MariaDB [hbase_test]> select * from users;
+MariaDB [class_test]> select * from users;
 +----+------+
 | id | name |
 +----+------+
@@ -108,7 +108,7 @@ MariaDB [hbase_test]> select * from users;
 And we see the where clause is supported and so forth:
 
 ```sql
-MariaDB [hbase_test]> select * from users where id < 2;
+MariaDB [class_test]> select * from users where id < 2;
 +----+------+
 | id | name |
 +----+------+
@@ -121,14 +121,14 @@ MariaDB [hbase_test]> select * from users where id < 2;
 <h4>5. Create a row in the related table</h4>
 
 ```sql
-MariaDB [hbase_test]> insert into orders (id, user_id, order_info) VALUES (1,1,"something");
+MariaDB [class_test]> insert into orders (id, user_id, order_info) VALUES (1,1,"something");
 Query OK, 1 row affected (0.00 sec)
 ```
 
 And check it:
 
 ```sql
-MariaDB [hbase_test]> select * from orders;
+MariaDB [class_test]> select * from orders;
 +----+---------+------------+
 | id | user_id | order_info |
 +----+---------+------------+
@@ -138,14 +138,14 @@ MariaDB [hbase_test]> select * from orders;
 ```
 
 ```sql
-MariaDB [hbase_test]> insert into orders (id, user_id, order_info) VALUES (2,1,"something");
+MariaDB [class_test]> insert into orders (id, user_id, order_info) VALUES (2,1,"something");
 Query OK, 1 row affected (0.00 sec)
 ```
 
 So you see the way `2` becomes another order number, no problem:
 
 ```sql
-MariaDB [hbase_test]> select * from orders;
+MariaDB [class_test]> select * from orders;
 +----+---------+------------+
 | id | user_id | order_info |
 +----+---------+------------+
@@ -158,7 +158,7 @@ MariaDB [hbase_test]> select * from orders;
 But what if we do something like this:
 
 ```sql
-MariaDB [hbase_test]> insert into orders (id, user_id, order_info) VALUES (1,2,"something");
+MariaDB [class_test]> insert into orders (id, user_id, order_info) VALUES (1,2,"something");
 ```
 
 What has happened?
@@ -170,20 +170,20 @@ What has happened?
 <h4>6. Do the same with an active Transaction</h4>
 
 ```sql
-MariaDB [hbase_test]> start transaction;
+MariaDB [class_test]> start transaction;
 Query OK, 0 rows affected (0.00 sec)
 ```
 
 Now, delete an order:
 
 ```sql
-MariaDB [hbase_test]> delete from orders where id=2;
+MariaDB [class_test]> delete from orders where id=2;
 Query OK, 1 row affected (0.01 sec)
 ```
 
 And the order is now gone:
 ```sql
-MariaDB [hbase_test]> select * from orders;
+MariaDB [class_test]> select * from orders;
 +----+---------+------------+
 | id | user_id | order_info |
 +----+---------+------------+
@@ -195,13 +195,13 @@ MariaDB [hbase_test]> select * from orders;
 But we made a mistake, so roll back the trransaction:
 
 ```sql
-MariaDB [hbase_test]> rollback;
+MariaDB [class_test]> rollback;
 Query OK, 0 rows affected (0.00 sec)
 ```
 
 
 ```sql
-MariaDB [hbase_test]> select * from orders;
+MariaDB [class_test]> select * from orders;
 +----+---------+------------+
 | id | user_id | order_info |
 +----+---------+------------+
@@ -233,7 +233,7 @@ MariaDB [(none)]> show databases;
 | Database           |
 +--------------------+
 | information_schema |
-| hbase_test         |
+| class_test         |
 | hive               |
 | mysql              |
 | performance_schema |
