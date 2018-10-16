@@ -22,7 +22,7 @@ The lab guide is [here](https://virtuant.github.io/hadoop-overview-spark-hwx/lab
 
 #### Lab [8](https://virtuant.github.io/hadoop-overview-spark-hwx/exploring-data-with-apache-pig.html) Exploring Data with Pig [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/exploring-data-with-apache-pig.pdf)
 
-#### Lab [9](https://virtuant.github.io/hadoop-overview-spark-hwx/manipulating_pig.html) Manipulasting Data with Pig [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/manipulating_pig.pdf)
+#### Lab [9](https://virtuant.github.io/hadoop-overview-spark-hwx/manipulating_pig.html) Manipulating Data with Pig [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/manipulating_pig.pdf)
 
 #### Lab [10](https://virtuant.github.io/hadoop-overview-spark-hwx/defining-a-pig-user-defined-function-in-python.html) Defining Pig with Python [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/defining-a-pig-user-defined-function-in-python.pdf)
 
