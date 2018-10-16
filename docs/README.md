@@ -22,11 +22,13 @@ The lab guide is [here](https://virtuant.github.io/hadoop-overview-spark-hwx/lab
 
 #### Lab [8](https://virtuant.github.io/hadoop-overview-spark-hwx/exploring-data-with-apache-pig.html) Exploring Data with Pig [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/exploring-data-with-apache-pig.pdf)
 
-#### Lab [9](https://virtuant.github.io/hadoop-overview-spark-hwx/defining-a-pig-user-defined-function-in-python.html) Defining Pig with Python [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/defining-a-pig-user-defined-function-in-python.pdf)
+#### Lab [9](https://virtuant.github.io/hadoop-overview-spark-hwx/manipulating-pig.html) Manipulasting Data with Pig [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/manipulating-pig.pdf)
 
-#### Lab [10](https://virtuant.github.io/hadoop-overview-spark-hwx/import-using-sqoop.html) Sqoop Import to Hive [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/import-using-sqoop.pdf)
+#### Lab [10](https://virtuant.github.io/hadoop-overview-spark-hwx/defining-a-pig-user-defined-function-in-python.html) Defining Pig with Python [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/defining-a-pig-user-defined-function-in-python.pdf)
 
-#### Lab [11](https://virtuant.github.io/hadoop-overview-spark-hwx/manipulating_data_with_hive.html) Manipulating Data with Hive [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/manipulating_data_with_hive.pdf)
+#### Lab [11](https://virtuant.github.io/hadoop-overview-spark-hwx/import-using-sqoop.html) Sqoop Import to Hive [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/import-using-sqoop.pdf)
+
+#### Lab [12](https://virtuant.github.io/hadoop-overview-spark-hwx/manipulating_data_with_hive.html) Manipulating Data with Hive [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/manipulating_data_with_hive.pdf)
 
 #### Lab [20](https://virtuant.github.io/hadoop-overview-spark-hwx/exploring-hbase-1.html) Exploring HBase 1 [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/exploring-hbase-1.pdf)
 
