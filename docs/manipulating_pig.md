@@ -64,6 +64,8 @@ Titles are movie titles and genres are pipe-separated and are selected from the 
 
 Field separators are double colon. We substitute them with semicolon. And then copy the whole directory to hadoop folder. The following shell script does the preparatory work of inserting semicolon as field separator and copying the whole movie folder to hadoop.
 
+So create this script in the system:
+
 ```bash
 #!/bin/bash
 #
