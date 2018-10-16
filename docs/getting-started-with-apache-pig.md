@@ -21,7 +21,7 @@ View the contents of the file `whitehouse_visits.txt`:
 tail whitehouse_visits.txt
 ```
 
-> Note  this publicly available data contains records of visitors to the White House in Washington, D.C.
+> Note  this publicly available data contains records of visitors to the White House in Washington, D.C. - you also can get a zip file of it [here](https://github.com/HortonworksUniversity/DevPH_Labs/blob/master/labs/Lab5.1/whitehouse_visits.zip).
 
 
 
