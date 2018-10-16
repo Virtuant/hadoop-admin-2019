@@ -13,10 +13,9 @@
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>1. Start the Grunt Shell</h4><br>
 
+Review the contents of the file `pigdemo.txt` - if there is no file just pick a `*.txt` what's in this file doesn't matter.
 
-Review the contents of the file `pigdemo.txt`
-
-Start the Grunt shell:
+Now, start the Grunt shell:
 
 ```
 pig
@@ -26,7 +25,7 @@ Notice that the output includes where the logging for your Pig session will go a
 
 ```
 [main] INFO org.apache.pig.Main - Logging error messages to: /root/devph/labs/demos/pig_1377892197767.log
-[main] INFO org.apache.pig.backend.hadoop.executionengine. HExecutionEngine - Connecting to hadoop file system at: hdfs://sandbox.hortonworks.com:8020
+[main] INFO org.apache.pig.backend.hadoop.executionengine. HExecutionEngine - Connecting to hadoop file system at: hdfs://[server or ip]:8020
 ```
 
 > Note: Some of the path given in the above example given, may difer from your lab environment's. 
@@ -57,17 +56,17 @@ grunt> copyFromLocal pigdemo.txt demos/
 Verify the file was uploaded successfully:
 
 ```
-grunt> ls demos hdfs://sandbox.hortonworks.com:8020/user/[user-name]/demos/pigdemo.txt
+grunt> ls demos hdfs://[server or ip]:8020/user/[user-name]/demos/pigdemo.txt
 ```
 
 Change the present working directory to `demos`:
 
 ```
 grunt> cd demos
-grunt> pwd hdfs://sandbox.hortonworks.com:8020/user/[user-name]/demos
+grunt> pwd hdfs://[server or ip]:8020/user/[user-name]/demos
 ```
 
->Note: your particular location may be slightly different
+>Note: your particular location por file may be different
 
 View the contents using the `cat` command:
 
@@ -88,8 +87,6 @@ CA  manish
 CA  Brian
 CO  Mark
 ```
-
-
 
 <!--STEP-->
 
