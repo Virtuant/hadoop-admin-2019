@@ -117,7 +117,7 @@ For every row in the user, generate columnar data as follows. This statement, in
 
 ```
 udata = foreach user generate userid , gender , age ,occupation , zip ;
- ```
+```
  
 Dump output to screen but limit it to five rows
 
@@ -130,121 +130,110 @@ In pig, function names and alias are case sensitive. The pig latin statements ar
 While executing load, foreach and limit statements, pig will merely check the syntax. Only when dump (or store) statement is encountered, these statements are fully executed and output produced.
 
 Let us now get the distribution of gender in the data. We will first group by gender using group statement and then run a foreach statement (followed by dump) to see some columns. (Note: In pig a comment can be written in c-style or after two dashes (–) on a line.
-1
-2
-3
-4
-5
-	
+
+>Note: you don't need to enter comments
+
+```
 gr = group user by gender ;                      --group alias 'user' by gender
 co = foreach gr generate group, COUNT(user) ;    --for each line in the group (i.e. M and F)
                                                  -- count rows in 'user'
 co = foreach gr generate group, COUNT_STAR(user) ; --same as above
 dump co ;
+```
 
 Let us now count how many persons are below 34 years of age. We want to get the number of young users.
-1
-2
-3
-4
-5
 	
-/* First write a filter statement */
+First write a filter statement
+
+```
 young = filter user by age < 35 ; 
 cm = group young all ;        
 countyoung = foreach cm generate COUNT(young) ;
 dump countyoung ;
+```
 
 In the above code, you may find the occurrence of ‘group‘ statement a little unusual. The group statement groups all fields (and hence is practically of no use). FOREACH statement will not work on a filter alias i.e. young (i.e. foreach young…). Count next how many females users between age category 35 and 50 have rated movies. We will use two filters, one after another.
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-	
-/* How many are between 35 and 59 */
+
+
+How many are between 35 and 59?
+
+```
 m_age = filter user by age >=35 AND age <= 50 ;
-/* How many of these are females. Filter after filter */
+```
+
+How many of these are females. Filter after filter?
+
+```
 m_age_female = filter m_age by gender == 'F' ; 
-/* First create group to project a column */
+```
+
+First create group to project a column
+
+```
 cmg = group m_age_female by gender ;  -- group by gender, OR
 cmg = group m_age_female ALL ;        -- group by ALL fields
- 
-/* Note that above group statement is NOT 'group m_age_female <em>by</em> ALL .
-   Create a foreach statement and dump it */
+```
+
+Note that above group statement is NOT 'group m_age_female <em>by</em> ALL. Create a foreach statement and dump it:
+
+```
 count_m_female = foreach cm generate COUNT(m_age_female) ;  
 dump count_m_female ;
+```
 
-We can order ‘age’ wise our filtered data using order statement.
-1
-	
+We can order ‘age’ wise our filtered data using order statement:
+
+```
 ord = order m_age_female by age ;
+```
 
 NExt, we split data in various ways. We will first split it gender wise and then age wise.
-1
-2
-3
-4
-5
-6
-7
-	
-/* Split udata by gender into two aliases */
+
+Split udata by gender into two aliases:
+
+```
 split udata into female if gender == 'F', male if gender == 'M' ;
 dump female ;   --see female data only
-/* split data into young and middle aged females */
-split udata into yfemale if gender == 'F' AND age <= 35, mfemale if ( gender == 'F' AND (age > 35 AND age <= 50 ));
- 
-dump yfemale;   -- see young females data
+```
 
-Sample 10% of users data for experimentation. The sample is random but no other data file is created that excludes records contained in the sample.
-1
-2
-3
-	
-/* Sample 10% (0.01) of data  */
+Split data into young and middle aged females:
+
+```
+split udata into yfemale if gender == 'F' AND age <= 35, mfemale if ( gender == 'F' AND (age > 35 AND age <= 50 ));
+dump yfemale;   -- see young females data
+```
+
+Sample 10% of users data for experimentation. The sample is random but no other data file is created that excludes records contained in the sample. Sample 10% (0.01) of data:
+
+```
 sam = sample udata 0.01 ;
 dump sam;
+```
 
-Let us now load ‘ratings’ data and generate columns.
-1
-2
-3
-4
-5
-6
-7
-8
-9
-	
-/* Load ratings file in pig. Also specify column separator, column names and their data types. */
-ratings = load '/user/ashokharnal/movie/ratings.dat' using PigStorage(';') as (userid:int, movieid:int, ratings:int, timestamp:int) ;
-/* A foreach statement to generate columns. You can dump alias, rdata */
+Let us now load `ratings` data and generate columns.
+
+Load ratings file in pig. Also specify column separator, column names and their data types:
+
+```
+ratings = load '/user/ashokharnal/movie/ratings.dat' using PigStorage(';') 
+	as (userid:int, movieid:int, ratings:int, timestamp:int) ;
+```
+
+A foreach statement to generate columns. You can dump alias, rdata:
+
+```
 rdata = foreach ratings generate (userid,movieid,ratings,timestamp) ;  --dump will have extra brackets (( ))
 rdata = foreach ratings generate (userid,movieid,ratings,timestamp) ;  --dump will have one pair of brackets
- 
---Check 
+```
+
+Now check:
+
+```
 x = limit rdata 5 ;
 dump x ;
+```
 
 We will now join the two relations ‘user’ and ‘ratings’ on userid. This is an inner join. We will use the join to calculate average ratings given by females and males. Are females more generous?
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
 	
 --Join two relations on userid.
 j = join user by userid, ratings by userid ;
