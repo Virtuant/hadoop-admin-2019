@@ -13,6 +13,7 @@
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>1. Put the File into HDFS</h4>
 
+<br>
 If not already done, open a Terminal.
 
 Use less (or more) to view the contents of the `stocks.csv` file. Press `q` when you are finished to exit.
@@ -66,6 +67,9 @@ Found 1 items
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>2. View the Number of Blocks</h4>
 
+
+<br>
+
 Run the following command to view the number of blocks that were created for `stocks.csv`:
 
 ```
@@ -84,6 +88,8 @@ Total blocks (validated):4 (avg. block size 903299 B)
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>3. Find the Actual Blocks</h4>
 
+
+<br>
 Enter the same `fsck` command as before, but add the `-files` and `-blocks` options:
 
 ```
@@ -122,6 +128,7 @@ ll
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>Important</h4>
 
+<br>
 If the results of the `ll` command are additional subdirectories rather than block information (as shown in the next lab step), repeat the process above to once again find the newest directory created , change to it, and list its contents.
 
 Confirm that the actual blocks appear in this folder. Look for files that are exactly 1,048,576 bytes. These are three of the blocks.
