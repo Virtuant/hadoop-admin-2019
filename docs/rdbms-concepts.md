@@ -20,7 +20,7 @@ Let's take a detour to check out the differences.
 So now lets take a detour and look at a RDBMS. 
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>1. Log in to MySQL DB</h4>
+<h4>1. Log in to MySQL DB</h4><br>
 
 Since it's loaded we'll use MySQL (may be MariaDB also):
 
@@ -41,7 +41,7 @@ MariaDB [(none)]>
 
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>2. Now look at the databases</h4>
+<h4>2. Now look at the databases</h4><br>
 
 
 ```sql
@@ -59,7 +59,7 @@ MariaDB [(none)]> show databases;
 ```
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>2. And create some database, and use it</h4>
+<h4>2. And create some database, and use it</h4><br>
 
 ```sql
 MariaDB [(none)]> create database class_test;
@@ -71,7 +71,7 @@ MariaDB [class_test]>
 ```
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>3. Let's create a table</h4>
+<h4>3. Let's create a table</h4><br>
 
 ```sql
 MariaDB [class_test]> create table users(id int, name char(20), PRIMARY KEY(id));
@@ -86,7 +86,7 @@ Query OK, 0 rows affected (0.00 sec)
 ```
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>4. Now insert a record</h4>
+<h4>4. Now insert a record</h4><br>
 
 ```sql
 MariaDB [class_test]> insert into users (id, name) VALUES (1, 'bill');
@@ -118,7 +118,7 @@ MariaDB [class_test]> select * from users where id < 2;
 ```
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>5. Create a row in the related table</h4>
+<h4>5. Create a row in the related table</h4><br>
 
 ```sql
 MariaDB [class_test]> insert into orders (id, user_id, order_info) VALUES (1,1,"something");
@@ -167,7 +167,7 @@ What has happened?
 ### RDBMS and Transactions
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>6. Do the same with an active Transaction</h4>
+<h4>6. Do the same with an active Transaction</h4><br>
 
 ```sql
 MariaDB [class_test]> start transaction;
@@ -216,7 +216,7 @@ MariaDB [class_test]> select * from orders;
 So now let's do some performance testing. We have a `.sql` file called `users.sql` in the directory above. :
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>7. Import into MySQL</h4>
+<h4>7. Import into MySQL</h4><br>
 
 ```sql
 [centos@ip-10-0-0-54 data]$ mysql -u root -p < users.sql
@@ -261,7 +261,7 @@ MariaDB [user_data]> select count(*) from users;
 Rather large table, isn't it?
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>8. Look at the Data</h4>
+<h4>8. Look at the Data</h4><br>
 
 ```sql
 MariaDB [user_data]> select * from users limit 1 \G
@@ -385,7 +385,7 @@ count(*): 15195
 Runtime is approximately `0.24` seconds.
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>9. Index the Column</h4>
+<h4>9. Index the Column</h4><br>
 
 Now, what if we index that column:
 
@@ -411,7 +411,4 @@ What are the results now?
 
 ### Results
 
-So we have seen where SQL databases (like MariaDB/MySQL) need to index a row by setting up an in-memory structure to make them perform better. In the next lab we'll see how NoSQL does a similar function but this time a little differently.
-
-
-
+So we have seen where SQL databases (like MariaDB/MySQL) need to index a row by setting up an in-memory structure to make them perform better.
