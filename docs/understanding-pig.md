@@ -28,7 +28,13 @@ Notice that the output includes where the logging for your Pig session will go a
 [main] INFO org.apache.pig.backend.hadoop.executionengine. HExecutionEngine - Connecting to hadoop file system at: hdfs://[server or ip]:8020
 ```
 
-> Note: Some of the path given in the above example given, may difer from your lab environment's. 
+Now look at the `help` command:
+
+```
+grunt> help
+```
+
+>Note: Some of the path given in the above example given, may difer from your lab environment's. 
 
 <!--STEP-->
 
