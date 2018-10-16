@@ -13,7 +13,7 @@
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h4>1. View the Raw Data</h4>
+<h4>1. View the Raw Data</h4><br>
 
 View the contents of the file `whitehouse_visits.txt`:
 
@@ -28,7 +28,7 @@ tail whitehouse_visits.txt
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h4>2. Load the Data into HDFS</h4>
+<h4>2. Load the Data into HDFS</h4><br>
 
 Start the Grunt shell:
 
@@ -60,7 +60,7 @@ hdfs://[your ip]:8020/user/[user-name]/whitehouse/visits.txt<r 3>183292235
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h4>3. Define a Relation</h4>
+<h4>3. Define a Relation</h4><br>
 
 You will use the TextLoader to load the `visits.txt` file.
 
@@ -98,7 +98,7 @@ grunt> DUMP A_limit;
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h4>4. Define a Schema</h4>
+<h4>4. Define a Schema</h4><br>
 
 Load the White House data again, but this time use the PigStorage loader and also define a partial schema:
 
@@ -124,7 +124,7 @@ B: {lname: chararray,fname: chararray,mname: chararray,id: chararray,status: cha
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h4>5. The `STORE` Command</h4>
+<h4>5. The `STORE` Command</h4><br>
 
 Enter the following `STORE` command, which stores the `B` relation into a folder named `whouse_tab` and separates the fields of each record with tabs:
 
@@ -153,7 +153,7 @@ What happened to the rest of the fields from the raw data that was loaded from `
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h4>6. Use a Different Storer</h4>
+<h4>6. Use a Different Storer</h4><br>
 
 In the previous step, you stored a relation using PigStorage with a tab delimiter. Enter the following command, which stores the same relation but in a JSON format:
 
