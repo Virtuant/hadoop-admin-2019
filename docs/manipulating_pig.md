@@ -235,44 +235,47 @@ dump x ;
 
 We will now join the two relations ‘user’ and ‘ratings’ on userid. This is an inner join. We will use the join to calculate average ratings given by females and males. Are females more generous?
 	
---Join two relations on userid.
-j = join user by userid, ratings by userid ;
-/* Group join by gender */
-h = group j by gender;
-/* Write a foreach to work group wise.
-'group' stands for group-field with two values (M & F)
-Note also that ratings field within AVG needs to be qualified by alias */
-g = foreach h generate group, AVG(j.ratings) ;
-/* The following will also produce output but massive repetition of M,M..*/
-g = foreach h generate j.gender , AVG(j.ratings) ;
+Join two relations on userid:
 
-The result is: (F,3.6203660120110372) (M,3.5688785290984373). You can draw your own conclusions. Next let us load movies.dat file and dump a few lines for our inspection.
-1
-2
-3
-4
-5
-	
--- Load movies.dat 
+```
+j = join user by userid, ratings by userid ;
+```
+
+Group join by gender:
+
+```
+h = group j by gender;
+```
+
+Write a foreach to work group wise - 'group' stands for group-field with two values (M & F)
+Note also that ratings field within AVG needs to be qualified by alias:
+
+```
+g = foreach h generate group, AVG(j.ratings) ;
+```
+
+The following will also produce output but massive repetition of M,M..:
+
+```
+g = foreach h generate j.gender , AVG(j.ratings) ;
+```
+
+The result is: (F,3.6203660120110372) (M,3.5688785290984373). You can draw your own conclusions. 
+
+Next let us load `movies.dat` file and dump a few lines for our inspection. Load movies.dat:
+
+```
 movie = load '/user/ashokharnal/movie/movies.dat' using PigStorage(';') as (movieid:int, title:chararray, genres:chararray) ;
 movielist = foreach movie generate movieid, title, genres ;
 x = limit movielist 3 ;
 dump x;
+```
 
 We will now join all the three tables: user, ratings and movies. We will join ‘movie’ with j, the earlier join of two relations, j. As this join is complicated, we can describe it to see how does it appear.
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
 	
-# Join the three tables
+### Join the three tables
+
+```
 jo = join  j by movieid, movie by movieid ;
 describe jo ;
 jo: {movie::movieid: int,movie::title: chararray,movie::genres: chararray,j::user::userid: int,j::user::gender: chararray,j::user::age: int,j::user::occupation: int,j::user::zip: chararray,j::ratings::userid: int,j::ratings::movieid: int,j::ratings::ratings: int,j::ratings::timestamp: int}
@@ -283,77 +286,70 @@ dump jo ;
 ghost = foreach jo generate j::user::userid  , j::ratings::ratings as rate , movie::genres ;
 tt = limit ghost 5 ;
 dump tt ;
+```
 
 Let us create a filter on this triple join. We are interested only in ‘Comedy’ movies. Only if the word ‘Comedy’ appears in genre string, it is of relevance to us.
-1
-2
-3
-4
-	
--- Filter out only Comedy from genres. Note carefully the syntax
+
+Filter out only Comedy from genres. Note carefully the syntax:
+
+```
 filt = filter ghost by ( movie::genres matches '.*Comedy.*' ) ;
 relx = group filt by movie::genres ;
 dump relx ;
+```
 
 As field-naming in triple join becomes a little complex, it is better to store the result in hadoop and reload the stored file in pig for further manipulation. We will do this now.
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
 	
-/* Store jo and reload it. This simplifies query. For storing,
-in hadoop, only folder name is to be given. Pig will create the folder. */
- 
+Store jo and reload it. This simplifies query. For storing, in hadoop, only folder name is to be given. Pig will create the folder:
+
+```
 store jo into '/user/ashokharnal/temp/myfolder' ; 
- 
--- Reload the stored file within 'myfolder'. As userid appears twice, name it userid1 and userid2.
--- Do the same for other fields
- 
+```
+
+Reload the stored file within 'myfolder'. As userid appears twice, name it userid1 and userid2.
+Do the same for other fields:
+
+```
 l_again = load '/user/ashokharnal/temp/myfolder/part-r-00000' as (userid1:int, gender:chararray, age:int, occupation:int, zip:chararray, userid2:int, movieid1:int, ratings:int, timestamp:int, movieid2:int, title:chararray, genres:chararray) ;
- 
---Check results
+```
+
+Now check results:
+
+```
 z = limit l_again 10 ;
 dump z ;
- 
---Create a projection of few columns for our manipulation. We will use alias 'alltable'
-alltable = foreach l_again generate gender, genres, ratings ;
+```
 
-Let us now see whether there is any preference for comedy movies across gender.
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-	
---First filter out Comedy movies from triple join.
+Create a projection of few columns for our manipulation. We will use alias 'alltable':
+
+```
+alltable = foreach l_again generate gender, genres, ratings ;
+```
+
+Let us now see whether there is any preference for comedy movies across gender. First filter out Comedy movies from triple join:
+
+```
 filt = filter alltable by ( genres matches '.*Comedy.*' )  ;
- 
--- Group by gender 
+```
+
+Now group by gender:
+
+```
 mygr = group filt by gender ;
- 
--- Find how gender votes for comedy movies
--- Note AVG argument should be as: filt.ratings. Just ratings raises an error.
+```
+Find how gender votes for comedy movies
+
+>Note AVG argument should be as: filt.ratings. Just ratings raises an error.
+
+```
 vote = foreach mygr generate group, AVG(filt.ratings) ;
 dump vote ;
+```
 
 The result is: (F,3.5719375512875113) (M,3.503666796000138)
+
 Well both are about equal.
 
-Happy pigging…
+### Results
+
+Happy pigging… good job!
