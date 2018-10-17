@@ -20,7 +20,7 @@ View the contents of the `orders.hive` file in that folder:
 ```console
 # more orders.hive  
 ```
->Note: you can get the file contents [here](https://raw.githubusercontent.com/Virtuant/hadoop-overview-spark-hwx/master/temp/orders.hive?token=AAiHOQkIEVig2PTgSfVD3N0hLq0GdAsXks5bz_VWwA%3D%3D) and `shop.tsv` [here](https://github.com/Virtuant/hadoop-overview-spark-hwx/raw/master/temp/shop.tsv).
+>Note: you can get the file contents [here](https://raw.githubusercontent.com/Virtuant/hadoop-overview-spark-hwx/master/temp/orders.hive?token=AAiHOQkIEVig2PTgSfVD3N0hLq0GdAsXks5bz_VWwA%3D%3D) and `shop.tsv` [here](https://raw.githubusercontent.com/Virtuant/hadoop-overview-spark-hwx/master/temp/shop.tsv?token=AAiHOc9OOEhI9JrrRwktZId0JvK9vGjVks5b0I1twA%3D%3D).
 
 Notice it defines a Hive table named orders that has seven columns.
 
