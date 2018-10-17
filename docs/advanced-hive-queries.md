@@ -8,8 +8,6 @@ File locations: ~/data
 
 Successful  outcome:    You will have executed numerous Hive queries on customer order data.
 
-Before you begin:   Your CDH cluster should be up and running within your VM.
-
 ----
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
@@ -42,7 +40,7 @@ hive> select count(*) from orders;
 Your orders table should contain 99,999 records.
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>2. Analyze the Customer Data</h4><br>
+<h4>2. Analyze the Customer Data</h4>
 
 Let’s run a few queries to see what this data looks like. Start by verifying that the `username` column actually looks like names:
 
