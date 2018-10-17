@@ -20,9 +20,7 @@ Now view the table:
 ----
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h4>1. Do the Following</h4>
-
-### Data Definition Language
+<h4>1. HBase DDL</h4>
 
 This command will display the currently used HBase version:
 
@@ -104,7 +102,6 @@ Checks whether the named table exists or not
 
 ### alter
 
-
 Alters the column family schema. You can pass table name and a dictionary specifying new column family schema.
 
 Examples:
@@ -129,8 +126,9 @@ the updated schema pass table name
 ### alter_status ‘[table name]’ 
 
 	alter_status '[table name]' 
-
-### Data manipulation commands
+	
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h4>2. Data Manipulation Commands</h4>
 
 ### count
 
@@ -245,8 +243,9 @@ Scanner specifications may include one or more of:
 
 	hbase(main):24:0> scan  'iot_data'
 
-
-### Cluster Replication Commands
+	
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h4>3. Cluster Replication Commands</h4>
 
 ### add_peer
 
@@ -294,7 +293,8 @@ Tops all the replication feature.
 
 >Note: start/stop replication is only meant to be used in critical load situations.
 
-## Security Commands
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h4>4. Security Commands</h4>
 
 The HBase shell has been extended to provide simple commands for editing and updating user permissions. 
 The following commands have been added for access control list management.
