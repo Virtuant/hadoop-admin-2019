@@ -198,23 +198,23 @@ Using the path from the ls, run the following command and replace the movie path
 Results:
 
 ```console
-    2015-03-05 18:44:00,210 INFO [main] Configuration.deprecation: hadoop.native.lib is deprecated. Instead, use io.native.lib.available
+	2015-03-05 18:44:00,210 INFO [main] Configuration.deprecation: hadoop.native.lib is deprecated. Instead, use io.native.lib.available
 	2015-03-05 18:44:00,580 INFO [main] util.ChecksumType: Checksum using org.apache.hadoop.util.PureJavaCrc32
-    2015-03-05 18:44:00,581 INFO [main] util.ChecksumType: Checksum can use org.apache.hadoop.util.PureJavaCrc32C
-    2015-03-05 18:44:02,680 INFO [main] Configuration.deprecation:  fs.default.name is deprecated. Instead, use fs.defaultFS
-    2015-03-05 18:44:03,056 INFO [main] hfile.CacheConfig: Allocating LruBlockCache with maximum size 396.7 M
-    K: 1/info:average/1425593979703/Put/vlen=4/mvcc=0 V: 4.15 
+	2015-03-05 18:44:00,581 INFO [main] util.ChecksumType: Checksum can use org.apache.hadoop.util.PureJavaCrc32C
+	2015-03-05 18:44:02,680 INFO [main] Configuration.deprecation:  fs.default.name is deprecated. Instead, use fs.defaultFS
+	2015-03-05 18:44:03,056 INFO [main] hfile.CacheConfig: Allocating LruBlockCache with maximum size 396.7 M
+	K: 1/info:average/1425593979703/Put/vlen=4/mvcc=0 V: 4.15 
 	K: 1/info:count/1425593979703/Put/vlen=4/mvcc=0 V: 2077
-    K: 10/info:average/1425593979703/Put/vlen=4/mvcc=0 V: 3.54 
+	K: 10/info:average/1425593979703/Put/vlen=4/mvcc=0 V: 3.54 
 	K: 10/info:count/1425593979703/Put/vlen=3/mvcc=0 V: 888
-    K: 100/info:average/1425593979703/Put/vlen=4/mvcc=0 V: 3.06 
+	K: 100/info:average/1425593979703/Put/vlen=4/mvcc=0 V: 3.06 
 	K: 100/info:count/1425593979703/Put/vlen=3/mvcc=0 V: 128
-    K: 1000/info:average/1425593979703/Put/vlen=4/mvcc=0 V: 3.05 
+	K: 1000/info:average/1425593979703/Put/vlen=4/mvcc=0 V: 3.05 
 	K: 1000/info:count/1425593979703/Put/vlen=2/mvcc=0 V: 20
-    K: 1002/info:average/1425593979703/Put/vlen=4/mvcc=0 V: 4.25
+	K: 1002/info:average/1425593979703/Put/vlen=4/mvcc=0 V: 4.25
 	K: 1002/info:count/1425593979703/Put/vlen=1/mvcc=0 V: 8
-    K: 1003/info:average/1425593979703/Put/vlen=4/mvcc=0 V: 2.94
-    ...
+	K: 1003/info:average/1425593979703/Put/vlen=4/mvcc=0 V: 2.94
+	...
 ```
 
 The above command allows you to see how HBase stores the HFiles. All row keys are stored in sorted order; and, for each row key, all column descriptors are stored in sorted order.
