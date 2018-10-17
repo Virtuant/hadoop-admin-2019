@@ -12,6 +12,9 @@ Before you begin:   Your CDH cluster should be up and running within your VM.
 
 ----
 
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>2. Create a Directory in HDFS</h4>
+
 1. Create and Populate a Hive Table
 
 From the command line, change directories to the data folder.
@@ -39,6 +42,9 @@ hive> select count(*) from orders;
 ```
 
 Your orders table should contain 99,999 records.
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>2. Create a Directory in HDFS</h4>
 
 2. Analyze the Customer Data
 
@@ -120,6 +126,9 @@ The output should look like this. Verify, then quit the Hive shell:
 hive> quit;
 ``` 
 
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>2. Create a Directory in HDFS</h4>
+
 3. Multi-File Insert
 
 In this step, you will run two completely different queries, but in a single MapReduce job. The output of the queries 
@@ -161,6 +170,9 @@ You should see two new folders: `2017_orders` and `software`.
 View the output files in these two folders. Verify that the `2017_orders` directory contains orders from only the year 2017, 
 and verify that the `software` directory contains only orders that included ‘Software.’
 
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>2. Create a Directory in HDFS</h4>
+
 4. Define a View
      
 Start the Hive shell. Define a view named `2016_orders` that contains the orderid, order_date, username, and itemlist columns of the `orders` table where the order_date was in the year 2016.
@@ -187,6 +199,9 @@ hive> SELECT COUNT(*) FROM 2016_orders;
 ```
 
 The `2016_orders` view should contain around 21,544 records.
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>2. Create a Directory in HDFS</h4>
 
 5. Find the Maximum Order of each customer
 
@@ -237,6 +252,9 @@ The end of your output should look like:
 600 100 Bicycle,Washer,DVD,Wrench Set,Sweater,2-Way Radio,Pants,Freezer,Blankets,Grill,Adapter,pillows
 ```
 
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>2. Create a Directory in HDFS</h4>
+
 6. Fixing the GROUP BY key error
 
 Let’s compute the sum of all of the orders of all of the customers. Start by entering the following query:
@@ -263,6 +281,9 @@ hive> SELECT sum(ordertotal), userid, collect_set(username)[0] FROM orders GROUP
 
 You should get the same output as before, but this time the username is included.
 
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>2. Create a Directory in HDFS</h4>
+
 7. Using the OVER Clause
 
 Now let’s compute the sum of all orders for each customer, but this time use the OVER clause to not group the output and to also display the itemlist column:
@@ -273,6 +294,8 @@ hive> SELECT userid, itemlist, sum(ordertotal) OVER (PARTITION BY userid) FROM o
 
 >NOTE: the output contains every order, along with the items they purchased and the sum of all of the orders ever placed from that particular customer.
 
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>2. Create a Directory in HDFS</h4>
 
 8. Using the Window Functions
 
@@ -310,6 +333,9 @@ To verify that it worked, your tail of your output should look  like:
 2017-07-31  4610
 2017-07-31  4714
 ```
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>2. Create a Directory in HDFS</h4>
 
 9. Using the Hive Analytics Functions
 
@@ -353,6 +379,9 @@ Solution: The rank query by month:
 SELECT substr(order_date,0,7), ordertotal, rank() OVER
 (PARTITION BY substr(order_date,0,7) ORDER BY ordertotal) FROM orders;
 ```
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>2. Create a Directory in HDFS</h4>
 
 10. Histograms
 
