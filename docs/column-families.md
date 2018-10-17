@@ -12,7 +12,9 @@ A Cell stores data and is essentially a unique combination of rowkey, Column Fam
 
 
 ----
-### Versioning in HBase with Column Families
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>1. Versioning in HBase with Column Families</h4>
 
 Now let's create a table and see a little more about how versioning works, this time with a column family.
 
@@ -30,6 +32,9 @@ Insert multiple versions of the same column. We'll call it `cf1:weight`:
 	hbase> put 'truck','1', 'cf1:weight','58643'
 	hbase> put 'truck','1', 'cf1:weight','64532'
 ```
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>2. Scan</h4>
 
 Now scan the table requesting multiple versions (note different timestamps):
 
@@ -73,7 +78,8 @@ Question: what happened?
 >Note: Gets vs. Scans: If the table is large, the scan operation uses a lot of resources. HBase was designed for the optimal lookup to be a single row get.
 
 
-### Create Table with 2 Column Families
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>3. 2 Column Families</h4>
 
 Now create a table called for shipping with two column families, column family `a` will store a single version 
 of each cell, column family `b` will store up to 3 versions of each cell:
@@ -112,7 +118,8 @@ Retrieve all cells for rowkey 1:
     b:temperature	timestamp=1396035310760, value=87
 ```
 
-### Enter a New Value
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>4. Enter a New Value</h4>
 
 Enter a new `temperature` for rowkey '1' into column family b:
 
@@ -143,7 +150,8 @@ Retrieve multiple versions of the cells for rowkey 1 by asking for them:
     b:temperature	timestamp=1396035206632, value=87
 ```
 
-### Look at the HBase Master UI
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>5. HBase Master UI</h4>
 
 Let's look at the Ambari view of things. Go to the main HBase page on Ambari. Look at the menu at the right:
 
@@ -160,7 +168,10 @@ then scroll down to the `Table Regions` section of the page:
 
 You see here some statistics about your table.
 
-### Now Look at the Data - Where is it Stored?
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>6. Now Look at the Data</h4>
+
+Where is it Stored?
 
 The rows just inserted are in a memory cache. Flush them to hdfs:
 
