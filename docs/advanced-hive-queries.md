@@ -102,7 +102,7 @@ Based on the output, which gender has spent more money on purchases?
 
 Answer: Men spent $9,919,847, and women spent $9,787,324.
 
-The orderdate column is a string with the format yyyy-mm-dd. Use the year function to extract the various parts of the date. For example, run the following query, which computes the sum of all orders for each year:
+The orderdate column is a string with the format `yyyy-mm-dd`. Use the year function to extract the various parts of the date. For example, run the following query, which computes the sum of all orders for each year:
 
 ```sql
 hive> SELECT sum(ordertotal), year(order_date) FROM orders GROUP BY year(order_date);
