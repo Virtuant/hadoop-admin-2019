@@ -24,7 +24,7 @@ View the contents of the `orders.hive` file in that folder:
 
 Notice it defines a Hive table named orders that has seven columns.
 
-Execute the contents of orders.hive:
+You can execute the contents of the file one after the other after logging into the Hive shell or execute the contents of `orders.hive` like this:
 
 ```console
 hive -f orders.hive   
@@ -33,7 +33,6 @@ hive -f orders.hive
 From the Hive shell, verify that the script worked by running the following commands:
 
 ```sql
-# hive
 hive> describe orders;
 hive> select count(*) from orders;
 ```
