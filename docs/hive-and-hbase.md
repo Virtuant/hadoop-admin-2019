@@ -36,6 +36,10 @@ There are numerous limitations with the present transactions available in Hive.
 
 ORC is the file format supported by Hive transaction. It is now essential to have ORC file format for performing transactions in Hive. The table needs to be bucketed in order to support transactions.
 
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h4>1. Create the Table</h4>
+
 ### Missing Files
 
 Make sure that the node you've picked is available to run `beeline`:
@@ -80,7 +84,8 @@ It may require you to `chown` the `data` directory as well:
 
 ----
 
-### Look at the Data
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h4>1. Look at the Data</h4>
 
 Do a `more` to look at the data in `iot_data.csv`:
 
@@ -110,7 +115,9 @@ Let’s go ahead and create the anonymous user in HDFS:
 	hdfs@host:~$ hdfs dfs -mkdir /user/anonymous
 	hdfs@host:~$ hdfs dfs -chown anonymous /user/anonymous
 
-### Create a Hive table and Load Data
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h4>2. Create a Hive table and Load Data</h4>
 
 We will begin by creating a Hive table with HBase charateristics. Notice the `hbase.table.name` below. 
 
@@ -132,7 +139,11 @@ Easier to copy:
 CREATE EXTERNAL TABLE iot_data (rowkey string, parameter string, value int, device_id string, datetime string) ROW FORMAT SERDE 'org.apache.hadoop.hive.hbase.HBaseSerDe' STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler' WITH SERDEPROPERTIES ("hbase.columns.mapping"=":key,para:parameter,para:value,para:device_id,para:datetime")  TBLPROPERTIES ("hbase.table.name"="iot_data");
 ```
 
-Validate the table in Hive:
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h4>3. Validate the Table</h4>
+
+So in Hive:
 
 ```console
 	describe iot_data;
@@ -155,6 +166,10 @@ Validate the table in Hive:
 	+------------+------------+----------+
 	5 rows selected (0.291 seconds)
 ```
+
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h4>4. Create a Temporary Table</h4>
 
 Now we will create a temporary lookup table in Hive:
 
@@ -190,6 +205,10 @@ and should be empty:
 	+------------+-------------------+---------------+-------------------+------------------+
 	No rows selected (0.121 seconds)
 ```
+
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h4>5. Load the Table</h4>
 
 Now load data into the table:
 
@@ -275,15 +294,11 @@ Exit Hive by executing a `!q`:
 	Closing: 0: jdbc:hive2://master1.hdp.com:2181/default;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2
 ```
 
-### Validate the Table in HBase
 
-Enter HBase shell:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h4>6. Validate the Table</h4>
 
-```console
-	hbase shell
-```
-
-Use LIST command to check tables:
+Enter HBase shell, and use LIST command to check tables:
 
 ```sql
 	hbase(main):005:0> list
@@ -326,7 +341,8 @@ As it shows, there is no data in the table:
 	hbase(main):005:0> 
 ```
 
-### Populate the Table in Hive with Tez
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h4>7. Populate the Table in Hive with Tez</h4>
 
 Go back to Hive, and run below command to set Hive engine as Tez:
 
@@ -390,7 +406,9 @@ And get a final count on `iot_data` (in terminal):
 
 >Question: where is the row counter?
 
-### Improve Performance (optional)
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h4>8. Improve Performance (optional)</h4>
 
 Let's play with the data a bit to see of we can improve performance. When populating a Hive/Hbase table the number of mappers is determined by the number of splits determined by the InputFormat used in the MapReduce job. In a typical InputFormat, it is directly proportional to the number of files and file sizes. Now suppose your HDFS block configuration is configured for 128MB(default size) and you have a files with 160MB size then it will occupy 2 block and then 2 mapper will get assigned based on the blocks. But suppose if you have 2 files with 30MB size (each file) then each file will occupy one block and mapper will get assignd based on that.
 
@@ -431,8 +449,8 @@ Now another `select count(*) ...` command
 
 What happened? Did this run go faster?
 
-
-### Alternative (optional)
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
+<h4>9. Alternative (optional)</h4>
 
 A newer approach to loading data in Hive/HBase is to use the ImportTsv tool:
 
