@@ -10,6 +10,7 @@ Internally, it works as follows. Spark Streaming receives live input data stream
 
 Also, you can also process TCP sockets through the use of complex algorithms that are expressed using high-level functions such as join, reduce, map, and window. Once the data is processed, you can push it to databases, live dashboards, and file systems like S3 and HDFS. It is also possible to apply the graph processing and machine learning algorithms of Spark to data streams.
 
+<img width="737" alt="Spark Streaming" src="https://user-images.githubusercontent.com/558905/47132027-db76d100-d26f-11e8-8e4d-8d03288791d2.png">
 
 ### DStream
 
@@ -19,9 +20,7 @@ Internally, a DStream is represented by a continuous series of RDDs, which is Sp
 
 ----
 
-1. Launch a “Shell in a Box”
-
-http://[your server ip]:4200
+1. Launch a “Shell in a Box” at http://[your server ip]:4200
 
 Now let’s download the lab code to your HDFS cluster from GitHub. In your terminal execute the following two commands:
 
