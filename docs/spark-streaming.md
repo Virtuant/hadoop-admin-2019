@@ -96,22 +96,24 @@ At this point you should be connected and you may start typing or pasting any te
 
 For example, if we type the text “Hello from the analyst team!” in the Netcat window, we can observe the following output in the running Spark Streaming job tab or window:
 
-```
-streaming-result
+https://github.com/Virtuant/hadoop-overview-spark-hwx/issues/2#issuecomment-430875394
 
-Stopping Spark Streaming and Netcat
+### Stopping Spark Streaming and Netcat
 
 When you’re done experimenting, press Ctrl + C in your shell tab or window to stop your Spark Job and/or Netcat process.
 Suppressing INFO Messages
 
 If you want to remove annoying INFO messages from the Spark streaming terminal window, do the following:
 
-Open conf/log4j.properties, for example:
+Open `conf/log4j.properties`, for example:
 
+```
 vi /usr/hdp/current/spark2-client/conf/log4j.properties
+```
 
-and Edit log4j.properties:
+and Edit `log4j.properties`:
 
+```
 # Set everything to be logged to the console
 log4j.rootCategory=INFO, console
 log4j.appender.console=org.apache.log4j.ConsoleAppender
@@ -124,16 +126,21 @@ log4j.logger.org.eclipse.jetty=WARN
 log4j.logger.org.eclipse.jetty.util.component.AbstractLifeCycle=ERROR
 log4j.logger.org.apache.spark.repl.SparkIMain$exprTyper=INFO
 log4j.logger.org.apache.spark.repl.SparkILoop$SparkILoopInterpreter=INFO
+```
 
 Replace the first line:
 
+```
 log4j.rootCategory=INFO, console
+```
 
 with
 
+```
 log4j.rootCategory=WARN, console
+```
 
-Save log4j.properties and restart your spark-submit job. Now you should see only WARN messages.
+Save `log4j.properties` and restart your spark-submit job. Now you should see only WARN messages.
 
 If you re-submit the Python script and Netcat you should see a much cleaner output.
 
