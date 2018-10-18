@@ -10,7 +10,6 @@ Internally, it works as follows. Spark Streaming receives live input data stream
 
 Also, you can also process TCP sockets through the use of complex algorithms that are expressed using high-level functions such as join, reduce, map, and window. Once the data is processed, you can push it to databases, live dashboards, and file systems like S3 and HDFS. It is also possible to apply the graph processing and machine learning algorithms of Spark to data streams.
 
-https://github.com/Virtuant/hadoop-overview-spark-hwx/blob/master/images/Screen%20Shot%202018-10-18%20at%2012.42.15%20AM.png
 
 ### DStream
 
