@@ -1,4 +1,4 @@
-## DataFrame and Datasets in Spark REPL
+## DataFrames and Datasets in Spark REPL
 
 Spark SQl is a Spark module for structured data processing. It has interfaces that provide Spark with additional information about the structure of both the data and the computation being performed. The additional information is used for optimization.
 
