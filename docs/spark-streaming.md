@@ -41,7 +41,7 @@ Several things worth pointing out in the demo code you’ve just downloaded:
 1. We’ve set a 2 sec batch interval to make it easier to inspect results of each batch processed.
 2. We perform a simple word count for each batch and return the results back to the terminal screen with a pprint() function.
 
-```spark
+```scala
 from pyspark import SparkContext
 from pyspark.streaming import StreamingContext
 
