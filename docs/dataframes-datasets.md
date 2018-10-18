@@ -8,7 +8,7 @@ Key difference between the Dataset and the DataFrame is that Datasets are strong
 
 ----
 
-### Download the Dataset
+### Download some Datasets
 
 In preparation for this tutorial you need to download two files, people.txt and people.json into your  Sandbox's **tmp** folder. The commands below should be typed into [Shell-in-a-Box](sandbox-hdp.hortonworks.com:4200)
 
@@ -30,7 +30,7 @@ wget https://raw.githubusercontent.com/hortonworks/data-tutorials/master/tutoria
 wget https://raw.githubusercontent.com/hortonworks/data-tutorials/master/tutorials/hdp/dataFrame-and-dataset-examples-in-spark-repl/assets/people.json
 ~~~
 
-### Upload the dataset to HDFS
+### Upload the Dataset to HDFS
 
 1\. Before moving the files into HDFS you need to login under **hdfs** user in order to give permission to perform file operations:
 
@@ -50,7 +50,6 @@ hdfs dfs -put /tmp/people.json /tmp/people.json
 3\.Verify that both files were copied into HDFS **/tmp** folder by copying the following commands:
 
 ~~~bash
-#Verify that files were move to HDF
 hdfs dfs -ls /tmp
 ~~~
 
@@ -156,7 +155,7 @@ scala>
 
 ### Programmatically Specifying Schema
 
-Type the following commands(one line a time) into your Spark-shell:
+Copy or type the following commands(one line a time) into your Spark-shell:
 
 1\. Import the necessary libraries
 
