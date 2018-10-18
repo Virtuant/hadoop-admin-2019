@@ -1,18 +1,9 @@
 ## DataFrame and Datasets in Spark REPL
 
-This lab will get you started with Apache Spark and will cover:
-
-- How to use the Spark DataFrame & Dataset API
-- How to use the SparkSQL interface via [Shell-in-a-Box](https://hortonworks.com/tutorial/learning-the-ropes-of-the-hortonworks-sandbox/#terminal-access)
-
-- [Getting Started with Apache Zeppelin](https://hortonworks.com/tutorial/getting-started-with-apache-zeppelin/)
-
-### Spark SQL
-
 Spark SQl is a Spark module for structured data processing. It has interfaces that provide Spark with additional information about the structure of both the data and the computation being performed. The additional information is used for optimization.
 
-A Dataset is a type of interface that provides the benefits of RDD (strongly typed) and Spark SQL's optimization. It is important to note that a Dataset can be constructed from JVM objects and then manipulated using complex functional transformations, however, they are beyond this quick guide.
-A DataFrame is a Dataset organized into named columns. Conceptually, they are equivalent to a table in a relational database or a DataFrame in R or Python. DataFrames can be created from various sources such as:
+* A Dataset is a type of interface that provides the benefits of RDD (strongly typed) and Spark SQL's optimization. It is important to note that a Dataset can be constructed from JVM objects and then manipulated using complex functional transformations, however, they are beyond this quick guide.
+* A DataFrame is a Dataset organized into named columns. Conceptually, they are equivalent to a table in a relational database or a DataFrame in R or Python. DataFrames can be created from various sources such as:
 Key difference between the Dataset and the DataFrame is that Datasets are strongly typed.
 
 ----
@@ -21,32 +12,29 @@ Key difference between the Dataset and the DataFrame is that Datasets are strong
 
 In preparation for this tutorial you need to download two files, people.txt and people.json into your  Sandbox's **tmp** folder. The commands below should be typed into [Shell-in-a-Box](sandbox-hdp.hortonworks.com:4200)
 
-1\. Assuming you start as `root` user:
+1\. Go to the `/tmp` directory:
 
 ~~~ bash
 cd /tmp
 ~~~
 
-2\. Copy and paste the command to download the people.txt:
+2\. Copy and paste the command to download the `people.txt`:
 
 ~~~bash
-#Download people.txt
 wget https://raw.githubusercontent.com/hortonworks/data-tutorials/master/tutorials/hdp/dataFrame-and-dataset-examples-in-spark-repl/assets/people.txt
 ~~~
 
-3\. Copy and paste the command to download the people.json:
+3\. Copy and paste the command to download the `people.json`:
 
 ~~~bash
-#Download people.json
 wget https://raw.githubusercontent.com/hortonworks/data-tutorials/master/tutorials/hdp/dataFrame-and-dataset-examples-in-spark-repl/assets/people.json
 ~~~
 
 ### Upload the dataset to HDFS
 
-1\. Before moving the files into HDFS you need to login under **hdfs** user in order to give root user permission to perform file operations:
+1\. Before moving the files into HDFS you need to login under **hdfs** user in order to give permission to perform file operations:
 
 ~~~bash
-#Login as hdfs user to give root permissions for file operations
 su hdfs
 cd
 ~~~
@@ -66,15 +54,13 @@ hdfs dfs -put /tmp/people.json /tmp/people.json
 hdfs dfs -ls /tmp
 ~~~
 
-Now, we are ready to start the examples.
-
 4\.Launch the Spark Shell:
 
 ~~~ bash
 spark-shell
 ~~~
 
-## DataFrame API Example
+## DataFrame API
 
 DataFrame API provides easier access to data since it looks conceptually like a Table and a lot of developers from Python/R/Pandas are familiar with it.
 
@@ -105,7 +91,7 @@ You should see an output similar to:
 scala>
 ~~~
 
-### Additional DataFrame API examples
+### Additional DataFrame API
 
 Now, lets select "name" and "age" columns and increment the "age" column by 1:
 
@@ -246,13 +232,11 @@ This will produce an output similar to the following:
 scala>
 ~~~
 
-## DataSet API Example
+## DataSet API
 
 If you haven't done so already in previous sections, make sure to upload people data sets (people.txt and people.json) to HDFS: [Environment Setup](https://hortonworks.com/tutorial/dataframe-and-dataset-examples-in-spark-repl/#environment-setup) and imported the libraries in step 1 of **Programmatically Specifying Schema** above:
 
 Finally, if you haven't already:
-
-Launch Spark Shell
 
 ~~~ bash
 spark-shell
@@ -282,7 +266,7 @@ You should see the following output:
 +-----+
 ~~~
 
-Moving on to a slightly more interesting example, let's prepare a *Person* class to hold our person data. We will use it in two ways by applying it directly on a hardcoded data and then on a data read from a json file.
+Moving on to something slightly more interesting, let's prepare a *Person* class to hold our person data. We will use it in two ways by applying it directly on a hardcoded data and then on a data read from a json file.
 
 To apply *Person* class to hardcoded data type:
 
