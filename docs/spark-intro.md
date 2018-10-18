@@ -19,34 +19,12 @@ In this lab, we will become familiar with the lab environment, set up Spark, and
 * Execute the following in a terminal window
   * If prompted for a password when starting Spark up, supply the student password you used to log into the VM
   * You should see output similar to that below
-
-```bash
-$   cd ~/spark
-$   ./sbin/start-all.sh
-starting org.apache.spark.deploy.master.Master, logging to /home/student/spark/logs/spark-student-org.apache.spark.deploy.master.Master-1-localhost.localhome.out
-localhost: starting org.apache.spark.deploy.worker.Worker, logging to /home/student/logs/spark-student-org.apache.spark.deploy.worker.Worker-1-localhost.localdomain.out
-
-```
-
-* Verify Spark is running by 'jps' command
-* jps lists the instrumented Java Virtual Machines (JVMs) on the target system.
-* The command and output will look something like the following.
-
-```bash
-  $  jps
-  30624 Jps
-  30431 Master
-  30565 Worker
-```
-You will see **Master** and **Worker**  processes running.
-(You will get different values for process ids - first column )
-
-The Spark UI will be at port 8080 of the host.
-
 * In a browser window go to:  **http://localhost:8080** OR **http://your-spark-host-address:8080**
 * Be sure to use the 'public' ip address
 
 Bingo!  Now we have spark running.
+
+
 
 Explore Spark UI
 
