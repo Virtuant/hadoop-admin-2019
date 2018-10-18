@@ -96,7 +96,7 @@ At this point you should be connected and you may start typing or pasting any te
 
 For example, if we type the text “Hello from the analyst team!” in the Netcat window, we can observe the following output in the running Spark Streaming job tab or window:
 
-https://github.com/Virtuant/hadoop-overview-spark-hwx/issues/2#issuecomment-430875394
+![image](https://user-images.githubusercontent.com/558905/47132223-dd8d5f80-d270-11e8-828e-15bb10018945.png)
 
 ### Stopping Spark Streaming and Netcat
 
