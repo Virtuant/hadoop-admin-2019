@@ -20,7 +20,7 @@ Internally, a DStream is represented by a continuous series of RDDs, which is Sp
 
 ----
 
-1. Launch a “Shell in a Box” at http://[your server ip]:4200
+### The Steps
 
 Now let’s download the lab code to your HDFS cluster from GitHub. In your terminal execute the following two commands:
 
@@ -84,9 +84,9 @@ Time: YYYY-MM-DD HH:MM:SS
 
 ### Run Netcat
 
-Netcat (often abbreviated to nc) is a computer networking utility for reading from and writing to network connections using TCP or UDP. In your browser, open a second tab or window, and open another “Shell in a Box” by navigating to http://[your server ip]:4200.
+Netcat (often abbreviated to nc) is a computer networking utility for reading from and writing to network connections using TCP or UDP.
 
-Log on to your shell and run the following command to launch Netcat:
+Go back to your shell and run the following command to launch Netcat:
 
 ```
 nc -l [your server ip] 3333
