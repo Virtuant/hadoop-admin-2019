@@ -304,7 +304,7 @@ If you want to exit, do a `!q`:
 	[centos@ip-10-0-0-237 bin]$ 
 ```
 
-### Summary
+### Results
 
 Congratulations! We went through the introduction of Phoenix and how to use it with HBase, and created data from both directions.
 
