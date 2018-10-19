@@ -52,10 +52,8 @@ To import the notebook, go to the Zeppelin home screen:
 1. Click Import note
 2. Select Add from URL
 3. Copy and paste this [URL](https://raw.githubusercontent.com/hortonworks/data-tutorials/master/tutorials/hdp/intro-to-machine-learning-with-apache-spark-and-apache-zeppelin/assets/Introduction%20to%20Machine%20Learning%20with%20Apache%20Spark.json) into the Note URL.
-
 4. Click on Import Note - once your notebook is imported, you can open it from the Zeppelin home screen by:
-
-5. Clicking Clicking on the Introduction to Machine Learning using Linear Regression
+    - Clicking on the Introduction to Machine Learning using Linear Regression
 
 Once the Introduction to Machine Learning using Linear Regression notebook is up, follow all the directions within the notebook to complete the lab.
 
