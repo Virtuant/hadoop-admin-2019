@@ -2,7 +2,7 @@
 
 In this lab, we will explore how you can access and analyze data on Hive from Spark. 
 
-In particular, you will learn:
+In particular, you should learn:
 
 *    How to interact with Apache Spark through an interactive Spark shell
 *    How to read a text file from HDFS and create a RDD
@@ -11,20 +11,20 @@ In particular, you will learn:
 *    How to query a Hive table using Spark SQL
 *    How to persist data in ORC file format
 
-Spark SQL uses the Spark engine to execute SQL queries either on data sets persisted in HDFS or on existing RDDs. It allows you to manipulate data with SQL statements within a Spark program. Apache Hive provides SQL interface to query data stored in various databases and files systems that integrate with Hadoop. Hive enables analysts familiar with SQL to run queries on large volumes of data. Hive has three main functions: data summarization, query and analysis. Hive provides tools that enable easy data extraction, transformation and loading (ETL).
+Spark SQL uses the Spark engine to execute SQL queries either on data sets persisted in HDFS or on existing RDDs. It allows you to manipulate data with SQL statements within a Spark program. Hive provides an SQL interface to query data stored in various databases and files systems that integrate with Hadoop. Hive enables analysts familiar with SQL to run queries on large volumes of data. Hive has three main functions: data summarization, query and analysis. Hive provides tools that enable easy data extraction, transformation and loading (ETL).
 
 Spark SQL supports reading and writing data stored in Apache Hive. It is important to note that Spark distribution does not include the many dependencies that Hive need. However, if those dependencies can be found on the classpath then Spark can load them automatically.
 
 The more basic SQLContext provides a subset of the Spark SQL support that does not depend on Hive. It reads the configuration for Hive from hive-site.xml on the classpath.
 
-ORC is a self-describing type-aware columnar file format designed for Hadoop workloads. It is optimized for large streaming reads and with integrated support for finding required rows fast. Storing data in a columnar format lets the reader read, decompress, and process only the values required for the current query. Because ORC files are type aware, the writer chooses the most appropriate encoding for the type and builds an internal index as the file is persisted.
+[ORC](https://orc.apache.org) is a self-describing type-aware columnar file format designed for Hadoop workloads. It is optimized for large streaming reads and with integrated support for finding required rows fast. Storing data in a columnar format lets the reader read, decompress, and process only the values required for the current query. Because ORC files are type aware, the writer chooses the most appropriate encoding for the type and builds an internal index as the file is persisted.
 
 Predicate push down uses those indexes to determine which stripes in a file need to be read for a particular query and the row indexes can narrow the search to a particular set of 10,000 rows. ORC supports the complete set of types in Hive, including the complex types: structs, lists, maps, and unions.
-Resilient Distributed Dataset
 
-A Resilient Distributed Dataset (RDD), is an immutable collection of objects that is partitioned and distributed across multiple physical nodes of a YARN cluster and that can be operated in parallel.
+Once an RDD is instantiated, we can apply a series of operations, which are:
 
-Once an RDD is instantiated, you can apply a series of operations. All operations fall into one of two types: transformations or actions. Transformation operations, as the name suggests, create new datasets from an existing RDD and build out the processing DAG that can then be applied on the partitioned dataset across the YARN cluster. An Action operation, on the other hand, executes DAG and returns a value.
+* Transformation operations, as the name suggests, create new datasets from an existing RDD and build out the processing DAG that can then be applied on the partitioned dataset across the YARN cluster. 
+* Action operations, on the other hand, executes DAG and returns a value.
 
 Normally, we would have directly loaded the data in the ORC table we created above and then created an RDD from the same, but in this to cover a little more surface of Spark we will create an RDD directly from the CSV file on HDFS and then apply Schema on the RDD and write it back to the ORC table.
 
@@ -64,10 +64,10 @@ hdfs dfs -put /tmp/yahoo_stocks.csv /tmp/yahoo_stocks.csv
 5. Verify that both files were copied into HDFS `/tmp` folder by copying the following commands:
 
 ```
-hdfs dfs -ls /tmp
+hdfs dfs -ls -R /tmp
 ```
 
-6. Launch the Spark Shell:
+6. Now launch the Spark Shell:
 
 ```
 spark-shell
