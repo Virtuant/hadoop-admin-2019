@@ -16,7 +16,6 @@ Spark SQL uses the Spark engine to execute SQL queries either on data sets persi
 Spark SQL supports reading and writing data stored in Apache Hive. It is important to note that Spark distribution does not include the many dependencies that Hive need. However, if those dependencies can be found on the classpath then Spark can load them automatically.
 
 The more basic SQLContext provides a subset of the Spark SQL support that does not depend on Hive. It reads the configuration for Hive from hive-site.xml on the classpath.
-ORC Tables
 
 ORC is a self-describing type-aware columnar file format designed for Hadoop workloads. It is optimized for large streaming reads and with integrated support for finding required rows fast. Storing data in a columnar format lets the reader read, decompress, and process only the values required for the current query. Because ORC files are type aware, the writer chooses the most appropriate encoding for the type and builds an internal index as the file is persisted.
 
@@ -28,93 +27,116 @@ A Resilient Distributed Dataset (RDD), is an immutable collection of objects tha
 Once an RDD is instantiated, you can apply a series of operations. All operations fall into one of two types: transformations or actions. Transformation operations, as the name suggests, create new datasets from an existing RDD and build out the processing DAG that can then be applied on the partitioned dataset across the YARN cluster. An Action operation, on the other hand, executes DAG and returns a value.
 
 Normally, we would have directly loaded the data in the ORC table we created above and then created an RDD from the same, but in this to cover a little more surface of Spark we will create an RDD directly from the CSV file on HDFS and then apply Schema on the RDD and write it back to the ORC table.
-Environment Setup
-Download the Dataset
 
-In preparation for this tutorial you need to download two files, people.txt and people.json into your Sandbox’s tmp folder. The commands below should be typed into Shell-in-a-Box
+----
 
-1. Assuming you start as root user:
+### Download the Dataset
 
+In preparation for this lab you need to download two files, `people.txt` and `people.json` into your system's `/tmp` folder.
+
+1. Assuming you start in the `tmp` directory:
+
+```
 cd /tmp
+```
 
-2. Copy and paste the command to download the yahoo_stocks.csv file:
+2. Copy and paste the command to download the `yahoo_stocks.csv` file:
 
-#Download yahoo_stocks.csv
+```
 wget http://hortonassets.s3.amazonaws.com/tutorial/data/yahoo_stocks.csv
+```
 
-Upload the dataset to HDFS
+### Upload the Dataset to HDFS
 
-3. Before moving the files into HDFS you need to login under hdfs user in order to give root user permission to perform file operations:
+3. Before moving the files into HDFS you need to login under `hdfs` user in order to give root user permission to perform file operations:
 
-#Login as hdfs user to give root permissions for file operations
+```
 su hdfs
 cd
+```
 
-4. Next, upload yahoo_stocks.csv file to HDFS:
+4. Next, upload `yahoo_stocks.csv` file to HDFS:
 
-#Copy files from local system to HDF
+```
 hdfs dfs -put /tmp/yahoo_stocks.csv /tmp/yahoo_stocks.csv
+```
 
-5. Verify that both files were copied into HDFS /tmp folder by copying the following commands:
+5. Verify that both files were copied into HDFS `/tmp` folder by copying the following commands:
 
-#Verify that files were move to HDF
+```
 hdfs dfs -ls /tmp
+```
 
 6. Launch the Spark Shell:
 
+```
 spark-shell
-
-Notice it is already starting with Hive integration as we have pre-configured it on the Hortonworks Sandbox.
+```
 
 7. Before we get started with the actual analytics let’s import the following Hive dependencies on line at a time:
 
+```
 import org.apache.spark.sql.SQLContext
 import org.apache.spark.sql.types
 import org.apache.spark.sql._
 import spark.implicits._
+```
 
 Now we are ready to start the examples.
-Creating a SparkSession
 
-Instantiating a SparkSession with Hive support:
+### Creating a SparkSession
 
+Instantiate a SparkSession with Hive support:
+
+```spark
 val spark = SparkSession
    .builder()
    .enableHiveSupport()
    .getOrCreate()
+```
 
-Creating ORC Tables
+### Creating ORC Tables
 
-Specifying as orc at the end of the SQL statement below ensures that the Hive table is stored in the ORC format.
+Specifying as ORC at the end of the SQL statement below ensures that the Hive table is stored in the ORC format:
 
+```spark
 spark.sql("DROP TABLE yahoo_orc_table")
 
 spark.sql("CREATE TABLE yahoo_orc_table (date STRING, open_price FLOAT, high_price FLOAT, low_price FLOAT, close_price FLOAT, volume INT, adj_price FLOAT) stored as orc")
+```
 
-Loading the File and Creating a RDD
+### Loading the File and Creating a RDD
 
 With the command below we instantiate an RDD:
 
+```spark
 val yahoo_stocks = sc.textFile("/tmp/yahoo_stocks.csv")
+```
 
-To preview data in yahoo_stocks type:
+To preview data in `yahoo_stocks` type:
 
+```spark
 yahoo_stocks.take(10)
+```
 
-Note that take(10) returns only ten records that are not in any particular order.
+Note that `take(10)` returns only ten records that are not in any particular order.
 
-Sample of results from yahoo_stocks.take(10)
+Sample of results from `yahoo_stocks.take(10)`:
 
+```spark
 scala> yahoo_stocks.take(10)
 res4: Array[String] = Array(Date,Open,High,Low,Close,Volume,Adj Close, 2015-04-28,44.34,44.57,43.94,44.34,7188300,44.34, 201
 11267500,44.52, 2015-04-23,43.92,44.06,43.58,43.70,14274900,43.70, 2015-04-22,44.58,44.85,43.67,43.98,32241200,43.98, 2015-0
 52900,44.66, 2015-04-17,45.30,45.44,44.25,44.45,13305700,44.45, 2015-04-16,45.82,46.13,45.53,45.78,13800300,45.78)
+```
 
-Separating the Header from the Data
+### Separating the Header from the Data
 
 Let’s assign the first row of the RDD above to a new variable:
 
+```spark
 val header = yahoo_stocks.first
+```
 
 Let’s dump this new RDD in the console to see what we have here:
 
