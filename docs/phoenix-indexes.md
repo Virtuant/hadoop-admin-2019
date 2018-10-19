@@ -271,7 +271,7 @@ And do the select:
 0: jdbc:phoenix:localhost> select * from "iot_data" where "deviceId" = 'SBS05' and "deviceParameter" = 'Sound'
 ```
 
-### Summary
+### Results
 
 So now you see the use of indexes on a table. Pretty interesting huh? 
 
