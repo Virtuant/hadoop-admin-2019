@@ -75,7 +75,7 @@ spark-shell
 
 7. Before we get started with the actual analytics let’s import the following Hive dependencies on line at a time:
 
-```
+```java
 import org.apache.spark.sql.SQLContext
 import org.apache.spark.sql.types
 import org.apache.spark.sql._
@@ -88,7 +88,7 @@ Now we are ready to start the examples.
 
 Instantiate a SparkSession with Hive support:
 
-```spark
+```java
 val spark = SparkSession
    .builder()
    .enableHiveSupport()
@@ -99,7 +99,7 @@ val spark = SparkSession
 
 Specifying as ORC at the end of the SQL statement below ensures that the Hive table is stored in the ORC format:
 
-```spark
+```java
 spark.sql("DROP TABLE yahoo_orc_table")
 
 spark.sql("CREATE TABLE yahoo_orc_table (date STRING, open_price FLOAT, high_price FLOAT, low_price FLOAT, close_price FLOAT, volume INT, adj_price FLOAT) stored as orc")
@@ -109,13 +109,13 @@ spark.sql("CREATE TABLE yahoo_orc_table (date STRING, open_price FLOAT, high_pri
 
 With the command below we instantiate an RDD:
 
-```spark
+```java
 val yahoo_stocks = sc.textFile("/tmp/yahoo_stocks.csv")
 ```
 
 To preview data in `yahoo_stocks` type:
 
-```spark
+```java
 yahoo_stocks.take(10)
 ```
 
@@ -123,7 +123,7 @@ Note that `take(10)` returns only ten records that are not in any particular ord
 
 Sample of results from `yahoo_stocks.take(10)`:
 
-```spark
+```java
 scala> yahoo_stocks.take(10)
 res4: Array[String] = Array(Date,Open,High,Low,Close,Volume,Adj Close, 2015-04-28,44.34,44.57,43.94,44.34,7188300,44.34, 201
 11267500,44.52, 2015-04-23,43.92,44.06,43.58,43.70,14274900,43.70, 2015-04-22,44.58,44.85,43.67,43.98,32241200,43.98, 2015-0
@@ -134,7 +134,7 @@ res4: Array[String] = Array(Date,Open,High,Low,Close,Volume,Adj Close, 2015-04-2
 
 Let’s assign the first row of the RDD above to a new variable:
 
-```spark
+```java
 val header = yahoo_stocks.first
 ```
 
