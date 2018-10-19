@@ -26,6 +26,10 @@ Let’s import some data into the table. We’ll use a sample dataset that track
 
 	curl -o ~/data.csv https://raw.githubusercontent.com/hortonworks/data-tutorials/d0468e45ad38b7405570e250a39cf998def5af0f/tutorials/hdp/hdp-2.5/introduction-to-apache-hbase-concepts-apache-phoenix-and-new-backup-restore-utility-in-hbase/assets/data.csv
 
+>Note: the `~/` puts the file into your user's `/home/[user name]` directory.
+
+Now put the file into HDFS:
+
 	hdfs dfs -copyFromLocal ~/data.csv /tmp
 
 Now execute the `ImportTsv` tool from hbase user statement as following:
@@ -38,7 +42,7 @@ Now execute the `ImportTsv` tool from hbase user statement as following:
 	driver_dangerous_event 
 	hdfs://master1.hdp.com:/tmp/data.csv
 
->Note: copy help:
+>Note: easier copy help:
 
 	hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.separator=, -Dimporttsv.columns="HBASE_ROW_KEY,events:driverId,events:driverName,events:eventTime,events:eventType,events:latitudeColumn,events:longitudeColumn,events:routeId,events:routeName,events:truckId" driver_dangerous_event hdfs://master1.hdp.com:/tmp/data.csv
 	
