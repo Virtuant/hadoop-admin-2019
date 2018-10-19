@@ -2,9 +2,9 @@
 
 **Objective**: Learn how to access and query HBase tables using Apache Spark.
 
-**Successful outcome**:  You will access and query HBase tables using Apache Spark.
+**Successful outcome**:  You will access and query HBase tables using Spark.
 
-In this lab, we will see how to access and query HBase tables using Apache Spark. Spark can work on data present in multiple sources like a local filesystem, HDFS, Cassandra, Hbase, MongoDB etc. Now, we will see the steps for accessing HBase tables through spark.
+In this lab, we will see how to access and query HBase tables using Apache Spark. Spark can work on data present in multiple sources like a local filesystem, HDFS, Cassandra, Hbase, MongoDB etc. Now, we will see the steps for accessing HBase tables through Spark.
 
 ----
 
