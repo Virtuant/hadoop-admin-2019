@@ -66,15 +66,17 @@ The lab guide is [here](https://virtuant.github.io/hadoop-overview-spark-hwx/lab
 
 #### Lab [36](https://virtuant.github.io/hadoop-overview-spark-hwx/hive-orc-spark.html) Hive ORC to Spark [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/hive-orc-spark.pdf)
 
-#### Lab [37](https://virtuant.github.io/hadoop-overview-spark-hwx/zeppelin-hbase.html) Zeppelin & Phoenix on HBase [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/zeppelin-hbase.pdf)
+#### Lab [37](https://virtuant.github.io/hadoop-overview-spark-hwx/machine-learning-spark.html) Machine Learning with Spark [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/machine-learning-spark.pdf)
 
-#### Lab [38](https://virtuant.github.io/hadoop-overview-spark-hwx/phoenix-on-hbase.html) Phoenix on HBase [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/phoenix-on-hbase.pdf)
+#### Lab [38](https://virtuant.github.io/hadoop-overview-spark-hwx/zeppelin-hbase.html) Zeppelin & Phoenix on HBase [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/zeppelin-hbase.pdf)
 
-#### Lab [39](https://virtuant.github.io/hadoop-overview-spark-hwx/phoenix-schemas.html) Phoenix Schema Operations [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/phoenix-schemas.pdf)
+#### Lab [39](https://virtuant.github.io/hadoop-overview-spark-hwx/phoenix-on-hbase.html) Phoenix on HBase [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/phoenix-on-hbase.pdf)
 
-#### Lab [40](https://virtuant.github.io/hadoop-overview-spark-hwx/phoenix-indexes.html) Phoenix Indexes [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/phoenix-indexes.pdf)
+#### Lab [40](https://virtuant.github.io/hadoop-overview-spark-hwx/phoenix-schemas.html) Phoenix Schema Operations [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/phoenix-schemas.pdf)
 
-#### Lab [41](https://virtuant.github.io/hadoop-overview-spark-hwx/streaming-python-with-pig.html) Streaming Python w Pig [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/streaming-python-with-pig.pdf)
+#### Lab [41](https://virtuant.github.io/hadoop-overview-spark-hwx/phoenix-indexes.html) Phoenix Indexes [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/phoenix-indexes.pdf)
+
+#### Lab [42](https://virtuant.github.io/hadoop-overview-spark-hwx/streaming-python-with-pig.html) Streaming Python w Pig [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/streaming-python-with-pig.pdf)
 
 ----
 
