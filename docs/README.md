@@ -46,7 +46,7 @@ The lab guide is [here](https://virtuant.github.io/hadoop-overview-spark-hwx/lab
 
 #### Lab [26](https://virtuant.github.io/hadoop-overview-spark-hwx/joins-hbase.html) Joins in HBase [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/joins-hbase.pdf)
 
-#### Lab [27](https://virtuant.github.io/hadoop-overview-spark-hwx/optimizing-hbase.html) Optizmizing HBase [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/optimizing-hbase.pdf)
+#### Lab [27](https://virtuant.github.io/hadoop-overview-spark-hwx/optimizing-hbase.html) Optimizing HBase [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/optimizing-hbase.pdf)
 
 #### Lab [28](https://virtuant.github.io/hadoop-overview-spark-hwx/nosql-concepts.html) Concepts of NOSql [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/nosql-concepts.pdf)
 
