@@ -41,7 +41,7 @@ To summarize, we will be:
 4. Predicting output using the model
 5. By the end of the notebook you will be able to visualize the linear fitting prediction that your model generated:
 
-<img src="../images/02.2-a-ShellUI.png" style="border: 5px solid grey ; max-width:100%;" />
+<img src="../images/linreg-match-4.jpg" style="border: 5px solid grey ; max-width:100%;" />
 
 ### Import a Zeppelin Notebook
 
