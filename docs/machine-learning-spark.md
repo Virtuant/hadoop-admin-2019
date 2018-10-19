@@ -51,7 +51,8 @@ To import the notebook, go to the Zeppelin home screen:
 
 1. Click Import note
 2. Select Add from URL
-3. Copy and paste the following URL into the Note URL
+3. Copy and paste the following [URL](https://raw.githubusercontent.com/hortonworks/data-tutorials/master/tutorials/hdp/intro-to-machine-learning-with-apache-spark-and-apache-zeppelin/assets/Introduction%20to%20Machine%20Learning%20with%20Apache%20Spark.json) into the Note URL
+
 ```
 https://raw.githubusercontent.com/hortonworks/data-tutorials/master/tutorials/hdp/intro-to-machine-learning-with-apache-spark-and-apache-zeppelin/assets/Introduction%20to%20Machine%20Learning%20with%20Apache%20Spark.json
 ```
