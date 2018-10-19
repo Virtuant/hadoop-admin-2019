@@ -73,7 +73,7 @@ hdfs dfs -ls -R /tmp
 spark-shell
 ```
 
-7. Before we get started with the actual analytics let’s import the following Hive dependencies on line at a time:
+7. Before we get started with the actual analytics let’s import the following Hive dependencies one line at a time:
 
 ```scala
 import org.apache.spark.sql.SQLContext
