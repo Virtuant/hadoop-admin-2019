@@ -12,19 +12,19 @@ Key difference between the Dataset and the DataFrame is that Datasets are strong
 
 In preparation for this tutorial you need to download two files, people.txt and people.json into your  Sandbox's **tmp** folder. The commands below should be typed into [Shell-in-a-Box](sandbox-hdp.hortonworks.com:4200)
 
-1\. Go to the `/tmp` directory:
+Go to the `/tmp` directory:
 
 ~~~ bash
 cd /tmp
 ~~~
 
-2\. Copy and paste the command to download the `people.txt`:
+Copy and paste the command to download the file `people.txt`:
 
 ~~~bash
 wget https://raw.githubusercontent.com/hortonworks/data-tutorials/master/tutorials/hdp/dataFrame-and-dataset-examples-in-spark-repl/assets/people.txt
 ~~~
 
-3\. Copy and paste the command to download the `people.json`:
+Copy and paste the command to download the file `people.json`:
 
 ~~~bash
 wget https://raw.githubusercontent.com/hortonworks/data-tutorials/master/tutorials/hdp/dataFrame-and-dataset-examples-in-spark-repl/assets/people.json
@@ -32,38 +32,32 @@ wget https://raw.githubusercontent.com/hortonworks/data-tutorials/master/tutoria
 
 ### Upload the Dataset to HDFS
 
-1\. Before moving the files into HDFS you need to login under **hdfs** user in order to give permission to perform file operations:
+>Note: before moving the files into HDFS you may need to login under **hdfs** user in order to give permission to perform file operations. Ask your instructor if neccessary.
+
+Next, upload `people.txt` and `people.json` files to HDFS:
 
 ~~~bash
-su hdfs
-cd
-~~~
-
-2\. Next, upload people.txt and people.json files to HDFS:
-
-~~~bash
-#Copy files from local system to HDF
 hdfs dfs -put /tmp/people.txt /tmp/people.txt
 hdfs dfs -put /tmp/people.json /tmp/people.json
 ~~~
 
-3\.Verify that both files were copied into HDFS **/tmp** folder by copying the following commands:
+Verify that both files were copied into HDFS **/tmp** folder by copying the following commands:
 
 ~~~bash
-hdfs dfs -ls /tmp
+hdfs dfs -ls -R /tmp
 ~~~
 
-4\.Launch the Spark Shell:
+Now launch the Spark Shell:
 
 ~~~ bash
 spark-shell
 ~~~
 
-## DataFrame API
+### DataFrame API
 
 DataFrame API provides easier access to data since it looks conceptually like a Table and a lot of developers from Python/R/Pandas are familiar with it.
 
-At a `scala>` REPL prompt, type the following:
+At a `scala>` prompt type the following:
 
 ~~~scala
 val df = spark.read.json("/tmp/people.json")
@@ -231,7 +225,7 @@ This will produce an output similar to the following:
 scala>
 ~~~
 
-## DataSet API
+### DataSet API
 
 If you haven't done so already in previous sections, make sure to upload people data sets (people.txt and people.json) to HDFS: [Environment Setup](https://hortonworks.com/tutorial/dataframe-and-dataset-examples-in-spark-repl/#environment-setup) and imported the libraries in step 1 of **Programmatically Specifying Schema** above:
 
