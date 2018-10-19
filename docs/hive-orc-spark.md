@@ -69,7 +69,7 @@ Now launch the Spark Shell:
 spark-shell
 ```
 
-Before we get started with the actual analytics let’s import the following Hive dependencies one line at a time:
+Before we get started with the actual analytics let’s import the following Hive dependencies:
 
 ```scala
 import org.apache.spark.sql.SQLContext
@@ -85,10 +85,7 @@ Now we are ready to start the examples.
 Instantiate a SparkSession with Hive support:
 
 ```scala
-val spark = SparkSession
-   .builder()
-   .enableHiveSupport()
-   .getOrCreate()
+val spark = SparkSession.builder().enableHiveSupport().getOrCreate()
 ```
 
 ### Creating ORC Tables
@@ -97,7 +94,13 @@ Specifying as ORC at the end of the SQL statement below ensures that the Hive ta
 
 ```scala
 spark.sql("DROP TABLE yahoo_orc_table")
+```
 
+>Note this may create an error, that's OK. Just means that the file is not there.
+
+Now create the table:
+
+```scala
 spark.sql("CREATE TABLE yahoo_orc_table (date STRING, open_price FLOAT, high_price FLOAT, low_price FLOAT, close_price FLOAT, volume INT, adj_price FLOAT) stored as orc")
 ```
 
