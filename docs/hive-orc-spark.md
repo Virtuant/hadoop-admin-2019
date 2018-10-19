@@ -149,39 +149,46 @@ Now we need to separate the data into a new RDD where we do not have the header 
 
 ```java
 val data = yahoo_stocks.mapPartitionsWithIndex { (idx, iter) => if (idx == 0) iter.drop(1) else iter }
+```
 
 the first row to be seen is indeed only the data in the RDD
 
 
 ```java
 data.first
+```
 
-Creating a Schema
+### Creating a Schema
 
 Let’s create the schema, copy and paste the command below:
 
 
 ```java
 case class YahooStockPrice(date: String, open: Float, high: Float, low: Float, close: Float, volume: Integer, adjClose: Float)
+```
 
-Attaching the Schema to the Parsed Data
+### Attaching the Schema to the Parsed Data
 
 Create an RDD of Yahoo Stock Price objects and register it as a table.
 
 ```java
-val stockprice = data.map(_.split(",")).map(row => YahooStockPrice(row(0), row(1).trim.toFloat, row(2).trim.toFloat, row(3).trim.toFloat, row(4).trim.toFloat, row(5).trim.toInt, row(6).trim.toFloat)).toDF()
+val stockprice = data.map(_.split(","))
+   .map(row => YahooStockPrice(row(0), row(1).trim.toFloat, row(2).trim.toFloat, row(3).trim.toFloat, row(4).trim.toFloat, row(5).trim.toInt, row(6).trim.toFloat)).toDF()
+```
 
 Let’s verify that the data has been correctly parsed by the statement above by dumping the first row of the RDD containing the parsed data:
 
 ```java
 stockprice.first
+```
 
 If we want to dump more all the rows, we can use:
 
 ```java
 stockprice.show
+```
 
-Sample results of stockprice.show
+Sample results of `stockprice.show`:
 
 ```java
 scala> stockprice.show 
@@ -210,11 +217,13 @@ scala> stockprice.show
 |2015-03-31|44.82| 45.2|44.42|44.44|10415500|   44.44|
 +----------+-----+-----+-----+-----+--------+--------+
 only showing top 20 rows  
+```
 
 To verify the schema, let’s dump the schema:
 
 ```java
 stockprice.printSchema
+```
 
 Sample of schema output:
 
@@ -228,6 +237,7 @@ root
  |-- close: float (nullable = false)
  |-- volume: integer (nullable = true)
  |-- adjClose: float (nullable = false)
+```
 
 ### Registering a Temporary Table
 
@@ -235,6 +245,7 @@ Now let’s give this RDD a name, so that we can use it in Spark SQL statements:
 
 ```java
 stockprice.createOrReplaceTempView("yahoo_stocks_temp") 
+```
 
 ### Querying Against the Table
 
@@ -242,11 +253,13 @@ Now that our schema’s RDD with data has a name, we can use Spark SQL commands 
 
 ```java
 val results = spark.sql("SELECT * FROM yahoo_stocks_temp")
+```
 
 The result set returned from the Spark SQL query is now loaded in the results RDD. Let’s pretty print it out on the command line.
 
 ```java
 results.map(t => "Stock Entry: " + t.toString).collect().foreach(println)
+```
 
 Sample of results:
 
@@ -260,6 +273,7 @@ Stock Entry: [1996-04-17,28.24992,28.24992,24.75,27.0,42816000,1.125]
 Stock Entry: [1996-04-16,32.25,32.25,28.00008,28.75008,48016000,1.19792]
 Stock Entry: [1996-04-15,35.74992,36.0,30.0,32.25,79219200,1.34375]
 Stock Entry: [1996-04-12,25.24992,43.00008,24.49992,33.0,408720000,1.375]
+```
 
 ### Saving as an ORC File
 
@@ -267,11 +281,13 @@ Now let’s persist back the RDD into the Hive ORC table we created before.
 
 ```java
 results.write.format("orc").save("yahoo_stocks_orc")
+```
 
 To store results in a hive directory rather than user directory, use this path instead:
 
 ```java
 results.write.format("orc").save("/apps/hive/warehouse/yahoo_stocks_orc")
+```
 
 ### Reading the ORC File
 
@@ -281,16 +297,19 @@ Now we can try to read the ORC file with:
 
 ```java
 val yahoo_stocks_orc = spark.read.format("orc").load("yahoo_stocks_orc")
+```
 
 Let’s register it as a temporary in-memory table mapped to the ORC table:
 
 ```java
 yahoo_stocks_orc.createOrReplaceTempView("orcTest")
+```
 
 Now we can verify whether we can query it back:
 
 ```java
 spark.sql("SELECT * from orcTest").collect.foreach(println)
+```
 
 Sample of results:
 
@@ -304,6 +323,7 @@ Stock Entry: [1996-04-17,28.24992,28.24992,24.75,27.0,42816000,1.125]
 Stock Entry: [1996-04-16,32.25,32.25,28.00008,28.75008,48016000,1.19792]
 Stock Entry: [1996-04-15,35.74992,36.0,30.0,32.25,79219200,1.34375]
 Stock Entry: [1996-04-12,25.24992,43.00008,24.49992,33.0,408720000,1.375]
+```
 
 ### Results
 
