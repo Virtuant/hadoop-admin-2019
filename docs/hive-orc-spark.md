@@ -144,14 +144,14 @@ Let’s dump this new RDD in the console to see what we have here:
 header
 ```
 
-Now we need to separate the data into a new RDD where we do not have the header above and
+Now we need to separate the data into a new RDD where we do not have the header above and:
 
 
 ```scala
 val data = yahoo_stocks.mapPartitionsWithIndex { (idx, iter) => if (idx == 0) iter.drop(1) else iter }
 ```
 
-the first row to be seen is indeed only the data in the RDD
+the first row to be seen is indeed only the data in the RDD:
 
 
 ```scala
@@ -169,7 +169,7 @@ case class YahooStockPrice(date: String, open: Float, high: Float, low: Float, c
 
 ### Attaching the Schema to the Parsed Data
 
-Create an RDD of Yahoo Stock Price objects and register it as a table.
+Create an RDD of Yahoo Stock Price objects and register it as a table:
 
 ```scala
 val stockprice = data.map(_.split(","))
@@ -249,13 +249,13 @@ stockprice.createOrReplaceTempView("yahoo_stocks_temp")
 
 ### Querying Against the Table
 
-Now that our schema’s RDD with data has a name, we can use Spark SQL commands to query it. Remember the table below is not a Hive table, it is just a RDD we are querying with SQL.
+Now that our schema’s RDD with data has a name, we can use Spark SQL commands to query it. Remember the table below is not a Hive table, it is just a RDD we are querying with SQL:
 
 ```scala
 val results = spark.sql("SELECT * FROM yahoo_stocks_temp")
 ```
 
-The result set returned from the Spark SQL query is now loaded in the results RDD. Let’s pretty print it out on the command line.
+The result set returned from the Spark SQL query is now loaded in the results RDD. Let’s pretty print it out on the command line:
 
 ```scala
 results.map(t => "Stock Entry: " + t.toString).collect().foreach(println)
@@ -277,7 +277,7 @@ Stock Entry: [1996-04-12,25.24992,43.00008,24.49992,33.0,408720000,1.375]
 
 ### Saving as an ORC File
 
-Now let’s persist back the RDD into the Hive ORC table we created before.
+Now let’s persist back the RDD into the Hive ORC table we created before:
 
 ```scala
 results.write.format("orc").save("yahoo_stocks_orc")
