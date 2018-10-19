@@ -40,7 +40,12 @@ Assuming you start in the `tmp` directory:
 cd /tmp
 ```
 
-Copy and paste the command to download the `yahoo_stocks.csv` file from this [URL](wget http://hortonassets.s3.amazonaws.com/tutorial/data/yahoo_stocks.csv).
+Copy and paste the command to download the `yahoo_stocks.csv` file from this location:
+
+```
+wget http://hortonassets.s3.amazonaws.com/tutorial/data/yahoo_stocks.csv
+```
+
 
 ### Upload the Dataset to HDFS
 
