@@ -34,46 +34,37 @@ Normally, we would have directly loaded the data in the ORC table we created abo
 
 In preparation for this lab you need to download two files, `people.txt` and `people.json` into your system's `/tmp` folder.
 
-1. Assuming you start in the `tmp` directory:
+Assuming you start in the `tmp` directory:
 
 ```
 cd /tmp
 ```
 
-2. Copy and paste the command to download the `yahoo_stocks.csv` file:
-
-```
-wget http://hortonassets.s3.amazonaws.com/tutorial/data/yahoo_stocks.csv
-```
+Copy and paste the command to download the `yahoo_stocks.csv` file from this [URL](wget http://hortonassets.s3.amazonaws.com/tutorial/data/yahoo_stocks.csv).
 
 ### Upload the Dataset to HDFS
 
-3. Before moving the files into HDFS you need to login under `hdfs` user in order to give root user permission to perform file operations:
+>Note: before moving the files into HDFS you may need to login under `hdfs` user in order to give root user permission to perform file operations to `/warehouse/tablespace/managed/..`.
 
-```
-su hdfs
-cd
-```
-
-4. Next, upload `yahoo_stocks.csv` file to HDFS:
+Next, upload `yahoo_stocks.csv` file to HDFS:
 
 ```
 hdfs dfs -put /tmp/yahoo_stocks.csv /tmp/yahoo_stocks.csv
 ```
 
-5. Verify that both files were copied into HDFS `/tmp` folder by copying the following commands:
+Verify that both files were copied into HDFS `/tmp` folder by copying the following commands:
 
 ```
 hdfs dfs -ls -R /tmp
 ```
 
-6. Now launch the Spark Shell:
+Now launch the Spark Shell:
 
 ```
 spark-shell
 ```
 
-7. Before we get started with the actual analytics let’s import the following Hive dependencies one line at a time:
+Before we get started with the actual analytics let’s import the following Hive dependencies one line at a time:
 
 ```scala
 import org.apache.spark.sql.SQLContext
