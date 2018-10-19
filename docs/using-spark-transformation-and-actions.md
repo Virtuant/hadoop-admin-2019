@@ -6,29 +6,23 @@
 
 **Successful outcome:** Write a Spark application that computes the most frequent visitors to the President at the White House
 
-**File Locations:** `~/labs`
+**File Locations:** `~/data`
 
 ---
-### Steps
-
-
 
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h2>1 . Create a New Notebook</h2>
+<h4>1 . Create a New Notebook</h4>
 
 1\.  Go to the IPython Notebook/Jupyter dashboard page
 
 2\.  In the labs folder, create a new notebook as before and rename it `Spark_Lab`. 
-  
-
 
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h2>2. Import SparkContext</h2>
-
+<h4>2. Import SparkContext</h4>
 
 1\.  In the first cell, import the `SparkContext` module and create a `SparkContext` ("sc") object:
 
