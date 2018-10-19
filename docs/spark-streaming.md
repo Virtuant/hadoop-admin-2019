@@ -50,7 +50,7 @@ sc = SparkContext("local[2]", "NetworkWordCount")
 ssc = StreamingContext(sc, 2)
 
 # Create a DStream
-lines = ssc.socketTextStream("sandbox-hdp.hortonworks.com", 3333)
+lines = ssc.socketTextStream("[your server ip]", 3333)
 
 # Split each line into words
 words = lines.flatMap(lambda line: line.split(" "))
