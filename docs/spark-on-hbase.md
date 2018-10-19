@@ -8,13 +8,13 @@ In this lab, we will see how to access and query HBase tables using Apache Spark
 
 ----
 
-1. Run spark-shell
+Run spark-shell
 
 ```
 spark-shell --master yarn-client --driver-memory 512m --executor-memory 512m
 ```
 
-1. Now do following imports:
+Now do following imports:
 
 ```scala
 import org.apache.hadoop.hbase.HBaseConfiguration
@@ -25,21 +25,21 @@ import org.apache.hadoop.hbase.util.Bytes
 import org.apache.hadoop.hbase.client.{Put,HTable}
 ```
 
-1. Now create hbase configuration object:
+Now create hbase configuration object:
 
 ```scala
 val conf = HBaseConfiguration.create() 
 val tablename = "spark_Hbase"
 ```
 
-1. Create Admin instance and set input format:
+Create Admin instance and set input format:
 
 ```scala
 conf.set(TableInputFormat.INPUT_TABLE,tablename)
 val admin = new HBaseAdmin(conf)
 ```
 
-1. Create table:
+Create table:
 
 ```scala
 val tableDescription = new HTableDescriptor(tablename)
@@ -47,7 +47,7 @@ tableDescription.addFamily(new HColumnDescriptor("cf".getBytes()));
 admin.createTable(tableDescription);
 ```
 
-1. Check the create table exists or not:
+Check the create table exists or not:
 
 ```scala
 admin.isTableAvailable(tablename)
@@ -59,7 +59,7 @@ If the table exists, it will return ‘True’ - get a list of tables:
 admin.getTableNames()
 ```
 
-1. Now we will put some data into it:
+Now we will put some data into it:
 
 ```scala
 val table = new HTable(conf,tablename);
@@ -70,19 +70,19 @@ for(x <- 1 to 10){
 }
 ```
 
-1. Flush your table mods:
+Flush your table mods:
 
 ```scala
 table.flushCommits()
 ```
 
-1. Now we can create the HadoopRDD from the data present in HBase using newAPIHadoopRDD by InputFormat , output key and value class:
+Now we can create the HadoopRDD from the data present in HBase using newAPIHadoopRDD by InputFormat , output key and value class:
 
 ```scala
 val HBaseRDD = sc.newAPIHadoopRDD(config, classOf[TableInputFormat], classOf[org.apache.hadoop.hbase.io.ImmutableBytesWritable]. classOf[org.apache.hadoop.hbase.client.Result])
 ```
 
-1. And we can perform all the transformations and actions on created RDD:
+And we can perform all the transformations and actions on created RDD:
 
 ```scala
 val count = HBaseRdd.count()
