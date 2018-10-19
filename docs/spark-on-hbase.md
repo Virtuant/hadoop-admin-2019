@@ -14,6 +14,9 @@ Run spark-shell
 spark-shell --master yarn-client --driver-memory 512m --executor-memory 512m
 ```
 
+>Note: you may need to add several jars: `--jars="[path]/hbase-common.jar, [path]/hbase-client.jar`
+
+
 Now do following imports:
 
 ```scala
