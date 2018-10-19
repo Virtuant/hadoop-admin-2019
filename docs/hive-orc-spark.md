@@ -1,4 +1,4 @@
-## Using Hive with ORC in Apache Spark
+## Using Hive with ORC in Spark
 
 In this lab, we will explore how you can access and analyze data on Hive from Spark. 
 
