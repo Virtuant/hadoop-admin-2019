@@ -54,21 +54,19 @@ The lab guide is [here](https://virtuant.github.io/hadoop-overview-spark-hwx/lab
 	
 #### Lab [30](https://virtuant.github.io/hadoop-overview-spark-hwx/dataframes-datasets.html) DataFrames and DataSets [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/dataframes-datasets.pdf)
 
-#### Lab [31](https://virtuant.github.io/hadoop-overview-spark-hwx/using-spark-mlib.html) Using Spark MLib [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/using-spark-mlib.pdf)
+#### Lab [31](https://virtuant.github.io/hadoop-overview-spark-hwx/hive-orc-spark.html) Hive ORC to Spark [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/hive-orc-spark.pdf)
 
-#### Lab [32](https://virtuant.github.io/hadoop-overview-spark-hwx/hive-orc-spark.html) Hive ORC to Spark [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/hive-orc-spark.pdf)
+#### Lab [32](https://virtuant.github.io/hadoop-overview-spark-hwx/machine-learning-spark.html) Machine Learning with Spark [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/machine-learning-spark.pdf)
 
-#### Lab [33](https://virtuant.github.io/hadoop-overview-spark-hwx/machine-learning-spark.html) Machine Learning with Spark [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/machine-learning-spark.pdf)
+#### Lab [33](https://virtuant.github.io/hadoop-overview-spark-hwx/zeppelin-hbase.html) Zeppelin & Phoenix on HBase [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/zeppelin-hbase.pdf)
 
-#### Lab [34](https://virtuant.github.io/hadoop-overview-spark-hwx/zeppelin-hbase.html) Zeppelin & Phoenix on HBase [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/zeppelin-hbase.pdf)
+#### Lab [34](https://virtuant.github.io/hadoop-overview-spark-hwx/phoenix-on-hbase.html) Phoenix on HBase [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/phoenix-on-hbase.pdf)
 
-#### Lab [35](https://virtuant.github.io/hadoop-overview-spark-hwx/phoenix-on-hbase.html) Phoenix on HBase [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/phoenix-on-hbase.pdf)
+#### Lab [35](https://virtuant.github.io/hadoop-overview-spark-hwx/phoenix-schemas.html) Phoenix Schema Operations [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/phoenix-schemas.pdf)
 
-#### Lab [36](https://virtuant.github.io/hadoop-overview-spark-hwx/phoenix-schemas.html) Phoenix Schema Operations [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/phoenix-schemas.pdf)
+#### Lab [36](https://virtuant.github.io/hadoop-overview-spark-hwx/phoenix-indexes.html) Phoenix Indexes [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/phoenix-indexes.pdf)
 
-#### Lab [37](https://virtuant.github.io/hadoop-overview-spark-hwx/phoenix-indexes.html) Phoenix Indexes [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/phoenix-indexes.pdf)
-
-#### Lab [38](https://virtuant.github.io/hadoop-overview-spark-hwx/streaming-python-with-pig.html) Streaming Python w Pig [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/streaming-python-with-pig.pdf)
+#### Lab [39](https://virtuant.github.io/hadoop-overview-spark-hwx/streaming-python-with-pig.html) Streaming Python w Pig [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/streaming-python-with-pig.pdf)
 
 ----
 
@@ -120,6 +118,8 @@ The lab guide is [here](https://virtuant.github.io/hadoop-overview-spark-hwx/lab
 
 #### Lab [43](https://virtuant.github.io/hadoop-overview-spark-hwx/computing-k-nearest-neighbor.html) Computing k nearest Neighbor [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/computing-k-nearest-neighbor.pdf)
 #### Lab [44](https://virtuant.github.io/hadoop-overview-spark-hwx/creating-a-spam-classifier-using-spark-mlib.html) Creating a Spam Classifier Using Spark Mlib [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/creating-a-spam-classifier-using-spark-mlib.pdf)
+
+#### Lab [31](https://virtuant.github.io/hadoop-overview-spark-hwx/using-spark-mlib.html) Using Spark MLib [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/using-spark-mlib.pdf)
 
 
 #### Lab [31](https://virtuant.github.io/hadoop-overview-spark-hwx/rdd-basics.html) RDD Basics [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/rdd-basics.pdf)
