@@ -134,7 +134,7 @@ And now look at it in Visual mode:
 
 Get the picture?
 
-### Summary
+### Results
 
 Congratulations, now you know how to write Phoenix SQL queries against an HBase table. You performed Phoenix SQL like queries against HBase to monitor temperature, humidity and pressure over time. You also know how to use the Phoenix Interpreter integrated with Zeppelin to visualize the data associated with our weather sensor. 
 
