@@ -2,7 +2,7 @@ theme: jekyll-theme-cayman
 plugins:
   - jemoji
 title: Hadoop Ecosystem on Hortonworks
-description: Traveler's Insurance
+description: Labs
 github:
   is_project_page: false
 include:
