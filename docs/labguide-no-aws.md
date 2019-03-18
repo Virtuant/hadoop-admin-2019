@@ -14,30 +14,6 @@ This has a copy of Hadoop installed in pseudo-distributed mode, which is a metho
 >Note: the user and hostname will be different based on circumstances.
 
 ----
-
-### Setup with AWS
-
-1. The VM is set to automatically log in as the user. If you log out, you can log back in as root with the password shown.
-
-	You will receive 1 to X AWS terminals:
-
-	![image](https://user-images.githubusercontent.com/558905/40750187-7107c45e-6434-11e8-87fe-51b2da2e687d.png)
-
-	So using [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), set up the appropriate connections:
-
-	![image](https://user-images.githubusercontent.com/558905/40750493-8176f98a-6435-11e8-89be-fd5563f5bcb3.png)
-
-	And the user page:
-
-	![image](https://user-images.githubusercontent.com/558905/40750607-d627b0d2-6435-11e8-8fd5-7d2162e72efc.png)
-
-	And the private [key](https://github.com/Virtuant/hbase-advanced-hwx/issues/3)  (should be on the share drive):
-
-	![image](https://user-images.githubusercontent.com/558905/40750709-295c29ae-6436-11e8-8409-2c044966c80c.png)
-
-	Its probably best to name and save the connection for the remainder of the week.
-	
-	Now choose Open and you should be in!
 	
 ### IP Address
 
