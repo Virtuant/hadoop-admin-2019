@@ -1,3 +1,9 @@
+
+{% comment %}
+
+
+
+{% endcomment %}
 ### Labs
 
 The problem domain is [gump.io](https://virtuant.github.io/hadoop-overview-spark-hwx/gump-io.html). It is your job to figure out how to get data, save and manipulate it with Hortonworks and Hadoop. 
