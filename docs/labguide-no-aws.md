@@ -9,9 +9,7 @@
 
 **Root access**: `sudo su`   **Root password**: none  
 
-Our training courses usually use the Hortonworks Sandbox on an AWS Linux distribution. This has a copy of Hadoop installed in pseudo-distributed mode. Pseudo-Distributed mode is a method of running Hadoop whereby all Hadoop daemons run on the same machine. It is, essentially, a cluster consisting of a single machine. It works just like a larger Hadoop cluster; the only key difference is that the HDFS block replication factor is set to 1, since there is only a single DataNode available.
-
-Depending on your company's IT preferences we also have a Docker image. If so when logged into the host you must treat the container as an SSH login. Use port 2222 in that case.
+This has a copy of Hadoop installed in pseudo-distributed mode, which is a method of running Hadoop whereby all Hadoop daemons run on the same machine. It is, essentially, a cluster consisting of a single machine. It works just like a larger Hadoop cluster; the only key difference is that the HDFS block replication factor is set to 1, since there is only a single DataNode available.
 
 >Note: the user and hostname will be different based on circumstances.
 
