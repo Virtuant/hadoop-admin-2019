@@ -4,7 +4,7 @@ This is several lab environments put together:
 
 1. Labguide:
 	With AWS labguide-aws.md
-	Without AWS labguide-without-aws.md
+	Without AWS labguide-no-aws.md
 2.
 
 
