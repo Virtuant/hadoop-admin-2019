@@ -55,13 +55,13 @@ Both files are uploaded to HDFS as shown in the Files View UI:
 
 ![uploaded-files-800x393](https://user-images.githubusercontent.com/558905/54851993-f12a6f80-4cc1-11e9-9f32-a5ce5c3f854e.jpg)
 
-You can also perform the following operations on a file or folder by clicking on the entity’s row: Open, Rename, Permissions, Delete, Copy, Move, Download and Concatenate.
+You can also perform the following operations on a file or folder by clicking on the entity’s row: `Open, Rename, Permissions, Delete, Copy, Move, Download and Concatenate`.
 
 ### Set Write Permissions to Write to data Folder
 
-    click on the data folder’s row, which is contained within the directory path /tmp/.
-    Click Permissions.
-    Make sure that the background of all the write boxes are checked (blue).
+    1. click on the data folder’s row, which is contained within the directory path `/tmp/`.
+    2. Click Permissions.
+    3. Make sure that the background of all the write boxes are checked (blue).
 
 ![edit-permissions-800x258](https://user-images.githubusercontent.com/558905/54851995-f12a6f80-4cc1-11e9-84af-96b00bf42451.jpg)
 
