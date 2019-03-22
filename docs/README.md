@@ -21,6 +21,9 @@ The lab guide is [here](https://virtuant.github.io/hadoop-overview-spark-hwx/lab
 
 #### Lab [2](https://virtuant.github.io/hadoop-overview-spark-hwx/using-hdfs-commands.html) Using HDFS Commands [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/using-hdfs-commands.pdf)
 
+#### Lab [3](https://virtuant.github.io/hadoop-overview-spark-hwx/using-hdfs-ambari.html) Using HDFS with Ambari [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/using-hdfs-ambari.pdf)
+
+
 #### Lab [3](https://virtuant.github.io/hadoop-overview-spark-hwx/rdbms-concepts.html) RDBMS Concepts [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/rdbms-concepts.pdf)
 
 #### Lab [4](https://virtuant.github.io/hadoop-overview-spark-hwx/understanding-block-storage.html) Understanding Block Storage [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/understanding-block-storage.pdf)
