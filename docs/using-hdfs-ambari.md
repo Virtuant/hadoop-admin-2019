@@ -8,9 +8,9 @@ In this section, you will download the sensor data and load that into HDFS using
 
 ----
 
-### HDFS backdrop
+### HDFS for IoT
 
-A single physical machine gets saturated with its storage capacity as the data grows. This growth drives the need to partition your data across separate machines. This type of File system that manages storage of data across a network of machines is called Distributed File Systems. HDFS is a core component of Apache Hadoop and is designed to store large files with streaming data access patterns, running on clusters of commodity hardware. With Hortonworks Data Platform (HDP), HDFS is now expanded to support heterogeneous storage media within the HDFS cluster.
+A single physical machine gets saturated with its storage capacity as the data grows. This growth drives the need to partition your data across separate machines. This type of File system that manages storage of data across a network of machines is called Distributed File Systems. HDFS is a core component of Apache Hadoop and is designed to store large files with streaming data access patterns, running on clusters of commodity hardware. With HDP, HDFS is now expanded to support heterogeneous storage media within the HDFS cluster.
 
 #### Download and Extract Sensor Data Files
 
