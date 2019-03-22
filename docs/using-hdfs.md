@@ -4,7 +4,7 @@
 
 **Exercise directory**: `~/data`
 
-**HDFS paths:** `/user/[logged in user]`
+**HDFS paths:** `/user/[user-name]`
 
 In this tutorial you will begin to get acquainted with Hadoop. You will manipulate files in HDFS, 
 the Hadoop Distributed File System. We will walk through many of the common of the basic Hadoop 
@@ -59,10 +59,10 @@ This affects the permissions of the folder or file. Controls who has read/write/
 
 ```console
    hdfs dfs -chmod 777 /user
-   hdfs dfs -chmod 777 /user/[logged in user]
+   hdfs dfs -chmod 777 /user/[user-name]
 ```
 
-> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) If the directory isn't there, then do a `dfs mkdir`.
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) If the directory isn't there, then do a `hdfs dfs -mkdir /user/student` and the re-chmod it.
 
 >Warning: in production environments, setting the folder with the permissions above is not a good idea because anyone can read/write/execute files or folders.
 
@@ -101,8 +101,8 @@ Copies single src file or multiple src files from local file system to the Hadoo
 Do the following:
 
 ```console
-   hdfs dfs -put [source file].csv   /user/[logged in user]/salaries/[source file].csv
-   hdfs dfs -put [source file 2].csv /user/[logged in user]/salaries/[source file 2].csv
+   hdfs dfs -put [source file].csv   /user/[user-name]/salaries/[source file].csv
+   hdfs dfs -put [source file 2].csv /user/[user-name]/salaries/[source file 2].csv
 ```
 
 
@@ -118,14 +118,14 @@ Lists the contents of a directory - for a file, returns stats of a file.
 Do the following:
 
 ```console
-   hdfs dfs -ls /user/[logged in user]
-   hdfs dfs -ls /user/[logged in user]/salaries
+   hdfs dfs -ls /user/[user-name]
+   hdfs dfs -ls /user/[user-name]/salaries
 ```
 
 You can also do the commands in shorhand as the `hadoop` user:
 
 ```console
-   sudo su [logged in user]
+   sudo su [user-name]
    cd
 ```
 
@@ -154,7 +154,7 @@ Displays size of files and directories contained in the given directory or the s
 Now do:
 
 ```console
-   hdfs dfs -du  /user/[logged in user]/ /user/[logged in user]/salaries/[source file].csv
+   hdfs dfs -du  /user/[user-name]/ /user/[user-name]/salaries/[source file].csv
 ```
 
 
@@ -171,7 +171,7 @@ This copies/downloads files from HDFS to the local file system:
 So do it:
 
 ```console
-   hdfs dfs -get /user/[logged in user]/salaries/[source file].csv /home/
+   hdfs dfs -get /user/[user-name]/salaries/[source file].csv /home/
 ```
 
 
@@ -191,7 +191,7 @@ Let’s concatenate the San Francisco salaries from two separate directories and
 >Note: can also be set to enable adding a newline on end of each file:
 
 ```console
-   hdfs dfs -getmerge /user/[logged in user]/salaries/ /root/output.csv
+   hdfs dfs -getmerge /user/[user-name]/salaries/ /root/output.csv
 ```
 
 Merges the files in your input files to output.csv in the root directory of the local filesystem. In our example, the first file contained about 120,000+ rows and the second file contained almost 30,000 rows. This file operation is important because it will save you time from having to manually concatenate them.
@@ -211,7 +211,7 @@ It is a tool used for large inter/intra-cluster copying:
 Now do:
 
 ```console
-   hdfs dfs -cp /user/[logged in user]/salaries/ /user/[logged in user]/[some other name]
+   hdfs dfs -cp /user/[user-name]/salaries/ /user/[user-name]/[some other name]
 ```
 
 -cp: copies and all their contents to [some other dir]
@@ -219,7 +219,7 @@ Now do:
 Now, verify the files or directories successfully copied to the destination folder:
 
 ```console
-   hdfs dfs -ls /user/[logged in user]/[some other dir]/
+   hdfs dfs -ls /user/[user-name]/[some other dir]/
 ```
 
 Visual result of distcp file operation. Notice that both src1 and src2 directories and their contents were copied to the dest directory.
@@ -246,6 +246,6 @@ Help command opens the list of commands supported by Hadoop Data File System (HD
    hdfs dfs -help
 ```
 
-### Summary
+### Results
 
 Congratulations! We just learned to use commands to manage our San Francisco dataset in HDFS. We learned to create, upload and list the the contents in our directories. We also acquired the skills to download files from HDFS to our local file system and explored a few advanced features of HDFS file management using the command line.
