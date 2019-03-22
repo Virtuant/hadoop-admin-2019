@@ -62,6 +62,8 @@ This affects the permissions of the folder or file. Controls who has read/write/
    hdfs dfs -chmod 777 /user/[logged in user]
 ```
 
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) If the directory isn't there, then do a `mkdir`.
+
 >Warning: in production environments, setting the folder with the permissions above is not a good idea because anyone can read/write/execute files or folders.
 
 Type the following exit command, so we can switch back to the root user. We can perform the remaining file operations under the user folder since the permissions were changed.
@@ -85,7 +87,6 @@ Do the following:
    hdfs dfs -mkdir /user/[logged in user]
    hdfs dfs -mkdir /user/[logged in user]/salaries
 ```
-
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>4. Now Copy Data into HDFS</h4>
