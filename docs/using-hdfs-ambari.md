@@ -39,15 +39,19 @@ Save the Geolocation.zip file to your computer, then extract the files. You shou
 <h4>4. Navigate to `/tmp/` directory by clicking on the directory links.</h4>
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>5. Create directory data. Click the ![new_folder_icon_lab1](https://user-images.githubusercontent.com/558905/54852691-f4bef600-4cc3-11e9-8e92-33a9d4aec0e4.png) button to create that directory. Then navigate to it. The directory path you should see: `/tmp/data`</h4>
+<h4>5. Create directory data.</h4>
+
+Click the ![new_folder_icon_lab1](https://user-images.githubusercontent.com/558905/54852691-f4bef600-4cc3-11e9-8e92-33a9d4aec0e4.png) button to create that directory. Then navigate to it. The directory path you should see: `/tmp/data`
 
 ![add-new-folder-800x74](https://user-images.githubusercontent.com/558905/54851994-f12a6f80-4cc1-11e9-8abc-5c99d01564d5.jpg)
 
 ### Upload Geolocation and Trucks CSV Files to data Folder
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>1. If you’re not already in your newly created directory path `/tmp/data`, go to the data folder. Then click on the 
-![upload_icon_lab1](https://user-images.githubusercontent.com/558905/54852693-f8527d00-4cc3-11e9-9cd7-e86c9b65f101.png) button to upload the corresponding geolocation.csv and trucks.csv files into it.</h4>
+<h4>1. If you’re not already in your newly created directory path `/tmp/data`, go to the data folder. </h4>
+
+Then click on the 
+![upload_icon_lab1](https://user-images.githubusercontent.com/558905/54852693-f8527d00-4cc3-11e9-9cd7-e86c9b65f101.png) button to upload the corresponding geolocation.csv and trucks.csv files into it.
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>2. An Upload file window will appear, click on the cloud symbol.</h4>
