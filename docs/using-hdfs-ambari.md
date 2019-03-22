@@ -26,23 +26,20 @@ Save the Geolocation.zip file to your computer, then extract the files. You shou
 
 2. Go to Ambari Dashboard and open Files View.
 
-
-
-
-
-![linreg-match-4](https://user-images.githubusercontent.com/558905/54851997-f12a6f80-4cc1-11e9-9ad7-8728d0179b3b.jpg)
-
-
-
 ![files-view](https://user-images.githubusercontent.com/558905/54851996-f12a6f80-4cc1-11e9-8d93-9c1dbbc874d1.jpg)
 
-3. Start from the top root of the HDFS file system, you will see all the files the logged in user (maria_dev in this case) has access to see:
+3. Start from the top root of the HDFS file system, you will see all the files the logged in user has access to see:
 
 ![root-files-view-800x412](https://user-images.githubusercontent.com/558905/54851998-f12a6f80-4cc1-11e9-8b7a-ee4090916998.jpg)
 
 4. Navigate to /tmp/ directory by clicking on the directory links.
 
-5. Create directory data. Click the new_folder_icon_lab1 button to create that directory. Then navigate to it. The directory path you should see: /tmp/data
+
+
+![upload_icon_lab1](https://user-images.githubusercontent.com/558905/54852693-f8527d00-4cc3-11e9-9cd7-e86c9b65f101.png)
+
+
+5. Create directory data. Click the ![new_folder_icon_lab1](https://user-images.githubusercontent.com/558905/54852691-f4bef600-4cc3-11e9-8e92-33a9d4aec0e4.png) button to create that directory. Then navigate to it. The directory path you should see: /tmp/data
 
 ![add-new-folder-800x74](https://user-images.githubusercontent.com/558905/54851994-f12a6f80-4cc1-11e9-8abc-5c99d01564d5.jpg)
 
