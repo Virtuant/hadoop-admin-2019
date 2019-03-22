@@ -66,7 +66,7 @@ This affects the permissions of the folder or file. Controls who has read/write/
 
 >Warning: in production environments, setting the folder with the permissions above is not a good idea because anyone can read/write/execute files or folders.
 
-Type the following exit command, so we can switch back to the root user. We can perform the remaining file operations under the user folder since the permissions were changed.
+Type the following exit command, so we can switch back to the base user. We can perform the remaining file operations under the user folder since the permissions were changed.
 
 ```console
    exit
@@ -84,9 +84,10 @@ Takes the path URI’s as an argument and creates a directory or multiple direct
 Do the following:
 
 ```console
-   hdfs dfs -mkdir /user/[logged in user]
-   hdfs dfs -mkdir /user/[logged in user]/salaries
+   hdfs dfs -mkdir salaries
 ```
+
+![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) What just happened? Do you know were `salaries` is? If not, do a `hdfs dfs -ls -R` and look for the `salaries` directory.
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>4. Now Copy Data into HDFS</h4>
