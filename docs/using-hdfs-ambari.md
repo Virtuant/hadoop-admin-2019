@@ -32,20 +32,16 @@ Save the Geolocation.zip file to your computer, then extract the files. You shou
 
 ![root-files-view-800x412](https://user-images.githubusercontent.com/558905/54851998-f12a6f80-4cc1-11e9-8b7a-ee4090916998.jpg)
 
-4. Navigate to /tmp/ directory by clicking on the directory links.
+4. Navigate to `/tmp/` directory by clicking on the directory links.
 
-
-
-![upload_icon_lab1](https://user-images.githubusercontent.com/558905/54852693-f8527d00-4cc3-11e9-9cd7-e86c9b65f101.png)
-
-
-5. Create directory data. Click the ![new_folder_icon_lab1](https://user-images.githubusercontent.com/558905/54852691-f4bef600-4cc3-11e9-8e92-33a9d4aec0e4.png) button to create that directory. Then navigate to it. The directory path you should see: /tmp/data
+5. Create directory data. Click the ![new_folder_icon_lab1](https://user-images.githubusercontent.com/558905/54852691-f4bef600-4cc3-11e9-8e92-33a9d4aec0e4.png) button to create that directory. Then navigate to it. The directory path you should see: `/tmp/data`
 
 ![add-new-folder-800x74](https://user-images.githubusercontent.com/558905/54851994-f12a6f80-4cc1-11e9-8abc-5c99d01564d5.jpg)
 
 ### Upload Geolocation and Trucks CSV Files to data Folder
 
-1. If you’re not already in your newly created directory path /tmp/data, go to the data folder. Then click on the upload_icon_lab1 button to upload the corresponding geolocation.csv and trucks.csv files into it.
+1. If you’re not already in your newly created directory path `/tmp/data`, go to the data folder. Then click on the 
+![upload_icon_lab1](https://user-images.githubusercontent.com/558905/54852693-f8527d00-4cc3-11e9-9cd7-e86c9b65f101.png) button to upload the corresponding geolocation.csv and trucks.csv files into it.
 
 2. An Upload file window will appear, click on the cloud symbol.
 
