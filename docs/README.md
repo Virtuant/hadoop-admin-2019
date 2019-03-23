@@ -87,6 +87,13 @@ The lab guide is [here](https://virtuant.github.io/hadoop-overview-spark-hwx/lab
 
 ----
 
+#### Lab [39](https://virtuant.github.io/hadoop-overview-spark-hwx/excel-reporting.html) Phoenix Indexes [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/excel-reporting.pdf)
+
+#### Lab [40](https://virtuant.github.io/hadoop-overview-spark-hwx/processing-data-with-pig.html) Streaming Python w Pig [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/processing-data-with-pig.pdf)
+
+
+----
+
 {% comment %}
 
 #### Lab [22](https://virtuant.github.io/hadoop-overview-spark-hwx/import-iot.html) Importing Data to HBase [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/import-iot.pdf)
