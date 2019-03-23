@@ -147,3 +147,8 @@ If you re-submit the Python script and Netcat you should see a much cleaner outp
 ### Results
 
 In this tutorial we have reviewed the process of ingesting data and using it as an input on Discretized Streaming provided by Spark Streaming; furthermore, we learned how to capture the data and perform a simple word count to find repetitions on the oncoming data set. Understanding DStreaming and RDDs will enable you to construct complex streaming applications with Spark and Spark Streaming.
+
+
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>

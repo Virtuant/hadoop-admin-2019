@@ -1,4 +1,4 @@
-## Lab: Sqoop Import Data From RDBMS to HDFS
+## Sqoop Import Data From RDBMS to HDFS
 
 A tool, which we use for importing tables from RDBMS to HDFS is the Sqoop Import tool. Here each row in a table is considered as a record in HDFS. 
 Moreover, when we talk about text files all records are stored as text data. Whereas when we talk about Avro and sequence files all records are stored as binary data here. 

@@ -89,3 +89,8 @@ The full `rewardAccountFor(Dining)` sequence incorporating these repositories is
 The Reward Dining applications share a database with this schema:
 
 ![rewarddining-databaseschema](https://user-images.githubusercontent.com/558905/40526897-67c11c1e-5fb7-11e8-9ae1-0cbff4949eff.png)
+
+
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>

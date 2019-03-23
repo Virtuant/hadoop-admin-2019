@@ -1,4 +1,4 @@
-## Lab: Column Families
+## Column Families
 
 **Objective**: Create several tables with different column families and explore the physical layout of the table in hdfs.  
 

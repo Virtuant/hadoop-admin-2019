@@ -1,4 +1,4 @@
-## Lab: Using Salted Tables in HBase
+## Using Salted Tables in HBase
 
 
 Time Series Data
@@ -117,8 +117,9 @@ hbase(main):036:0> splits=gen_splits(100000,99999999,10)
 hbase(main):036:0> create 'iot_data','para',SPLITS=>splits
 ```
 
-### Summary
+### Results
 
 
-
-
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>

@@ -11,9 +11,6 @@
 ---
 ### Steps
 
-
-<!--STEP-->
-
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>1. View the `hdfs dfs` Command</h4>
 
@@ -270,7 +267,6 @@ hdfs fsck /user/[user-name]/data.txt
 
 You should now be comfortable with executing the various HDFS commands, including creating directories, putting files into HDFS, copying files out of HDFS, and deleting files and folders.
 
-You are finished!
 
 <button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
 <br>

@@ -1,4 +1,4 @@
-## Lab: Export with Pig and Import with ImportTsv
+## Export with Pig and Import with ImportTsv
 
 **Objective**: To connect to an HBase table via Pig and export some data into tab-delimited format; then import that 
 data into HBase using ImportTSV. 

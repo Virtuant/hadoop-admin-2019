@@ -1,4 +1,4 @@
-## Lab: Advanced Hive Queries
+## Advanced Hive Queries
 
 This lab explores some of the more advanced features of Hive work, including multi-table inserts, views, and windowing.
 

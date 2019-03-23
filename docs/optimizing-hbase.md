@@ -1,4 +1,4 @@
-## Lab: Optimizing NOSql in Hive and HBase
+## Optimizing NOSql in Hive and HBase
 
 ----
 

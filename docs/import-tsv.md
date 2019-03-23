@@ -1,4 +1,4 @@
-## Lab: Ingesting Data with ImportTsv
+## Ingesting Data with ImportTsv
 
 **Objective**: You are going to bulk load data into an HBase table using the ImportTsv and CompleteBulkLoad tools. 
 
@@ -131,9 +131,13 @@ Now scan the table:
     2500 row(s) in 6.7060 seconds
     ```
 
-### Result
+### Results
 
 You performed a bulk import of comma-separated value data from local filesystem into HBase by uploading 
 the raw data into HDFS; creating HFile-formatted files via the ImportTsv tool; and completing the bulk 
 load process of submitting the HFile-formatted files to HBase using the CompleteBulkLoad tool.
 
+
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>

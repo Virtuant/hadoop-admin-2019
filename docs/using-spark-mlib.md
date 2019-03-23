@@ -4,9 +4,7 @@
 
 **Objective:** To use Spark MLlib to run data science algorithms on a Hadoop cluster
 
-**Successful outcome:** Follow along with the steps below and be sure to ask question if needed. And have fun!
-
-**File locations:** `~/labs`
+**File locations:** `~/data`
 
 ---
 ### Steps
@@ -183,8 +181,13 @@ print("Mean Squared Error = " + str(MSE))
 ![using-spark-mlib-2](https://user-images.githubusercontent.com/21102559/40943056-e6ffa428-681d-11e8-9e71-c9b7b22bed6b.png)
 
 
-### Result
+### Results
 
 You have used Spark MLlib to execute a recommender engine using alternating least squares (implemented by the ALS class in Spark). You also computed the mean-squared error of the model.
 
 You are finished!
+
+
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>

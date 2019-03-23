@@ -1,4 +1,4 @@
-## Lab: Manipulating Data With Hive
+## Manipulating Data With Hive
 
 Exercise directory: ~/data
 
@@ -159,3 +159,10 @@ unknown years have a value of 0 in the year field; these do not belong in your a
 	Unrated  movies are not needed in this copy.
 
 4.	What are the 10 highest-‐rated movies? (Notice that your work in step 3 makes this question easy to answer.)
+
+### Results
+
+
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>

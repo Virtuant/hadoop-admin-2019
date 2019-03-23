@@ -1,4 +1,4 @@
-## Lab: Exploring HBase 1
+## Exploring HBase 1
 
 **Objective**: Use the HBase Shell to populate and explore the `hbase:meta` table.
 

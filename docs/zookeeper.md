@@ -1,8 +1,6 @@
-## Lab: Zookeeper
+## Zookeeper
 
 **Objective**: Practice using Zookeeper to keep track of tables, regions, masters and other information.
-
-**Exercise directory**: `~/data`
 
 **Data directory**: `~/data`
 
@@ -15,17 +13,22 @@ In order to maintain server state in the HBase Cluster, HBase uses ZooKeeper as 
 Basically, which servers are alive and available is maintained by Zookeeper, and also it provides server 
 failure notification. Moreover, in order to guarantee common shared state, Zookeeper uses consensus.
 
-
 ----
 
-1.	Open two command line windows in your lab environment. The zookeeper command prompt will be shortened to [zk:] below. Use the HBase `zkcli` to connect to zookeeper and run some queries:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
+<h4>1.	Open two command line windows in your lab environment.</h4>
+
+The zookeeper command prompt will be shortened to [zk:] below. Use the HBase `zkcli` to connect to zookeeper and run some queries:
 
     ```console
     hbase zkcli
     [zk: sandbox.hortonworks.com:2181(CONNECTED) 0]
     ```
 
-2.	The HBase `zkcli` uses commands similar to navigating a file system. `ls /` will show you the nodes that are children of the root node:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
+<h4>2.	The HBase `zkcli` uses commands similar to navigating a file system</h4>
+
+`ls /` will show you the nodes that are children of the root node:
 
     ```console
     [zk:] ls /
@@ -34,7 +37,8 @@ failure notification. Moreover, in order to guarantee common shared state, Zooke
     
     This shows us that beneath the path, the following child nodes exist: `hbase-unsecure` and `zookeeper`
 
-3.	Create  a node.
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
+<h4>3.	Create  a node</h4>
 
     ```console
     [zk:] create -e /test 'hello'
@@ -43,7 +47,8 @@ failure notification. Moreover, in order to guarantee common shared state, Zooke
     This creates a node /test with a value of “hello”. The node with -e is an ephemeral node, it will exist as long as the creator of the node is connected to zookeeper.
 
 
-4.	Query zookeeper from the other terminal window to get the value of `/test`
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
+<h4>4.	Query zookeeper from the other terminal window to get the value of `/test`</h4>
 
     ```console
     [zk:] get /test 'hello'
@@ -52,26 +57,34 @@ failure notification. Moreover, in order to guarantee common shared state, Zooke
 
     This demonstrates that a zookeeper node can be created by one client and seen by any client. This service is the basic need that distributed systems have that zookeeper provides. A consistent distributed information service.
 
-5.	Delete the ephemeral node:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
+<h4>5.	Delete the ephemeral node:</h4>
 
     ```console
     [zk:] delete test 
     [zk:] ls /
     ```
     
-6.	Create a persistent node.
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
+<h4>6.	Create a persistent node</h4>
 
     ```console
     [zk:] create /test 'hello'
     ```
     
-7.	Quit the command line shell and reconnect. Notice your node persists if you reconnect or if you get the node from the other connection.
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
+<h4>7.	Quit the command line shell and reconnect</h4>
 
-8.	HBase uses a collection of child nodes under the node `/hbase-unsecure` List the HBase zookeeper nodes:
+Notice your node persists if you reconnect or if you get the node from the other connection.
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
+<h4>8. List the HBase zookeeper nodes:</h4>
 
     ```console
     [zk:] ls /hbase-unsecure
     ```
+	
+HBase uses a collection of child nodes under the node `/hbase-unsecure`.
 
     The result should be
 
@@ -81,7 +94,8 @@ failure notification. Moreover, in order to guarantee common shared state, Zooke
     
     > Note: that the HBase node has many children. If this was a fully distributed cluster there would also be a child node for hmaster. There is a node for meta-region-server which tells client what region server is managing the catalog table meta.
  
-9.	Get the value of that node:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
+<h4>9.	Get the value of that node:</h4>
 
     ```console
     [zk:] get /hbase-unsecure/meta-region-server regionserver:60020ezTSCPBUF
@@ -96,7 +110,10 @@ failure notification. Moreover, in order to guarantee common shared state, Zooke
     
     This shows that it is at `sandbox.hortonworks.com` plus some other information including some unprintable characters.
 
-10.	HBase stores the existing tables as children of the node `/hbase-unsecure/table`. Get the list of tables:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
+<h4>10.	 Get the list of tables:</h4>
+
+HBase stores the existing tables as children of the node `/hbase-unsecure/table`.
 
     ```console
     [zk:] ls /hbase-unsecure/table
@@ -108,7 +125,8 @@ failure notification. Moreover, in order to guarantee common shared state, Zooke
     [timeline, hbase:meta, hbase:namespace, test, cf, ambarismoketest]
     ```
     
-11.	Open another terminal window and launch HBase shell:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
+<h4>11.	Open another terminal window and launch HBase shell:</h4>
 
     ```console
     # hbase shell
@@ -120,7 +138,10 @@ failure notification. Moreover, in order to guarantee common shared state, Zooke
     hbase> create 'zktest','a'
     ```
     
-12. From the zookeeper window, query zookeeper for children of the `/hbase-unsecure/table` node:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
+<h4>12. From the zookeeper window, query zookeeper for children </h4>
+
+of the `/hbase-unsecure/table` node:
 
     ```console
     [zk:] ls /hbase-unsecure/table
@@ -130,7 +151,8 @@ failure notification. Moreover, in order to guarantee common shared state, Zooke
     
     Note the node for zktest in the output.
  
-13.	From the HBase window, drop the table in the HBase shell by running:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
+<h4>13.	From the HBase window, drop the table in the HBase shell by running:</h4>
 
     ```console
     hbase> disable 'zktest'
@@ -142,7 +164,8 @@ failure notification. Moreover, in order to guarantee common shared state, Zooke
     hbase> drop 'zktest'
     ```
     
-14.	In the HBase zkcli the child nodes of `/hbase-unsecure/table` should no longer show the zktest entry.
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
+<h4>14.	In the HBase zkcli the child nodes of `/hbase-unsecure/table` should no longer show the zktest entry.</h4>
 
 
 ### Results

@@ -1,4 +1,4 @@
-## Lab: Phoenix on HBase
+## Phoenix on HBase
 
 **Objective**: Begin using the Phoenix system.
 

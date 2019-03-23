@@ -91,9 +91,14 @@ And we can perform all the transformations and actions on created RDD:
 val count = HBaseRdd.count()
 ```
 
-### Result
+### Results
 
 So here you see that Spark can be used to Query tables in HBase.
+
+
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>
 
 {% comment %}
 # Links for these files:

@@ -1,4 +1,4 @@
-## Lab: Zeppelin and Phoenix for HBase
+## Zeppelin and Phoenix for HBase
 
 Zeppelin is a browser-based notebook-driven system that enables data engineers, data analysts and data scientists to be more productive by developing, organizing, executing, and sharing data code and visualizing results without referring to the command line or needing the cluster details. 
 

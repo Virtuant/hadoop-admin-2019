@@ -1,4 +1,4 @@
-## Lab: RDBMS and Performance
+## RDBMS and Performance
 
 MariaDB is a drop-in replacement for MySQL, the most used open source database for online applications. MariaDB falls into the category of the NewSQL products, 
 i.e. a product that provides unique NoSQL features together with the typical features available in relational databases. 

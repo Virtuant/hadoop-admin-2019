@@ -1,4 +1,4 @@
-## Lab: Min Versions and Time-To-Live
+## Min Versions and Time-To-Live
 
 **Objective**: Look deeper into HBase's minimum versioning, and time to live settings.
 
@@ -135,5 +135,10 @@ Finally, cleanup the table:
     hbase> drop 'tbl_2'
     ```
 
-### Summary
+### Results
+
+
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>
 

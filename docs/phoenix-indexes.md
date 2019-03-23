@@ -1,4 +1,4 @@
-## Lab: Indexes and Secondary Indexes in Phoenix/HBase
+## Indexes and Secondary Indexes in Phoenix/HBase
 
 **Objective**: Use Phoenix to create indexes on HBase and see the performance.
 

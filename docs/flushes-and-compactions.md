@@ -1,4 +1,4 @@
-## Lab: Flushes and Compactions
+## Flushes and Compactions
 
 **Objective**: Learn how to manaually flush and compact a table and view the results of each operation. 
 

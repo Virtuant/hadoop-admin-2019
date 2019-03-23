@@ -4,7 +4,7 @@
 
 **Successful outcome:** Follow along with the steps below and be sure to ask question if needed. And hae fun!
 
-**File location:** `~/labs`
+**File location:** `~/data`
 
 ---
 ### Steps
@@ -236,6 +236,11 @@ You should see the PNG file that was loaded:
 
 ![understanding-the-numpy-package-2](https://user-images.githubusercontent.com/21102559/40943021-cbb47c02-681d-11e8-9c0f-5633f483e355.png)
 
-### Result
+### Results
 
 You are finished!
+
+
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>

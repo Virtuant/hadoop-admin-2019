@@ -1,4 +1,4 @@
-## Lab: Apache Hive – Data ETL
+## Apache Hive – Data ETL
 
 **Objective**: This will guide you on how to create a table and how to move data into a Hive warehouse.
 

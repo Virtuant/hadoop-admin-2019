@@ -1,4 +1,4 @@
-## Lab: HBase and Hive Integration
+## HBase and Hive Integration
 
 **Objective**: Understand how HBase and Hive integrate. You will complete data storage in HBase from Hive table data.
 

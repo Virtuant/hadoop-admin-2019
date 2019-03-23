@@ -1,4 +1,4 @@
-## Lab: NoSql and Performance Comparisons
+## NoSql and Performance Comparisons
 
 **Objective**: Let's do a little more with HBase to see how the Regions make it perform better.
 

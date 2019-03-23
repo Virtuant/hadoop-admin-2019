@@ -1,4 +1,4 @@
-## Lab: Using HDFS with Ambari
+## Using HDFS with Ambari
 
 **Objective**: Begin to get acquainted with Hadoops file system. And manipulate files in HDFS, the Hadoop Distributed File System.
 
@@ -69,9 +69,9 @@ Both files are uploaded to HDFS as shown in the Files View UI:
 
 You can also perform the following operations on a file or folder by clicking on the entity’s row: `Open, Rename, Permissions, Delete, Copy, Move, Download and Concatenate`.
 
-### Set Write Permissions to Write to data Folder
-
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>Set Write Permissions to Write to data Folder</h4>
+
 <h4>1. click on the data folder’s row, which is contained within the directory path `/tmp/`</h4>
 <h4>2. Click Permissions</h4>
 <h4>3. Make sure that the background of all the write boxes are checked (blue)</h4>

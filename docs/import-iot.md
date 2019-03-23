@@ -1,4 +1,4 @@
-## Lab: Importing Data into HBase from IoT Tables
+## Importing Data into HBase from IoT Tables
 
 **Objective**: In this exercise you will import data from MySQL into HBase.
 
@@ -210,3 +210,7 @@ Importtsv statement generates massive amount of logs, so make sure you have enou
 
 ### Summary
 
+
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>

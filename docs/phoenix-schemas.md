@@ -1,4 +1,4 @@
-## Lab: Schemas on HBase with Phoenix
+## Schemas on HBase with Phoenix
 
 **Objective**: Use Phoenix to manipulate schemas.
 

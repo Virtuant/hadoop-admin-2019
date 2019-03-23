@@ -11,12 +11,10 @@
 ---
 ### Steps
 
-
-
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h2>1. Create a New Notebook</h2>
+<h4>1. Create a New Notebook</h4>
 
 1\.  From your web browser, go to the IPython Notebook page
 
@@ -33,7 +31,7 @@
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h2>2. Import the NLTK Library</h2>
+<h4>2. Import the NLTK Library</h4>
 
 1\.  In the first cell import the `NLTK` library:
 
@@ -48,7 +46,7 @@ import nltk
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h2>3. View the Data</h2>
+<h4>3. View the Data</h4>
 
 1\.  Import the `state_union` data and display the words in it:
 
@@ -65,7 +63,7 @@ h.  Print out the number of words in the corpus. You should see 399,822 as the r
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h2>4. Segment the Sentences</h2>
+<h4>4. Segment the Sentences</h4>
 
 1\.  In the next cell add the following code, which attempts to display the sentences of the corpus:
 
@@ -112,7 +110,7 @@ greek.pickle 	polish.pickle 	README 		swedish.pickle
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h2>5. Use the Text Class</h2>
+<h4>5. Use the Text Class</h4>
 
 1\.  In this step, you will create a `nltk.text.Text` object that acts as a wrapper around a body of text. The `Text` class contains several useful functions. Start by instantiating a new `Text` object from the words in `state_union`:
 
@@ -142,7 +140,7 @@ greek.pickle 	polish.pickle 	README 		swedish.pickle
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h2>6. Calculate a Frequency Distribution</h2>
+<h4>6. Calculate a Frequency Distribution</h4>
 
 1\.  NLTK contains a `nltk.probability.FreqDist` class for computing frequency distributions for a corpus of words. Let's compute a frequency distribution for `state_union`. Start by importing the `FreqDist` class:
 
@@ -161,7 +159,7 @@ Not surprisingly, the most common words are "the", "of", "to" and so on.
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h2>7. Remove Stop Words</h2>
+<h4>7. Remove Stop Words</h4>
 
 1\.  Let's take a look at the stop words in the NLTL package:
 
@@ -182,7 +180,7 @@ len(filtered)
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
-<h2>8. Calculate the Frequency Distribution</h2>
+<h4>8. Calculate the Frequency Distribution</h4>
 
 1\.  Define a new variable named `fdist_filtered` and assign it to a new `FreqDist` object for the `filtered` series.
 
@@ -207,3 +205,8 @@ len(filtered)
 After using the Natural Language Toolkit library, you should now have a better understanding of Natural Language processing and the work involved in dealing with large amount of text.
 
 You are finished!
+
+
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>

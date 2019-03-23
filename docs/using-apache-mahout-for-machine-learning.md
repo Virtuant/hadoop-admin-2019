@@ -357,8 +357,13 @@ hdfs dfs -rm -R -skipTrash rec/temp
 hdfs dfs -rm -R -skipTrash rec/output 
 ```
 
-### Result
+### Results
 
 You have executed a machine learning recommender engine on a Hadoop cluster using Mahout's item recommender with both the cosine and co-occurrence similarity classes.
 
 You are finished!
+
+
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>

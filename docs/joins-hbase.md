@@ -1,4 +1,4 @@
-## Lab: Joins in HBase
+## Joins in HBase
 
 The standard SQL join syntax (with some limitations) is now supported by Phoenix to combine records from two or more tables based on their fields having common values.
 
