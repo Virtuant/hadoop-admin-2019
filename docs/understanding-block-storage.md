@@ -13,7 +13,6 @@
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>1. Put the File into HDFS</h4>
 
-<br>
 If not already done, open a Terminal.
 
 Use less (or more) to view the contents of the `stocks.csv` file. Press `q` when you are finished to exit.
@@ -28,7 +27,7 @@ Try putting the file into HDFS with a block size of 30 bytes:
 hdfs dfs -D dfs.blocksize=30 -put stocks.csv
 ```
 
-> Note that a size of 30 bytes is not a valid blocksize. The blocksize needs to be at least 1,048,576 according to the `dfs.namenode.fs-limits.min-block-size property`
+![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) Notice that a size of 30 bytes is not a valid blocksize. The blocksize needs to be at least 1,048,576 according to the `dfs.namenode.fs-limits.min-block-size property`
 
 ```
 put: Specified block size is less than configured minimum value (dfs.namenode.fs-limits.min-block-size): 30 < 1048576
@@ -40,7 +39,7 @@ Try the put again, but use a block size of 2,000,000:
 hdfs dfs -D dfs.blocksize=2000000 -put stocks.csv
 ```
 
-> Note that 2,000,000 is not a valid blocksize because it is not a multiple of 512 (the checksum size)
+![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) 2,000,000 is not a valid blocksize because it is not a multiple of 512 (the checksum size)
 
 
 Try the put again, but this time use 1,048,576 for the blocksize:
@@ -62,13 +61,8 @@ Found 1 items
 -rw-r--r--	1 root root   3613198	stocks.csv
 ```
 
-<!--STEP-->
-
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>2. View the Number of Blocks</h4>
-
-
-<br>
 
 Run the following command to view the number of blocks that were created for `stocks.csv`:
 
@@ -82,21 +76,16 @@ There are four blocks. Look for the following line in the output:
 Total blocks (validated):4 (avg. block size 903299 B)
 ```
 
-
-<!--STEP-->
-
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>3. Find the Actual Blocks</h4>
 
-
-<br>
 Enter the same `fsck` command as before, but add the `-files` and `-blocks` options:
 
 ```
 hdfs fsck /user/[user-name]/stocks.csv -files -blocks
 ```
 
-> Note  the output contains the block IDs, which are coincidentally the names of the files on the DataNodes
+![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) the output contains the block IDs, which are coincidentally the names of the files on the DataNodes
 
 Run the command again, but this time add the -locations flag:
 
@@ -104,7 +93,7 @@ Run the command again, but this time add the -locations flag:
 hdfs fsck /user/[user-name]/stocks.csv -files -blocks -locations
 ```
 
-> Note  in the output that the IP address of the DataNode appear next to each block.
+![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) In the output that the IP address of the DataNode appear next to each block.
 
 Change directories to the following:
 
@@ -122,13 +111,9 @@ cd <most recently created directory - for example, subdir0>
 ll
 ```
 
-
-<!--STEP-->
-
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>Important</h4>
 
-<br>
 If the results of the `ll` command are additional subdirectories rather than block information (as shown in the next lab step), repeat the process above to once again find the newest directory created , change to it, and list its contents.
 
 Confirm that the actual blocks appear in this folder. Look for files that are exactly 1,048,576 bytes. These are three of the blocks.
@@ -142,7 +127,7 @@ Confirm that the actual blocks appear in this folder. Look for files that are ex
 -rw-r--r--	1	hdfs	hdfs	3663	blk_1073742093_1269.meta
 ```
 
-> Note  that the fourth block is smaller: 467,470 bytes.
+![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) the fourth block is smaller: 467,470 bytes.
 
 You can view the contents of a block (although this is not a typical task in Hadoop). Here is the tail of the second block:
 
@@ -165,7 +150,7 @@ NYSE,XKK,2007-08-08,9.45,9.90,9.45,9.66,6000,7.28
 NYSE,XKK,2007-08-07,9.25,9.50,9.25,9.40
 ```
 
->Note: the last record in this file is not complete and spills over to the next block, a common occurrence in HDFS.
+The last record in this file is not complete and spills over to the next block, a common occurrence in HDFS.
 
 
 ### Results
