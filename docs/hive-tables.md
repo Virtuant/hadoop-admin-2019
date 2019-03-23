@@ -119,9 +119,9 @@ You can review the SQL statements issued by selecting the Queries tab and review
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>4. Click on the Compose tab, type the following query into the query editor and click on Execute:</h4>
 
-```sql
-select * from trucks limit 10;
-```
+	```sql
+	select * from trucks limit 10;
+	```
 
 The results should look similar to:
 
@@ -129,6 +129,7 @@ The results should look similar to:
 
 A few additional commands to explore tables:
 
+	```sql
     show tables; – List the tables created in the database by looking up the list of tables from the metadata stored in HCatalogdescribe
     describe {table_name}; – Provides a list of columns for a particular table
 	describe geolocation;
@@ -136,6 +137,7 @@ A few additional commands to explore tables:
 	show create table geolocation;
     describe formatted {table_name}; – Explore additional metadata about the table. For example you can verify geolocation is an ORC Table, execute the following query:
 	describe formatted geolocation;
+	```
 
 By default, when you create a table in Hive, a directory with the same name gets created in the /warehouse/tablespace/managed/hive folder in HDFS. Using the Ambari Files View, navigate to that folder. You should see both a geolocation and trucks directory:
 
