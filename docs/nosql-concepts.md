@@ -191,8 +191,11 @@ Now show some output:
 ```console
 hdfs dfs -cat /tmp/hive_output/0* | grep 669410 | less
 ```
-### Summary
+### Results
 
 So you see how HBase compares with Hive on simple queries. Good Job.
 
 
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>

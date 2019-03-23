@@ -274,6 +274,10 @@ Notice you can view the log files of the ApplicationMaster and also each map and
 STORE, DUMP, and ILLUSTRATE.
 ```
 
-### Result
+### Results
 
 You are finished! Pig's pretty powerful.
+
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>

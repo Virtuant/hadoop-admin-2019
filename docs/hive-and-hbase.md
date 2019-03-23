@@ -458,6 +458,11 @@ A newer approach to loading data in Hive/HBase is to use the ImportTsv tool:
 hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.separator=, -Dimporttsv.columns="HBASE_ROW_KEY,para:deviceParameter,para:deviceValue,para:deviceId,para:dateTime" iot_data hdfs://[master node id]:/tmp/iot_data.csv
 ```
 
-### Summary
+### Results
 
 Now you have seen how to hook up Hive to HBase. The tables are interchangeable. Pretty cool, huh?
+
+
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>

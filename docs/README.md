@@ -23,7 +23,7 @@ The lab guide is [here](https://virtuant.github.io/hadoop-overview-spark-hwx/lab
 
 #### Lab [3](https://virtuant.github.io/hadoop-overview-spark-hwx/using-hdfs-ambari.html) Using HDFS with Ambari [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/using-hdfs-ambari.pdf)
 
-#### Lab [4](https://virtuant.github.io/hadoop-overview-spark-hwx/hive-tables.html) Using HDFS with Ambari [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/hive-tables.pdf)
+
 
 
 #### Lab [3](https://virtuant.github.io/hadoop-overview-spark-hwx/rdbms-concepts.html) RDBMS Concepts [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/rdbms-concepts.pdf)
@@ -44,7 +44,7 @@ The lab guide is [here](https://virtuant.github.io/hadoop-overview-spark-hwx/lab
 
 #### Lab [11](https://virtuant.github.io/hadoop-overview-spark-hwx/import-using-sqoop.html) Sqoop Import to Hive [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/import-using-sqoop.pdf)
 
-#### Lab [12](https://virtuant.github.io/hadoop-overview-spark-hwx/manipulating_data_with_hive.html) Manipulating Data with Hive [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/manipulating_data_with_hive.pdf)
+#### Lab [4](https://virtuant.github.io/hadoop-overview-spark-hwx/hive-tables.html) Using HDFS with Ambari [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/hive-tables.pdf)
 
 #### Lab [13](https://virtuant.github.io/hadoop-overview-spark-hwx/advanced-hive-queries.html) Advanced Hive Queries [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/advanced-hive-queries.pdf)
 

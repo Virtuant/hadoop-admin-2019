@@ -229,7 +229,11 @@ To verify use the list command again:
 	hbase(main):012:0> list
 ```
 
-### Summary
+### Results
 
 You're getting the hang of it! Good!
 
+
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>

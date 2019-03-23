@@ -525,9 +525,13 @@ Instead, only those columns used by the query, and only the records that satisfy
 
 You can see more on the Phoenix [tuning guide](https://phoenix.apache.org/tuning_guide.html) for more help optimizing your queries.
 
-### SUMMARY
+### Results
 
 WOW! OK, think we're done? Not exactly, but that's a lot of SQL! Good job!
 
 A really good book can do wonders with Lars George's [HBase The Definitive Guide](https://www.safaribooksonline.com/library/view/hbase-the-definitive/9781492024255). It can save you a ton of hours.
 
+
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>

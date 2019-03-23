@@ -272,22 +272,6 @@ You should now be comfortable with executing the various HDFS commands, includin
 
 You are finished!
 
-#### Answers 
-
-**7a**<br>
-```
-hdfs dfs -get test/data.txt /tmp/ 
-cd /tmp
-ls
- ```
-
-**8a**<br>
-```
-hdfs dfs -put ~data/small_blocks.txt test/
-```
-
-**8c**<br>
-The two files that were in the test folder in HDFS were merged into a single file and stored on the local file system.
-
-**9c**<br>
-The file should be broken down into 2 blocks.
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>

@@ -58,4 +58,10 @@ To import the notebook, go to the Zeppelin home screen:
 Once the Introduction to Machine Learning using Linear Regression notebook is up, follow all the directions within the notebook to complete the lab.
 
 ### Results
+
 This lab introduced a basic, yet very common, Machine Learning application. By running this you learned how to generate and explore data, train, test, visualize, and save a Linear Regression Machine Learning model.
+
+
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>

@@ -220,9 +220,13 @@ Change your browser ***Ambari -> MapReduce2 -> Quick Links -> JobHistory UI***
 2\. Click on the job's id to view the details of the job and its log files.
 
 
-### Result
+### Results
 
 You have written several Pig scripts to analyze and query the data in the White House visitors' log. You should now be comfortable with writing Pig scripts with the Grunt shell and using common Pig commands like `LOAD`, `GROUP`, `FOREACH`, `FILTER`, `LIMIT`, `DUMP` and `STORE`.
+
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>
 
 ### Answers
 

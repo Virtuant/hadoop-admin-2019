@@ -179,8 +179,12 @@ grunt> fs -tail whouse_json/part-m-00000
 ...
 ```
 
-### Result
+### Results
 
 You have now seen how to execute some basic Pig commands, load data into a relation, and store a relation into a folder in HDFS using different formats.
 
 You are finished!
+
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>

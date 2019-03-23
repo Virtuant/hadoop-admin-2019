@@ -195,7 +195,11 @@ And now the schema/table shows:
 0: jdbc:phoenix:localhost> 
 ```
 
-### Summary
+### Results
 
 So now you see how schemas can be used to appropritely separate the data in rows from one another. And you can treat the either together or separate as your needs require.
 
+
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>

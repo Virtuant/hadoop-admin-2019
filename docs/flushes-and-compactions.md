@@ -115,9 +115,14 @@ The table below has a column called HBase shell and another column called Termin
 
 1.  Use the `hfile --printkv` command on the new file path to verify that row4 only has three versions.
 
-### Summary
+### Results
 
 During a major compaction columns with too many versions are cleaned up. By default, all column families store one version, however in step 1 when you created table `sensor`, you specified that three versions be kept for column family cf. As you can see, the version with value “first time” (which was the oldest) has been dropped. Only the three latest version of the row are output.
+
+
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>
 
 {% comment %}
 

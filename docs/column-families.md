@@ -216,7 +216,11 @@ Do the command again recursively:
 
 There is a directory `a` for data in column family `a`, and a directory `b` for data in column family `b`.
 
-### Summary
+### Results
 
 You have now created an HBase table with multiple column families, and see how the data is stored as it changes.
 
+
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>

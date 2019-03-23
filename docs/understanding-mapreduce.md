@@ -105,6 +105,10 @@ Based on the output of the reducer, what do you think the mapper output would be
     
 > ***Answer:*** The mapper outputs each word as a key and the number 1 as each value.
 
-### Result
+### Results
 
 You are finished! Not bad!
+
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>

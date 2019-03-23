@@ -81,3 +81,7 @@ You can also perform the following operations on a file or folder by clicking on
 ### Results
 
 Congratulations! Let’s summarize the skills and knowledge we acquired from this tutorial. We learned Hadoop Distributed File System (HDFS) was built to manage storing data across multiple machines. Now we can upload data into the HDFS using Ambari’s HDFS Files view.
+
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>

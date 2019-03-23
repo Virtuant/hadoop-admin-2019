@@ -145,6 +145,11 @@ failure notification. Moreover, in order to guarantee common shared state, Zooke
 14.	In the HBase zkcli the child nodes of `/hbase-unsecure/table` should no longer show the zktest entry.
 
 
-### Summary
+### Results
 
 You should now have been able to use Zookeeper to keep track of tables, regions, masters and other information.
+
+
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>

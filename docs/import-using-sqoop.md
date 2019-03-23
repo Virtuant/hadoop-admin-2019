@@ -236,3 +236,7 @@ In the corp database, there is an import of a table named EMPLOYEES. That uses v
 ### Results
 
 In this article, we have learned the whole concept of Sqoop Import. Also, we have seen various Sqoop Import examples and Sqoop import syntax. However, if you want to ask any query regarding, please ask in the comment section below. We will definitely get back to you.
+
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>

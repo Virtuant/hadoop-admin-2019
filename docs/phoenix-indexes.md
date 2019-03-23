@@ -275,3 +275,7 @@ And do the select:
 
 So now you see the use of indexes on a table. Pretty interesting huh? 
 
+
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>

@@ -414,6 +414,11 @@ WHERE ordertotal > 200;
 {"x":589.0761194029857,"y":670.0}
 ```
 
-### Result
+### Results
 
 You should now be comfortable running Hive queries and using some of the more advanced features of Hive, like views and the window functions.
+
+
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>

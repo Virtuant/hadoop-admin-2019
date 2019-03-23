@@ -103,7 +103,12 @@ Create HFiles from an import and then associate those files with the table:
     users hdfs:///user/student/PigUsers/part-m-00000
     ```
 
-### Summary
+### Results
 
 You should have exported data from HBase into Pig and stored it in HDFS as a tab-delimited file; 
 and then imported that file into an HBase table using ImportTSV.
+
+
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>

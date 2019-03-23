@@ -382,6 +382,10 @@ And check the Metrics tab:
 Now you see how HBase can be tuned by these region splits.
 
 
-### Summary
+### Results
 
 
+
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>
