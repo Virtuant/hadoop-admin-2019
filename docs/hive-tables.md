@@ -25,7 +25,7 @@ From Ambari Dashboard Select Data Analytics Studio and click on Data Analytics S
 
 ![open-das-800x426](https://user-images.githubusercontent.com/558905/54866727-077e0d00-4d4e-11e9-9fb6-69b5dffeecb1.jpg)
 
-Alternatively, use your favorite browser navigate to http://sandbox-hdp.hortonworks.com:30800/ while your sandbox is running.
+Alternatively, use your favorite browser navigate to http://master1.hadoop.com.com:30800/ while your sandbox is running.
 
 Now let’s take a closer look at the SQL editing capabilities Data Analytics Studio:
 
@@ -119,7 +119,9 @@ You can review the SQL statements issued by selecting the Queries tab and review
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>4. Click on the Compose tab, type the following query into the query editor and click on Execute:</h4>
 
+```sql
 select * from trucks limit 10;
+```
 
 The results should look similar to:
 
@@ -128,24 +130,19 @@ The results should look similar to:
 A few additional commands to explore tables:
 
     show tables; – List the tables created in the database by looking up the list of tables from the metadata stored in HCatalogdescribe
-
     describe {table_name}; – Provides a list of columns for a particular table
-
-describe geolocation;
-
+	describe geolocation;
     show create table {table_name}; – Provides the DDL to recreate a table
-
-   show create table geolocation;
-
+	show create table geolocation;
     describe formatted {table_name}; – Explore additional metadata about the table. For example you can verify geolocation is an ORC Table, execute the following query:
-
-   describe formatted geolocation;
+	describe formatted geolocation;
 
 By default, when you create a table in Hive, a directory with the same name gets created in the /warehouse/tablespace/managed/hive folder in HDFS. Using the Ambari Files View, navigate to that folder. You should see both a geolocation and trucks directory:
 
-    NOTE: The definition of a Hive table and its associated metadata (i.e., the directory the data is stored in, the file format, what Hive properties are set, etc.) are stored in the Hive metastore, which on the Sandbox is a MySQL database.
+![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) The definition of a Hive table and its associated metadata (i.e., the directory the data is stored in, the file format, what Hive properties are set, etc.) are stored in the Hive metastore, which is a MySQL database.
 
-### Rename Query Editor Worksheet
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>5. Rename Query Editor Worksheet</h4>
 
 Click on the SAVE AS button in the Compose section, enter the name of your query and save it.
 
@@ -155,22 +152,33 @@ Click on the SAVE AS button in the Compose section, enter the name of your query
 
 Try running commands using the command line interface – Beeline. Beeline uses a JDBC connection to connect to HiveServer2. Use the built-in SSH Web Client (aka Shell-In-A-Box):
 
-1. Connect to Beeline hive.
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>1. Connect to Beeline hive.</h4>
 
-beeline -u jdbc:hive2://sandbox-hdp.hortonworks.com:10000 -n hive
+```
+beeline -u jdbc:hive2://master1.hadoop.com.com:10000 -n hive
+```
 
-2. Enter the beeline commands to grant all permission access for maria_dev user:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>2. Enter the beeline commands to grant all permission access for maria_dev user:</h4>
 
+```sql
 grant all on database foodmart to user maria_dev;
 grant all on database default to user maria_dev;
 !quit
+```
 
-3. Connect to Beeline using maria_dev.
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>3. Connect to Beeline using maria_dev.</h4>
 
-beeline -u jdbc:hive2://sandbox-hdp.hortonworks.com:10000 -n maria_dev
+```
+beeline -u jdbc:hive2://master1.hadoop.com.com:10000 -n maria_dev
+```
 
-4. Enter the beeline commands to view 10 rows from foodmart database customer and account tables:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>4. Enter the beeline commands to view 10 rows from foodmart database customer and account tables:</h4>
 
+```sql
 select * from foodmart.customer limit 10;
 select * from foodmart.account limit 10;
 select * from trucks;
@@ -178,26 +186,29 @@ show tables;
 !help
 !tables
 !describe trucks
+```
 
-5. Exit the Beeline shell:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>5. Exit the Beeline shell:</h4>
 
+```sql
 !quit
+```
 
 What did you notice about performance after running hive queries from shell?
 
-    Queries using the shell run faster because hive runs the query directory in hadoop whereas in DAS, the query must be accepted by a rest server before it can submitted to hadoop.
-    You can get more information on the Beeline from the Hive Wiki.
-    Beeline is based on SQLLine.
+* Queries using the shell run faster because hive runs the query directory in hadoop whereas in DAS, the query must be accepted by a rest server before it can submitted to hadoop.
+* You can get more information on the Beeline from the Hive Wiki.
+* Beeline is based on SQLLine.
 
 ### Explore Hive Settings on Ambari Dashboard
 
-Open Ambari Dashboard in New Tab
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>1. Open Ambari Dashboard in New Tab</h4>
 
 Click on the Dashboard tab to start exploring the Ambari Dashboard.
 
 ![ambari-dash-800x192](https://user-images.githubusercontent.com/558905/54866711-064ce000-4d4e-11e9-8423-953fe6bbec58.jpg)
-
-Become Familiar with Hive Settings
 
 Go to the Hive page then select the Configs tab then click on Settings tab:
 
@@ -205,44 +216,45 @@ Go to the Hive page then select the Configs tab then click on Settings tab:
 
 Once you click on the Hive page you should see a page similar to above:
 
-    Hive Page
-    Hive Configs Tab
-    Hive Settings Tab
-    Version History of Configuration
+* Hive Page
+* Hive Configs Tab
+* Hive Settings Tab
+* Version History of Configuration
 
 Scroll down to the Optimization Settings:
 
 ![tez-optimization-800x478](https://user-images.githubusercontent.com/558905/54866739-0816a380-4d4e-11e9-9017-e1a4f1f74da2.jpg)
 
-In the above screenshot we can see:
-
-Tez is set as the optimization engine
+In the above screenshot we can see Tez is set as the optimization engine.
 
 This shows the HDP Ambari Smart Configurations, which simplifies setting configurations
 
-    Hadoop is configured by a collection of XML files.
-    In early versions of Hadoop, operators would need to do XML editing to change settings.  There was no default versioning.
-    Early Ambari interfaces made it easier to change values by showing the settings page with dialog boxes for the various settings and allowing you to edit them.  However, you needed to know what needed to go into the field and understand the range of values.
-    Now with Smart Configurations you can toggle binary features and use the slider bars with settings that have ranges.
+* Hadoop is configured by a collection of XML files.
+* In early versions of Hadoop, operators would need to do XML editing to change settings.  There was no default versioning.
+* Early Ambari interfaces made it easier to change values by showing the settings page with dialog boxes for the various settings and allowing you to edit them.  * However, you needed to know what needed to go into the field and understand the range of values.
+* Now with Smart Configurations you can toggle binary features and use the slider bars with settings that have ranges.
 
 By default the key configurations are displayed on the first page.  If the setting you are looking for is not on this page you can find additional settings in the Advanced tab:
 
 ![hive-vector-800x478](https://user-images.githubusercontent.com/558905/54866722-06e57680-4d4e-11e9-8f1c-843a6bf845c0.jpg)
 
-For example, if we wanted to improve SQL performance, we can use the new Hive vectorization features. These settings can be found and enabled by following these steps:
+For example, if we wanted to improve SQL performance, we can use the new Hive vectorization features. 
 
-    Click on the Advanced tab and scroll to find the property
-    Or, start typing in the property into the property search field and then this would filter the setting you scroll for.
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>1. These settings can be found and enabled by following these steps:</h4>
+
+1. Click on the Advanced tab and scroll to find the property
+2. Or, start typing in the property into the property search field and then this would filter the setting you scroll for.
 
 As you can see from the green circle above, the Enable Vectorization and Map Vectorization is turned on already.
 
 Some key resources to learn more about vectorization and some of the key settings in Hive tuning:
 
-    Apache Hive docs on Vectorized Query Execution
-    HDP Docs Vectorization docs
-    Hive Blogs
-    5 Ways to Make Your Hive Queries Run Faster
-    Evaluating Hive with Tez as a Fast Query Engine
+* Apache Hive docs on Vectorized Query Execution
+* HDP Docs Vectorization docs
+* Hive Blogs
+* 5 Ways to Make Your Hive Queries Run Faster
+* Evaluating Hive with Tez as a Fast Query Engine
 
 ### Analyze the Trucks Data
 
@@ -254,13 +266,15 @@ Let’s get started with the first transformation. We want to calculate the mile
 
 #### Create Table truckmileage From Existing Trucking Data
 
-Using DAS, execute the following query:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>1. Using DAS, execute the following query:</h4>
 
 CREATE TABLE truckmileage STORED AS ORC AS SELECT truckid, driverid, rdate, miles, gas, miles / gas mpg FROM trucks LATERAL VIEW stack(54, 'jun13',jun13_miles,jun13_gas,'may13',may13_miles,may13_gas,'apr13',apr13_miles,apr13_gas,'mar13',mar13_miles,mar13_gas,'feb13',feb13_miles,feb13_gas,'jan13',jan13_miles,jan13_gas,'dec12',dec12_miles,dec12_gas,'nov12',nov12_miles,nov12_gas,'oct12',oct12_miles,oct12_gas,'sep12',sep12_miles,sep12_gas,'aug12',aug12_miles,aug12_gas,'jul12',jul12_miles,jul12_gas,'jun12',jun12_miles,jun12_gas,'may12',may12_miles,may12_gas,'apr12',apr12_miles,apr12_gas,'mar12',mar12_miles,mar12_gas,'feb12',feb12_miles,feb12_gas,'jan12',jan12_miles,jan12_gas,'dec11',dec11_miles,dec11_gas,'nov11',nov11_miles,nov11_gas,'oct11',oct11_miles,oct11_gas,'sep11',sep11_miles,sep11_gas,'aug11',aug11_miles,aug11_gas,'jul11',jul11_miles,jul11_gas,'jun11',jun11_miles,jun11_gas,'may11',may11_miles,may11_gas,'apr11',apr11_miles,apr11_gas,'mar11',mar11_miles,mar11_gas,'feb11',feb11_miles,feb11_gas,'jan11',jan11_miles,jan11_gas,'dec10',dec10_miles,dec10_gas,'nov10',nov10_miles,nov10_gas,'oct10',oct10_miles,oct10_gas,'sep10',sep10_miles,sep10_gas,'aug10',aug10_miles,aug10_gas,'jul10',jul10_miles,jul10_gas,'jun10',jun10_miles,jun10_gas,'may10',may10_miles,may10_gas,'apr10',apr10_miles,apr10_gas,'mar10',mar10_miles,mar10_gas,'feb10',feb10_miles,feb10_gas,'jan10',jan10_miles,jan10_gas,'dec09',dec09_miles,dec09_gas,'nov09',nov09_miles,nov09_gas,'oct09',oct09_miles,oct09_gas,'sep09',sep09_miles,sep09_gas,'aug09',aug09_miles,aug09_gas,'jul09',jul09_miles,jul09_gas,'jun09',jun09_miles,jun09_gas,'may09',may09_miles,may09_gas,'apr09',apr09_miles,apr09_gas,'mar09',mar09_miles,mar09_gas,'feb09',feb09_miles,feb09_gas,'jan09',jan09_miles,jan09_gas ) dummyalias AS rdate, miles, gas;
 
 ![create-mileage-800x464](https://user-images.githubusercontent.com/558905/54866715-06e57680-4d4e-11e9-86c4-c736a5119469.jpg)
 
-#### Explore a sampling of the data in the truckmileage table
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>2. Explore a sampling of the data in the truckmileage table</h4>
 
 To view the data generated by the script, execute the following query in the query editor:
 
@@ -270,40 +284,41 @@ You should see a table that lists each trip made by a truck and driver:
 
 ![select-truck-data-mileage-800x778](https://user-images.githubusercontent.com/558905/54866736-0816a380-4d4e-11e9-8d8d-e6e1dc4cf943.jpg)
 
-#### Use the Content Assist to build a query
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>3. Use the Content Assist to build a query</h4>
 
-1.  Create a new SQL Worksheet.
-
-2.  Start typing in the SELECT SQL command, but only enter the first two letters:
-
-SE
-
-3.  Note that suggestions automatically begin to appear:
+	1.  Create a new SQL Worksheet.
+	2.  Start typing in the SELECT SQL command, but only enter the first two letters:  `SE`
+	3.  Note that suggestions automatically begin to appear:
 
 ![auto-fill](https://user-images.githubusercontent.com/558905/54866713-06e57680-4d4e-11e9-9635-93121dcbd7c0.jpg)
 
-    NOTE: Notice content assist shows you some options that start with an “SE”. These shortcuts will be great for when you write a lot of custom query code.
+![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) Notice content assist shows you some options that start with an “SE”. These shortcuts will be great for when you write a lot of custom query code.
 
-4. Type in the following query
+	4. Type in the following query
 
+```sql
 SELECT truckid, avg(mpg) avgmpg FROM truckmileage GROUP BY truckid;
-
+```
 
 ![Lab2_28-800x303](https://user-images.githubusercontent.com/558905/54866724-077e0d00-4d4e-11e9-8617-bed85ec43036.jpg)
 
-5.  Click the “Save As” button to save the query as “average-mpg”:
+	5.  Click the “Save As” button to save the query as “average-mpg”:
 
 ![save-query2-800x431](https://user-images.githubusercontent.com/558905/54866731-077e0d00-4d4e-11e9-94f4-bcdd2a4deba6.jpg)
 
-6.  Notice your query now shows up in the list of “Saved Queries”, which is one of the tabs at the top of the Hive User View.
+	6.  Notice your query now shows up in the list of “Saved Queries”, which is one of the tabs at the top of the Hive User View.
 
 ![saved-query-800x431](https://user-images.githubusercontent.com/558905/54866730-077e0d00-4d4e-11e9-8742-aaf2f93f3f68.jpg)
 
-7.  Execute the “average-mpg” query and view its results.
+	7.  Execute the “average-mpg” query and view its results.
 
 ### Explore Explain Features of the Hive Query Editor
 
-Let’s explore the various explain features to better understand the execution of a query: Visual Explain, Text Explain, and Tez Explain. Click on the Visual Explain button:
+Let’s explore the various explain features to better understand the execution of a query: Visual Explain, Text Explain, and Tez Explain. 
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>1. Click on the Visual Explain button:</h4>
 
 This visual explain provides a visual summary of the query execution plan. You can see more detailed information by clicking on each plan phase.
 
@@ -315,53 +330,63 @@ If you want to see the explain result in text, select RESULTS. You should see so
 
 ### Explore TEZ
 
-Click on Queries and select the last SELECT query we issued:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>1. Click on Queries and select the last SELECT query we issued:</h4>
 
 ![select-last-query-800x711](https://user-images.githubusercontent.com/558905/54866735-0816a380-4d4e-11e9-8bcb-605abe215355.jpg)
 
 From this view you can observe critically important information, such as:
 
+```
 USER, STATUS, DURATION, TABLES READ, TABLES WRITTEN, APPLICATION ID, DAG ID
+```
 
 ![query-details-800x763](https://user-images.githubusercontent.com/558905/54866728-077e0d00-4d4e-11e9-85e8-702005d92119.jpg)
 
 There are seven tabs at the top, please take a few minutes to explore the various tabs.
 
-#### Create Table avgmileage From Existing trucks_mileage Data
+#### Create Table avgmileage From Existing `trucks_mileage` Data
 
-It is common to save results of query into a table so the result set becomes persistent. This is known as Create Table As Select (CTAS). Copy the following DDL into the query editor, then click Execute:
+It is common to save results of query into a table so the result set becomes persistent. This is known as Create Table As Select (CTAS). 
 
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>1. Copy the following DDL into the query editor, then click Execute:</h4>
+
+```sql
 CREATE TABLE avgmileage
 STORED AS ORC
 AS
 SELECT truckid, avg(mpg) avgmpg
 FROM truckmileage
 GROUP BY truckid;
-
+```
 
 ![create-mileage-table-800x473](https://user-images.githubusercontent.com/558905/54866716-06e57680-4d4e-11e9-95e1-4e6e3996f2dc.jpg)
 
-#### View Sample Data of avgmileage
+#### View Sample Data of `avgmileage`
 
 To view the data generated by CTAS above, execute the following query:
 
+```sql
 SELECT * FROM avgmileage LIMIT 100;
+```
 
 Table avgmileage provides a list of average miles per gallon for each truck:
 
 ![load-sample-avg-800x817](https://user-images.githubusercontent.com/558905/54866726-077e0d00-4d4e-11e9-87f7-c8a97ac6d4d7.jpg)
 
-#### Create Table DriverMileage from Existing truckmileage data
+#### Create Table `DriverMileage` from Existing `truckmileage` data
 
 The following CTAS groups the records by driverid and sums of miles. Copy the following DDL into the query editor, then click Execute:
 
+```sql
 CREATE TABLE DriverMileage
 STORED AS ORC
 AS
 SELECT driverid, sum(miles) totmiles
 FROM truckmileage
 GROUP BY driverid;
-
+```
 
 ![driver-mileage-table-800x515](https://user-images.githubusercontent.com/558905/54866720-06e57680-4d4e-11e9-9dfa-0f412d754c98.jpg)
 
@@ -369,8 +394,9 @@ GROUP BY driverid;
 
 To view the data generated by CTAS above, execute the following query:
 
+```sql
 SELECT * FROM drivermileage;
-
+```
 
 ![select-ddrivermialeage-800x951](https://user-images.githubusercontent.com/558905/54866733-077e0d00-4d4e-11e9-90a5-86d96ab6ba0e.jpg)
 
@@ -382,7 +408,9 @@ and store it at /tmp/data/drivermileage.
 
 Then open your web shell client:
 
+```
 sudo -u hdfs hdfs dfs -chown maria_dev:hdfs /tmp/data/drivermileage.csv
+```
 
 Next, navigate to HDFS as maria_dev and give permission to other users to use this file:
 
