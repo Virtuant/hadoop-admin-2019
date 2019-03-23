@@ -67,6 +67,8 @@ The lab guide is [here](https://virtuant.github.io/hadoop-overview-spark-hwx/lab
 	
 #### Lab [30](https://virtuant.github.io/hadoop-overview-spark-hwx/dataframes-datasets.html) DataFrames and DataSets [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/dataframes-datasets.pdf)
 
+#### Lab [30](https://virtuant.github.io/hadoop-overview-spark-hwx/spark-risk-factor.html) Spark - Risk Factor [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/spark-risk-factor.pdf)
+
 #### Lab [31](https://virtuant.github.io/hadoop-overview-spark-hwx/hive-orc-spark.html) Hive ORC to Spark [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/hive-orc-spark.pdf)
 
 #### Lab [32](https://virtuant.github.io/hadoop-overview-spark-hwx/machine-learning-spark.html) Machine Learning with Spark [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/machine-learning-spark.pdf)
