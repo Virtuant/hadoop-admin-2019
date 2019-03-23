@@ -91,6 +91,10 @@ The lab guide is [here](https://virtuant.github.io/hadoop-overview-spark-hwx/lab
 
 #### Lab [40](https://virtuant.github.io/hadoop-overview-spark-hwx/processing-data-with-pig.html) Streaming Python w Pig [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/processing-data-with-pig.pdf)
 
+#### Lab [41](https://virtuant.github.io/hadoop-overview-spark-hwx/query-hive-tez.html) Streaming Python w Pig [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/query-hive-tez.pdf)
+
+#### Lab [42](https://virtuant.github.io/hadoop-overview-spark-hwx/hive-acid.html) Streaming Python w Pig [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/hive-acid.pdf)
+
 
 ----
 
