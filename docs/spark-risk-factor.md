@@ -43,9 +43,11 @@ Optionally, if you want to find out how to access the Spark shell to run code on
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>3. Create a Zeppelin Notebook</h4>
 
-Click on a Notebook tab at the top left and select Create new note. Name your notebook: `Compute Riskfactor with Spark`
+Click on a Notebook tab at the top left and select Create new note:
 
 ![create-new-notebook-800x460](https://user-images.githubusercontent.com/558905/54868599-9433c580-4d64-11e9-8a18-99384ec1dcc7.jpg)
+
+Name your notebook: `Compute Riskfactor with Spark`:
 
 ![new-spark-note-800x457](https://user-images.githubusercontent.com/558905/54868609-9564f280-4d64-11e9-8035-9866609ca18a.jpg)
 
@@ -53,12 +55,12 @@ Click on a Notebook tab at the top left and select Create new note. Name your no
 
 For improved Hive integration, ORC file support has been added for Spark. This allows Spark to read data stored in ORC files. Spark can leverage ORC file’s more efficient columnar storage and predicate pushdown capability for even faster in-memory processing. HiveContext is an instance of the Spark SQL execution engine that integrates with data stored in Hive. The more basic SQLContext provides a subset of the Spark SQL support that does not depend on Hive. It reads the configuration for Hive from hive-site.xml on the classpath.
 
-Import sql libraries:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>1. Import sql libraries:</h4>
 
 If you already have a riskfactor table on your system you must remove it so that you can populate it again using Spark. Copy and paste the following code into your Zeppelin notebook, then click the play button. Alternatively, press shift+enter to run the code.
 
-<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>1. Instantiate SparkSession</h4>
+Instantiate SparkSession:
 
 ```spark
 %spark2
@@ -80,7 +82,7 @@ All operations fall into one of two types: transformations or actions.
 In this lab we use the CSV files we stored in HDFS in previous labs. Additionally, we will leverage Global Temporary Views on SparkSessions to programmatically query DataFrames using SQL.
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>1. Import CSV data into a data frame without a user defined schema
+<h4>1. Import CSV data into a data frame without a user defined schema:</h4>
 
 ```spark
 %spark2
