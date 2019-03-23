@@ -314,21 +314,20 @@ There will be a directory structure with our data under user/maria_dev/data/ nam
 
 ### Full Spark Code Review
 
-<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>1. Instantiate SparkSession</h4>
+1. Instantiate SparkSession</h4>
 
 ```spark
 %spark2
 val hiveContext = new org.apache.spark.sql.SparkSession.Builder().getOrCreate()
 ```
 
-Shows tables in the default Hive database:
+2. Shows tables in the default Hive database:
 
 ```spark
 hiveContext.sql("SHOW TABLES").show()
 ```
 
-Select all rows and columns from tables, stores Hive script into variable and registers variables as RDD:
+3. Select all rows and columns from tables, stores Hive script into variable and registers variables as RDD:
 
 ```spark
 val geolocation_temp0 = hiveContext.sql("SELECT * FROM geolocation")
@@ -343,26 +342,26 @@ val geolocation_temp1 = hiveContext.sql("SELECT driverid, count(driverid) occura
 geolocation_temp1.createOrReplaceTempView("geolocation_temp1")
 ```
 
-Load first 15 rows from geolocation_temp2, which is the data from drivermileage table:
+4. Load first 15 rows from geolocation_temp2, which is the data from drivermileage table:
 
 ```spark
 hiveContext.sql("SELECT * FROM geolocation_temp1 LIMIT 15").show()
 ```
 
-Create joined to join 2 tables by the same driverid and register joined as a RDD:
+5. Create joined to join 2 tables by the same driverid and register joined as a RDD:
 
 ```spark
 val joined = hiveContext.sql("SELECT a.driverid,a.occurance,b.totmiles FROM geolocation_temp1 a,drivermileage_temp0 b WHERE a.driverid=b.driverid")
 joined.createOrReplaceTempView("joined")
 ```
 
-Load first 10 rows and columns in joined:
+6. Load first 10 rows and columns in joined:
 
 ```spark
 hiveContext.sql("SELECT * FROM joined LIMIT 10").show()
 ```
 
-Initialize risk_factor_spark and register as an RDD:
+7. Initialize risk_factor_spark and register as an RDD:
 
 ```spark
 val risk_factor_spark = hiveContext.sql("SELECT driverid, occurance, totmiles, totmiles/occurance riskfactor from joined")
@@ -370,7 +369,7 @@ val risk_factor_spark = hiveContext.sql("SELECT driverid, occurance, totmiles, t
 risk_factor_spark.createOrReplaceTempView("risk_factor_spark")
 ```
 
-Print the first 15 lines from the risk_factor_spark table:
+8. Print the first 15 lines from the risk_factor_spark table:
 
 ```spark
 hiveContext.sql("SELECT * FROM risk_factor_spark LIMIT 15").show()
