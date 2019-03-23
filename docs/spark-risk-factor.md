@@ -30,7 +30,9 @@ At the bottom left corner of the services column, check that Spark2 and Zeppelin
 ![ambari-dash-running-spark-800x651](https://user-images.githubusercontent.com/558905/54868594-9433c580-4d64-11e9-9bc4-8bc3e6cfe484.jpg)
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>2. Open Zeppelin interface using URL: http://master1.hadoop.com.com:9995/
+<h4>2. Open Zeppelin interface </h4>
+
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) Probably using URL: http://master1.hadoop.com.com:9995/
 
 You should see a Zeppelin Welcome Page:
 
@@ -39,7 +41,7 @@ You should see a Zeppelin Welcome Page:
 Optionally, if you want to find out how to access the Spark shell to run code on Spark refer to Appendix A.
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>3. Create a Zeppelin Notebook
+<h4>3. Create a Zeppelin Notebook</h4>
 
 Click on a Notebook tab at the top left and select Create new note. Name your notebook: `Compute Riskfactor with Spark`
 
@@ -56,7 +58,7 @@ Import sql libraries:
 If you already have a riskfactor table on your system you must remove it so that you can populate it again using Spark. Copy and paste the following code into your Zeppelin notebook, then click the play button. Alternatively, press shift+enter to run the code.
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>1. Instantiate SparkSession
+<h4>1. Instantiate SparkSession</h4>
 
 ```spark
 %spark2
