@@ -1,4 +1,4 @@
-## Lab: Using HDFS
+## Using HDFS
 
 **Objective**: Begin to get acquainted with Hadoops file system. And manipulate files in HDFS, the Hadoop Distributed File System.
 
