@@ -87,13 +87,13 @@ The lab guide is [here](https://virtuant.github.io/hadoop-overview-spark-hwx/lab
 
 ----
 
-#### Lab [39](https://virtuant.github.io/hadoop-overview-spark-hwx/excel-reporting.html) Phoenix Indexes [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/excel-reporting.pdf)
+#### Lab [39](https://virtuant.github.io/hadoop-overview-spark-hwx/excel-reporting.html) Reporting Hive Data with Microsoft Excel [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/excel-reporting.pdf)
 
-#### Lab [40](https://virtuant.github.io/hadoop-overview-spark-hwx/processing-data-with-pig.html) Streaming Python w Pig [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/processing-data-with-pig.pdf)
+#### Lab [40](https://virtuant.github.io/hadoop-overview-spark-hwx/processing-data-with-pig.html) Processing Data  with Pig [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/processing-data-with-pig.pdf)
 
-#### Lab [41](https://virtuant.github.io/hadoop-overview-spark-hwx/query-hive-tez.html) Streaming Python w Pig [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/query-hive-tez.pdf)
+#### Lab [41](https://virtuant.github.io/hadoop-overview-spark-hwx/query-hive-tez.html) Interactive Queries with Hive and Tez [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/query-hive-tez.pdf)
 
-#### Lab [42](https://virtuant.github.io/hadoop-overview-spark-hwx/hive-acid.html) Streaming Python w Pig [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/hive-acid.pdf)
+#### Lab [42](https://virtuant.github.io/hadoop-overview-spark-hwx/hive-acid.html) Running on Acid with Hive [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/hive-acid.pdf)
 
 
 ----
