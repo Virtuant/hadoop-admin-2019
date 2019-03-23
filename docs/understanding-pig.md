@@ -11,7 +11,7 @@
 ----
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>1. Start the Grunt Shell</h4><br>
+<h4>1. Start the Grunt Shell</h4>
 
 Review the contents of the file `pigdemo.txt` - if you need to you may get it [here](https://github.com/HortonworksUniversity/DevPH_Rev4/blob/master/labs/demos/pigdemo.txt).
 
@@ -39,7 +39,7 @@ grunt> help
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>2. Make a New Directory</h4><br>
+<h4>2. Make a New Directory</h4>
 
 Notice you can run HDFS commands easily from the Grunt shell. For example, run the `ls` command:
 
@@ -97,7 +97,7 @@ CO  Mark
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>3. Define a Relation</h4><br>
+<h4>3. Define a Relation</h4>
 
 Define the `employees` relation, using a schema:
 
@@ -137,7 +137,7 @@ grunt> DUMP employees;
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>4. Filter the Relation by a Field</h4><br>
+<h4>4. Filter the Relation by a Field</h4>
 
 Let's filter the employees whose state field equals CA:
 
@@ -158,7 +158,7 @@ The output is still tuples, but only the records that match the filter appear:
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>5. Create a Group</h4><br>
+<h4>5. Create a Group</h4>
 
 Define a relation that groups the employees by the state field:
 
@@ -190,13 +190,13 @@ The output is:
 (SD,{(SD,Rich)})
 ```
 
->Note  Tuples are displayed in parentheses. Curly braces represent bags.
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) Tuples are displayed in parentheses. Curly braces represent bags.
 
 
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>6. The STORE Command</h4><br>
+<h4>6. The STORE Command</h4>
 
 The `DUMP` command dumps the contents of a relation to the console. The `STORE` command sends the output to a folder in HDFS. For example:
 
@@ -244,7 +244,7 @@ grunt > cat emp_group_csv/part-r-00000
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>7. Show All Aliases</h4><br>
+<h4>7. Show All Aliases</h4>
 
 The aliases command shows a list of currently defined aliases:
 
@@ -260,7 +260,7 @@ There will be a couple of additional numeric aliases created by the system for i
 <!--STEP-->
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>8. Monitor the Pig Jobs</h4><br>
+<h4>8. Monitor the Pig Jobs</h4>
 
 Point your browser to the JobHistory UI at `http://[server or ip]:19888`.
 
@@ -268,7 +268,7 @@ View the list of jobs, which should contain the MapReduce jobs that were execute
 
 Notice you can view the log files of the ApplicationMaster and also each map and reduce task.
 
->Note  Three commands trigger a logical plan to be converted to a physical plan and execute as a MapReduce job: 
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) three commands trigger a logical plan to be converted to a physical plan and execute as a MapReduce job: 
 
 ```
 STORE, DUMP, and ILLUSTRATE.
