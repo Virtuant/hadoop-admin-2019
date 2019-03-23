@@ -2,7 +2,7 @@
 
 **Objective**: Begin to get acquainted with Hadoops file system. And manipulate files in HDFS, the Hadoop Distributed File System.
 
-**Exercise directory**: `~/data`
+**Exercise directory**: `~/data/iot`
 
 In this section, you will download the sensor data and load that into HDFS using Ambari User Views. You will get introduced to the Ambari Files User View to manage files. You can perform tasks like create directories, navigate file systems and upload files to HDFS.  In addition, you’ll perform a few other file-related tasks as well.  Once you get the basics, you will create two directories and then load two files into HDFS using the Ambari Files User View.
 
@@ -10,14 +10,14 @@ In this section, you will download the sensor data and load that into HDFS using
 
 ### HDFS for IoT
 
-A single physical machine gets saturated with its storage capacity as the data grows. This growth drives the need to partition your data across separate machines. This type of File system that manages storage of data across a network of machines is called Distributed File Systems. HDFS is a core component of Apache Hadoop and is designed to store large files with streaming data access patterns, running on clusters of commodity hardware. With HDP, HDFS is now expanded to support heterogeneous storage media within the HDFS cluster.
+A single physical machine gets saturated with its storage capacity as the data grows. This growth drives the need to partition your data across separate machines. This type of File system that manages storage of data across a network of machines is called Distributed File Systems. HDFS is a core component of Hadoop and is designed to store large files with streaming data access patterns, running on clusters of commodity hardware. With HDP, HDFS is now expanded to support heterogeneous storage media within the HDFS cluster.
 
 #### Download and Extract Sensor Data Files
 
 Download the sample sensor data either local or contained in a compressed (.zip) folder here:  [Geolocation.zip](https://raw.githubusercontent.com/hortonworks/data-tutorials/master/tutorials/hdp/hadoop-tutorial-getting-started-with-hdp/assets/datasets/Geolocation.zip)
 
-Save the Geolocation.zip file to your computer, then extract the files. You should see a Geolocation folder that contains the following files:
-    * geolocation.csv –  collected geolocation data from the trucks. It contains records showing truck location, date, time, type of event, speed, etc.
+Save the zip file to your computer, then extract the files. You should see a Geolocation folder that contains the following files:
+    * geolocation.csv –  collected geolocation data from trucks. It contains records showing truck location, date, time, type of event, speed, etc.
     * trucks.csv – exported from a relational database and it shows information on truck models, driverid, truckid, and aggregated mileage info.
 
 ### Load the Sensor Data into HDFS
