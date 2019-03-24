@@ -1,6 +1,4 @@
-## Getting Started with Apache Pig
-
-### About This Lab
+## More with Apache Pig
 
 **Objective:** To use Pig to navigate through HDFS and explore a dataset
 
