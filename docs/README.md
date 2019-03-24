@@ -11,7 +11,7 @@ This is several lab environments put together:
 
 The problem domain is [gump.io](https://virtuant.github.io/hadoop-overview-spark-hwx/gump-io.html). It is your job to figure out how to get data, save and manipulate it with Hortonworks and Hadoop. 
 
-The lab guide is [here](https://virtuant.github.io/hadoop-overview-spark-hwx/labguide.html) and a [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/labguide.pdf) version exists as well.
+The lab guide is [here](https://virtuant.github.io/hadoop-overview-spark-hwx/labguide.html) and a [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/pdfs/labguide.pdf) version exists as well.
 
 ----
 
