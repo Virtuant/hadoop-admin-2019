@@ -11,23 +11,23 @@ This is several lab environments put together:
 
 The problem domain is [gump.io](https://virtuant.github.io/hadoop-overview-spark-hwx/gump-io.html). It is your job to figure out how to get data, save and manipulate it with Hortonworks and Hadoop. 
 
-The lab guide is [here](https://virtuant.github.io/hadoop-overview-spark-hwx/labguide.html) and a [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/pdfs/labguide.pdf) version exists as well.
+The lab guide is [here](https://virtuant.github.io/hadoop-overview-spark-hwx/labguide.html) and a [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/labguide.pdf) version exists as well.
 
 ----
 
-#### Lab [1](https://virtuant.github.io/hadoop-overview-spark-hwx/using-hdfs.html) Using HDFS [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/pdfs/using-hdfs.pdf)
+#### Lab [1](https://virtuant.github.io/hadoop-overview-spark-hwx/using-hdfs.html) Using HDFS [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/using-hdfs.pdf)
 
-#### Lab [2](https://virtuant.github.io/hadoop-overview-spark-hwx/using-hdfs-commands.html) Using HDFS Commands [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/pdfs/using-hdfs-commands.pdf)
+#### Lab [2](https://virtuant.github.io/hadoop-overview-spark-hwx/using-hdfs-commands.html) Using HDFS Commands [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/using-hdfs-commands.pdf)
 
-#### Lab [3](https://virtuant.github.io/hadoop-overview-spark-hwx/using-hdfs-ambari.html) Using HDFS with Ambari [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/pdfs/using-hdfs-ambari.pdf)
+#### Lab [3](https://virtuant.github.io/hadoop-overview-spark-hwx/using-hdfs-ambari.html) Using HDFS with Ambari [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/using-hdfs-ambari.pdf)
 
-#### Lab [4](https://virtuant.github.io/hadoop-overview-spark-hwx/rdbms-concepts.html) RDBMS Concepts [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/pdfs/rdbms-concepts.pdf)
+#### Lab [4](https://virtuant.github.io/hadoop-overview-spark-hwx/rdbms-concepts.html) RDBMS Concepts [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/rdbms-concepts.pdf)
 
-#### Lab [5](https://virtuant.github.io/hadoop-overview-spark-hwx/understanding-block-storage.html) Understanding Block Storage [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/pdfs/understanding-block-storage.pdf)
+#### Lab [5](https://virtuant.github.io/hadoop-overview-spark-hwx/understanding-block-storage.html) Understanding Block Storage [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/understanding-block-storage.pdf)
 
-#### Lab [6](https://virtuant.github.io/hadoop-overview-spark-hwx/understanding-mapreduce.html) Understanding MapReduce [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/pdfs/understanding-mapreduce.pdf)
+#### Lab [6](https://virtuant.github.io/hadoop-overview-spark-hwx/understanding-mapreduce.html) Understanding MapReduce [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/understanding-mapreduce.pdf)
 
-#### Lab [7](https://virtuant.github.io/hadoop-overview-spark-hwx/understanding-pig.html) Understanding Apache Pig [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/pdfs/understanding-pig.pdf)
+#### Lab [7](https://virtuant.github.io/hadoop-overview-spark-hwx/understanding-pig.html) Understanding Apache Pig [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/understanding-pig.pdf)
 
 #### Lab [8](https://virtuant.github.io/hadoop-overview-spark-hwx/getting-started-with-apache-pig.html) More with Pig [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/getting-started-with-apache-pig.pdf)
 
