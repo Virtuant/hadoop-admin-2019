@@ -18,7 +18,7 @@ Review the contents of the file `pigdemo.txt` - if you need to you may get it [h
 Now, start the Grunt shell:
 
 ```
-pig
+[student@ip-xx-xx-xx-xx ~]$ pig
 ```
 
 Notice that the output includes where the logging for your Pig session will go as well as a statement about connecting to your Hadoop filesystem:
@@ -26,9 +26,10 @@ Notice that the output includes where the logging for your Pig session will go a
 ```
 [main] INFO org.apache.pig.Main - Logging error messages to: /root/devph/labs/demos/pig_1377892197767.log
 [main] INFO org.apache.pig.backend.hadoop.executionengine. HExecutionEngine - Connecting to hadoop file system at: hdfs://[server or ip]:8020
+...
 ```
 
-Now look at the `help` command:
+You will eventually see the `grunt` prompt. Now look at the `help` command:
 
 ```
 grunt> help
