@@ -241,6 +241,7 @@ grunt > ls
 grunt > cat emp_group_csv/part-r-00000
 ```
 
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) pig mimics much of the Linux system's command structure
 
 <!--STEP-->
 
