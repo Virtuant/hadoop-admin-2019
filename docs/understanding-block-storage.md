@@ -103,7 +103,7 @@ cd /hadoop/hdfs/data/current/BP-xxx/current/finalized/
 
 Replace `BP-xxx` with the actual folder name. To finish this, use the `TAB` key to complete the filename once you have typed `B`. Then finish typing the rest of the directory path.
 
-![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) you may have a different structure - use `cd /hadoop/hdfs/data/current' and start lokking there.
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) you may have a different structure - use `cd /hadoop/hdfs/data/current' and start lokking there.
 
 Try and find the folder that contains the blocks you are looking for and change directories into that folder. The easiest way is to look at the timestamps and find the most recently changed folder. You can use the `stat \*` command to view the contents of the directory, then use `ll` to list the contents of that directory.
 
