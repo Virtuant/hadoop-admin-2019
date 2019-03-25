@@ -174,7 +174,7 @@ This copies/downloads files from HDFS to the local file system:
 So do it:
 
 ```console
-   hdfs dfs -get /user/[user-name]/salaries/[source file].csv /home/
+   hdfs dfs -get /user/[user-name]/salaries/[source file].csv [some other name].csv
 ```
 
 
