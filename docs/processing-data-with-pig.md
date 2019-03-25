@@ -74,9 +74,7 @@ The next thing we want to do is name the fields. We will use a FOREACH statement
 drivers_details = FOREACH raw_drivers GENERATE $0 AS driverId, $1 AS name;
 ```
 
-Perform these operations for timesheet data as well.
-
-Load the timesheet data and then filter out the first row of the data to remove column headings and then use FOREACH statement to iterate each row and GENERATE to pull out selected fields and assign them names.
+Perform these operations for timesheet data as well - load the timesheet data and then filter out the first row of the data to remove column headings and then use FOREACH statement to iterate each row and GENERATE to pull out selected fields and assign them names.
 
 ```
 timesheet = LOAD 'timesheet.csv' USING PigStorage(',');
