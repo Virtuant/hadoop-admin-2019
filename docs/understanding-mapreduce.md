@@ -20,7 +20,7 @@ more constitution.txt
 ```
 
 
-> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) if you don't have the file local, you can get it with a [here](http://www.usconstitution.net/const.txt) - use the `wget` command.
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) if you don't have the file local, you can get it [here](http://www.usconstitution.net/const.txt) - use the `wget` command.
 
 Put the file into HDFS:
 
