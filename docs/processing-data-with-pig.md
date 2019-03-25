@@ -26,15 +26,15 @@ Once you have the file you will need to unzip the file into a directory. We will
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>2. Upload the data files</h4>
 
-We start by selecting the HDFS Files view from the Off-canvas menu at the top. The HDFS Files view allows us to view the Hortonworks Data Platform(HDP) file store. This is separate from the local file system. For the Hortonworks Sandbox, it will be part of the file system in the Hortonworks Sandbox VM.
+We start by selecting the HDFS Files view from the off-canvas menu at the top. The HDFS Files view allows us to view the Hortonworks Data Platform (HDP) file store. This is separate from the local file system.
 
 ![files-view](https://user-images.githubusercontent.com/558905/54872452-aa5c7880-4d9a-11e9-84be-e9ecb79b56de.jpg)
 
-Navigate to /user/maria_dev and click on the Upload button to select the files we want to upload into the Hortonworks Sandbox environment.
+Navigate to /user/maria_dev and click on the Upload button to select the files we want to upload:
 
 ![upload-button-800x241](https://user-images.githubusercontent.com/558905/54872468-ab8da580-4d9a-11e9-824d-1f9799095c86.jpg)
 
-Click on the browse button to open a dialog box. Navigate to where you stored the drivers.csv file on your local disk and select drivers.csv and click Open. Do the same thing for timesheet.csv. When you are done you will see there are two new files in your directory.
+Click on the browse button to open a dialog box. Navigate to where you stored the `drivers.csv` file on your local disk and select `drivers.csv` and click Open. Do the same thing for `timesheet.csv`. When you are done you will see there are two new files in your directory:
 
 ![uploaded_files-800x301](https://user-images.githubusercontent.com/558905/54872469-ab8da580-4d9a-11e9-9efe-5d2cd7623074.png)
 
