@@ -217,6 +217,8 @@ Now do:
    hdfs dfs -cp /user/[user-name]/salaries/ /user/[user-name]/[some other name]
 ```
 
+Where:
+
 -cp: copies and all their contents to [some other dir]
 
 Now, verify the files or directories successfully copied to the destination folder:
