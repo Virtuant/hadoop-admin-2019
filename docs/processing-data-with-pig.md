@@ -30,7 +30,7 @@ We start by selecting the HDFS Files view from the off-canvas menu at the top. T
 
 ![files-view](https://user-images.githubusercontent.com/558905/54872452-aa5c7880-4d9a-11e9-84be-e9ecb79b56de.jpg)
 
-Navigate to /user/maria_dev and click on the Upload button to select the files we want to upload:
+Navigate to `/user/student` and click on the Upload button to select the files we want to upload:
 
 ![upload-button-800x241](https://user-images.githubusercontent.com/558905/54872468-ab8da580-4d9a-11e9-824d-1f9799095c86.jpg)
 
