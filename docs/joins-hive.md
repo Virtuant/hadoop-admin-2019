@@ -41,7 +41,7 @@ $ touch aggregate.hive
 
 2.	Use a text editor to add below lines to create the `dividend_c` table:
 
-```console
+```sql
 CREATE TABLE dividend_c (market string, symbol string, 
 trade_date string, dividend float) 
 row format delimited fields terminated by ',';
@@ -79,7 +79,7 @@ $ hive -f aggregate.hive
 
 7.	Verify that data exists in the `dividend_c` table in hive:
 
-```console
+```sql
 hive>  select * from dividend_c limit 10;
 Results: exchange	
 stock_symbol	date	
@@ -98,7 +98,8 @@ Time taken:	0.266 seconds, Fetched: 10	row(s)
 
 8.	Verify the stock_aggregate table:
 
-```console
+
+```sql
 hive>  describe stock_aggregate;
 OK
 symbol	string
@@ -109,9 +110,9 @@ average_close	float
 total_dividends	float
 ```
 
-> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png)  Question: do you see any data in the stock_aggregate table? Answer: No
+> ![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png)  Question: do you see any data in the stock_aggregate table? Answer: No
 
-### Now join the price and dividend data in Hive
+### Now join the Price and Dividend data in Hive
 
 1.	Create a new Hive file at the Linux prompt:
 
@@ -121,31 +122,33 @@ $ touch price_dividend_join.hive
 
 2.	Edit the price_dividend_join.hive file with a text editor, first adding the data insert statement:
 
-```console
+```sql
 insert overwrite table stock_aggregate
 ```
 
 3.	In the same line add below command to the above statement:
  
-```console
+
+```sql
 select p.symbol, year(p.dates), max(.price_high), min(p.price_low), avg(p.price_close), sum(d.dividend) from prices_fp
 ```
 
 4.	Now we need to do a join to the dividend_c table
 
-```console
+```sql
 left outer join dividend_c d
 ```
 
 5.	Add the join:
 
-```console
+
+```sql
 on(p.symbol=d.symbol and p.dates=d.trade_date)
 ```
 
 6.	the below will need to be added to get the aggregate result:
 
-```console
+```sql
 group by p.symbol,year(p.dates);
 ```
 
@@ -171,7 +174,8 @@ OK
 
 Time taken: 43.654 seconds
 
-Note the time taken might be different in your environment.
+
+> ![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) the time taken might be different in your environment.
  
 
 3.	How many Map and Reduce jobs executed? 1 Map and 1 Reduce job
@@ -188,7 +192,7 @@ $ hdfs dfs -ls
 2.	Now use the text command to check the data again and get a row counts:
 
 ```console
-$ hdfs dfs -text /apps/hive/warehouse/stock_aggregate/ 000000_0 | wc -l
+$ hdfs dfs -text /apps/hive/warehouse/stock_aggregate/000000_0 | wc -l
 1748
 ```
 
@@ -196,9 +200,8 @@ $ hdfs dfs -text /apps/hive/warehouse/stock_aggregate/ 000000_0 | wc -l
 
 1.	Retrieve data from the table:
 
-```console
-$ hive hive>
-select * from stock_aggregate;
+```sql
+$ hive> select * from stock_aggregate;
 ....
 FXEN 200 68.53 3.84 5.27 79284 NULL
 FXEN 200 710.6 4.6 47.69 3825 NULL
@@ -213,11 +216,15 @@ Answer: Yes
 
 3.	Use count command to get the total rows:
  
-```console
-hive>
-select count(*) from stock_aggregate;
+
+```sql
+hive> select count(*) from stock_aggregate;
 ```
 
 What is the result? Answer: 1748
 
-END
+### Results
+
+Great! We joined several tables in hive.
+
+
