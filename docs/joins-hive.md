@@ -17,10 +17,10 @@ $ head NYSE_daily_prices_F.csv
 $ head NYSE_dividends_C.csv
 ```
 
-3.	Verify the two files you have put into HDFS (if not there put them there):
+3.	Verify the two files you have put into HDFS (if not there go ahead and put them there):
 
 ```console
-$ hdfs dfs -ls hive_data/*.csv
+$ hdfs dfs -ls [path]/*.csv
 ```
 
 4.	Check that the prices_f table is still in Hive, load it if not:
@@ -37,7 +37,7 @@ $ hdfs dfs -ls /apps/hive/warehouse
 $ touch aggregate.hive
 ```
 
-2.	Use a text editor to add below lines to create dividend_c table:
+2.	Use a text editor to add below lines to create the `dividend_c` table:
 
 ```console
 CREATE TABLE dividend_c (market string, symbol string, 
