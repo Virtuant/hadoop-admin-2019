@@ -84,9 +84,9 @@ The Optimized Row Columnar (Apache ORC project) file format provides a highly ef
 
 To create a table using the ORC file format, use STORED AS ORC option. For example:
 
-	```sql
-	CREATE TABLE <tablename> ... STORED AS ORC ...
-	```
+```sql
+CREATE TABLE <tablename> ... STORED AS ORC ...
+```
 
 ![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) For details on these clauses consult the Apache Hive Language Manual.
 
@@ -119,9 +119,9 @@ You can review the SQL statements issued by selecting the Queries tab and review
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>4. Click on the Compose tab, type the following query into the query editor and click on Execute:</h4>
 
-	```sql
-	select * from trucks limit 10;
-	```
+```sql
+select * from trucks limit 10;
+```
 
 The results should look similar to:
 
@@ -129,15 +129,15 @@ The results should look similar to:
 
 A few additional commands to explore tables:
 
-	```sql
-    show tables; – List the tables created in the database by looking up the list of tables from the metadata stored in HCatalogdescribe
-    describe {table_name}; – Provides a list of columns for a particular table
-	describe geolocation;
-    show create table {table_name}; – Provides the DDL to recreate a table
-	show create table geolocation;
-    describe formatted {table_name}; – Explore additional metadata about the table. For example you can verify geolocation is an ORC Table, execute the following query:
-	describe formatted geolocation;
-	```
+```sql
+show tables; – List the tables created in the database by looking up the list of tables from the metadata stored in HCatalogdescribe
+describe {table_name}; – Provides a list of columns for a particular table
+describe geolocation;
+show create table {table_name}; – Provides the DDL to recreate a table
+show create table geolocation;
+describe formatted {table_name}; – Explore additional metadata about the table. For example you can verify geolocation is an ORC Table, execute the following query:
+describe formatted geolocation;
+```
 
 By default, when you create a table in Hive, a directory with the same name gets created in the `/warehouse/tablespace/managed/hive` folder in HDFS. Using the Ambari Files View, navigate to that folder. You should see both a geolocation and trucks directory:
 
@@ -157,18 +157,18 @@ Try running commands using the command line interface – Beeline. Beeline uses 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>1. Connect to Beeline hive.</h4>
 
-	```
-	beeline -u jdbc:hive2://master1.hadoop.com.com:10000 -n hive
-	```
+```
+beeline -u jdbc:hive2://master1.hadoop.com.com:10000 -n hive
+```
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>2. Enter the beeline commands to grant all permission access for maria_dev user:</h4>
 
-	```sql
-	grant all on database foodmart to user maria_dev;
-	grant all on database default to user maria_dev;
-	!quit
-	```
+```sql
+grant all on database foodmart to user maria_dev;
+grant all on database default to user maria_dev;
+!quit
+```
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>3. Connect to Beeline using maria_dev.</h4>
@@ -180,15 +180,15 @@ beeline -u jdbc:hive2://master1.hadoop.com.com:10000 -n maria_dev
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>4. Enter the beeline commands to view 10 rows from foodmart database customer and account tables:</h4>
 
-	```sql
-	select * from foodmart.customer limit 10;
-	select * from foodmart.account limit 10;
-	select * from trucks;
-	show tables;
-	!help
-	!tables
-	!describe trucks
-	```
+```sql
+select * from foodmart.customer limit 10;
+select * from foodmart.account limit 10;
+select * from trucks;
+show tables;
+!help
+!tables
+!describe trucks
+```
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>5. Exit the Beeline shell:</h4>
