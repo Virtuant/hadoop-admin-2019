@@ -235,3 +235,6 @@ What is the result? Answer: 1748
 Great! We joined several tables in hive.
 
 
+<button type="button"><a href="https://virtuant.github.io/hadoop-overview-spark-hwx/">Go Back</a></button>
+<br>
+<br>
