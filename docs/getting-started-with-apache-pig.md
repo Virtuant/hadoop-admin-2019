@@ -4,7 +4,7 @@
 
 **Successful outcome:** You will have a couple of Pig programs that load the White House visitors' data, with and without a schema, and store the output of a relation into a folder in HDFS
 
-**File locations:** `~/data/static_data`
+**File locations:** `~/data/static_data` (may need to unzip)
 
 ----
 
