@@ -39,51 +39,14 @@ Click on the browse button to open a dialog box. Navigate to where you stored th
 ![uploaded_files-800x301](https://user-images.githubusercontent.com/558905/54872469-ab8da580-4d9a-11e9-9efe-5d2cd7623074.png)
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>3. Create Pig Script</h4>
+<h4>3. Create a Pig Script</h4>
 
-Now that we have our data files, we can start writing our Pig script.
-
-Open a new browser window and open Shell-In-A-Box.
-
-The default Username/Password is root/hadoop, you will be asked to reset your password the first time you sign on.
-
-![S-In-B-800x630](https://user-images.githubusercontent.com/558905/54872463-ab8da580-4d9a-11e9-9a14-5769afcb8f9c.jpg)
-
-Once in the shell switched users to `maria_dev` and change directories to home:
-
-```
-su maria_dev
-cd
-```
-
-In this tutorial we will explore Grunt shell which is used to write Pig Latin scripts. There are 3 execute modes of accessing Grunt shell:
-
-* local – Type pig -x local to enter the shell
-* mapreduce – Type pig -x mapreduce to enter the shell
-* tez – Type pig -x tez to enter the shell
-
-Default is mapreduce, so if you just type pig, it will use mapreduce as the execution mode.
-
-```
-pig
-```
-
-![start-pig](https://user-images.githubusercontent.com/558905/54872464-ab8da580-4d9a-11e9-85b4-c0810b50c23d.jpg)
-
-Explore this link to explore more about the grunt shell.
-
-<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>4. Create a New Script</h4>
-
-To get started exit out of grunt and create a new file named `sum_of_hours_miles` then use VI or `nano` to edit it:
+To get started create a new file named `sum_of_hours_miles` then use VI or `nano` to edit it:
 
 ```
 touch sum_of_hours_miles
 vi sum_of_hours_miles
 ```
-
-<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>5. Create a Script to Load drivers.csv Data</h4>
 
 The first thing we need to do is load the data. We use the load statement for this. The PigStorage function is what does the loading and we pass it a comma as the data delimiter. Our code is:
 
@@ -96,7 +59,7 @@ drivers = LOAD 'drivers.csv' USING PigStorage(',');
 ![load-driver-data](https://user-images.githubusercontent.com/558905/54872458-aaf50f00-4d9a-11e9-9d35-db27e7e5ac27.jpg)
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>6. Create a Script to Filter Out Data</h4>
+<h4>4. Filter Out Data</h4>
 
 To filter out the first row of the data we have to add this line:
 
@@ -107,7 +70,7 @@ raw_drivers = FILTER drivers BY $0>1;
 ![filter-driver-data-800x308](https://user-images.githubusercontent.com/558905/54872453-aa5c7880-4d9a-11e9-9924-b910bcf8c8db.jpg)
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>7. Implement a Script to Name the Fields</h4>
+<h4>5. Name the Fields</h4>
 
 The next thing we want to do is name the fields. We will use a FOREACH statement to iterate through the raw_drivers data object and GENERATE pulls out selected fields and assigns them names. The new data object we are creating is then named driver_details. Our code will now be:
 
@@ -129,7 +92,8 @@ timesheet_logged = FOREACH raw_timesheet GENERATE $0 AS driverId, $2 AS hours_lo
 
 ![iterate-pulls-fields-timesheet-800x308](https://user-images.githubusercontent.com/558905/54872456-aaf50f00-4d9a-11e9-9151-87d2c216cff1.jpg)
 
-Use Script to Filter The Data (all hours and miles for each driverId)
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>6. Now Filter The Data (all hours and miles for each driverId)</h4>
 
 The next line of code is a GROUP statement that groups the elements in timesheet_logged by the driverId field. So the grp_logged object will then be indexed by driverId. In the next statement as we iterate through grp_logged we will go through driverId by driverId. Type in the code:
 
@@ -139,7 +103,8 @@ grp_logged = GROUP timesheet_logged by driverId;
 
 ![group-timesheet-by-driverId-800x308](https://user-images.githubusercontent.com/558905/54872455-aaf50f00-4d9a-11e9-83e2-bd9b2bf790a2.jpg)
 
-Compose a Script to Find the Sum of Hours and Miles Logged by each Driver
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>7. Now Find the Sum of Hours and Miles Logged by each Driver</h4>
 
 In the next FOREACH statement, we are going to find the sum of hours and miles logged by each driver. The code for this is:
 
@@ -151,7 +116,8 @@ SUM(timesheet_logged.miles_logged) as sum_mileslogged;
 
 ![sum-hours-miles-logged-800x308](https://user-images.githubusercontent.com/558905/54872465-ab8da580-4d9a-11e9-9984-b34c3deeff83.jpg)
 
-Build a Script to join driverId, Name, Hours and Miles Logged
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>8. Build a Script to join driverId, Name, Hours and Miles Logged</h4>
 
 Now that we have the sum of hours and miles logged, we need to join this with the driver_details data object so we can pick up the name of the driver. The result will be a dataset with driverId, name, hours logged and miles logged. At the end we DUMP the data to the output.
 
@@ -165,9 +131,8 @@ dump join_data;
 
 Let’s take a look at our script. The first thing to notice is we never really address single rows of data to the left of the equals sign and on the right we just describe what we want to do for each row. We just assume things are applied to all the rows. We also have powerful operators like GROUP and JOIN to sort rows by a key and to build new data objects.
 
-
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>8. Save and Execute The Script
+<h4>9. Save and Execute The Script</h4>
 
 At this point we can save our script. Let’s execute our code by exiting and saving on VI press esc then type :x
 
