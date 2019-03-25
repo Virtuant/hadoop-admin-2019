@@ -56,8 +56,6 @@ The first thing we need to do is load the data. We use the load statement for th
 drivers = LOAD 'drivers.csv' USING PigStorage(',');
 ```
 
-![load-driver-data](https://user-images.githubusercontent.com/558905/54872458-aaf50f00-4d9a-11e9-9d35-db27e7e5ac27.jpg)
-
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>4. Filter Out Data</h4>
 
@@ -67,8 +65,6 @@ To filter out the first row of the data we have to add this line:
 raw_drivers = FILTER drivers BY $0>1;
 ```
 
-![filter-driver-data-800x308](https://user-images.githubusercontent.com/558905/54872453-aa5c7880-4d9a-11e9-9924-b910bcf8c8db.jpg)
-
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>5. Name the Fields</h4>
 
@@ -77,8 +73,6 @@ The next thing we want to do is name the fields. We will use a FOREACH statement
 ```
 drivers_details = FOREACH raw_drivers GENERATE $0 AS driverId, $1 AS name;
 ```
-
-![foreach-name-fields-800x308](https://user-images.githubusercontent.com/558905/54872454-aaf50f00-4d9a-11e9-9e9b-351006dedfcc.jpg)
 
 Perform these operations for timesheet data as well.
 
@@ -90,8 +84,6 @@ raw_timesheet = FILTER timesheet by $0>1;
 timesheet_logged = FOREACH raw_timesheet GENERATE $0 AS driverId, $2 AS hours_logged, $3 AS miles_logged;
 ```
 
-![iterate-pulls-fields-timesheet-800x308](https://user-images.githubusercontent.com/558905/54872456-aaf50f00-4d9a-11e9-9151-87d2c216cff1.jpg)
-
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>6. Now Filter The Data (all hours and miles for each driverId)</h4>
 
@@ -100,8 +92,6 @@ The next line of code is a GROUP statement that groups the elements in timesheet
 ```
 grp_logged = GROUP timesheet_logged by driverId;
 ```
-
-![group-timesheet-by-driverId-800x308](https://user-images.githubusercontent.com/558905/54872455-aaf50f00-4d9a-11e9-83e2-bd9b2bf790a2.jpg)
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>7. Now Find the Sum of Hours and Miles Logged by each Driver</h4>
@@ -114,8 +104,6 @@ SUM(timesheet_logged.hours_logged) as sum_hourslogged,
 SUM(timesheet_logged.miles_logged) as sum_mileslogged;
 ```
 
-![sum-hours-miles-logged-800x308](https://user-images.githubusercontent.com/558905/54872465-ab8da580-4d9a-11e9-9984-b34c3deeff83.jpg)
-
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>8. Build a Script to join driverId, Name, Hours and Miles Logged</h4>
 
@@ -127,9 +115,7 @@ join_data = FOREACH join_sum_logged GENERATE $0 as driverId, $4 as name, $1 as h
 dump join_data;
 ```
 
-![join-data-objects-800x308](https://user-images.githubusercontent.com/558905/54872457-aaf50f00-4d9a-11e9-87ef-071d9b66ff0b.jpg)
-
-Let’s take a look at our script. The first thing to notice is we never really address single rows of data to the left of the equals sign and on the right we just describe what we want to do for each row. We just assume things are applied to all the rows. We also have powerful operators like GROUP and JOIN to sort rows by a key and to build new data objects.
+Now let’s take a look at our script. The first thing to notice is we never really address single rows of data to the left of the equals sign and on the right we just describe what we want to do for each row. We just assume things are applied to all the rows. We also have powerful operators like GROUP and JOIN to sort rows by a key and to build new data objects.
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>9. Save and Execute The Script</h4>
