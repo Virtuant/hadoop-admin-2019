@@ -244,7 +244,7 @@ Visual result of distcp file operation. Notice that both src1 and src2 directori
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>10. Other Commands</h4>
 
-There are several other commands associated with the FsShell subsystem which let you perform most common filesystem manipulations: `rm, rm -r (recursive rm), mv, cp, mkdir`, etc.
+There are several other commands associated with the FsShell subsystem which let you perform most common filesystem manipulations: `rm (remove), rm -r (recursive rm), mv (move), cp (copy), mkdir (make directory)`, etc.
 
 For example:
 
@@ -252,7 +252,7 @@ For example:
    hdfs dfs -cat glossary | tail -n 50
 ```
 
-This prints the last 50 lines of the glossary to your terminal. This command is handy for viewing the output of MapReduce programs. Very often, an individual output file of a MapReduce program is very large, making it inconvenient to view the entire file in the terminal. For this reason, it’s often a good idea to pipe the output of the fs -cat command into head, tail, more, or less.
+This prints the last 50 lines of the file `glossary` to your terminal. This command is handy for viewing the output of MapReduce programs. Very often, an individual output file of a MapReduce program is very large, making it inconvenient to view the entire file in the terminal. For this reason, it’s often a good idea to pipe the output of the fs -cat command into head, tail, more, or less.
 
 ### Help
 
@@ -261,6 +261,10 @@ Help command opens the list of commands supported by Hadoop Data File System (HD
 ```console
    hdfs dfs -help
 ```
+
+### Extra Credit
+
+Use help and try some of these commands on your own files.
 
 ### Results
 
