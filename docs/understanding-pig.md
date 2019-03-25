@@ -34,7 +34,7 @@ Now look at the `help` command:
 grunt> help
 ```
 
-> ![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) some of the path given in the above example given, may difer from your lab environment's. 
+> ![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) some of the path given in the above example given, may differ from your lab environment's. 
 
 <!--STEP-->
 
@@ -72,7 +72,7 @@ grunt> cd demos
 grunt> pwd hdfs://[server or ip]:8020/user/[user-name]/demos
 ```
 
-> ![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) your particular location por file may be different
+> ![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) your particular location or file may be different
 
 View the contents using the `cat` command:
 
