@@ -65,7 +65,7 @@ This affects the permissions of the folder or file. Controls who has read/write/
    hdfs dfs -chmod 777 /user/[user-name]
 ```
 
-> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) If the directory isn't there, then do a `hdfs dfs -mkdir /user/student` and the re-chmod it.
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) If the directory isn't there, then do a `hdfs dfs -mkdir /user/student` and then re-chmod it.
 
 >Warning: in production environments, setting the folder with the permissions above is not a good idea because anyone can read/write/execute files or folders.
 
