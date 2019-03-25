@@ -23,7 +23,9 @@ $ head NYSE_dividends_C.csv
 $ hdfs dfs -ls [path]/*.csv
 ```
 
-4.	Check that the prices_f table is still in Hive, load it if not:
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) remember the `[path]` is optional and selected by you
+
+4.	Check that the `prices_f` table is still in Hive, load it if not:
 
 ```console
 $ hdfs dfs -ls /apps/hive/warehouse
@@ -48,7 +50,7 @@ row format delimited fields terminated by ',';
 3.	To load the data into the table, add below command to the file:
 
 ```console
-LOAD DATA INPATH 'hive_data/dividends_C.csv' 
+LOAD DATA INPATH '[path]/[filename].csv' 
 OVERWRITE INTO TABLE dividend_c;
 ```
 
@@ -59,6 +61,8 @@ CREATE TABLE stock_aggregate (symbol string, year string, high float, low float,
 average_close float, total_dividends float);
 ```
 
+Save the file.
+
 5.	View the file:
 
 ```console
@@ -67,7 +71,7 @@ $ cat aggregate.hive
 
 Make sure it has the correct commands as above.
 
-6.	Execute the hive file
+6.	Now execute the hive file:
 
 ```console
 $ hive -f aggregate.hive
@@ -76,8 +80,7 @@ $ hive -f aggregate.hive
 7.	Verify that data exists in the `dividend_c` table in hive:
 
 ```console
-hive>
-select * from dividend_c limit 10;
+hive>  select * from dividend_c limit 10;
 Results: exchange	
 stock_symbol	date	
 NULL
@@ -96,8 +99,7 @@ Time taken:	0.266 seconds, Fetched: 10	row(s)
 8.	Verify the stock_aggregate table:
 
 ```console
-hive>
-describe stock_aggregate;
+hive>  describe stock_aggregate;
 OK
 symbol	string
 year	string
@@ -107,7 +109,7 @@ average_close	float
 total_dividends	float
 ```
 
-Question: do you see any data in the stock_aggregate table? Answer: No
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png)  Question: do you see any data in the stock_aggregate table? Answer: No
 
 ### Now join the price and dividend data in Hive
 
