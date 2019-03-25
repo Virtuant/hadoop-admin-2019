@@ -13,6 +13,9 @@ The particular datasets we will utilize to learn HDFS file management are from S
 
 We will download data onto our local filesystems. The commands are tailored for mac and linux users.
 
+
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) remember that anything in brackets like `[something]` is either up to you or set by the administrator.
+
 ----
 
 #### Open a Terminal on AWS or your Local Machine
