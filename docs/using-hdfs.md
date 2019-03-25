@@ -52,7 +52,7 @@ Let’s learn by writing the syntax. You will be able to copy and paste the foll
    sudo su hdfs
 ```
 
-We will use the following command to run filesystem commands on the file system of hadoop:
+We will use the following command to run different filesystem commands on the file system of hadoop:
 
 ```console
    hdfs dfs [command_operation]
