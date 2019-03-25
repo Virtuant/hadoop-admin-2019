@@ -4,7 +4,7 @@
 
 **Successful outcome:** You will have a couple of Pig programs that load the White House visitors' data, with and without a schema, and store the output of a relation into a folder in HDFS
 
-**File locations:** `~/data`
+**File locations:** `~/data/static_data`
 
 ----
 
@@ -13,14 +13,13 @@
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
 <h4>1. View the Raw Data</h4>
 
-View the contents of the file `whitehouse_visits.txt`:
+View the contents of the file `whitehouse_visits.txt` (or similar):
 
 ```
 tail whitehouse_visits.txt
 ```
 
-> Note  this publicly available data contains records of visitors to the White House in Washington, D.C. - you also can get a zip file of it [here](https://github.com/HortonworksUniversity/DevPH_Labs/blob/master/labs/Lab5.1/whitehouse_visits.zip).
-
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) this publicly available data contains records of visitors to the White House in Washington, D.C. - you also can get a zip file of it [here](https://github.com/HortonworksUniversity/DevPH_Labs/blob/master/labs/Lab5.1/whitehouse_visits.zip).
 
 
 <!--STEP-->
