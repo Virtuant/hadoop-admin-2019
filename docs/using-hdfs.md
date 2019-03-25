@@ -151,10 +151,10 @@ And now exit the `hadoop` user:
 Displays size of files and directories contained in the given directory or the size of a file if its just a file.
 
 ```console
-   hdfs dfs -du URI
+   hdfs dfs -du [URI]
 ```
 
-Now do:
+So now do:
 
 ```console
    hdfs dfs -du  /user/[user-name]/ /user/[user-name]/salaries/[source file].csv
