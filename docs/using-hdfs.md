@@ -177,6 +177,11 @@ So do it:
    hdfs dfs -get /user/[user-name]/salaries/[source file].csv [some other name].csv
 ```
 
+And then check it at your Linux level:
+
+```console
+   ls -al
+```
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>8. Advanced Features</h4>
