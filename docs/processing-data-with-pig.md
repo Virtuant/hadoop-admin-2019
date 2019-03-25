@@ -19,8 +19,6 @@ Tez – Hindi for “speed” provides a general-purpose, highly customizable fr
 We are going to read in a truck driver statistics files. We are going to compute the sum of hours and miles logged driven by a truck driver for an year. Once we have the sum of hours and miles logged, we will extend the script to translate a driver id field into the name of the drivers by joining two different files.
 
 ----
-
-![files-view](https://user-images.githubusercontent.com/558905/54872452-aa5c7880-4d9a-11e9-84be-e9ecb79b56de.jpg)
 ![filter-driver-data-800x308](https://user-images.githubusercontent.com/558905/54872453-aa5c7880-4d9a-11e9-9924-b910bcf8c8db.jpg)
 ![foreach-name-fields-800x308](https://user-images.githubusercontent.com/558905/54872454-aaf50f00-4d9a-11e9-9e9b-351006dedfcc.jpg)
 ![group-timesheet-by-driverId-800x308](https://user-images.githubusercontent.com/558905/54872455-aaf50f00-4d9a-11e9-83e2-bd9b2bf790a2.jpg)
@@ -36,28 +34,30 @@ We are going to read in a truck driver statistics files. We are going to compute
 ![sum-hours-miles-logged-800x308](https://user-images.githubusercontent.com/558905/54872465-ab8da580-4d9a-11e9-9984-b34c3deeff83.jpg)
 ![time-with-tez-800x42](https://user-images.githubusercontent.com/558905/54872466-ab8da580-4d9a-11e9-980a-1d00e8aeab98.jpg)
 ![top-form-bg](https://user-images.githubusercontent.com/558905/54872467-ab8da580-4d9a-11e9-8595-fc54c0bd24a8.png)
-![upload-button-800x241](https://user-images.githubusercontent.com/558905/54872468-ab8da580-4d9a-11e9-824d-1f9799095c86.jpg)
-![uploaded_files-800x301](https://user-images.githubusercontent.com/558905/54872469-ab8da580-4d9a-11e9-9efe-5d2cd7623074.png)
 
 
-Download The Data
 
-Download the driver data file from here.
-Once you have the file you will need to unzip the file into a directory. We will be uploading two csv files – drivers.csv and timesheet.csv.
-Upload the data files
+### Download The Data
+
+Download the driver data file from [here](https://raw.githubusercontent.com/hortonworks/data-tutorials/master/tutorials/hdp/how-to-process-data-with-apache-hive/assets/driver_data.zip).
+
+Once you have the file you will need to unzip the file into a directory. We will be uploading two csv files – `drivers.csv ` and `timesheet.csv`.
+
+### Upload the data files
 
 We start by selecting the HDFS Files view from the Off-canvas menu at the top. The HDFS Files view allows us to view the Hortonworks Data Platform(HDP) file store. This is separate from the local file system. For the Hortonworks Sandbox, it will be part of the file system in the Hortonworks Sandbox VM.
 
-files-view
+![files-view](https://user-images.githubusercontent.com/558905/54872452-aa5c7880-4d9a-11e9-84be-e9ecb79b56de.jpg)
 
 Navigate to /user/maria_dev and click on the Upload button to select the files we want to upload into the Hortonworks Sandbox environment.
 
-upload-button
+![upload-button-800x241](https://user-images.githubusercontent.com/558905/54872468-ab8da580-4d9a-11e9-824d-1f9799095c86.jpg)
 
 Click on the browse button to open a dialog box. Navigate to where you stored the drivers.csv file on your local disk and select drivers.csv and click Open. Do the same thing for timesheet.csv. When you are done you will see there are two new files in your directory.
 
-uploaded_files
-Create Pig Script
+![uploaded_files-800x301](https://user-images.githubusercontent.com/558905/54872469-ab8da580-4d9a-11e9-9efe-5d2cd7623074.png)
+
+### Create Pig Script
 
 Now that we have our data files, we can start writing our Pig script.
 
