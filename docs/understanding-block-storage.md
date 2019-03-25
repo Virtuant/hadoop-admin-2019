@@ -6,7 +6,7 @@
 
 **During this Lab:** Perform the following steps
 
-**Lab Files:** `~/data`
+**Lab Files:** `~/data/stocks`
 
 ----
 
@@ -27,7 +27,7 @@ Try putting the file into HDFS with a block size of 30 bytes:
 hdfs dfs -D dfs.blocksize=30 -put stocks.csv
 ```
 
-![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) Notice that a size of 30 bytes is not a valid blocksize. The blocksize needs to be at least 1,048,576 according to the `dfs.namenode.fs-limits.min-block-size property`
+![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png)  a size of 30 bytes is not a valid blocksize. The blocksize needs to be at least 1,048,576 according to the `dfs.namenode.fs-limits.min-block-size property`
 
 ```
 put: Specified block size is less than configured minimum value (dfs.namenode.fs-limits.min-block-size): 30 < 1048576
