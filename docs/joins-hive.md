@@ -8,16 +8,17 @@ In this exercise you will practice setting various Hive configuration options.
 
 ### Joining Datasets and Contents Analysis PriceData load into Hive
 
-1.	Go to your data stocks directory
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>1.	Go to your data stocks directory</h4>
 
-2.	Check contents of the files using the `head` command on local file system. Note these two local files:
+Check contents of the files using the `head` command on local file system. Note these two local files:
 
 ```console
 $ head NYSE_daily_prices_F.csv
 $ head NYSE_dividends_C.csv
 ```
 
-3.	Verify the two files you have put into HDFS (if not there go ahead and put them there):
+Verify the two files you have put into HDFS (if not there go ahead and put them there):
 
 ```console
 $ hdfs dfs -ls [path]/*.csv
@@ -33,13 +34,16 @@ $ hdfs dfs -ls /apps/hive/warehouse
 
 ### Dividend Data load into Hive
 
-1.	Let's create a new hive file called `aggregate.hive` at the Linux prompt:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>2. Let's create a new hive file</h4>
+ 
+Call it `aggregate.hive` at the Linux prompt:
 
 ```console
 $ touch aggregate.hive
 ```
 
-2.	Use a text editor to add below lines to create the `dividend_c` table:
+Use a text editor to add below lines to create the `dividend_c` table:
 
 ```sql
 CREATE TABLE dividend_c (market string, symbol string, 
@@ -47,14 +51,14 @@ trade_date string, dividend float)
 row format delimited fields terminated by ',';
 ```
 
-3.	To load the data into the table, add below command to the file:
+To load the data into the table, add below command to the file:
 
 ```console
 LOAD DATA INPATH '[path]/[filename].csv' 
 OVERWRITE INTO TABLE dividend_c;
 ```
 
-4.	Now we need to create a table to have the data sets joined. Let's add below command to the file to build the table named `stock_aggregate`:
+Now we need to create a table to have the data sets joined. Let's add below command to the file to build the table named `stock_aggregate`:
 
 ```console
 CREATE TABLE stock_aggregate (symbol string, year string, high float, low float,
@@ -63,7 +67,7 @@ average_close float, total_dividends float);
 
 Save the file.
 
-5.	View the file:
+View the file:
 
 ```console
 $ cat aggregate.hive
@@ -71,13 +75,13 @@ $ cat aggregate.hive
 
 Make sure it has the correct commands as above.
 
-6.	Now execute the hive file:
+Now execute the hive file:
 
 ```console
 $ hive -f aggregate.hive
 ```
 
-7.	Verify that data exists in the `dividend_c` table in hive:
+Verify that data exists in the `dividend_c` table in hive:
 
 ```sql
 hive>  select * from dividend_c limit 10;
@@ -96,7 +100,7 @@ NYSE	CPO	2008-06-24	0.14
 Time taken:	0.266 seconds, Fetched: 10	row(s)
 ```
 
-8.	Verify the stock_aggregate table:
+Verify the stock_aggregate table:
 
 
 ```sql
@@ -114,45 +118,46 @@ total_dividends	float
 
 ### Now join the Price and Dividend data in Hive
 
-1.	Create a new Hive file at the Linux prompt:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>3.	Create a new Hive file at the Linux prompt:</h4>
 
 ```console
 $ touch price_dividend_join.hive
 ```
 
-2.	Edit the price_dividend_join.hive file with a text editor, first adding the data insert statement:
+Edit the price_dividend_join.hive file with a text editor, first adding the data insert statement:
 
 ```sql
 insert overwrite table stock_aggregate
 ```
 
-3.	In the same line add below command to the above statement:
+In the same line add below command to the above statement:
  
 
 ```sql
 select p.symbol, year(p.dates), max(.price_high), min(p.price_low), avg(p.price_close), sum(d.dividend) from prices_fp
 ```
 
-4.	Now we need to do a join to the dividend_c table
+Now we need to do a join to the dividend_c table
 
 ```sql
 left outer join dividend_c d
 ```
 
-5.	Add the join:
+Add the join:
 
 
 ```sql
 on(p.symbol=d.symbol and p.dates=d.trade_date)
 ```
 
-6.	the below will need to be added to get the aggregate result:
+The below will need to be added to get the aggregate result:
 
 ```sql
 group by p.symbol,year(p.dates);
 ```
 
-7.	Verify the file:
+Verify the file:
 
 ```console
 $ more price_dividend_join.hive
@@ -161,7 +166,8 @@ insert overwrite table stock_aggregate select p.symbol,year(p.dates), max(p.pric
 
 ### Execute the Hive script
 
-1.	Now execute the script:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>4.	Now execute the script:</h4>
 
 ```console
 $ hive -f price_dividend_join.hive
@@ -170,7 +176,7 @@ Total MapReduce CPU Time Spent: 7 seconds 910 msec
 OK
 ```
 
-2.	How long does this job run?
+How long does this job run?
 
 Time taken: 43.654 seconds
 
@@ -178,18 +184,19 @@ Time taken: 43.654 seconds
 > ![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) the time taken might be different in your environment.
  
 
-3.	How many Map and Reduce jobs executed? 1 Map and 1 Reduce job
+How many Map and Reduce jobs executed? 1 Map and 1 Reduce job
 
 ### View the Aggregate Table Contents
 
-1.	Verify a file is generated:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>5.	Verify a file is generated:</h4>
 
 ```console
 $ hdfs dfs -ls
 000000_0
 ```
 
-2.	Now use the text command to check the data again and get a row counts:
+Now use the text command to check the data again and get a row counts:
 
 ```console
 $ hdfs dfs -text /apps/hive/warehouse/stock_aggregate/000000_0 | wc -l
@@ -198,7 +205,8 @@ $ hdfs dfs -text /apps/hive/warehouse/stock_aggregate/000000_0 | wc -l
 
 ### View the aggregate table contents in Hive
 
-1.	Retrieve data from the table:
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>6.	Retrieve data from the table:</h4>
 
 ```sql
 $ hive> select * from stock_aggregate;
@@ -210,12 +218,11 @@ FXEN	200	94.9	72.1	23.27	0635	NULL
 FXEN 201 03.2 32.8 43.03 16 NULL symbol NULL NULL NULL NULL NULL
 ```
 
-2.	How many rows were returned from the above query? Fetched: 1748 row(s)
+How many rows were returned from the above query? Fetched: 1748 row(s)
 Does it match the count from Step 4.4?
 Answer: Yes
 
-3.	Use count command to get the total rows:
- 
+Use count command to get the total rows:
 
 ```sql
 hive> select count(*) from stock_aggregate;
