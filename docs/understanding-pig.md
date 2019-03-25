@@ -34,7 +34,7 @@ Now look at the `help` command:
 grunt> help
 ```
 
->Note: Some of the path given in the above example given, may difer from your lab environment's. 
+> ![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) some of the path given in the above example given, may difer from your lab environment's. 
 
 <!--STEP-->
 
@@ -72,7 +72,7 @@ grunt> cd demos
 grunt> pwd hdfs://[server or ip]:8020/user/[user-name]/demos
 ```
 
->Note: your particular location por file may be different
+> ![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) your particular location por file may be different
 
 View the contents using the `cat` command:
 
@@ -111,7 +111,7 @@ Demonstrate the `describe` command, which describes what a relation looks like: 
 employees: {state: bytearray,name: bytearray}
 ```
 
->Note  Fields have a data type, and we will discuss data types later in this unit. Notice that the default data type of a field (if you do not specify one) is bytearray.
+> ![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) fields have a data type, and we will discuss data types later in this unit. Notice that the default data type of a field (if you do not specify one) is bytearray.
 
 Let's view the records in the employees relation:
 
@@ -119,7 +119,7 @@ Let's view the records in the employees relation:
 grunt> DUMP employees;
 ```
 
->Note  this requires a MapReduce job to execute, and the result is a collection of tuples:
+> ![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png)  this requires a MapReduce job to execute, and the result is a collection of tuples:
 
 ```
 (SD,Rich) 
@@ -204,7 +204,7 @@ The `DUMP` command dumps the contents of a relation to the console. The `STORE` 
 grunt> STORE emp_group INTO 'emp_group';
 ```
 
->Note  at the end of the MapReduce job that no records are output to the console.
+> ![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png)  at the end of the MapReduce job that no records are output to the console.
 
 Verify that a new folder is created:
 
@@ -227,7 +227,7 @@ OH      {(OH,Tom)}
 SD      {(SD,Rich)}
 ```
 
->Note  that the fields of the records (which in this case is the state field followed by a bag) are separated by a tab character, which is the default delimiter in Pig. Use the PigStorage object to specify a different delimiter
+> ![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png)  that the fields of the records (which in this case is the state field followed by a bag) are separated by a tab character, which is the default delimiter in Pig. Use the PigStorage object to specify a different delimiter
 
 ```
 grunt> STORE emp_group INTO 'emp_group_csv' USING PigStorage(',');
