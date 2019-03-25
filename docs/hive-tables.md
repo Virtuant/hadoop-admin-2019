@@ -70,7 +70,7 @@ You should see a similar screen:
 
 ![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) The first row contains the names of the columns.
 
-Click Create button to complete table creation.
+Click `Create` button to complete table creation.
 
 Repeat the steps above with the `trucks.csv` file to create and load the `trucks` table.
 
@@ -412,13 +412,13 @@ We will use these result to calculate all truck driver’s risk factors in the n
 
 and store it at `/tmp/data/drivermileage`.
 
-Then open your web shell client:
+Then open your web shell client and open the file's security:
 
 ```
 sudo -u hdfs hdfs dfs -chown maria_dev:hdfs /tmp/data/drivermileage.csv
 ```
 
-Next, navigate to HDFS as maria_dev and give permission to other users to use this file:
+Now you can navigate to HDFS as maria_dev and give permission to other users to use this file:
 
 ![all-permissions-800x233](https://user-images.githubusercontent.com/558905/54866710-064ce000-4d4e-11e9-8452-dc5326074481.jpg)
 
