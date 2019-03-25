@@ -19,7 +19,7 @@ View the contents of the file `whitehouse_visits.txt` (or similar):
 tail whitehouse_visits.txt
 ```
 
-> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) this publicly available data contains records of visitors to the White House in Washington, D.C. - you also can get a zip file of it [here](https://github.com/HortonworksUniversity/DevPH_Labs/blob/master/labs/Lab5.1/whitehouse_visits.zip).
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) this publicly available data contains records of visitors to the White House in Washington, D.C. - you also can get a sample zip file of it [here](https://obamawhitehouse.archives.gov/sites/default/files/disclosures/whitehouse-waves-2014_03.csv_.zip).
 
 
 <!--STEP-->
@@ -30,7 +30,7 @@ tail whitehouse_visits.txt
 Start the Grunt shell:
 
 ```
-pig
+[student@ip-xx-xx-xx-xx ~]$ pig
 ```
 
 From the Grunt shell, make a new directory in HDFS named `whitehouse`:
