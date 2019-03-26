@@ -1,4 +1,4 @@
-## Exploring HBase 3
+## Exploring HBase 2
 
 **Objective**: Use the HBase Shell to populate and explore the `hbase:meta` table.
 
