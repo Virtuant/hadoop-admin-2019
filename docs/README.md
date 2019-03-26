@@ -39,7 +39,7 @@ The lab guide is [here](https://virtuant.github.io/hadoop-overview-spark-hwx/lab
 
 #### Lab [12](https://virtuant.github.io/hadoop-overview-spark-hwx/defining-a-pig-user-defined-function-in-python.html) Defining Pig with Python [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/defining-a-pig-user-defined-function-in-python.pdf)
 
-#### Lab [13](https://virtuant.github.io/hadoop-overview-spark-hwx/hive-tables.html) Apache Hive – Data ETL [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/hive-tables.pdf)
+#### Lab [13](https://virtuant.github.io/hadoop-overview-spark-hwx/pig-baseball.html) Pig & Baseball [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/pig-baseball.pdf)
 
 #### Lab [14](https://virtuant.github.io/hadoop-overview-spark-hwx/advanced-hive-queries.html) Advanced Hive Queries [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/advanced-hive-queries.pdf)
 
