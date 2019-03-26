@@ -13,9 +13,9 @@
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>1. Review and understand Baseball statistics data files</h4>
 
-1. In your VM, create a new directory in your home directory to use for sample data.
+In your VM, create a new directory in your home directory to use for sample data.
 
-2. Via a browser, get the latest baseball stats file from Sean Lahman’s baseball stats web site (the
+Via a browser, get the latest baseball stats file from Sean Lahman’s baseball stats web site (the
 file version may change.) On the page http://www.seanlahman.com/baseball-archive/statistics you’ll see
 the link for downloading some comma-delimited CSV files in a zipped archive. Get that archive (easiest
 using your VM browser), expand it and do a put of the files needed into HDFS.
@@ -28,14 +28,12 @@ $ wget http://seanlahman.com/files/database/baseballdatabank-master_2016-03-02.z
 
 (the latest file as of January 2016 – zip file name may change)
 
-
-<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>3. Unzip the file in your new directory</h4>
+Unzip the file in your new directory</h4>
   
 Many statistics files will unpack from the file.
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>4. Examine the following file</h4>
+<h4>2. Examine the following file</h4>
 
 #### Batting.csv
 
