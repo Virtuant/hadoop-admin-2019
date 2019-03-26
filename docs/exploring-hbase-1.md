@@ -126,7 +126,7 @@ Aggregate load: 0, regions: 8
 Scan the `hbase:meta` table again:
 
 ```console
-	hbase> scan 'hbase:meta'
+hbase> scan 'hbase:meta'
 ```
 
 > Note that the `hbase:meta` information for the table has multiple regions and those regions have start and end row keys. Look at how HBase took the splits in the table creation command and made regions out of them.
@@ -137,8 +137,8 @@ Scan the `hbase:meta` table again:
 So now drop your table:
 
 ```console
-	hbase> disable '[some name]'
-	hbase> drop '[some name]'
+hbase> disable '[some name]'
+hbase> drop '[some name]'
 ```
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
@@ -147,36 +147,36 @@ So now drop your table:
 Put some data into hbase:
 
 ```console
-	hbase> create 'movie', 'cf1'
-	hbase> create 'location', 'cf1'
-	hbase> put 'movie', 1001, 'cf1:title', 'All The Kings Men'
-	hbase> put 'movie', 1001, 'cf1:title', 'Ulysses'
-	hbase> put 'movie', 1001, 'cf1:title', 'The Sting'
-	hbase> put 'movie', 1001, 'cf1:title', 'When We Were Young'
-	hbase> put 'location', 1012, 'cf1:city', 'Los Angeles'
-	hbase> put 'location', 1034, 'cf1:city', 'London'
-	hbase> put 'location', 1056, 'cf1:city', 'Benhru'
-	hbase> put 'location', 1052, 'cf1:city', 'Nashik'		
+hbase> create 'movie', 'cf1'
+hbase> create 'location', 'cf1'
+hbase> put 'movie', 1001, 'cf1:title', 'All The Kings Men'
+hbase> put 'movie', 1001, 'cf1:title', 'Ulysses'
+hbase> put 'movie', 1001, 'cf1:title', 'The Sting'
+hbase> put 'movie', 1001, 'cf1:title', 'When We Were Young'
+hbase> put 'location', 1012, 'cf1:city', 'Los Angeles'
+hbase> put 'location', 1034, 'cf1:city', 'London'
+hbase> put 'location', 1056, 'cf1:city', 'Benhru'
+hbase> put 'location', 1052, 'cf1:city', 'Nashik'		
 ```
 
 Flush the movie and tags tables. This writes out the data from the memstore to HDFS:
 
 ```console
-	hbase> flush 'movie'  
-	hbase> flush 'location'
+hbase> flush 'movie'  
+hbase> flush 'location'
 ```
 
 Now scan the tables:
 
 ```console
-	hbase> scan 'movie'  
-	hbase> scan 'location'
+hbase> scan 'movie'  
+hbase> scan 'location'
 ```
 
 Quit the HBase shell:
 
 ```console
-	hbase> quit
+hbase> quit
 ```
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
@@ -185,36 +185,36 @@ Quit the HBase shell:
 Get the full path in HDFS where the movie table's info column family's data is stored:
 
 ```console
-	hdfs dfs -ls -R /apps/hbase/data/data/default
-	hdfs dfs -ls -R /apps/hbase/data/data/default/movie/*/*info
+hdfs dfs -ls -R /apps/hbase/data/data/default
+hdfs dfs -ls -R /apps/hbase/data/data/default/movie/*/*info
 ```
 
 Using the path from the ls, run the following command and replace the movie path with the previous command's path output:
 
 ```console
-	hbase hfile --printkv --file /apps/hbase/data/data/default/<moviepath>
+hbase hfile --printkv --file /apps/hbase/data/data/default/<moviepath>
 ```
 
 Results:
 
 ```console
-	2015-03-05 18:44:00,210 INFO [main] Configuration.deprecation: hadoop.native.lib is deprecated. Instead, use io.native.lib.available
-	2015-03-05 18:44:00,580 INFO [main] util.ChecksumType: Checksum using org.apache.hadoop.util.PureJavaCrc32
-	2015-03-05 18:44:00,581 INFO [main] util.ChecksumType: Checksum can use org.apache.hadoop.util.PureJavaCrc32C
-	2015-03-05 18:44:02,680 INFO [main] Configuration.deprecation:  fs.default.name is deprecated. Instead, use fs.defaultFS
-	2015-03-05 18:44:03,056 INFO [main] hfile.CacheConfig: Allocating LruBlockCache with maximum size 396.7 M
-	K: 1/info:average/1425593979703/Put/vlen=4/mvcc=0 V: 4.15 
-	K: 1/info:count/1425593979703/Put/vlen=4/mvcc=0 V: 2077
-	K: 10/info:average/1425593979703/Put/vlen=4/mvcc=0 V: 3.54 
-	K: 10/info:count/1425593979703/Put/vlen=3/mvcc=0 V: 888
-	K: 100/info:average/1425593979703/Put/vlen=4/mvcc=0 V: 3.06 
-	K: 100/info:count/1425593979703/Put/vlen=3/mvcc=0 V: 128
-	K: 1000/info:average/1425593979703/Put/vlen=4/mvcc=0 V: 3.05 
-	K: 1000/info:count/1425593979703/Put/vlen=2/mvcc=0 V: 20
-	K: 1002/info:average/1425593979703/Put/vlen=4/mvcc=0 V: 4.25
-	K: 1002/info:count/1425593979703/Put/vlen=1/mvcc=0 V: 8
-	K: 1003/info:average/1425593979703/Put/vlen=4/mvcc=0 V: 2.94
-	...
+2015-03-05 18:44:00,210 INFO [main] Configuration.deprecation: hadoop.native.lib is deprecated. Instead, use io.native.lib.available
+2015-03-05 18:44:00,580 INFO [main] util.ChecksumType: Checksum using org.apache.hadoop.util.PureJavaCrc32
+2015-03-05 18:44:00,581 INFO [main] util.ChecksumType: Checksum can use org.apache.hadoop.util.PureJavaCrc32C
+2015-03-05 18:44:02,680 INFO [main] Configuration.deprecation:  fs.default.name is deprecated. Instead, use fs.defaultFS
+2015-03-05 18:44:03,056 INFO [main] hfile.CacheConfig: Allocating LruBlockCache with maximum size 396.7 M
+K: 1/info:average/1425593979703/Put/vlen=4/mvcc=0 V: 4.15 
+K: 1/info:count/1425593979703/Put/vlen=4/mvcc=0 V: 2077
+K: 10/info:average/1425593979703/Put/vlen=4/mvcc=0 V: 3.54 
+K: 10/info:count/1425593979703/Put/vlen=3/mvcc=0 V: 888
+K: 100/info:average/1425593979703/Put/vlen=4/mvcc=0 V: 3.06 
+K: 100/info:count/1425593979703/Put/vlen=3/mvcc=0 V: 128
+K: 1000/info:average/1425593979703/Put/vlen=4/mvcc=0 V: 3.05 
+K: 1000/info:count/1425593979703/Put/vlen=2/mvcc=0 V: 20
+K: 1002/info:average/1425593979703/Put/vlen=4/mvcc=0 V: 4.25
+K: 1002/info:count/1425593979703/Put/vlen=1/mvcc=0 V: 8
+K: 1003/info:average/1425593979703/Put/vlen=4/mvcc=0 V: 2.94
+...
 ```
 
 The above command allows you to see how HBase stores the HFiles. All row keys are stored in sorted order; and, for each row key, all column descriptors are stored in sorted order.
@@ -228,13 +228,13 @@ In the case of an ongoing scan or read, a just-flushed update can be added to th
 Get the full path in HDFS where the user table's info column family's data is stored:
 
 ```console
-	hdfs dfs -ls /hbase/data/default/user/*/info
+hdfs dfs -ls /hbase/data/default/user/*/info
 ```
 
 Using the path from the ls, run the following command and replace the user path with the previous command's path output:
 
 ```console
-	hbase hfile --printkv --file /hbase/data/default/user/<userpath>
+hbase hfile --printkv --file /hbase/data/default/user/<userpath>
 ```
 
 The above command allows you to see how HBase stores the HFiles. All row keys are stored in sorted order and all Column Descriptors are stored in sorted order.
@@ -244,7 +244,9 @@ The above command allows you to see how HBase stores the HFiles. All row keys ar
 
 And to get rid of everything:
 
-	$ bin/hbase clean
+```
+$ bin/hbase clean
+```
 
 >Note: beware!
 
