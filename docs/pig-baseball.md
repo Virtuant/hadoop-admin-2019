@@ -88,7 +88,7 @@ You may wish to rename the file in HDFS. Use `hdfs dfs –cat` to verify the put
 <h4>4. Identify players who scored highest runs for each year</h4>
 
 > ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) If you haven’t yet, create a new directory, such as `baseball/input` in HDFS and put statistic
-files Batting.csv & Master.csv into this directory from your local machine. You may rename them in
+files Batting.csv & People.csv into this directory from your local machine. You may rename them in
 HDFS as you wish.
 
 For this lab, you should consider following fields/columns:
