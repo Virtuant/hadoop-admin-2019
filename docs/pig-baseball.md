@@ -151,19 +151,6 @@ Make sure that data is sorted on Year in ascending order.
 
 Get the output using DUMP command
 
-{ %comment% }
-
-<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>[OPTIONAL] Run a similar job using Pig Streaming</h4>
-
-The syntax for Pig streaming is here.
-
-* Write a simple script to take stdin and massage to stdout
-* In Pig, LOAD data in using PigStorage() syntax.
-* Use DEFINE to reference your script in Pig query to come up with similar results as before.
-
-{ %endcomment% }
-
 ### Results
 
 Comgrats! Finished team score 100 to 0!!!
