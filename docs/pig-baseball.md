@@ -11,7 +11,7 @@
 ----
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>1. Review and understand Baseball statistics data files
+<h4>1. Review and understand Baseball statistics data files</h4>
 
 1. In your VM, create a new directory in your home directory to use for sample data.
 
@@ -19,7 +19,6 @@
 file version may change.) On the page http://www.seanlahman.com/baseball-archive/statistics you’ll see
 the link for downloading some comma-delimited CSV files in a zipped archive. Get that archive (easiest
 using your VM browser), expand it and do a put of the files needed into HDFS.
-
 
 > ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) you can also achieve this from a Linux shell like this:
 
