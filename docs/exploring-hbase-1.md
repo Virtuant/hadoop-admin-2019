@@ -18,18 +18,18 @@ In this exercise you will use the HBase Shell to explore the `hbase:meta` table.
 Invoke the HBase shell and print the help menu:
 
 ```console
-	hbase shell
+hbase shell
 ```
     
 Get the status of the HBase cluster:
 
 ```console
-	hbase(main):000:0> status 'simple'
+hbase(main):000:0> status 'simple'
 
-	1 live servers
-	localhost:60020 1425572833316 requestsPerSecond=0.0, numberOfOnlineRegions=4,usedHeapMB=72, maxHeapMB=503, numberOfStores=6, numberOfStorefiles=8, storefileUncompressedSizeMB=34, storefileSizeMB=34, compressionRatio=1.0000, memstoreSizeMB=0, storefileIndexSizeMB=0, readRequestsCount=82856, writeRequestsCount=37055, rootIndexSizeKB=43, totalStaticIndexSizeKB=20, totalStaticBloomSizeKB=32, totalCompactingKVs=33915, currentCompactedKVs=33915, compactionProgressPct=1.0, coprocessors=[]
-	0 dead servers
-	Aggregate load: 0, regions: 4
+1 live servers
+localhost:60020 1425572833316 requestsPerSecond=0.0, numberOfOnlineRegions=4,usedHeapMB=72, maxHeapMB=503, numberOfStores=6, numberOfStorefiles=8, storefileUncompressedSizeMB=34, storefileSizeMB=34, compressionRatio=1.0000, memstoreSizeMB=0, storefileIndexSizeMB=0, readRequestsCount=82856, writeRequestsCount=37055, rootIndexSizeKB=43, totalStaticIndexSizeKB=20, totalStaticBloomSizeKB=32, totalCompactingKVs=33915, currentCompactedKVs=33915, compactionProgressPct=1.0, coprocessors=[]
+0 dead servers
+Aggregate load: 0, regions: 4
 ```
 
 This command shows the status of all nodes in the cluster. It breaks the information down into live and dead servers. 
@@ -41,28 +41,28 @@ The parameters can be 'summary', 'simple', or 'detailed'. The default is ‘summ
 You can also get a detailed status by adding `detailed` to the status command:
 
 ```console
-	hbase(main):000:0> status 'detailed'
-	version 0.96.0.2.0.6.0-76-hadoop2
-	0	regionsInTransition master coprocessors: [ ]
-	1	live servers
-	sandbox.hortonworks.com:60020 1390046418833 requestsPerSecond=0.0, numberOfOnlineRegions=4,
-	usedHeapMB=102, maxHeapMB=1004, numberOfStores=4, numberOfStorefiles=4, storefileUncompressedSizeMB=14, storefileSizeMB=14, 
-	compressionRatio=1.0000, memstoreSizeMB=0, storefileIndexSizeMB=0, readRequestsCount=1231, writeRequestsCount=46, rootIndexSizeKB=16, 
-	totalStaticIndexSizeKB=8, totalStaticBloomSizeKB=64, totalCompactingKVs=37, 
-	...
+hbase(main):000:0> status 'detailed'
+version 0.96.0.2.0.6.0-76-hadoop2
+0	regionsInTransition master coprocessors: [ ]
+1	live servers
+sandbox.hortonworks.com:60020 1390046418833 requestsPerSecond=0.0, numberOfOnlineRegions=4,
+usedHeapMB=102, maxHeapMB=1004, numberOfStores=4, numberOfStorefiles=4, storefileUncompressedSizeMB=14, storefileSizeMB=14, 
+compressionRatio=1.0000, memstoreSizeMB=0, storefileIndexSizeMB=0, readRequestsCount=1231, writeRequestsCount=46, rootIndexSizeKB=16, 
+totalStaticIndexSizeKB=8, totalStaticBloomSizeKB=64, totalCompactingKVs=37, 
+...
 ```
 
 Now do more status check for summary:
 
 ```console
-	hbase(main):000:0> status 'summary'
+hbase(main):000:0> status 'summary'
 ```
 
 Determine what user you are connected as. Use the whoami command:
 
 ```console
-	hbase> whoami
-	root (auth:SIMPLE)
+hbase> whoami
+root (auth:SIMPLE)
 ```
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
@@ -71,7 +71,7 @@ Determine what user you are connected as. Use the whoami command:
 Run the help command and view the output:
 
 ```console
-	hbase(main):027:0> help
+hbase(main):027:0> help
 ```
 
 Type `help "COMMAND"`, (e.g. `help "get"` - the quotes are necessary) for help on a specific command. Commands are grouped. Type `help "COMMAND_GROUP"`, (e.g. `help "general"`) for help on a command group.
@@ -82,7 +82,7 @@ Type `help "COMMAND"`, (e.g. `help "get"` - the quotes are necessary) for help o
 Now scan the `hbase:meta` It will give information about the tables that HBase is serving (your results may vary):
 
 ```console
-	hbase> scan 'hbase:meta'
+hbase> scan 'hbase:meta'
 ```
 
 |ROW|COLUMN+CELL|
@@ -103,7 +103,7 @@ The `hbase:meta` table contains information about the node that is serving the t
 Now let's create a new table (whatever name you wish):
 
 ```console
-	hbase> create [some name], 'cf1', 'cf2', {SPLITS => ['A', 'M', 'Z']}
+hbase> create [some name], 'cf1', 'cf2', {SPLITS => ['A', 'M', 'Z']}
 ```
     
 When creating a new table in HBase, you can split the table into regions as the starting point. The splits passed in during the create will serve as the initial regions for the table.
@@ -111,14 +111,14 @@ When creating a new table in HBase, you can split the table into regions as the 
 Now again get the status of the HBase cluster:
 
 ```console
-	hbase> status 'simple'
+hbase> status 'simple'
 
-	1 live servers
-	localhost:60020 1425572833316 requestsPerSecond=0.0, numberOfOnlineRegions=8,
-	usedHeapMB=71, maxHeapMB=503, numberOfStores=14, numberOfStorefiles=8, storefileUncompressedSizeMB=34, storefileSizeMB=34, compressionRatio=1.0000, memstoreSizeMB=0, storefileIndexSizeMB=0, readRequestsCount=82887, writeRequestsCount=37063, rootIndexSizeKB=43, totalStaticIndexSizeKB=20, totalStaticBloomSizeKB=32, totalCompactingKVs=33915, currentCompactedKVs=33915, compactionProgressPct=1.0, coprocessors=[]
+1 live servers
+localhost:60020 1425572833316 requestsPerSecond=0.0, numberOfOnlineRegions=8,
+usedHeapMB=71, maxHeapMB=503, numberOfStores=14, numberOfStorefiles=8, storefileUncompressedSizeMB=34, storefileSizeMB=34, compressionRatio=1.0000, memstoreSizeMB=0, storefileIndexSizeMB=0, readRequestsCount=82887, writeRequestsCount=37063, rootIndexSizeKB=43, totalStaticIndexSizeKB=20, totalStaticBloomSizeKB=32, totalCompactingKVs=33915, currentCompactedKVs=33915, compactionProgressPct=1.0, coprocessors=[]
 
-	0 dead servers
-	Aggregate load: 0, regions: 8
+0 dead servers
+Aggregate load: 0, regions: 8
 ```
 
 >Note: the number of regions increased by four to account for the four regions in the your table.
