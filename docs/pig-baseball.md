@@ -142,12 +142,12 @@ Read relevant fields from the file. In this case we are interested in 13th & 14t
 record using FOREACH and generate command:
 
 Join PLAYERS dataset with the result dataset from previous task based on the common
-field `playerID`:
+field `playerID`.
 
 Create a new dataset having Year, Player’s First and Last Name and the MAX using
 FOREACH and GENERATE commands.
 
-Make sure that data is sorted on Year in ascending order
+Make sure that data is sorted on Year in ascending order.
 
 Get the output using DUMP command
 
