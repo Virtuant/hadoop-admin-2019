@@ -107,47 +107,60 @@ HDFS as you wish.
 
 Load batting data into Pig using the PigStorage() function.
 
-NOTE: The default delimiter in Pig is a TAB (\t). A CSV file has comma-separated data in each
+![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) The default delimiter in Pig is a TAB (\t). A CSV file has comma-separated data in each
 line, so we need to inform Pig explicitly about that field delimiter. See here for the correct
 function syntax.
 
-Step 4. Read relevant fields from the loaded data. In this case we are interested in 1st , 2nd and 9th fields
+Read relevant fields from the loaded data. In this case we are interested in 1st , 2nd and 9th fields
 for each record. Use FOREACH-GENERATE statements to accomplish this task. Look here for correct
 FOREACH syntax.
 
-HINT: In Pig Latin $0 can represent the 1st field, $1 the 2nd field and so on. In the GENERATE
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) In Pig Latin $0 can represent the 1st field, $1 the 2nd field and so on. In the GENERATE
 statement, you can use the “$X AS (alias:type)” syntax to create text aliases for positional fields.
 More on this here.
 
-Step 5. Group runs from step 4 by year. See the syntax for GROUP here.
-HINT: use DUMP and DESCRIBE to validate your assumptions along the way
+Group runs from step 4 by year. See the syntax for GROUP here.
 
-Step 6. Use FOREACH-GENERATE, GROUP and MAX functions in Step 5 data to get max runs for
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png)  use DUMP and DESCRIBE to validate your assumptions along the way
+
+Use FOREACH-GENERATE, GROUP and MAX functions in Step 5 data to get max runs for
 each year.
 
-Step 7. Now, join Step 4 and Step 6 data based on the ‘year’ and ‘runs’ fields. Inner and outer joins
+Now, join Step 4 and Step 6 data based on the ‘year’ and ‘runs’ fields. Inner and outer joins
 syntax is shown here.
 
-Step 8. To identify the playerID who scored the highest one for each year, create a new bag with Year,
+To identify the playerID who scored the highest one for each year, create a new bag with Year,
 PlayerID and Max Run data using FOREACH, GENERATE on Step7 data.
 
-Step 9. Check the output of the above exercise using a DUMP command.
-Task 4: Determine First and Last name for the each player
-Activity Procedure
-Step 1. Load master data to Pig using the PigStorage() function.
-Step 2. Read relevant fields from the file. In this case we are interested in 13th & 14th fields for each
+Check the output of the above exercise using a DUMP command.
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>5. Determine First and Last name for the each player</h4>
+
+Load master data to Pig using the PigStorage() function.
+
+Read relevant fields from the file. In this case we are interested in 13th & 14th fields for each
 record using FOREACH and generate command:
-Step 3. Join PLAYERS dataset with the result dataset from previous task (Step 9) based on the common
+
+Join PLAYERS dataset with the result dataset from previous task (Step 9) based on the common
 field ‘playerID’:
-Step 4. Create a new dataset having Year, Player’s First and Last Name and the MAX from Step 3 using
+
+Create a new dataset having Year, Player’s First and Last Name and the MAX from Step 3 using
 FOREACH and GENERATE commands.
-Step 5. Make sure that data in Step 4 is sorted on Year in ascending order
-Step 6. Get the output of Step 5 using DUMP command
-Task 5: [OPTIONAL] Run a similar job using Pig Streaming
+
+Make sure that data in Step 4 is sorted on Year in ascending order
+
+Get the output of Step 5 using DUMP command
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>[OPTIONAL] Run a similar job using Pig Streaming</h4>
 
 The syntax for Pig streaming is here.
-Step 1. Write a simple script to take stdin and massage to stdout
-Step 2. In Pig, LOAD data in using PigStorage() syntax.
-Step 3. Use DEFINE to reference your script in Pig
-Step 4. Try to come up with similar results as before.
 
+* Write a simple script to take stdin and massage to stdout
+* In Pig, LOAD data in using PigStorage() syntax.
+* Use DEFINE to reference your script in Pig query to come up with similar results as before.
+
+### Results
+
+Comgrats! Finished team score 100 to 0!!!
