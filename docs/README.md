@@ -55,7 +55,7 @@ The lab guide is [here](https://virtuant.github.io/hadoop-overview-spark-hwx/lab
 
 #### Lab [20](https://virtuant.github.io/hadoop-overview-spark-hwx/exploring-hbase-1.html) Exploring HBase 1 [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/exploring-hbase-1.pdf)
 
-#### Lab [21](https://virtuant.github.io/hadoop-overview-spark-hwx/exploring-hbase-2.html) Exploring HBase 2 [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/exploring-hbase-2.pdf)
+#### Lab [21](https://virtuant.github.io/hadoop-overview-spark-hwx/exploring-hbase-3.html) Exploring HBase 2 [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/exploring-hbase-3.pdf)
 
 #### Lab [22](https://virtuant.github.io/hadoop-overview-spark-hwx/column-families.html) Column Families [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/column-families.pdf)
 
