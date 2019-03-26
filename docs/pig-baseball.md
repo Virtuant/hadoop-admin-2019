@@ -119,18 +119,17 @@ FOREACH syntax.
 statement, you can use the “$X AS (alias:type)” syntax to create text aliases for positional fields.
 More on this [here](http://pig.apache.org/docs/r0.16.0/basic.html#expressions).
 
-Group runs from step 4 by year. See the syntax for GROUP [here](http://pig.apache.org/docs/r0.16.0/basic.html#group).
+Now group the runs from by year. See the syntax for GROUP [here](http://pig.apache.org/docs/r0.16.0/basic.html#group).
 
 > ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png)  use DUMP and DESCRIBE to validate your assumptions along the way
 
-Use FOREACH-GENERATE, GROUP and MAX functions in Step 5 data to get max runs for
-each year.
+Now use FOREACH-GENERATE, GROUP and MAX functions in to get max runs for each year.
 
-Now, join Step 4 and Step 6 data based on the ‘year’ and ‘runs’ fields. Inner and outer joins
-syntax is shown here.
+Now, join data based on the ‘year’ and ‘runs’ fields. Inner and outer joins
+syntax is shown [here](https://pig.apache.org/docs/r0.16.0/basic.html#join-inner).
 
-To identify the playerID who scored the highest one for each year, create a new bag with Year,
-PlayerID and Max Run data using FOREACH, GENERATE on Step7 data.
+To identify the `playerID` who scored the highest one for each year, create a new bag with Year,
+PlayerID and Max Run data using FOREACH, GENERATE on data.
 
 Check the output of the above exercise using a DUMP command.
 
@@ -142,16 +141,17 @@ Load master data to Pig using the PigStorage() function.
 Read relevant fields from the file. In this case we are interested in 13th & 14th fields for each
 record using FOREACH and generate command:
 
-Join PLAYERS dataset with the result dataset from previous task (Step 9) based on the common
-field ‘playerID’:
+Join PLAYERS dataset with the result dataset from previous task based on the common
+field `playerID`:
 
-Create a new dataset having Year, Player’s First and Last Name and the MAX from Step 3 using
+Create a new dataset having Year, Player’s First and Last Name and the MAX using
 FOREACH and GENERATE commands.
 
-Make sure that data in Step 4 is sorted on Year in ascending order
+Make sure that data is sorted on Year in ascending order
 
-Get the output of Step 5 using DUMP command
+Get the output using DUMP command
 
+{ %comment% }
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>[OPTIONAL] Run a similar job using Pig Streaming</h4>
 
@@ -161,6 +161,7 @@ The syntax for Pig streaming is here.
 * In Pig, LOAD data in using PigStorage() syntax.
 * Use DEFINE to reference your script in Pig query to come up with similar results as before.
 
+{ %endcomment% }
 ### Results
 
 Comgrats! Finished team score 100 to 0!!!
