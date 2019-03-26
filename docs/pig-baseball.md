@@ -19,8 +19,13 @@ file version may change.) On the page http://www.seanlahman.com/baseball-archive
 the link for downloading some comma-delimited CSV files in a zipped archive. Get that archive (easiest
 using your VM browser), expand it and do a put of the files needed into HDFS.
 
-NOTE: you can also achieve this from a Linux shell like this:
+
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) you can also achieve this from a Linux shell like this:
+
+```
 $ wget http://seanlahman.com/files/database/baseballdatabank-master_2016-03-02.zip
+```
+
 (the latest file as of January 2016 – zip file name may change)
 
 
