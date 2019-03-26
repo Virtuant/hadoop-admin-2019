@@ -1,11 +1,12 @@
 ## Pig Use Case: Baseball Stats
 
-### Goals:
-• You will be given a fairly large set of game statistics (over 97,800 rows)
-• Stats for each American baseball player by year from 1871-2013
-• Identify players who scored highest runs for each year in ascending order
-• Determine First and Last name for the each player by joining 2 data sets
-• You should try to accomplish this with minimal instruction
+### Goals
+
+* You will be given a fairly large set of game statistics (over 97,800 rows)
+* Stats for each American baseball player by year from 1871-2013
+* Identify players who scored highest runs for each year in ascending order
+* Determine First and Last name for the each player by joining 2 data sets
+* You should try to accomplish this with minimal instruction
 
 ----
 
