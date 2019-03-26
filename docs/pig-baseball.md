@@ -9,55 +9,75 @@
 
 ----
 
-Task 1: Review and understand Baseball statistics data files
-Activity Procedure
-Step 1. In your VM, create a new directory in your home directory to use for sample data.
-Step 2. Via a browser, get the latest baseball stats file from Sean Lahman’s baseball stats web site (the
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>1. Review and understand Baseball statistics data files
+
+1. In your VM, create a new directory in your home directory to use for sample data.
+
+2. Via a browser, get the latest baseball stats file from Sean Lahman’s baseball stats web site (the
 file version may change.) On the page http://www.seanlahman.com/baseball-archive/statistics you’ll see
 the link for downloading some comma-delimited CSV files in a zipped archive. Get that archive (easiest
 using your VM browser), expand it and do a put of the files needed into HDFS.
+
 NOTE: you can also achieve this from a Linux shell like this:
 $ wget http://seanlahman.com/files/database/baseballdatabank-master_2016-03-02.zip
 (the latest file as of January 2016 – zip file name may change)
-Step 3. Unzip the file in your new directory. Many statistics files will unpack from the file.
-Step 4. Examine the following file:
+
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>3. Unzip the file in your new directory. 
+  
+Many statistics files will unpack from the file.
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>4. Examine the following file</h4>
+
 Batting.csv
-# NAME DESCRIPTION
-0 playerID A unique code assigned to each player. The
+
+|# |NAME |DESCRIPTION|
+|0 |playerID|A unique code assigned to each player. The
 playerID links the data in this file with records
-in other files
-1 yearID Year
-2 stint player's stint (order of appearances in season)
-3 teamID Team
-4 lgID League
-5 G Games
-6 AB At Bats
-7 R Runs
-8 H Hits
-9 2B Doubles
-10 3B Triples
-11 HR Homeruns
-12 RBI Runs Batted In
-13 SB Stolen Bases
-14 CS Caught Stealing
-15 BB Base on Balls
-16 SO Strikeouts
-17 IBB Intentional walks
-19 HBP Hit by pitch
-19 SH Sacrifice hits
-20 SF Sacrifice flies
-21 GIDP Grounded into double plays
-Step 5. Consider following fields/columns:
+in other files|
+|1 yearID Year
+|2 stint player's stint (order of appearances in season)
+|3 teamID Team
+|4 lgID League
+|5 G Games
+|6 AB At Bats
+|7 R Runs
+|8 H Hits
+|9 2B Doubles
+|10 3B Triples
+|11 HR Homeruns
+|12 RBI Runs Batted In
+|13 SB Stolen Bases
+|14 CS Caught Stealing
+|15 BB Base on Balls
+|16 SO Strikeouts
+|17 IBB Intentional walks
+|19 HBP Hit by pitch
+|19 SH Sacrifice hits
+|20 SF Sacrifice flies
+|21 GIDP Grounded into double plays
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>5. Consider following fields/columns<h4>
+  
 • Column # 0 (Player ID)
 • Column # 1 (Year)
 • Column # 7 (Runs)
-Step 6. Put the file Batting.csv into HDFS under an appropriate directory, such as batting/input.
-You may wish to rename the file in HDFS. Use hadoop fs –cat to verify the put if needed.
-Task 2: Review and understand Baseball statistics data files
-Activity Procedure
-Step 1. Examine following files
-Here is the column definition for the join file:
+
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>6. Put the file `Batting.csv` into HDFS under an appropriate directory, such as `batting/input`.
+
+You may wish to rename the file in HDFS. Use `hdfs dfs –cat` to verify the put if needed.
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>6. Review and understand Baseball statistics data files</h4>
+
 Master.csv
+
 # NAME DESCRIPTION
 0 playerID Unique ID for player
 1 birthYear Year player was born
@@ -85,17 +105,23 @@ appearance
 21 finalGame Date that player made first major league
 appearance (blank if still active)
 22 more fields
+
 For this lab, you should consider following fields/columns:
-Batting.csv
+
+#### Batting.csv
 • Column # 0 (Player ID)
 • Column # 1 (Year)
 • Column # 7 (Runs)
-Master.csv
+
+#### Master.csv
 • Column # 0 (Player ID)
 • Column # 13 (First Name)
 • Column # 14 (Last Name)
-Task 3: Identify players who scored highest runs for each
-year
+
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>3. Identify players who scored highest runs for each year
+
 Activity Procedure
 Step 1. If you haven’t yet, create a new directory, such as baseball/input in HDFS and put statistic
 files Batting.csv & Master.csv into this directory from your local machine. You may rename them in
