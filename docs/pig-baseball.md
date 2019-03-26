@@ -30,14 +30,14 @@ $ wget http://seanlahman.com/files/database/baseballdatabank-master_2016-03-02.z
 
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>3. Unzip the file in your new directory. 
+<h4>3. Unzip the file in your new directory</h4>
   
 Many statistics files will unpack from the file.
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>4. Examine the following file</h4>
 
-Batting.csv
+#### Batting.csv
 
 |# |NAME |DESCRIPTION|
 |---|---|---|
@@ -67,7 +67,7 @@ in other files|
 |21 |GIDP |Grounded into double plays|
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>5. Consider following fields/columns<h4>
+<h4>5. Consider following fields/columns</h4>
   
 • Column # 0 (Player ID)
 • Column # 1 (Year)
@@ -75,14 +75,14 @@ in other files|
 
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>6. Put the file `Batting.csv` into HDFS under an appropriate directory, such as `batting/input`.
+<h4>6. Put the file `Batting.csv` into HDFS under an appropriate directory, such as `batting/input`</h4>
 
 You may wish to rename the file in HDFS. Use `hdfs dfs –cat` to verify the put if needed.
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>6. Review and understand Baseball statistics data files</h4>
 
-Master.csv
+#### Master.csv
 
 # NAME DESCRIPTION
 0 playerID Unique ID for player
@@ -126,31 +126,38 @@ For this lab, you should consider following fields/columns:
 
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>3. Identify players who scored highest runs for each year
+<h4>3. Identify players who scored highest runs for each year</h4>
 
-Activity Procedure
 Step 1. If you haven’t yet, create a new directory, such as baseball/input in HDFS and put statistic
 files Batting.csv & Master.csv into this directory from your local machine. You may rename them in
 HDFS as you wish.
 Step 2. Start the Pig shell
 Step 3. Load batting data into Pig using the PigStorage() function.
+
 NOTE: The default delimiter in Pig is a TAB (\t). A CSV file has comma-separated data in each
 line, so we need to inform Pig explicitly about that field delimiter. See here for the correct
 function syntax.
+
 Step 4. Read relevant fields from the loaded data. In this case we are interested in 1st , 2nd and 9th fields
 for each record. Use FOREACH-GENERATE statements to accomplish this task. Look here for correct
 FOREACH syntax.
+
 HINT: In Pig Latin $0 can represent the 1st field, $1 the 2nd field and so on. In the GENERATE
 statement, you can use the “$X AS (alias:type)” syntax to create text aliases for positional fields.
 More on this here.
+
 Step 5. Group runs from step 4 by year. See the syntax for GROUP here.
 HINT: use DUMP and DESCRIBE to validate your assumptions along the way
+
 Step 6. Use FOREACH-GENERATE, GROUP and MAX functions in Step 5 data to get max runs for
 each year.
+
 Step 7. Now, join Step 4 and Step 6 data based on the ‘year’ and ‘runs’ fields. Inner and outer joins
 syntax is shown here.
+
 Step 8. To identify the playerID who scored the highest one for each year, create a new bag with Year,
 PlayerID and Max Run data using FOREACH, GENERATE on Step7 data.
+
 Step 9. Check the output of the above exercise using a DUMP command.
 Task 4: Determine First and Last name for the each player
 Activity Procedure
@@ -164,7 +171,7 @@ FOREACH and GENERATE commands.
 Step 5. Make sure that data in Step 4 is sorted on Year in ascending order
 Step 6. Get the output of Step 5 using DUMP command
 Task 5: [OPTIONAL] Run a similar job using Pig Streaming
-Activity Procedure
+
 The syntax for Pig streaming is here.
 Step 1. Write a simple script to take stdin and massage to stdout
 Step 2. In Pig, LOAD data in using PigStorage() syntax.
