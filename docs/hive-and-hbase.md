@@ -2,7 +2,7 @@
 
 **Objective**: Understand how HBase and Hive integrate. You will complete data storage in HBase from Hive table data.
 
-**Data directory**: `~/data/hbase/data`
+**Data directory**: `~/data/iot`
 
 What opportunities exist for deeper integration? Currently, customers are putting together solutions leveraging HBase, Phoenix, Hive etc. to build bespoke a closed-loop system for operational data and SQL analytics. We feel there is an opportunity to provide out-of-the-box integration with ease of use and additional capabilities such as transactions, cross datacenter failover etc.
 
@@ -128,11 +128,10 @@ INFO  : OK
 Now we will create a temporary lookup table in Hive:
 
 ```sql
-CREATE TABLE iot_in (
-	id string, parameter string, value string, device_id string, datetime string
-	) ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
-	WITH SERDEPROPERTIES ( "separatorChar" = ",", "quoteChar" = "\"") 
-	STORED AS TEXTFILE  location '/tmp/iot_data.csv';
+CREATE TABLE iot_in (id string, parameter string, value string, device_id string, datetime string) 
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( "separatorChar" = ",", "quoteChar" = "\"") 
+STORED AS TEXTFILE  location '/tmp/iot_data.csv';
 ```
 
 
@@ -167,7 +166,7 @@ No rows selected (0.121 seconds)
 Now load data into the table:
 
 ```console
-LOAD DATA LOCAL INPATH '/tmp/iot_data.csv' OVERWRITE INTO TABLE iot_in;
+LOAD DATA LOCAL INPATH '/home/student/data/iot_data.csv' OVERWRITE INTO TABLE iot_in;
 ```
 
 Now print to make sure its loaded:
