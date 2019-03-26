@@ -35,7 +35,7 @@ hbase zkcli
 [hbase-unsecure, templeton-hadoop, storm, zookeeper]
 ```
     
-    This shows us that beneath the path, the following child nodes exist: `hbase-unsecure` and `zookeeper`
+This shows us that beneath the path, the following child nodes exist: `hbase-unsecure` and `zookeeper`
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
 <h4>3.	Create  a node</h4>
@@ -44,7 +44,7 @@ hbase zkcli
 [zk:] create -e /test 'hello'
 ```
     
-    This creates a node /test with a value of “hello”. The node with -e is an ephemeral node, it will exist as long as the creator of the node is connected to zookeeper.
+This creates a node /test with a value of “hello”. The node with -e is an ephemeral node, it will exist as long as the creator of the node is connected to zookeeper.
 
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
@@ -55,7 +55,7 @@ hbase zkcli
 …
 ```
 
-    This demonstrates that a zookeeper node can be created by one client and seen by any client. This service is the basic need that distributed systems have that zookeeper provides. A consistent distributed information service.
+This demonstrates that a zookeeper node can be created by one client and seen by any client. This service is the basic need that distributed systems have that zookeeper provides. A consistent distributed information service.
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
 <h4>5.	Delete the ephemeral node:</h4>
@@ -86,7 +86,7 @@ Notice your node persists if you reconnect or if you get the node from the other
 	
 HBase uses a collection of child nodes under the node `/hbase-unsecure`.
 
-    The result should be
+The result should be
 
 ```console
 [meta-region-server, backup-masters, region-in-transition, draining, table, running, table-lock, namespace, HBaseid, online-snapshot, replication, splitWAL, recovering- regions, rs]
@@ -108,7 +108,7 @@ aclVersion = 0 ephemeralOwner = 0x0 dataLength = 75
 numChildren = 0
 ```
     
-    This shows that it is at `sandbox.hortonworks.com` plus some other information including some unprintable characters.
+This shows that it is at `sandbox.hortonworks.com` plus some other information including some unprintable characters.
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
 <h4>10.	 Get the list of tables:</h4>
@@ -119,7 +119,7 @@ HBase stores the existing tables as children of the node `/hbase-unsecure/table`
 [zk:] ls /hbase-unsecure/table
 ```
     
-    The result should be:
+The result should be:
 
 ```console
 [timeline, hbase:meta, hbase:namespace, test, cf, ambarismoketest]
@@ -132,7 +132,7 @@ HBase stores the existing tables as children of the node `/hbase-unsecure/table`
 # hbase shell
 ```
     
-    and create another HBase table `zktest`
+and create another HBase table `zktest`
 
 ```console
 hbase> create 'zktest','a'
@@ -149,7 +149,7 @@ of the `/hbase-unsecure/table` node:
 
 ```
     
-    Note the node for zktest in the output.
+Note the node for zktest in the output.
  
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
 <h4>13.	From the HBase window, drop the table in the HBase shell by running:</h4>
@@ -158,7 +158,7 @@ of the `/hbase-unsecure/table` node:
 hbase> disable 'zktest'
 ```
     
-    Followed by:
+Followed by:
 
 ```console
 hbase> drop 'zktest'
