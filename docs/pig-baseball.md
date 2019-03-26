@@ -33,9 +33,7 @@ Unzip the file in your new directory</h4>
 Many statistics files will unpack from the file.
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>2. Put into HDFS</h4>
-
-#### Batting.csv
+<h4>2. Put Batting.csv into HDFS</h4>
 
 |# |NAME |DESCRIPTION|
 |---|---|---|
@@ -62,21 +60,18 @@ Many statistics files will unpack from the file.
 |20 |SF |Sacrifice flies|
 |21 |GIDP |Grounded into double plays|
 
-<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>5. Consider following fields/columns</h4>
+Consider following fields/columns</h4>
   
 * Column # 0 (Player ID)
 * Column # 1 (Year)
 * Column # 7 (Runs)
 
-Put the file `Batting.csv` into HDFS under an appropriate directory, such as `batting/input`</h4>
+Put the file `Batting.csv` into HDFS under an appropriate directory, such as `batting/input`.
 
 You may wish to rename the file in HDFS. Use `hdfs dfs –cat` to verify the put if needed.
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>3. Review and understand Baseball statistics data files</h4>
-
-#### People.csv
+<h4>3. Do the same with People.csv</h4>
 
 |# |NAME |DESCRIPTION|
 |0 |playerID |Unique ID for player|
@@ -85,6 +80,13 @@ You may wish to rename the file in HDFS. Use `hdfs dfs –cat` to verify the put
 |14 |nameLast |Player's last name|
 |15 |nameGiven |Player's given name (typically first and middle)|
 |||22 more fields|
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>4. Identify players who scored highest runs for each year</h4>
+
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) If you haven’t yet, create a new directory, such as `baseball/input` in HDFS and put statistic
+files Batting.csv & Master.csv into this directory from your local machine. You may rename them in
+HDFS as you wish.
 
 For this lab, you should consider following fields/columns:
 
@@ -97,13 +99,6 @@ For this lab, you should consider following fields/columns:
 * Column # 0 (Player ID)
 * Column # 13 (First Name)
 * Column # 14 (Last Name)
-
-<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>4. Identify players who scored highest runs for each year</h4>
-
-If you haven’t yet, create a new directory, such as `baseball/input` in HDFS and put statistic
-files Batting.csv & Master.csv into this directory from your local machine. You may rename them in
-HDFS as you wish.
 
 Load batting data into Pig using the PigStorage() function.
 
