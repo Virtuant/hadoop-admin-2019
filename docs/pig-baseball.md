@@ -103,32 +103,32 @@ For this lab, you should consider following fields/columns:
 * Column # 13 (First Name)
 * Column # 14 (Last Name)
 
-Start the Pig shell.
+a. Start the Pig shell.
 
-Load batting data into Pig using the PigStorage() function.
+b. Load batting data into Pig using the PigStorage() function.
 
 ![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) The default delimiter in Pig is a TAB (\t). A CSV file has comma-separated data in each
 line, so we need to inform Pig explicitly about that field delimiter. See [here](http://pig.apache.org/docs/r0.16.0/basic.html#load) for the correct
 function syntax.
 
-Read relevant fields from the loaded data. In this case we are interested in 1st , 2nd and 9th fields
+c. Read relevant fields from the loaded data. In this case we are interested in 1st , 2nd and 9th fields
 for each record. Use FOREACH-GENERATE statements to accomplish this task. Look [here](http://pig.apache.org/docs/r0.16.0/basic.html#foreach) for correct
 FOREACH syntax.
 
 > ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) In Pig Latin $0 can represent the 1st field, $1 the 2nd field and so on. In the GENERATE
-statement, you can use the “$X AS (alias:type)” syntax to create text aliases for positional fields.
+statement, you can use the `$X AS (alias:type)` syntax to create text aliases for positional fields.
 More on this [here](http://pig.apache.org/docs/r0.16.0/basic.html#expressions).
 
-Now group the runs from by year. See the syntax for GROUP [here](http://pig.apache.org/docs/r0.16.0/basic.html#group).
+d. Now group the runs from by year. See the syntax for GROUP [here](http://pig.apache.org/docs/r0.16.0/basic.html#group).
 
 > ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png)  use DUMP and DESCRIBE to validate your assumptions along the way
 
-Now use FOREACH-GENERATE, GROUP and MAX functions in to get max runs for each year.
+e. Now use FOREACH-GENERATE, GROUP and MAX functions in to get max runs for each year.
 
-Now, join data based on the ‘year’ and ‘runs’ fields. Inner and outer joins
+f. Now, join data based on the ‘year’ and ‘runs’ fields. Inner and outer joins
 syntax is shown [here](https://pig.apache.org/docs/r0.16.0/basic.html#join-inner).
 
-To identify the `playerID` who scored the highest one for each year, create a new bag with Year,
+g. To identify the `playerID` who scored the highest one for each year, create a new bag with Year,
 PlayerID and Max Run data using FOREACH, GENERATE on data.
 
 Check the output of the above exercise using a DUMP command.
