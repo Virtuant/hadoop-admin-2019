@@ -28,7 +28,7 @@ using your VM browser), expand it and do a put of the files needed into HDFS.
 $ wget https://github.com/chadwickbureau/baseballdatabank/archive/v2019.2.zip
 ```
 
-(the latest file as of January 2016 – zip file name may change)
+(the latest file as of January 2019 – zip file name may change)
 
 Unzip the file in your new directory</h4>
   
