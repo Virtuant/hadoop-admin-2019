@@ -36,52 +36,6 @@ There are numerous limitations with the present transactions available in Hive.
 
 ORC is the file format supported by Hive transaction. It is now essential to have ORC file format for performing transactions in Hive. The table needs to be bucketed in order to support transactions.
 
-
-<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
-<h4>1. Create the Table</h4>
-
-### Missing Files
-
-Make sure that the node you've picked is available to run `beeline`:
-
-```console
-	beeline -n hive -u jdbc:hive2://localhost:10000
-```
-
-You may see something like this:
-
-```console
-Connecting to jdbc:hive2://localhost:10000
-18/09/25 03:56:01 [main]: WARN jdbc.HiveConnection: Failed to connect to localhost:10000
-Could not open connection to the HS2 server. Please check the server URI and if the URI is correct, then ask the administrator to check the server status.
-Error: Could not open client transport with JDBC Uri: jdbc:hive2://localhost:10000: java.net.ConnectException: Connection refused (Connection refused) (state=08S01,code=0)
-Beeline version 3.1.0.3.0.1.0-187 by Apache Hive
-[centos@ip-172-30-12-85 ~]$ 
-```
-
-If so, try another node as a Hive client. Once you find a running node, you may need to copy the files from `data` on the Ambari (or other) node to your local drive.  You can do an `scp` (a SSH copy of files) from the Ambari node like this:
-
-```console
-[centos@ip-172-30-13-166 ~]$ sudo su -
-[root@ip-172-30-13-166 ~]# scp -r /home/centos/data root@[remote Hive node address]:/home/centos
-```
-
->Note: scp works the other way too
-
-Go to the Hive node, and you should now see your files:
-
-```console
-[centos@ip-172-30-11-227 ~]$ ll
-total 0
-drwxrwxr-x. 5 root root 51 Sep 25 03:40 data
-```
-
-It may require you to `chown` the `data` directory as well:
-
-```console
-[centos@ip-172-30-11-227 ~]$ sudo chown -R centos:centos data/
-```
-
 ----
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
@@ -90,23 +44,23 @@ It may require you to `chown` the `data` directory as well:
 Do a `more` to look at the data in `iot_data.csv`:
 
 ```console
-	[centos@ip-10-0-0-237 data]$ more iot_data.csv 
-	_id,deviceParameter,deviceValue,deviceId,dateTime
-	ObjectId(5a81b5395882b86112555f70),Temperature,27,SBS05,2018-02-12 15:39:37.050 UTC
-	ObjectId(5a81b5395882b86112555f71),Humidity,59,SBS05,2018-02-12 15:39:37.801 UTC
-	ObjectId(5a81b53a5882b86112555f72),Sound,130,SBS04,2018-02-12 15:39:38.629 UTC
-	ObjectId(5a81b53b5882b86112555f73),Humidity,75,SBS05,2018-02-12 15:39:39.272 UTC
-	ObjectId(5a81b53b5882b86112555f74),Temperature,33,SBS02,2018-02-12 15:39:39.613 UTC
-	ObjectId(5a81b53c5882b86112555f75),Sound,102,SBS03,2018-02-12 15:39:40.363 UTC
-	ObjectId(5a81b53c5882b86112555f76),Temperature,18,SBS02,2018-02-12 15:39:40.663 UTC
-	ObjectId(5a81b53c5882b86112555f77),Flow,64,SBS05,2018-02-12 15:39:40.678 UTC
-	ObjectId(5a81b53d5882b86112555f78),Temperature,28,SBS04,2018-02-12 15:39:41.141 UTC
+$ more iot_data.csv 
+_id,deviceParameter,deviceValue,deviceId,dateTime
+ObjectId(5a81b5395882b86112555f70),Temperature,27,SBS05,2018-02-12 15:39:37.050 UTC
+ObjectId(5a81b5395882b86112555f71),Humidity,59,SBS05,2018-02-12 15:39:37.801 UTC
+ObjectId(5a81b53a5882b86112555f72),Sound,130,SBS04,2018-02-12 15:39:38.629 UTC
+ObjectId(5a81b53b5882b86112555f73),Humidity,75,SBS05,2018-02-12 15:39:39.272 UTC
+ObjectId(5a81b53b5882b86112555f74),Temperature,33,SBS02,2018-02-12 15:39:39.613 UTC
+ObjectId(5a81b53c5882b86112555f75),Sound,102,SBS03,2018-02-12 15:39:40.363 UTC
+ObjectId(5a81b53c5882b86112555f76),Temperature,18,SBS02,2018-02-12 15:39:40.663 UTC
+ObjectId(5a81b53c5882b86112555f77),Flow,64,SBS05,2018-02-12 15:39:40.678 UTC
+ObjectId(5a81b53d5882b86112555f78),Temperature,28,SBS04,2018-02-12 15:39:41.141 UTC
 ```
 
 For bypassing any security issues, put the `iot_data.csv` table into the `tmp` directory in the Linux system:
 
 ```console
-	cp iot_data.csv /tmp/.
+cp iot_data.csv /tmp/.
 ```
 
 Let’s go ahead and create the anonymous user in HDFS:
@@ -124,13 +78,13 @@ We will begin by creating a Hive table with HBase charateristics. Notice the `hb
 Now start beeline and create the table `iot_data`:
 
 ```sql
-	CREATE EXTERNAL TABLE iot_data 
-		(rowkey string, parameter string, value int, device_id string, datetime string)  
-	ROW FORMAT SERDE 'org.apache.hadoop.hive.hbase.HBaseSerDe' 
-	STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler' 
-	WITH SERDEPROPERTIES ("hbase.columns.mapping"=":key,para:param,
-		para:value,para:device_id,para:datetime")  
-	TBLPROPERTIES ("hbase.table.name"="iot_data");
+CREATE EXTERNAL TABLE iot_data 
+	(rowkey string, parameter string, value int, device_id string, datetime string)  
+ROW FORMAT SERDE 'org.apache.hadoop.hive.hbase.HBaseSerDe' 
+STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler' 
+WITH SERDEPROPERTIES ("hbase.columns.mapping"=":key,para:param,
+	para:value,para:device_id,para:datetime")  
+TBLPROPERTIES ("hbase.table.name"="iot_data");
 ```
 
 Easier to copy:
@@ -146,25 +100,25 @@ CREATE EXTERNAL TABLE iot_data (rowkey string, parameter string, value int, devi
 So in Hive:
 
 ```console
-	describe iot_data;
-	INFO  : Compiling command(queryId=hive_20180815000016_8eed1209-306c-4e5b-8e19-45fb250fae0a): describe iot_data
-	INFO  : Semantic Analysis Completed (retrial = false)
-	INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:col_name, type:string, comment:from deserializer), FieldSchema(name:data_type, type:string, comment:from deserializer), FieldSchema(name:comment, type:string, comment:from deserializer)], properties:null)
-	INFO  : Completed compiling command(queryId=hive_20180815000016_8eed1209-306c-4e5b-8e19-45fb250fae0a); Time taken: 0.03 seconds
-	INFO  : Executing command(queryId=hive_20180815000016_8eed1209-306c-4e5b-8e19-45fb250fae0a): describe iot_data
-	INFO  : Starting task [Stage-0:DDL] in serial mode
-	INFO  : Completed executing command(queryId=hive_20180815000016_8eed1209-306c-4e5b-8e19-45fb250fae0a); Time taken: 0.026 seconds
-	INFO  : OK
-	+------------+------------+----------+
-	|  col_name  | data_type  | comment  |
-	+------------+------------+----------+
-	| id         | string     |          |
-	| parameter  | string     |          |
-	| value      | int        |          |
-	| device_id  | string     |          |
-	| datetime   | string     |          |
-	+------------+------------+----------+
-	5 rows selected (0.291 seconds)
+describe iot_data;
+INFO  : Compiling command(queryId=hive_20180815000016_8eed1209-306c-4e5b-8e19-45fb250fae0a): describe iot_data
+INFO  : Semantic Analysis Completed (retrial = false)
+INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:col_name, type:string, comment:from deserializer), FieldSchema(name:data_type, type:string, comment:from deserializer), FieldSchema(name:comment, type:string, comment:from deserializer)], properties:null)
+INFO  : Completed compiling command(queryId=hive_20180815000016_8eed1209-306c-4e5b-8e19-45fb250fae0a); Time taken: 0.03 seconds
+INFO  : Executing command(queryId=hive_20180815000016_8eed1209-306c-4e5b-8e19-45fb250fae0a): describe iot_data
+INFO  : Starting task [Stage-0:DDL] in serial mode
+INFO  : Completed executing command(queryId=hive_20180815000016_8eed1209-306c-4e5b-8e19-45fb250fae0a); Time taken: 0.026 seconds
+INFO  : OK
++------------+------------+----------+
+|  col_name  | data_type  | comment  |
++------------+------------+----------+
+| id         | string     |          |
+| parameter  | string     |          |
+| value      | int        |          |
+| device_id  | string     |          |
+| datetime   | string     |          |
++------------+------------+----------+
+5 rows selected (0.291 seconds)
 ```
 
 
@@ -174,11 +128,11 @@ So in Hive:
 Now we will create a temporary lookup table in Hive:
 
 ```sql
-	CREATE TABLE iot_in (
-		id string, parameter string, value string, device_id string, datetime string
-		) ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
-		WITH SERDEPROPERTIES ( "separatorChar" = ",", "quoteChar" = "\"") 
-		STORED AS TEXTFILE  location '/tmp/iot_data.csv';
+CREATE TABLE iot_in (
+	id string, parameter string, value string, device_id string, datetime string
+	) ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+	WITH SERDEPROPERTIES ( "separatorChar" = ",", "quoteChar" = "\"") 
+	STORED AS TEXTFILE  location '/tmp/iot_data.csv';
 ```
 
 
@@ -191,19 +145,19 @@ CREATE TABLE iot_in (id string, parameter string, value string, device_id string
 And describe it:
 
 ```console
-	describe iot_in;
+describe iot_in;
 ```
 
 and should be empty:
 
 
 ```console
-	INFO  : OK
-	+------------+-------------------+---------------+-------------------+------------------+
-	| iot_in.id  | iot_in.parameter  | iot_in.value  | iot_in.device_id  | iot_in.datetime  |
-	+------------+-------------------+---------------+-------------------+------------------+
-	+------------+-------------------+---------------+-------------------+------------------+
-	No rows selected (0.121 seconds)
+INFO  : OK
++------------+-------------------+---------------+-------------------+------------------+
+| iot_in.id  | iot_in.parameter  | iot_in.value  | iot_in.device_id  | iot_in.datetime  |
++------------+-------------------+---------------+-------------------+------------------+
++------------+-------------------+---------------+-------------------+------------------+
+No rows selected (0.121 seconds)
 ```
 
 
@@ -213,7 +167,7 @@ and should be empty:
 Now load data into the table:
 
 ```console
-	LOAD DATA LOCAL INPATH '/tmp/iot_data.csv' OVERWRITE INTO TABLE iot_in;
+LOAD DATA LOCAL INPATH '/tmp/iot_data.csv' OVERWRITE INTO TABLE iot_in;
 ```
 
 Now print to make sure its loaded:
@@ -290,8 +244,8 @@ There is a ton of DAG and Map/Reduce action displayed here.
 Exit Hive by executing a `!q`:
 
 ```console
-	!q
-	Closing: 0: jdbc:hive2://master1.hdp.com:2181/default;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2
+!q
+Closing: 0: jdbc:hive2://master1.hdp.com:2181/default;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2
 ```
 
 
@@ -301,44 +255,44 @@ Exit Hive by executing a `!q`:
 Enter HBase shell, and use LIST command to check tables:
 
 ```sql
-	hbase(main):005:0> list
-	TABLE
-	...
-	iot_data
-	iot_in
-	...
+hbase(main):005:0> list
+TABLE
+...
+iot_data
+iot_in
+...
 ```
 
 Validate the table in HBase:
 
 ```sql
-	hbase(main):003:0> describe 'iot_in'
-	Table iot_in is ENABLED                                                                                        
-	iot_in                                                                                                         
-	COLUMN FAMILIES DESCRIPTION                                                                                    
-	{NAME => 'RAW', VERSIONS => '1', EVICT_BLOCKS_ON_CLOSE => 'false', NEW_VERSION_BEHAVIOR => 'false', KEEP_DELETE
-	D_CELLS => 'FALSE', CACHE_DATA_ON_WRITE => 'false', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', MIN_VERSIO
-	NS => '0', REPLICATION_SCOPE => '0', BLOOMFILTER => 'ROW', CACHE_INDEX_ON_WRITE => 'false', IN_MEMORY => 'false
-	', CACHE_BLOOMS_ON_WRITE => 'false', PREFETCH_BLOCKS_ON_OPEN => 'false', COMPRESSION => 'NONE', BLOCKCACHE => '
-	true', BLOCKSIZE => '65536'}                                                                                   
-	1 row(s)
-	Took 0.1312 seconds 
+hbase(main):003:0> describe 'iot_in'
+Table iot_in is ENABLED                                                                                        
+iot_in                                                                                                         
+COLUMN FAMILIES DESCRIPTION                                                                                    
+{NAME => 'RAW', VERSIONS => '1', EVICT_BLOCKS_ON_CLOSE => 'false', NEW_VERSION_BEHAVIOR => 'false', KEEP_DELETE
+D_CELLS => 'FALSE', CACHE_DATA_ON_WRITE => 'false', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', MIN_VERSIO
+NS => '0', REPLICATION_SCOPE => '0', BLOOMFILTER => 'ROW', CACHE_INDEX_ON_WRITE => 'false', IN_MEMORY => 'false
+', CACHE_BLOOMS_ON_WRITE => 'false', PREFETCH_BLOCKS_ON_OPEN => 'false', COMPRESSION => 'NONE', BLOCKCACHE => '
+true', BLOCKSIZE => '65536'}                                                                                   
+1 row(s)
+Took 0.1312 seconds 
 ```
 
 
 Now use SCAN to find if data exists:
 
 ```sql
-	hbase(main):004:0> scan 'iot_in'
+hbase(main):004:0> scan 'iot_in'
 ```
 
 As it shows, there is no data in the table:
 
 ```console
-	ROW                          COLUMN+CELL                                                                       
-	0 row(s)
-	Took 0.0559 seconds                                                                                            
-	hbase(main):005:0> 
+ROW                          COLUMN+CELL                                                                       
+0 row(s)
+Took 0.0559 seconds                                                                                            
+hbase(main):005:0> 
 ```
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo">
@@ -347,15 +301,15 @@ As it shows, there is no data in the table:
 Go back to Hive, and run below command to set Hive engine as Tez:
 
 ```sql
-	set hive.execution.engine=tez;
+set hive.execution.engine=tez;
 ```
 
 Execute below HiveQL to populate the table
 
 ```sql
-	INSERT OVERWRITE TABLE iot_data 
-	SELECT iot_in.id, iot_in.device_id, iot_in.parameter, iot_in.value, iot_in.datetime 
-	FROM iot_in WHERE iot_in.device_id='SBS05';
+INSERT OVERWRITE TABLE iot_data 
+SELECT iot_in.id, iot_in.device_id, iot_in.parameter, iot_in.value, iot_in.datetime 
+FROM iot_in WHERE iot_in.device_id='SBS05';
 ```
 
 Easier to copy:
@@ -367,27 +321,27 @@ INSERT OVERWRITE TABLE iot_data SELECT iot_in.id, iot_in.device_id, iot_in.param
 and you should see something like this:
 
 ```sql
-	Query ID = root_20140830123030_3fee9010-e712-4c44-89ec-1261c220e424
-	Total jobs = 1
-	Launching Job 1 out of 1
-	Status: Running (application id: application_1409394057604_0003)
-	Map 1: -/-
-	Map 1: 0/1
-	Map 1: 0/1
-	Map 1: 0/1
-	Map 1: 0/1
-	Map 1: 0/1
-	Map 1: 0/1
-	Map 1: 1/1
-	Status: Finished successfully
-	OK
-	Time taken: 24.005 seconds
+Query ID = root_20140830123030_3fee9010-e712-4c44-89ec-1261c220e424
+Total jobs = 1
+Launching Job 1 out of 1
+Status: Running (application id: application_1409394057604_0003)
+Map 1: -/-
+Map 1: 0/1
+Map 1: 0/1
+Map 1: 0/1
+Map 1: 0/1
+Map 1: 0/1
+Map 1: 0/1
+Map 1: 1/1
+Status: Finished successfully
+OK
+Time taken: 24.005 seconds
 ```
 
 Now check the data in Hive:
 
 ```sql
-	select * from iot_data;
+select * from iot_data;
 ```
 
 now the table should have about 85,394 rows.
@@ -425,7 +379,7 @@ So if you want to have less splits (less mapper action) you need to set this par
 So clear the table out:
 
 ```sql
-	truncate table iot_in;
+truncate table iot_in;
 ```
 
 Now set the performance variable:
