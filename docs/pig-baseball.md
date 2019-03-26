@@ -3,7 +3,7 @@
 ### Goals
 
 * You will be given a fairly large set of game statistics (over 97,800 rows)
-* Stats for each American baseball player by year from 1871-2013
+* Stats for each American baseball player by year from 1871
 * Identify players who scored highest runs for each year in ascending order
 * Determine First and Last name for the each player by joining 2 data sets
 * You should try to accomplish this with minimal instruction
@@ -33,15 +33,13 @@ Unzip the file in your new directory</h4>
 Many statistics files will unpack from the file.
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>2. Examine the following file</h4>
+<h4>2. Put into HDFS</h4>
 
 #### Batting.csv
 
 |# |NAME |DESCRIPTION|
 |---|---|---|
-|0 |playerID|A unique code assigned to each player. The
-playerID links the data in this file with records
-in other files|
+|0 |playerID|A unique code assigned to each player. The playerID links the data in this file with records in other files|
 |1 |yearID |Year|
 |2 |stint |player's stint (order of appearances in season)|
 |3 |teamID |Team|
@@ -67,13 +65,11 @@ in other files|
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>5. Consider following fields/columns</h4>
   
-• Column # 0 (Player ID)
-• Column # 1 (Year)
-• Column # 7 (Runs)
+* Column # 0 (Player ID)
+* Column # 1 (Year)
+* Column # 7 (Runs)
 
-
-<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>6. Put the file `Batting.csv` into HDFS under an appropriate directory, such as `batting/input`</h4>
+Put the file `Batting.csv` into HDFS under an appropriate directory, such as `batting/input`</h4>
 
 You may wish to rename the file in HDFS. Use `hdfs dfs –cat` to verify the put if needed.
 
@@ -82,9 +78,9 @@ You may wish to rename the file in HDFS. Use `hdfs dfs –cat` to verify the put
 
 #### Master.csv
 
-# NAME DESCRIPTION
-0 playerID Unique ID for player
-1 birthYear Year player was born
+|# NAME DESCRIPTION
+|0 playerID Unique ID for player
+|1 birthYear Year player was born
 2 birthMonth Month player was born
 3 birthday Day player was born
 4 birthCountry Country where player was born
@@ -98,29 +94,26 @@ You may wish to rename the file in HDFS. Use `hdfs dfs –cat` to verify the put
 12 deathCity City where player died
 13 nameFirst Player's first name
 14 nameLast Player's last name
-15 nameGiven Player's given name (typically first and
-middle)
+15 nameGiven Player's given name (typically first and middle)
 16 weight Player's weight in pounds
 17 height Player's height in inches
 18 bats Player's batting hand (left, right, or both)
 19 throws Player's throwing hand (left or right)
-20 debut Date that player made first major league
-appearance
-21 finalGame Date that player made first major league
-appearance (blank if still active)
+20 debut Date that player made first major league appearance
+21 finalGame Date that player made first major league appearance (blank if still active)
 22 more fields
 
 For this lab, you should consider following fields/columns:
 
 #### Batting.csv
-• Column # 0 (Player ID)
-• Column # 1 (Year)
-• Column # 7 (Runs)
+* Column # 0 (Player ID)
+* Column # 1 (Year)
+* Column # 7 (Runs)
 
 #### Master.csv
-• Column # 0 (Player ID)
-• Column # 13 (First Name)
-• Column # 14 (Last Name)
+* Column # 0 (Player ID)
+* Column # 13 (First Name)
+* Column # 14 (Last Name)
 
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
