@@ -91,8 +91,8 @@ The result should be
 ```console
 [meta-region-server, backup-masters, region-in-transition, draining, table, running, table-lock, namespace, HBaseid, online-snapshot, replication, splitWAL, recovering- regions, rs]
 ```
-    
-    > Note: that the HBase node has many children. If this was a fully distributed cluster there would also be a child node for hmaster. There is a node for meta-region-server which tells client what region server is managing the catalog table meta.
+
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) that the HBase node has many children. If this was a fully distributed cluster there would also be a child node for hmaster. There is a node for meta-region-server which tells client what region server is managing the catalog table meta.
  
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
 <h4>9.	Get the value of that node:</h4>
@@ -148,8 +148,8 @@ of the `/hbase-unsecure/table` node:
 [test, ambarismoketest, timeline, hbase:meta, zktest, hbase:namespace, cf]
 
 ```
-    
-Note the node for zktest in the output.
+
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) the node for zktest in the output.
  
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo"> 
 <h4>13.	From the HBase window, drop the table in the HBase shell by running:</h4>
