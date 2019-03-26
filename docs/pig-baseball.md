@@ -76,6 +76,7 @@ You may wish to rename the file in HDFS. Use `hdfs dfs –cat` to verify the put
 <h4>3. Do the same with People.csv</h4>
 
 |# |NAME |DESCRIPTION|
+|---|---|---|
 |0 |playerID |Unique ID for player|
 |1 |birthYear |Year player was born|
 |13 |nameFirst |Player's first name|
