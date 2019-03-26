@@ -16,14 +16,14 @@
 In your VM, create a new directory in your home directory to use for sample data.
 
 Via a browser, get the latest baseball stats file from Sean Lahman’s baseball stats web site (the
-file version may change.) On the page http://www.seanlahman.com/baseball-archive/statistics you’ll see
+file version may change.) On a page [here](http://www.seanlahman.com/baseball-archive/statistics) you’ll see
 the link for downloading some comma-delimited CSV files in a zipped archive. Get that archive (easiest
 using your VM browser), expand it and do a put of the files needed into HDFS.
 
 > ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) you can also achieve this from a Linux shell like this:
 
 ```
-$ wget http://seanlahman.com/files/database/baseballdatabank-master_2016-03-02.zip
+$ wget https://github.com/chadwickbureau/baseballdatabank/archive/v2019.2.zip
 ```
 
 (the latest file as of January 2016 – zip file name may change)
@@ -74,34 +74,17 @@ Put the file `Batting.csv` into HDFS under an appropriate directory, such as `ba
 You may wish to rename the file in HDFS. Use `hdfs dfs –cat` to verify the put if needed.
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>6. Review and understand Baseball statistics data files</h4>
+<h4>3. Review and understand Baseball statistics data files</h4>
 
-#### Master.csv
+#### People.csv
 
-|# NAME DESCRIPTION
-|0 playerID Unique ID for player
-|1 birthYear Year player was born
-2 birthMonth Month player was born
-3 birthday Day player was born
-4 birthCountry Country where player was born
-5 birthState State where player was born
-6 birthCity City where player was born
-7 deathYear Year player died
-8 deathMonth Month player died
-9 deathDay Day player died
-10 deathCountry Country where player died
-11 deathState State where player died
-12 deathCity City where player died
-13 nameFirst Player's first name
-14 nameLast Player's last name
-15 nameGiven Player's given name (typically first and middle)
-16 weight Player's weight in pounds
-17 height Player's height in inches
-18 bats Player's batting hand (left, right, or both)
-19 throws Player's throwing hand (left or right)
-20 debut Date that player made first major league appearance
-21 finalGame Date that player made first major league appearance (blank if still active)
-22 more fields
+|# |NAME |DESCRIPTION|
+|0 |playerID |Unique ID for player|
+|1 |birthYear |Year player was born|
+|13 |nameFirst |Player's first name|
+|14 |nameLast |Player's last name|
+|15 |nameGiven |Player's given name (typically first and middle)|
+|||22 more fields|
 
 For this lab, you should consider following fields/columns:
 
@@ -110,20 +93,19 @@ For this lab, you should consider following fields/columns:
 * Column # 1 (Year)
 * Column # 7 (Runs)
 
-#### Master.csv
+#### People.csv
 * Column # 0 (Player ID)
 * Column # 13 (First Name)
 * Column # 14 (Last Name)
 
-
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>3. Identify players who scored highest runs for each year</h4>
+<h4>4. Identify players who scored highest runs for each year</h4>
 
-Step 1. If you haven’t yet, create a new directory, such as baseball/input in HDFS and put statistic
+If you haven’t yet, create a new directory, such as `baseball/input` in HDFS and put statistic
 files Batting.csv & Master.csv into this directory from your local machine. You may rename them in
 HDFS as you wish.
-Step 2. Start the Pig shell
-Step 3. Load batting data into Pig using the PigStorage() function.
+
+Load batting data into Pig using the PigStorage() function.
 
 NOTE: The default delimiter in Pig is a TAB (\t). A CSV file has comma-separated data in each
 line, so we need to inform Pig explicitly about that field delimiter. See here for the correct
