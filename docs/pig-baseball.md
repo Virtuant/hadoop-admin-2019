@@ -136,20 +136,20 @@ Check the output of the above exercise using a DUMP command.
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>5. Determine First and Last name for the each player</h4>
 
-Load master data to Pig using the PigStorage() function.
+a. Load master data to Pig using the PigStorage() function.
 
-Read relevant fields from the file. In this case we are interested in 13th & 14th fields for each
+b. Read relevant fields from the file. In this case we are interested in 13th & 14th fields for each
 record using FOREACH and generate command:
 
-Join PLAYERS dataset with the result dataset from previous task based on the common
+c. Join PLAYERS dataset with the result dataset from previous task based on the common
 field `playerID`.
 
-Create a new dataset having Year, Player’s First and Last Name and the MAX using
+d. Create a new dataset having Year, Player’s First and Last Name and the MAX using
 FOREACH and GENERATE commands.
 
-Make sure that data is sorted on Year in ascending order.
+e. Make sure that data is sorted on Year in ascending order.
 
-Get the output using DUMP command
+Get the final output using DUMP command
 
 ### Results
 
