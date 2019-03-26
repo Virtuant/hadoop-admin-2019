@@ -40,30 +40,31 @@ Many statistics files will unpack from the file.
 Batting.csv
 
 |# |NAME |DESCRIPTION|
+|---|---|---|
 |0 |playerID|A unique code assigned to each player. The
 playerID links the data in this file with records
 in other files|
-|1 yearID Year
-|2 stint player's stint (order of appearances in season)
-|3 teamID Team
-|4 lgID League
-|5 G Games
-|6 AB At Bats
-|7 R Runs
-|8 H Hits
-|9 2B Doubles
-|10 3B Triples
-|11 HR Homeruns
-|12 RBI Runs Batted In
-|13 SB Stolen Bases
-|14 CS Caught Stealing
-|15 BB Base on Balls
-|16 SO Strikeouts
-|17 IBB Intentional walks
-|19 HBP Hit by pitch
-|19 SH Sacrifice hits
-|20 SF Sacrifice flies
-|21 GIDP Grounded into double plays
+|1 |yearID |Year|
+|2 |stint |player's stint (order of appearances in season)|
+|3 |teamID |Team|
+|4 |lgID |League|
+|5 |G |Games|
+|6 |AB |At Bats|
+|7 |R |Runs|
+|8 |H |Hits|
+|9 |2B |Doubles|
+|10 |3B |Triples|
+|11 |HR |Homeruns|
+|12 |RBI |Runs Batted In|
+|13 |SB |Stolen Bases|
+|14 |CS |Caught Stealing|
+|15 |BB |Base on Balls|
+|16 |SO |Strikeouts|
+|17 |IBB |Intentional walks|
+|19 |HBP |Hit by pitch|
+|19 |SH |Sacrifice hits|
+|20 |SF |Sacrifice flies|
+|21 |GIDP |Grounded into double plays|
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>5. Consider following fields/columns<h4>
