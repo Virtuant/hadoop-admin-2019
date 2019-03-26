@@ -48,7 +48,8 @@ Use a text editor to add below lines to create the `dividend_c` table:
 ```sql
 CREATE TABLE dividend_c (market string, symbol string, 
 trade_date string, dividend float) 
-row format delimited fields terminated by ',';
+row format delimited fields terminated by ','
+stored as textfile;
 ```
 
 To load the data into the table, add below command to the file:
