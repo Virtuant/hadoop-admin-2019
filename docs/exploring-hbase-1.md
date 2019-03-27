@@ -103,7 +103,7 @@ The `hbase:meta` table contains information about the node that is serving the t
 Now let's create a new table (whatever name you wish):
 
 ```console
-hbase> create [some name], 'cf1', 'cf2', {SPLITS => ['A', 'M', 'Z']}
+hbase> create '[some name]', 'cf1', 'cf2', {SPLITS => ['A', 'M', 'Z']}
 ```
     
 When creating a new table in HBase, you can split the table into regions as the starting point. The splits passed in during the create will serve as the initial regions for the table.
