@@ -74,7 +74,6 @@ df.show
 You should see an output similar to:
 
 ~~~scala
-...
 +----+-------+
 | age|   name|
 +----+-------+
@@ -97,7 +96,6 @@ df.select(df("name"), df("age") + 1).show()
 This will produce an output similar to the following:
 
 ~~~ bash
-...
 +-------+---------+
 |   name|(age + 1)|
 +-------+---------+
@@ -118,7 +116,6 @@ df.filter(df("age") > 21).show()
 This will produce an output similar to the following:
 
 ~~~ bash
-...
 +---+----+
 |age|name|
 +---+----+
@@ -137,7 +134,6 @@ df.groupBy("age").count().show()
 This will produce an output similar to the following:
 
 ~~~ bash
-...
 +----+-----+
 | age|count|
 +----+-----+
@@ -215,7 +211,6 @@ results.map(attributes => "Name: " + attributes(0)).show()
 This will produce an output similar to the following:
 
 ~~~ bash
-...
 +-------------+
 |        value|
 +-------------+
@@ -245,7 +240,6 @@ At the `scala>` prompt, copy & paste the following:
 
 ~~~scala
 val ds = Seq(1, 2, 3).toDS()
-
 ds.show
 ~~~
 
@@ -267,7 +261,6 @@ To apply *Person* class to hardcoded data type:
 
 ~~~ bash
 case class Person(name: String, age: Long)
-
 val ds = Seq(Person("Andy", 32)).toDS()
 ~~~
 
@@ -303,7 +296,6 @@ people.show
 You should see an output similar to the following:
 
 ~~~ bash
-...
 +----+-------+
 | age|   name|
 +----+-------+
