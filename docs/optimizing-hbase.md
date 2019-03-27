@@ -197,7 +197,7 @@ cp data.hive /tmp/.
 cp orders.hive /tmp/.
 ```
 
-Now run several beeline create tables and import:
+Now run several hive create tables and import:
 
 ```console
 ## Create the hive users table
@@ -210,15 +210,7 @@ beeline -n hive -u jdbc:hive2://localhost:10000 -e "CREATE  TABLE orders(id int,
 beeline -n hive -u jdbc:hive2://localhost:10000 -e "load data local inpath '/tmp/orders.hive' into table orders"
 ```
 
-Go into `hive`, using `beeline`:
-
-```console
-[centos@ip-10-0-0-34 nosql]$ beeline -n hive -u jdbc:hive2://localhost:10000
-...
-0: jdbc:hive2://master1.hdp.com:2181/default>
-```
-
-Now let's select a sample row:
+Now let's select a sample hive row:
 
 ```sql
 0: jdbc:hive2://localhost:10000> select * from users limit 1;
