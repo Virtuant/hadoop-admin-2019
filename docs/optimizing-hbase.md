@@ -39,7 +39,8 @@ hbase org.apache.hadoop.hbase.mapreduce.ImportTsv
 -Dimporttsv.separator=$'\x01' users_optimized data_padded.hive
 ```
 
->Note: copyable command:
+
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) copyable command:
 
 ```console
 hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.columns=HBASE_ROW_KEY,f1:name,f1:address,f1:dob,f1:phone,f1:state -Dimporttsv.separator=$'\x01' users_optimized data_padded.hive
@@ -107,7 +108,7 @@ hbase org.apache.hadoop.hbase.mapreduce.ImportTsv
 -Dimporttsv.separator=$'\x01' users_name data_padded.hive
 ```
 
->Note: copyable command:
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) copyable command:
 
 ```console
 hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.columns=f1:id,HBASE_ROW_KEY,f1:address,f1:dob,f1:phone,f1:state -Dimporttsv.separator=$'\x01' users_name data_padded.hive
