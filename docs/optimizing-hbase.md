@@ -11,7 +11,7 @@ Took 2.2568 seconds
 => Hbase::Table - users_optimized
 ```
 
->Question: how are the regions split?
+> ![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) Question: how are the regions split?
 
 Now create the related table:
 
@@ -114,7 +114,7 @@ hbase org.apache.hadoop.hbase.mapreduce.ImportTsv
 hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.columns=f1:id,HBASE_ROW_KEY,f1:address,f1:dob,f1:phone,f1:state -Dimporttsv.separator=$'\x01' users_name data_padded.hive
 ```
 
->Note: do you see anything different about this file?
+> ![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) Question: do you see anything different about this file?
 
 The `HBASE_ROW_KEY` in this case is pointing to the name, rather than `id`.
 
@@ -146,7 +146,8 @@ ROW                COLUMN+CELL
 Took 0.4199 seconds
 ```
 
->Note: the rowkey in this case has changed to name.
+
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) the rowkey in this case has changed to name.
 
 A `GET` against the `users_optimized` for a known row key will be very fast:
 
@@ -182,7 +183,7 @@ scan 'users_name', {STARTROW => 'Cassie', ENDROW => 'Cassif'}
 
 Now let us look at joins in Hive.
 
->Note: You may have to do this first to make sure you have write permissions:
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) You may have to do this first to make sure you have write permissions:
 
 ```console
 [centos@ip-10-0-0-34 nosql]$ sudo su hive
@@ -266,7 +267,7 @@ create table prejoined as
 select users.id, users.name, users.address, users.dob,users.phone,users.state, collect_set(orders.total) as orderlist from users left join orders on users.id=orders.id group by users.id,users.name,users.address, users.dob,users.phone,users.state ;
 ```
 
->Note: copyable command:
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) copyable command:
 
 ```sql
 create table prejoined as select users.id, users.name, users.address, users.dob,users.phone,users.state, collect_set(orders.total) as orderlist from users left join orders on users.id=orders.id group by users.id,users.name,users.address, users.dob,users.phone,users.state;
