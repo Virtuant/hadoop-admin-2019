@@ -75,7 +75,7 @@ Let’s go ahead and create the anonymous user in HDFS:
 
 We will begin by creating a Hive table with HBase charateristics. Notice the `hbase.table.name` below. 
 
-Now start beeline and create the table `iot_data`:
+Now start hive and create the table `iot_data`:
 
 ```sql
 CREATE EXTERNAL TABLE iot_data 
