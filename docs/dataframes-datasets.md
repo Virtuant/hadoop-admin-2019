@@ -1,6 +1,8 @@
-## DataFrames and Datasets in Spark REPL
+## DataFrames and Datasets in Spark
 
-Spark SQl is a Spark module for structured data processing. It has interfaces that provide Spark with additional information about the structure of both the data and the computation being performed. The additional information is used for optimization.
+**Objective**: Spark SQl is a Spark module for structured data processing. It has interfaces that provide Spark with additional information about the structure of both the data and the computation being performed. We will investigate this technology.
+
+**Exercise directory**: `~/data`
 
 * A Dataset is a type of interface that provides the benefits of RDD (strongly typed) and Spark SQL's optimization. It is important to note that a Dataset can be constructed from JVM objects and then manipulated using complex functional transformations, however, they are beyond this quick guide.
 * A DataFrame is a Dataset organized into named columns. Conceptually, they are equivalent to a table in a relational database or a DataFrame in R or Python. DataFrames can be created from various sources such as:
@@ -10,7 +12,7 @@ Key difference between the Dataset and the DataFrame is that Datasets are strong
 
 ### Download some Datasets
 
-In preparation for this tutorial you need to download two files, people.txt and people.json into your  Sandbox's **tmp** folder. The commands below should be typed into [Shell-in-a-Box](sandbox-hdp.hortonworks.com:4200)
+In preparation for this lab you need to download two files, people.txt and people.json into your  Sandbox's **tmp** folder. The commands below should be typed into [Shell-in-a-Box](sandbox-hdp.hortonworks.com:4200)
 
 Go to the `/tmp` directory:
 
@@ -18,13 +20,13 @@ Go to the `/tmp` directory:
 cd /tmp
 ~~~
 
-Copy and paste the command to download the file `people.txt`:
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) if the file can't be found, copy and paste the command to download the file `people.txt`:
 
 ~~~bash
 wget https://raw.githubusercontent.com/hortonworks/data-tutorials/master/tutorials/hdp/dataFrame-and-dataset-examples-in-spark-repl/assets/people.txt
 ~~~
 
-Copy and paste the command to download the file `people.json`:
+The same for the file `people.json`:
 
 ~~~bash
 wget https://raw.githubusercontent.com/hortonworks/data-tutorials/master/tutorials/hdp/dataFrame-and-dataset-examples-in-spark-repl/assets/people.json
@@ -32,7 +34,7 @@ wget https://raw.githubusercontent.com/hortonworks/data-tutorials/master/tutoria
 
 ### Upload the Dataset to HDFS
 
->Note: before moving the files into HDFS you may need to login under **hdfs** user in order to give permission to perform file operations. Ask your instructor if neccessary.
+![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) before moving the files into HDFS you may need to login under **hdfs** user in order to give permission to perform file operations. Ask your instructor if neccessary.
 
 Next, upload `people.txt` and `people.json` files to HDFS:
 
@@ -311,7 +313,7 @@ You should see an output similar to the following:
 +----+-------+
 ~~~
 
-Note that the *age* column contains a *null* value. Before we can convert our people DataFrame to a Dataset, let's filter out the *null* value first:
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) the *age* column contains a *null* value. Before we can convert our people DataFrame to a Dataset, let's filter out the *null* value first:
 
 ~~~ bash
 val pplFiltered = people.filter("age is not null")
