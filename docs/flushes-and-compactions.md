@@ -16,6 +16,7 @@ The table below has a column called HBase shell and another column called Termin
 
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>1. Do these steps</h4>
+<br>
     
 |**Step**|**HBase Shell**|**Terminal**|
 ---|---|---
