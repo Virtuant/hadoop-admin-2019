@@ -1,0 +1,6 @@
+**Objective**: Begin to get acquainted with Hadoops file system. And manipulate files in HDFS, the Hadoop Distributed File System.
+
+**Exercise directory**: `~/data`
+
+**HDFS paths:** `/user/[user-name]`
+
