@@ -1,6 +1,6 @@
 ## DataFrames and Datasets in Spark
 
-**Objective**: Spark SQl is a Spark module for structured data processing. It has interfaces that provide Spark with additional information about the structure of both the data and the computation being performed. We will investigate this technology.
+**Objective**: Spark SQL is a Spark module for structured data processing. It has interfaces that provide Spark with additional information about the structure of both the data and the computation being performed. We will investigate this technology.
 
 **Exercise directory**: `~/data`
 
