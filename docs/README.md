@@ -59,7 +59,7 @@ The lab guide is [here](https://virtuant.github.io/hadoop-overview-spark-hwx/lab
 
 #### Lab [22](https://virtuant.github.io/hadoop-overview-spark-hwx/column-families.html) Column Families [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/column-families.pdf)
 
-#### Lab [23](https://virtuant.github.io/hadoop-overview-spark-hwx/hive-and-hbase.html) Hive and HBase [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/hive-and-hbase.pdf)
+#### Lab [23](https://virtuant.github.io/hadoop-overview-spark-hwx/hbase-pig.html) HBase and Pig [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/hbase-pig.pdf)
 
 #### Lab [24](https://virtuant.github.io/hadoop-overview-spark-hwx/flushes-and-compactions.html) Flushes and Compactions [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/flushes-and-compactions.pdf)
 
