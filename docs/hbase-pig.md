@@ -1,15 +1,6 @@
-## Hadoop and NoSQL
+## HBase and Pig Interaction
 
-### What is NoSQL?
-
-A NoSQL database is a type of database that stores and retrieves data differently than a traditional relational database. NoSQL databases are also known as non relational databases, or as Not-only-SQL databases because they can have a SQL-like language that is used to query data.
-
-NoSQL databases grew in popularity with the emergence of companies such as Google and Amazon because of the requirements of real time web applications combined with massive amounts of data (Big Data). It's simplistic design allows horizontally scalability across multiple nodes easily, resulting in high availability. They also offer a lot of options when it comes to how the data is stored and retrieved — data can be stored in key value pairs, wide column, document, and graphs, providing a great deal of flexibility.
-Why does Hadoop need NoSQL?
-
-Hadoop has some limitations when it comes to processing and retrieval of data. HDFS is really good at sequential querying of data. One thing HDFS cannot do is query data in a random fashion. For example, if Hadoop was to look up a word in the dictionary, it would start from the beginning and go through every page to find the right word. If you had a NoSQL database, you could “randomly” go to a page and start looking or go to a certain letter and start looking there. This is why HBase was created for the Hadoop ecosystem.
-
-Choosing which type to use depends on whether it is more likely that an entire row needs to be fetched when doing queries (which row-based databases are better at) or just a subset of the data or a few columns.
+----
 
 Let’s put the data into HDFS quickly with some data prep.
 
