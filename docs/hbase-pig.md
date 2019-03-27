@@ -1,6 +1,10 @@
 ## HBase and Pig Interaction
 
-For this lab, we will be working with some movie data. You can download the data that we are going to be using from [here](http://www.grouplens.org/system/files/ml-1m.zip). In the `ml-1m.zip` file, you should see three files inside: `movies.dat, ratings.dat, users.dat`.
+**Objective**: Get acquainted with integrating HBase and Pig.
+
+**Exercise directory**: `~/data/movie`
+
+For this lab, we will be working with some movie data. If you need it the data can be gotten from [here](http://www.grouplens.org/system/files/ml-1m.zip). In the `ml-1m.zip` file, you should see three files inside: `movies.dat, ratings.dat, users.dat`.
 
 ----
 
@@ -198,49 +202,6 @@ ratings = LOAD '/moviedata/ratings/ratings.t' USING PigStorage(',') AS (userid:i
 STORE ratings INTO 'hbase://ratings' USING org.apache.pig.backend.hadoop.hbase.HBaseStorage('ratingsdata:movieid ratingsdata:rating ratingsdata:tstamp');
 users = LOAD '/moviedata/users/users.t' USING PigStorage(',') AS (userid:int, gender:chararray, age:int, occupation:int, zipcode:chararray);
 STORE users INTO 'hbase://users' USING org.apache.pig.backend.hadoop.hbase.HBaseStorage('userdata:gender userdata:age userdata:occupation userdata:zipcode');
-```
-
-We are loading some data from HDFS and using a special class (hbase://) to store data into HBase for each of the files. The command to run this script is a little different because we need to add some jars (Java ARchives) to the classpath of Pig that contain the special class that we used to store the data into HBase. Run the following command and watch the magic happen.
-
-```console
-PIG_CLASSPATH=/usr/lib/hbase/hbase-*:/usr/lib/zookeeper/zookeeper-3.4.5-cdh5.7.0.jar pig loadHBase.pig
-
-HadoopVersion        PigVersion        UserId        StartedAt        FinishedAt        Features
-2.6.0-cdh5.7.0        0.12.0-cdh5.7.0        root        2018-02-11 20:25:07        2018-02-11 20:28:00        UNKNOWN
-
-Success!
-
-Job Stats (time in seconds):
-
-JobId        Maps        Reduces        MaxMapTime        MinMapTIme        AvgMapTime        MedianMapTime        MaxReduceTime        MinReduceTime        AvgReduceTime        MedianReducetime        Alias        Feature        Output
-job_1518379779375_0001        1        0        80        80        80        80        n/a        n/a        n/a        n/a        ratings        MAP_ONLY        hbase://ratings,
-job_1518379779375_0002        1        0        21        21        21        21        n/a        n/a        n/a        n/a        movies        MAP_ONLY        hbase://movies,
-job_1518379779375_0003        1        0        20        20        20        20        n/a        n/a        n/a        n/a       
-
-Input(s):
-
-Successfully read 1000209 records (21593882 bytes) from: "/moviedata/ratings/ratings.t"
-Successfully read 3883 records (163918 bytes) from: "/moviedata/movies/movies.t"
-Successfully read 6040 records (110582 bytes) from: "/moviedata/users/users.t"
-
-Output(s):
-
-Successfully stored 1000209 records in: "hbase://ratings"
-Successfully stored 3883 records in: "hbase://movies"
-Successfully stored 6040 records in: "hbase://users"
- 
-Counters:
-
-Total records written : 1010132
-Total bytes written : 0
-Spillable Memory Manager spill count : 0
-Total bags proactively spilled: 0
-
-Job DAG:
-
-job_1518379779375_0001
-job_1518349779375_0002
-job_1518379779375_0003
 ```
 
 Awesome. The data should now be loaded into HBase. Let’s jump into the HBase shell and do some querying of the data.
