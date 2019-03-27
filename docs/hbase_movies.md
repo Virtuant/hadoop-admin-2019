@@ -196,19 +196,14 @@ create 'movies', 'moviedata'
 => Hbase::Table - movies
 ```
 
-Great! Let’s create a script to load the data using pig. Copy the following code into a file called loadHbase.pig.
+Great! Let’s create a script to load the data using pig. Copy the following code into a file called `loadHbase.pig`.
 
 ```console
 movies = LOAD '/moviedata/movies/movies.t' USING PigStorage(',') AS (movieid:int, title:chararray, genres:chararray);
-
 STORE movies INTO 'hbase://movies' USING org.apache.pig.backend.hadoop.hbase.HBaseStorage('moviedata:title moviedata:genres');
-
 ratings = LOAD '/moviedata/ratings/ratings.t' USING PigStorage(',') AS (userid:int, movieid:int, rating:int, tstamp:chararray);
-
 STORE ratings INTO 'hbase://ratings' USING org.apache.pig.backend.hadoop.hbase.HBaseStorage('ratingsdata:movieid ratingsdata:rating ratingsdata:tstamp');
-
 users = LOAD '/moviedata/users/users.t' USING PigStorage(',') AS (userid:int, gender:chararray, age:int, occupation:int, zipcode:chararray);
-
 STORE users INTO 'hbase://users' USING org.apache.pig.backend.hadoop.hbase.HBaseStorage('userdata:gender userdata:age userdata:occupation userdata:zipcode');
 ```
 
@@ -224,12 +219,9 @@ Success!
 
 Job Stats (time in seconds):
 
-JobId        Maps        Reduces        MaxMapTime        MinMapTIme        AvgMapTime        MedianMapTime        MaxReduceTime        MinReduceTime        AvgReduceTime        MedianReducetime        Alias        Feature        Outputs
-
+JobId        Maps        Reduces        MaxMapTime        MinMapTIme        AvgMapTime        MedianMapTime        MaxReduceTime        MinReduceTime        AvgReduceTime        MedianReducetime        Alias        Feature        Output
 job_1518379779375_0001        1        0        80        80        80        80        n/a        n/a        n/a        n/a        ratings        MAP_ONLY        hbase://ratings,
-
 job_1518379779375_0002        1        0        21        21        21        21        n/a        n/a        n/a        n/a        movies        MAP_ONLY        hbase://movies,
-
 job_1518379779375_0003        1        0        20        20        20        20        n/a        n/a        n/a        n/a       
 
 Input(s):
