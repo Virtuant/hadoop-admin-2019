@@ -255,6 +255,6 @@ moviedata:title        timestamp=1518381803660, value=Nico Icon (1995)
 2 row(s) in 0.1390 seconds
 ```
 
-### Resulte
+### Results
 
 Great - now you understand about enabling and disabling tables.
