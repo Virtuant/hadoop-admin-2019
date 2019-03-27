@@ -27,17 +27,16 @@ Awesome! Let's put aside this data for now, and just get some practice interacti
 Let’s create a table now.
 
 ```console
-create 'tabletest', 'columnfamily1'
+hbase(main):001:0> create 'tabletest', 'columnfamily1'
 0 row(s) in 1.5990 seconds
 => Hbase::Table - tabletest
 ```
 
-In the last command, we specify the create command with tabletest as the name of our table with columnfamily1 as a column family name — the command is create '<<table name>>', '<<column family>>'.
+In the last command, we specify the create command with tabletest as the name of our table with columnfamily1 as a column family name — the command is create `<<table name>>`, `<<column family>>`.
 
 Use the list command to print out some information about your table:
 
 ```console
-list 'tabletest'
 hbase(main):002:0> list 'tabletest'
 TABLE                                                                                                                   
 tabletest                                                                                                               
@@ -59,10 +58,10 @@ hbase(main):006:0> put 'tabletest', 'thirdrow', 'columnfamily1','testValue3'
 
 This format looks a little different:
 
-* The first part put tabletest is just telling HBase which table we want to put the data into.
-* firstrow denotes where in the table we want to put the data. Remember random read and writes, so we have to specify exactly where to store the data.
-* columnfamily1 refers to which column family we are going to be putting data into
-* Finally we put the value of testvalue.
+* The first part put `tabletest` is just telling HBase which table we want to put the data into.
+* `firstrow` denotes where in the table we want to put the data. Remember random read and writes, so we have to specify exactly where to store the data.
+* `columnfamily1` refers to which column family we are going to be putting data into
+* Finally we put the value of `testvalue`.
 
 It's important to note here that HBase doesn't support multiple columns in a single statement. So if you had a table with a column family with two columns under it, the put statement to add to both columns would look like the following:
 
@@ -207,7 +206,7 @@ STORE users INTO 'hbase://users' USING org.apache.pig.backend.hadoop.hbase.HBase
 Awesome. The data should now be loaded into HBase. Let’s jump into the HBase shell and do some querying of the data.
 
 ```console
-scan 'movie
+hbase(main):002:0> scan 'movie'
 
  988       column=moviedata:title, timestamp=1518381804300, value=Grace of My Heart (1996)                                                                                                                        
  989       column=moviedata:genres, timestamp=1518381804300, value=Drama                                                                                                                          
