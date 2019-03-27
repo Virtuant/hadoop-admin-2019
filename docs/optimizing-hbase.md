@@ -1,8 +1,14 @@
-## Optimizing NOSql in Hive and HBase
+## Optimizing Queries in Hive and HBase
+
+**Objective**: We will learn to make some changes to allow HBase to run faster.
+
+**Exercise directory**: `~/data`
 
 ----
 
-So create another `users` table. This time we will split the table into 4 regions:
+### Setup
+
+So let's create another `users` table. This time we will split the table into 4 regions:
 
 ```sql
 hbase(main):004:0> create 'users_optimized','f1', SPLITS => ['0250000','0500000','0750000']
