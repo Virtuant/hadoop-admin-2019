@@ -1,5 +1,7 @@
 ## HBase and Pig Interaction
 
+For this lab, we will be working with some movie data. You can download the data that we are going to be using from [here](http://www.grouplens.org/system/files/ml-1m.zip). In the `ml-1m.zip` file, you should see three files inside: `movies.dat, ratings.dat, users.dat`.
+
 ----
 
 Let’s put the data into HDFS quickly with some data prep.
