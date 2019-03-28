@@ -1,3 +1,24 @@
+![copy-jar-path-800x624](https://user-images.githubusercontent.com/558905/55126119-82467f80-50e2-11e9-92f6-43f270b0888d.jpg)
+![copy-path-800x624](https://user-images.githubusercontent.com/558905/55126120-82467f80-50e2-11e9-95fe-de93f1497b62.jpg)
+![edit-configs](https://user-images.githubusercontent.com/558905/55126121-82467f80-50e2-11e9-96fb-fa69af292574.jpg)
+![file-preview-800x432](https://user-images.githubusercontent.com/558905/55126122-82467f80-50e2-11e9-960e-0edb27acfbf8.jpg)
+![intellij-folder-structure-800x624](https://user-images.githubusercontent.com/558905/55126123-82467f80-50e2-11e9-908e-46d13eb7b264.jpg)
+![intellij-new-project](https://user-images.githubusercontent.com/558905/55126124-82467f80-50e2-11e9-92af-e5d3632fd65d.jpg)
+![intellij-sbt-file-800x624](https://user-images.githubusercontent.com/558905/55126125-82467f80-50e2-11e9-931b-d6df782ce8a0.jpg)
+![intellij-scala-plugin](https://user-images.githubusercontent.com/558905/55126126-82467f80-50e2-11e9-807f-c62b7b6275a2.jpg)
+![intellij-select-scala-sbt](https://user-images.githubusercontent.com/558905/55126127-82467f80-50e2-11e9-9540-16bbc7e863fc.jpg)
+![new-object](https://user-images.githubusercontent.com/558905/55126128-82df1600-50e2-11e9-99dc-b8cf6b854739.jpg)
+![new-project-name](https://user-images.githubusercontent.com/558905/55126129-82df1600-50e2-11e9-972f-3a240d454b13.jpg)
+![new-scala-class-800x624](https://user-images.githubusercontent.com/558905/55126130-82df1600-50e2-11e9-8318-412082080bfe.jpg)
+![open-part-00000-800x159](https://user-images.githubusercontent.com/558905/55126132-82df1600-50e2-11e9-87b8-2bea3777ee23.jpg)
+![output-ide-800x487](https://user-images.githubusercontent.com/558905/55126133-82df1600-50e2-11e9-83e2-4de549b9af4e.jpg)
+![resources-folder](https://user-images.githubusercontent.com/558905/55126134-82df1600-50e2-11e9-8e0c-f28e4bce20d1.jpg)
+![run-helloworld-800x624](https://user-images.githubusercontent.com/558905/55126135-82df1600-50e2-11e9-9a54-2246ec834895.jpg)
+![sandbox-host-800x515](https://user-images.githubusercontent.com/558905/55126136-82df1600-50e2-11e9-9cf9-80b95f69d224.jpg)
+![saved-in-hdfs-800x366](https://user-images.githubusercontent.com/558905/55126137-8377ac80-50e2-11e9-850f-cd920946d4a6.jpg)
+![select-files-view](https://user-images.githubusercontent.com/558905/55126138-8377ac80-50e2-11e9-8bcd-2bf307e1c6ba.jpg)
+![wordcount-hdfs-800x366](https://user-images.githubusercontent.com/558905/55126139-8377ac80-50e2-11e9-891d-b7440183b667.jpg)
+
 Set up IntelliJ
 
 To install the IntelliJ Scala plugin navigate to preferences > Plugins > Browse Repositories > search and install Scala. Your screen should look something like this:
