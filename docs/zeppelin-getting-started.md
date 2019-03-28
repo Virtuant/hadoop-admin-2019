@@ -141,11 +141,11 @@ There are two ways of running a paragraph in a Zeppelin Notebook, step 1 and 2 c
 
 2. Press Shift + Enter
 
-Running Paragraphs
+![running_a_paragraph-800x115](https://user-images.githubusercontent.com/558905/55121487-04c64380-50d1-11e9-83a3-5d2737c305e0.jpg)
 
 3.Click the play button (blue) triangle at the top of the Zeppelin Notebook as shown on the image below.
 
-Running Paragraphs
+![running_paragraphs-800x115](https://user-images.githubusercontent.com/558905/55121488-04c64380-50d1-11e9-8fcd-6b17b45a7eb2.jpg)
 
 ### Clearing Paragraph Output
 
@@ -309,8 +309,7 @@ z.load("harsha2010:magellan:1.0.3-s_2.10")
 ![export_notebook-800x120](https://user-images.githubusercontent.com/558905/55121476-03951680-50d1-11e9-8ad7-2595d8bfc641.jpg)
 
 ![interpreter_examples-800x373](https://user-images.githubusercontent.com/558905/55121485-04c64380-50d1-11e9-9c7a-4c0ff3f05c52.jpg)
-![running_a_paragraph-800x115](https://user-images.githubusercontent.com/558905/55121487-04c64380-50d1-11e9-83a3-5d2737c305e0.jpg)
-![running_paragraphs-800x115](https://user-images.githubusercontent.com/558905/55121488-04c64380-50d1-11e9-8fcd-6b17b45a7eb2.jpg)
+
 
 
 ### Results
