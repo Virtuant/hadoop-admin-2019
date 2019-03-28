@@ -1,10 +1,8 @@
 ## Apache Zeppelin 
 
-**Objective**: Begin to get acquainted with Hadoops file system. And manipulate files in HDFS, the Hadoop Distributed File System.
+**Objective**: Zeppelin is a web-based notebook that enables interactive data analytics. With Zeppelin, you can make beautiful data-driven, interactive and collaborative documents with a rich set of pre-built language back-ends (or interpreters) such as Scala (with Apache Spark), Python (with Apache Spark), SparkSQL, Hive, Markdown, Angular, and Shell.
 
 **Exercise directory**: `~/data`
-
-Zeppelin is a web-based notebook that enables interactive data analytics. With Zeppelin, you can make beautiful data-driven, interactive and collaborative documents with a rich set of pre-built language back-ends (or interpreters) such as Scala (with Apache Spark), Python (with Apache Spark), SparkSQL, Hive, Markdown, Angular, and Shell.
 
 With a focus on Enterprise, Zeppelin has the following important features:
 
@@ -17,6 +15,8 @@ With a focus on Enterprise, Zeppelin has the following important features:
 The purpose of this lab is to guide you through basic functionalities of Zeppelin so that you may create your own data analysis applications or import existent Zeppelin Notebooks; additionally, you will learn advanced features of Zeppelin like creating and binding interpreters, and importing external libraries.
 
 This lab is the fundamental base which will be used in future Spark labs and covers important topics such as creating notebooks, importing and expanding existing notebooks, and binding different back-ends to your environment so that you may use Zeppelin to it’s full potential.
+
+----
 
 ### Launching Zeppelin
 
