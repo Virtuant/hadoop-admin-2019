@@ -12,7 +12,7 @@ Key difference between the Dataset and the DataFrame is that Datasets are strong
 
 ### Download some Datasets
 
-In preparation for this lab you need to download two files, people.txt and people.json into your  Sandbox's **tmp** folder. The commands below should be typed into [Shell-in-a-Box](sandbox-hdp.hortonworks.com:4200)
+In preparation for this lab you need to download two files, `people.txt` and `people.json` into your Linux **tmp** folder.
 
 Go to the `/tmp` directory:
 
