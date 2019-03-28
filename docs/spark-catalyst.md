@@ -21,9 +21,6 @@ We'll first work with the Wikimedia page count data again, and see how Catalyst 
 > val viewsWithSchemaDF = splitViewsDF.select('splitLine(0).as("domain"), 'splitLine(1).as("pageName"), 'splitLine(2).cast("integer").as("viewCount"), 'splitLine(3).cast("long").as("size"))
 ```
 
-* If you haven't already done the steps above, then do so now.
-	* Cat/copy from the helper file, __*spark-labs/helpers/wikiSchema.txt*__, and use the `:paste` command in the shell.
-
 ### Push Down Predicate
 
 * First, write a transformation to order `viewsWithSchemaDF` by `viewCount`.
@@ -47,7 +44,7 @@ We'll now create a DataSet and filter it using a lambda.  We'll look at how the 
 
 * Declare a case class for the Wikimedia data.
 * Create a DataSet using the case class.
-* We show this code below, and also supply it in __*spark-labs/helpers/wikiSchema.txt*__ for easy copy/paste
+* We show this code below:
 
 ```scala
 case class WikiViews(domain:String, pageName:String, viewCount:Integer, size:Long)
