@@ -2,26 +2,18 @@
 
 <!-- [<< back to main index](../README.md) -->
 
-Lab 3.1 : RDD Basics operations
-===================
+## RDD Basics operations
 
-### Overview
- In this lab, we will work with RDDs at a basic level, including:
+In this lab, we will work with RDDs at a basic level, including:
  
 * Learn basic operations like filter / map / count
 * Work with larger sized RDDs
 * Load multiple files into a single RDD
 * Save computed RDDs
 
-### Builds on
-Lab 2.2: Spark Shell
 
-### Run time
-30-40 minutes
+### Load a small file, then filter it
 
---------------------------------
-Load a small file, then filter it
---------------------------------
 We supply a number of text files of varying sizes in *data/twinkle* including:
 
 * *sample.txt*: A few lines
@@ -54,18 +46,14 @@ Let's find how many lines contain the word "twinkle".  We'll do this using the `
 // How do you count?
 ```
 
-* Goto Spark shell UI (as done previously)
+* Goto Spark shell
 * Inspect the 'Stages' section in the UI
 * Note how the above transformations are executed (should be the first stage listed in the table of "**Completed Stages**"
 * Next, view the DAG visualiation in the Jobs tab at follows
 	* Go to the Jobs tab - the above transformation should be the first job listed
 	* Click on the link in the **Description**, as shown below
 
-<img src="../images/03.1-d-DAG-Access.png" style="border: 5px solid grey; max-width:100%;"/>
-
-* Expand the **DAG Visuaization** node to view it, as shown below
-
-<img src="../images/03.1-c-DAG.png" style="border: 5px solid grey; max-width:100%;"/>
+* Expand the **DAG Visuaization** node to view it
 
 We can observe some of this behavior in the shell by changing the logging
 
@@ -83,13 +71,11 @@ We can observe some of this behavior in the shell by changing the logging
 > sc.setLogLevel("WARN") // Set level back to WARN
 ```
 
+### Process a large file
 
---------------------------------
-Process a large file
---------------------------------
 We'll do some processing now on much larger files, and then view the processing in the UI
 
-**NOTE**: All data files are in the *spark-labs/data/twinkle* folder
+>Note: look under `~/data/movies`
 
 ##### Tasks
 
@@ -98,10 +84,7 @@ We'll do some processing now on much larger files, and then view the processing 
 * Count the number of lines that have the word "diamond"
  * Use `filter` and `count`
 * Check how many 'tasks' are used in the above calculation
- * Check **Stages** tab in the spark shell UI - we illustrate below
- 
- <img src="../images/03.1-b-stages.png" style="border: 5px solid grey; max-width:100%;" />
- 
+ * Check **Stages** tab in the spark shell UI 
 * Count the number of lines that do NOT have the word 'diamond'  
  * Use the negative operator  !
 * Verify that both counts add up to the total line count
@@ -114,9 +97,8 @@ We'll do some processing now on much larger files, and then view the processing 
 		* In this UI, if you drill down to a worker, you can view its stout/stderr
  
  
---------------------------------
-Loading multiple files	
---------------------------------
+### Loading multiple files	
+
 You can use wildcards in the filename to specify multiple files, e.g. __*.data__
 
 #### Tasks
@@ -124,9 +106,9 @@ You can use wildcards in the filename to specify multiple files, e.g. __*.data__
 * Load some of the files like this and then filter for lines containing the word "diamond"
 * Count them, and review the UI statistics
 
---------------------------------
-Writing data
---------------------------------
+
+### Writing data
+
 You can easily write an RDD to disk using `saveAsTextFile("filename")` as shown below
 
 #### Tasks
