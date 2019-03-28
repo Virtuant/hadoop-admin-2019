@@ -12,7 +12,6 @@
 
 
 
-> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) 
 
 
 Zeppelin is a web-based notebook that enables interactive data analytics. With Zeppelin, you can make beautiful data-driven, interactive and collaborative documents with a rich set of pre-built language back-ends (or interpreters) such as Scala (with Apache Spark), Python (with Apache Spark), SparkSQL, Hive, Markdown, Angular, and Shell.
@@ -167,9 +166,7 @@ To clear the output of the whole Zeppelin Notebook go to the top of the Notebook
 
 In this section we will review how to install a Zeppelin interpreter for use in the Zeppelin UI. Please note the supported interpreters to ensure that the interpreter you want to install.
 
-Open Web Shell by navigating to http://sandbox-hdp.hortonworks.com:4200
-
-To display a list of the available interpreters issue the following command:
+Go to the Command Prompt and display a list of the available interpreters issue the following command:
 
 ```
 /usr/hdp/current/zeppelin-server/bin/install-interpreter.sh --list
@@ -187,9 +184,7 @@ Output you should see:
 
 ![install-interpreter-shell-800x454](https://user-images.githubusercontent.com/558905/55121484-042dad00-50d1-11e9-9dcc-303d89065272.jpg)
 
-### Restart Zeppelin from Ambari UI.
-
-Refer to creating an interpreter section to enable usage on the Zeppelin Web Application.
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) Restart Zeppelin from Ambari UI.
 
 ### Creating an Interpreter
 
@@ -212,7 +207,7 @@ These are some of the interpreters that will be utilized throughout our various 
 |%angular 	|Angular interpreter to run Angular and HTML code|
 |%md 	|Markdown for displaying formatted text, links, and images|
 
-Note the % at the beginning of each interpreter. Each paragraph needs to start with % followed by the interpreter name. The image below showcases three interpreters, Markdown, Spark and Shell.
+Note the `%` at the beginning of each interpreter. Each paragraph needs to start with `%` followed by the interpreter name. The image below showcases three interpreters, Markdown, Spark and Shell.
 
 Interpreter Examples
 
