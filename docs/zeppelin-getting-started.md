@@ -1,4 +1,4 @@
-## Apache Zeppelin 
+## Zeppelin Getting Started
 
 **Objective**: Zeppelin is a web-based notebook that enables interactive data analytics. With Zeppelin, you can make beautiful data-driven, interactive and collaborative documents with a rich set of pre-built language back-ends (or interpreters) such as Scala (with Apache Spark), Python (with Apache Spark), SparkSQL, Hive, Markdown, Angular, and Shell.
 
