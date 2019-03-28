@@ -1,4 +1,4 @@
-## Splitting Text Data
+## Splitting Text Data with Spark
 
 **Data Set** `data/static_data` (may need unzipped)
 
@@ -24,13 +24,15 @@ The data file has lines containing four fields.
 
 The data is in simple text format, so when we read it in, we get a dataframe with a single column - a string containing all the data in each row.  This is cumbersome to work with.  In this lab, we'll apply a better schema to this data.
 
+----
+
 #### Tasks
 
 * Create a DataFrame by reading in the page view data
 * Once you've created it, view a few lines to see the format of the data
 * You'll see that you have one line of input per dataframe row
 
-```
+```scala
 > val viewsDF=spark.read.text("data/static_data/wiki-pagecounts")
 ```
 
@@ -41,10 +43,10 @@ Our first step in creating an easier to use schema is splitting each row into se
 #### Tasks
 
 * Create a dataframe by splitting each line up
-	* Use `split()`, and split on whitespace (pattern of `"\\s+"`)
-	* Call the resulting column `splitLineDF`
+* Use `split()`, and split on whitespace (pattern of `"\\s+"`)
+* Call the resulting column `splitLineDF`
 
-```
+```scala
 val splitViewsDF = // ...
 ```
 
