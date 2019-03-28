@@ -209,7 +209,7 @@ These are some of the interpreters that will be utilized throughout our various 
 
 Note the `%` at the beginning of each interpreter. Each paragraph needs to start with `%` followed by the interpreter name. The image below showcases three interpreters, Markdown, Spark and Shell.
 
-Interpreter Examples
+![interpreter_examples-800x373](https://user-images.githubusercontent.com/558905/55121485-04c64380-50d1-11e9-9c7a-4c0ff3f05c52.jpg)
 
 To create an interpreter in Zeppelin:
 
@@ -217,11 +217,11 @@ To create an interpreter in Zeppelin:
 
 2. On the drop down select Interpreter
 
-Creating Interpreter Part 1
+![creating_an_interpreter_1-800x337](https://user-images.githubusercontent.com/558905/55121472-02fc8000-50d1-11e9-8cd1-3114f492e538.jpg)
 
-3. On the right hand corner of the Interpreters page you will see Create, click on it
+3. On the right hand corner of the Interpreters page you will see Create, click on it:
 
-Creating Interpreter Part 2
+![creating_an_interpreter_2-800x308](https://user-images.githubusercontent.com/558905/55121473-03951680-50d1-11e9-8045-da7c88888319.jpg)
 
 This will bring up the Create new interpreter option. We will use the shell interpreter as an example.
 
@@ -231,7 +231,7 @@ This will bring up the Create new interpreter option. We will use the shell inte
 
 6. Click on Save
 
-Creating Interpreter Part 3
+![creating_an_interpreter_3-800x454](https://user-images.githubusercontent.com/558905/55121474-03951680-50d1-11e9-978a-ce460edfd44d.jpg)
 
 Once you are done creating the interpreter you need to bind it to the notebook you will be using it in. The next section will cover how to bind the interpreter into a notebook.
 
@@ -251,8 +251,9 @@ The settings section appears and you can see your newly created interpreter, in 
 
 Your new shell interpreter is ready to be put to use.
 
-Interpreter Binding
-Exporting a Notebook
+![binding_interpreter_example-800x397](https://user-images.githubusercontent.com/558905/55121467-02fc8000-50d1-11e9-9b70-b427d4c207be.jpg)
+
+### Exporting a Notebook
 
 To export a notebook that you have been working on you can do so by simply going top of the notebook you are working on.
 
@@ -293,16 +294,14 @@ z.load("com.esri.geometry:esri-geometry-api:1.2.1")
 z.load("harsha2010:magellan:1.0.3-s_2.10")
 ```
 
-![binding_interpreter_example-800x397](https://user-images.githubusercontent.com/558905/55121467-02fc8000-50d1-11e9-9b70-b427d4c207be.jpg)
 
 
-![creating_an_interpreter_1-800x337](https://user-images.githubusercontent.com/558905/55121472-02fc8000-50d1-11e9-8cd1-3114f492e538.jpg)
-![creating_an_interpreter_2-800x308](https://user-images.githubusercontent.com/558905/55121473-03951680-50d1-11e9-8045-da7c88888319.jpg)
-![creating_an_interpreter_3-800x454](https://user-images.githubusercontent.com/558905/55121474-03951680-50d1-11e9-978a-ce460edfd44d.jpg)
+
+
 
 ![export_notebook-800x120](https://user-images.githubusercontent.com/558905/55121476-03951680-50d1-11e9-8ad7-2595d8bfc641.jpg)
 
-![interpreter_examples-800x373](https://user-images.githubusercontent.com/558905/55121485-04c64380-50d1-11e9-9c7a-4c0ff3f05c52.jpg)
+
 
 
 
