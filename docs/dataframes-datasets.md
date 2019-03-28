@@ -174,7 +174,6 @@ val schemaString = "name age"
 
 ~~~scala
 val fields = schemaString.split(" ").map(fieldName => StructField(fieldName, StringType, nullable = true))
-
 val schema = StructType(fields)
 ~~~
 
