@@ -1,8 +1,10 @@
 ## Spark SQL with Zeppelin
 
-In this two-part lab, we will first introduce you to Apache Spark SQL. Spark SQL is a higher-level Spark module that allows you to operate on DataFrames and Datasets, which we will cover in more detail later. At the end of the lab we will provide you a Zeppelin Notebook to import into Zeppelin Environment.
+**Overview** In this two-part lab, we will first introduce you to Apache Spark SQL. Spark SQL is a higher-level Spark module that allows you to operate on DataFrames and Datasets, which we will cover in more detail later. At the end of the lab we will provide you a Zeppelin Notebook to import into Zeppelin Environment.
 
 In the second part of the lab, we will explore an airline dataset using high-level SQL API. We will visualize the dataset and write SQL queries to find insights on when and where we can expect highest delays in flight arrivals and departures.
+
+**Data Set** [Airline Delays](https://raw.githubusercontent.com/hortonworks-gallery/zeppelin-notebooks/master/2BB5CUPUW/note.json)
 
 ### Concepts
 
@@ -65,6 +67,8 @@ Through the use of user defined functions in the Notebook you will find the perc
 ![image](https://user-images.githubusercontent.com/558905/55120572-02fa8100-50cd-11e9-9448-ff3a257451d6.png)
 
 We found out some of the information that we needed; however, we can do better. Zeppelin has powerful visualization tools such as graphs and tables that we can use to present our newly found data in a more appealing format. In the second part of the lab we explore different ways in which we can present data.
+
+----
 
 ### Using SQL API to Analyze the Airline Data
 
