@@ -90,11 +90,10 @@ Great! we found what we were looking for. Now that we know the basics we can ext
 ### Putting It All Together
 
 Now, with all these basic analytics in Part 1 and 2 of this lab, you should have a fairly good idea which flights have the most delays, on which routes, from which airports, at which hour, on which days of the week and months of the year, and be able to start making meaningful predictions yourself. That’s the power of using Spark with Zeppelin – having one powerful environment to perform data munging, wrangling, visualization and more on large datasets.
-Persisting Results / Data
 
-Finally, let’s persist some of our results by saving our DataFrames in an optimized file format called ORC.
+### Persisting Results / Data
 
-In our Zeppelin Notebook we store our DataFrame in the following command:
+Finally, let’s persist some of our results by saving our DataFrames in an optimized file format called ORC. In our Zeppelin Notebook we store our DataFrame in the following command:
 
 ```scala
 // Save and Overwrite our new DataFrame to an ORC file
@@ -109,17 +108,18 @@ flightsWithDelays.write.format("orc")
 
 ### What is an ORC file format?
 
-ORC (Optimized Row-Column) is a self-describing, type-aware columnar file format designed for Hadoop workloads. It is optimized for large streaming reads, but with integrated support for finding required rows quickly. Storing data in a columnar format lets the reader read, decompress, and process only the values that are required for the current query. Because ORC files are type-aware, the writer chooses the most appropriate encoding for the type and builds an internal index as the file is written. More information here.
+ORC (Optimized Row-Column) is a self-describing, type-aware columnar file format designed for Hadoop workloads. It is optimized for large streaming reads, but with integrated support for finding required rows quickly. Storing data in a columnar format lets the reader read, decompress, and process only the values that are required for the current query. Because ORC files are type-aware, the writer chooses the most appropriate encoding for the type and builds an internal index as the file is written. More information [here](https://orc.apache.org/).
 
 ```scala
 mode(SaveMode.Overwrite)
 ```
 
-Mode (Scala/Java) 	Meaning
-SaveMode.ErrorIfExists (default) 	When saving a DataFrame to a data source, if data already exists, an exception is expected to be thrown.
-SaveMode.Append 	When saving a DataFrame to a data source, if data/table already exists, contents of the DataFrame are expected to be appended to existing data.
-SaveMode.Overwrite 	Overwrite mode means that when saving a DataFrame to a data source, if data/table already exists, existing data is expected to be overwritten by the contents of the DataFrame.
-SaveMode.Ignore 	Ignore mode means that when saving a DataFrame to a data source, if data already exists, the save operation is expected to not save the contents of the DataFrame and to not change the existing data. This is similar to a CREATE TABLE IF NOT EXISTS in SQL.
+|Mode (Scala/Java) |	Meaning |
+|---|---|
+|SaveMode.ErrorIfExists (default) 	|When saving a DataFrame to a data source, if data already exists, an exception is expected to be thrown|
+|SaveMode.Append 	|When saving a DataFrame to a data source, if data/table already exists, contents of the DataFrame are expected to be appended to existing data|
+|SaveMode.Overwrite 	|Overwrite mode means that when saving a DataFrame to a data source, if data/table already exists, existing data is expected to be overwritten by the contents of the DataFrame|
+|SaveMode.Ignore |	Ignore mode means that when saving a DataFrame to a data source, if data already exists, the save operation is expected to not save the contents of the DataFrame and to not change the existing data. This is similar to a CREATE TABLE IF NOT EXISTS in SQL|
 
 ### Import the Zeppelin Notebook
 
