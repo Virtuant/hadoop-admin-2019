@@ -11,13 +11,11 @@ In this lab, we will work with RDDs at a basic level, including:
 * Load multiple files into a single RDD
 * Save computed RDDs
 
-
 ### Load a small file, then filter it
 
-We supply a number of text files of varying sizes in *data/twinkle* including:
+We supply a number of text files of varying sizes in *data* including:
 
-* *sample.txt*: A few lines
-* *1M.data, 10M.data*: 1MB, 10MB text file
+* *1M.data, 10M.data*: 1MB, 10MB text file (yours may vary)
 * *100M.data.zip, 200M, 500M, 1G*: Various size files zipped up to save space
 	* To use any of these, unzip them from a terminal prompt in the data folder, e.g.
 	* `$ unzip 100M.data.zip`
