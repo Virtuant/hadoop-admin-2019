@@ -22,6 +22,8 @@ This lab is the fundamental base which will be used in future Spark labs and cov
 
 There are two ways to access Zeppelin in the HDP environment, the first is through Amabari’s Quick Links and the second is by navigating to Zeppelin’s dedicated port on your browser.
 
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) if needed you might need to install Zeppelin Service - and make sure it's indicated in running mode.
+
 Once you are in Ambari click on Zeppelin Notebook select Zeppelin UI under Quick Links.
 
 ![getting-to-zepp-800x441](https://user-images.githubusercontent.com/558905/55121478-03951680-50d1-11e9-82d7-ad3344fa18e7.jpg)
