@@ -20,42 +20,68 @@ Login to Ambari (operations console) using amy_ds/amy_ds as a username/password 
 
     NOTE: Recall that Ambari is accessible at http://sandbox-hdp.hortonworks.com:8080 on your browser while the Sandbox is running. If you’re new to the HDP Sandbox environment, make sure to review Learning the Ropes of the HDP Sandbox.
 
-scr1-login
+![add-paragraph-hover-above-800x228](https://user-images.githubusercontent.com/558905/55121465-0263e980-50d1-11e9-838a-33907a5a1062.jpg)
+![add-paragraph-hover-below-800x228](https://user-images.githubusercontent.com/558905/55121466-0263e980-50d1-11e9-8164-138cf6175e2d.jpg)
+![binding_interpreter_example-800x397](https://user-images.githubusercontent.com/558905/55121467-02fc8000-50d1-11e9-9b70-b427d4c207be.jpg)
+![clear_a_paragraph_output-800x305](https://user-images.githubusercontent.com/558905/55121468-02fc8000-50d1-11e9-9bea-b3313c082765.jpg)
+![clear_all_outputs-800x111](https://user-images.githubusercontent.com/558905/55121469-02fc8000-50d1-11e9-9f20-49c8f64f6699.jpg)
+
+![creating_an_interpreter_1-800x337](https://user-images.githubusercontent.com/558905/55121472-02fc8000-50d1-11e9-8cd1-3114f492e538.jpg)
+![creating_an_interpreter_2-800x308](https://user-images.githubusercontent.com/558905/55121473-03951680-50d1-11e9-8045-da7c88888319.jpg)
+![creating_an_interpreter_3-800x454](https://user-images.githubusercontent.com/558905/55121474-03951680-50d1-11e9-978a-ce460edfd44d.jpg)
+
+![export_notebook-800x120](https://user-images.githubusercontent.com/558905/55121476-03951680-50d1-11e9-8ad7-2595d8bfc641.jpg)
+
+
+
+![install-interpreter-shell-800x454](https://user-images.githubusercontent.com/558905/55121484-042dad00-50d1-11e9-9dcc-303d89065272.jpg)
+![interpreter_examples-800x373](https://user-images.githubusercontent.com/558905/55121485-04c64380-50d1-11e9-9c7a-4c0ff3f05c52.jpg)
+![running_a_paragraph-800x115](https://user-images.githubusercontent.com/558905/55121487-04c64380-50d1-11e9-83a3-5d2737c305e0.jpg)
+![running_paragraphs-800x115](https://user-images.githubusercontent.com/558905/55121488-04c64380-50d1-11e9-8fcd-6b17b45a7eb2.jpg)
+![welcome-to-zepp-800x426](https://user-images.githubusercontent.com/558905/55121490-04c64380-50d1-11e9-9958-ee74caacb7b2.jpg)
+
+
+
+
+![scr1-login-800x529](https://user-images.githubusercontent.com/558905/55121489-04c64380-50d1-11e9-909e-d2522a63f363.jpg)
 
 Once you are in Ambari click on Zeppelin Notebook select Zeppelin UI under Quick Links.
 
-getting-to-zepp
+![getting-to-zepp-800x441](https://user-images.githubusercontent.com/558905/55121478-03951680-50d1-11e9-82d7-ad3344fa18e7.jpg)
 
 Voila, you should see default Zeppelin menu.
 
 scr3-zeppelin-main
-Launching Zeppelin from URL
+
+### Launching Zeppelin from URL
 
 The second option to launch a Zeppelin instance is by opening a browser and navigating to http://sandbox-hdp.hortonworks.com:9995 while your Sandbox is running.
 
     NOTE: For this approach to work you must have already renamed the sandbox IP address in your hosts file. If you need assistance renaming your default IP in the hosts file this visit the Learning the Ropes of the HDP Sandbox Tutorial
 
-welcome-to-zepp-url
+![welcome-to-zepp-url-800x480](https://user-images.githubusercontent.com/558905/55121491-055eda00-50d1-11e9-8fd2-0405189f76c9.jpg)
 
 Now let’s create your first notebook.
-Creating a Notebook
+
+### Creating a Notebook
 
 To create a notebook:
 
 1. Under the “Notebook” tab, choose Create new note.
 
-click-create-new-note
+![click-create-new-note-800x426](https://user-images.githubusercontent.com/558905/55121470-02fc8000-50d1-11e9-945a-dc08f4c157c8.jpg)
 
 2. You will see the following window. Type a name for the new note (In this case we will call it Spark on HDP), for now let’s leave the interpreter option on the default setting. You will learn about interpreters in subsequent sections; Finally, click on create.
 
-create-new-note-zepp
+![create-new-note-zepp](https://user-images.githubusercontent.com/558905/55121471-02fc8000-50d1-11e9-8d8d-c392e4592418.jpg)
 
 By default the new notebook will be opened with a blank paragraph, if you want to come back to work on it at a later time you will find your notebook on the main Zeppelin UI.
 
-new-note-saved
+![new-note-saved-800x422](https://user-images.githubusercontent.com/558905/55121486-04c64380-50d1-11e9-93f1-df253b70a22a.jpg)
 
 Great, now you know how to create a notebook from scratch. Before we being coding, let’s learn about different ways to import an already existent Zeppelin Notebook.
-Importing a Notebook
+
+### Importing a Notebook
 
 Instead of creating a new notebook, you may want to import an existing one.
 
@@ -65,15 +91,15 @@ There are two ways to import Zeppelin notebooks, either by pointing to json note
 
 On the Zeppelin UI click Import.
 
-import-note
+![import-note-800x426](https://user-images.githubusercontent.com/558905/55121483-042dad00-50d1-11e9-9993-1045d2bb25bd.jpg)
 
 Next, click Select JSON File button.
 
-import-from-json-zepp
+![import-from-json-zepp-800x422](https://user-images.githubusercontent.com/558905/55121480-042dad00-50d1-11e9-9551-f34c8a44e31f.jpg)
 
 Finally, select the notebook you want to import and click Open.
 
-import-from-json-select-file
+![import-from-json-select-file](https://user-images.githubusercontent.com/558905/55121479-042dad00-50d1-11e9-8791-4c1956a9c174.jpg)
 
 Now you should see your imported notebook among other notebooks on the main Zeppelin screen.
 
@@ -83,16 +109,17 @@ Click Import note.
 
 import-note
 
-Next, click Add from URL button.
+Next, click Add from URL button:
 
-import-from-url-zepp
+![import-from-url-zepp-800x422](https://user-images.githubusercontent.com/558905/55121481-042dad00-50d1-11e9-9a93-9734fb52b633.jpg)
 
-Finally, paste the url to the (raw) json file and click on Import Note.
+Finally, paste the url to the (raw) json file and click on Import Note:
 
-import-from-url-zepp-paste
+![import-from-url-zepp-paste-800x426](https://user-images.githubusercontent.com/558905/55121482-042dad00-50d1-11e9-81b3-7d4b7e4c29cc.jpg)
 
 Now you should see your imported notebook among other notebooks on the main Zeppelin screen.
-Deleting a Notebook
+
+### Deleting a Notebook
 
 If you would like to delete a notebook you can do so by going to the Zeppelin Welcome Page. On the left side of the page under Notebook you will see various options such as Import note, Create new note, a Filter box, right under the Filter box is where you will find notebooks that you created or imported.
 
@@ -104,7 +131,7 @@ Various icons will appear including a trashcan.
 
 2. Click on the trashcan icon
 
-deleting_a_notebook
+![deleting_a_notebook-800x322](https://user-images.githubusercontent.com/558905/55121475-03951680-50d1-11e9-91db-9f7f0b7b95a8.jpg)
 
 A prompt will ask you if you want to Move this note to trash?, click OK.
 
