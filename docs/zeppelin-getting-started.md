@@ -80,6 +80,8 @@ Click Import note.
 
 ![import-note-800x426](https://user-images.githubusercontent.com/558905/55121483-042dad00-50d1-11e9-9993-1045d2bb25bd.jpg)
 
+Here is a sample iot json [note](https://github.com/Virtuant/hadoop-overview-spark-hwx/issues/14)
+
 Next, click Add from URL button:
 
 ![import-from-url-zepp-800x422](https://user-images.githubusercontent.com/558905/55121481-042dad00-50d1-11e9-9a93-9734fb52b633.jpg)
