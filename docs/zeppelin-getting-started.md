@@ -133,21 +133,6 @@ Or click below to add the new paragraph after the current paragraph.
 
 Okay, now that you have either created or imported a notebook and wrote paragraphs, the next step is to run the paragraphs.
 
-![binding_interpreter_example-800x397](https://user-images.githubusercontent.com/558905/55121467-02fc8000-50d1-11e9-9b70-b427d4c207be.jpg)
-![clear_a_paragraph_output-800x305](https://user-images.githubusercontent.com/558905/55121468-02fc8000-50d1-11e9-9bea-b3313c082765.jpg)
-![clear_all_outputs-800x111](https://user-images.githubusercontent.com/558905/55121469-02fc8000-50d1-11e9-9f20-49c8f64f6699.jpg)
-
-![creating_an_interpreter_1-800x337](https://user-images.githubusercontent.com/558905/55121472-02fc8000-50d1-11e9-8cd1-3114f492e538.jpg)
-![creating_an_interpreter_2-800x308](https://user-images.githubusercontent.com/558905/55121473-03951680-50d1-11e9-8045-da7c88888319.jpg)
-![creating_an_interpreter_3-800x454](https://user-images.githubusercontent.com/558905/55121474-03951680-50d1-11e9-978a-ce460edfd44d.jpg)
-
-![export_notebook-800x120](https://user-images.githubusercontent.com/558905/55121476-03951680-50d1-11e9-8ad7-2595d8bfc641.jpg)
-
-![interpreter_examples-800x373](https://user-images.githubusercontent.com/558905/55121485-04c64380-50d1-11e9-9c7a-4c0ff3f05c52.jpg)
-![running_a_paragraph-800x115](https://user-images.githubusercontent.com/558905/55121487-04c64380-50d1-11e9-83a3-5d2737c305e0.jpg)
-![running_paragraphs-800x115](https://user-images.githubusercontent.com/558905/55121488-04c64380-50d1-11e9-8fcd-6b17b45a7eb2.jpg)
-
-
 ### Running a Paragraph
 
 There are two ways of running a paragraph in a Zeppelin Notebook, step 1 and 2 covers how to run individual paragraphs. Step 3 will show you how to you all paragraphs with one click.
@@ -210,12 +195,12 @@ Refer to creating an interpreter section to enable usage on the Zeppelin Web App
 
 Zeppelin Notebooks supports various interpreters which allow you to perform many operations on your data. Below are just a few of operations you can do with Zeppelin interpreters:
 
-    Ingestion
-    Munging
-    Wrangling
-    Visualization
-    Analysis
-    Processing
+* Ingestion
+* Munging
+* Wrangling
+* Visualization
+* Analysis
+* Processing
 
 These are some of the interpreters that will be utilized throughout our various Spark labs.
 
@@ -312,6 +297,21 @@ z.addRepo("Spark Packages Repo").url("http://dl.bintray.com/spark-packages/maven
 z.load("com.esri.geometry:esri-geometry-api:1.2.1")
 z.load("harsha2010:magellan:1.0.3-s_2.10")
 ```
+
+![binding_interpreter_example-800x397](https://user-images.githubusercontent.com/558905/55121467-02fc8000-50d1-11e9-9b70-b427d4c207be.jpg)
+![clear_a_paragraph_output-800x305](https://user-images.githubusercontent.com/558905/55121468-02fc8000-50d1-11e9-9bea-b3313c082765.jpg)
+![clear_all_outputs-800x111](https://user-images.githubusercontent.com/558905/55121469-02fc8000-50d1-11e9-9f20-49c8f64f6699.jpg)
+
+![creating_an_interpreter_1-800x337](https://user-images.githubusercontent.com/558905/55121472-02fc8000-50d1-11e9-8cd1-3114f492e538.jpg)
+![creating_an_interpreter_2-800x308](https://user-images.githubusercontent.com/558905/55121473-03951680-50d1-11e9-8045-da7c88888319.jpg)
+![creating_an_interpreter_3-800x454](https://user-images.githubusercontent.com/558905/55121474-03951680-50d1-11e9-978a-ce460edfd44d.jpg)
+
+![export_notebook-800x120](https://user-images.githubusercontent.com/558905/55121476-03951680-50d1-11e9-8ad7-2595d8bfc641.jpg)
+
+![interpreter_examples-800x373](https://user-images.githubusercontent.com/558905/55121485-04c64380-50d1-11e9-9c7a-4c0ff3f05c52.jpg)
+![running_a_paragraph-800x115](https://user-images.githubusercontent.com/558905/55121487-04c64380-50d1-11e9-83a3-5d2737c305e0.jpg)
+![running_paragraphs-800x115](https://user-images.githubusercontent.com/558905/55121488-04c64380-50d1-11e9-8fcd-6b17b45a7eb2.jpg)
+
 
 ### Results
 
