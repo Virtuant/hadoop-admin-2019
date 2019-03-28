@@ -155,13 +155,13 @@ To clear the output of a specific paragraph:
 
 2. Select Clear Output
 
-Clearing the Output of a Paragraph
+![clear_a_paragraph_output-800x305](https://user-images.githubusercontent.com/558905/55121468-02fc8000-50d1-11e9-9bea-b3313c082765.jpg)
 
 This will clear the output of that specific paragraph
 
 To clear the output of the whole Zeppelin Notebook go to the top of the Notebook and select the eraser icon. A prompt will appear asking Do you want to clear all output? Press OK.
 
-Clearing the Output of all Paragraphs
+![clear_all_outputs-800x111](https://user-images.githubusercontent.com/558905/55121469-02fc8000-50d1-11e9-9f20-49c8f64f6699.jpg)
 
 ### Installing an Interpreter
 
@@ -299,8 +299,7 @@ z.load("harsha2010:magellan:1.0.3-s_2.10")
 ```
 
 ![binding_interpreter_example-800x397](https://user-images.githubusercontent.com/558905/55121467-02fc8000-50d1-11e9-9b70-b427d4c207be.jpg)
-![clear_a_paragraph_output-800x305](https://user-images.githubusercontent.com/558905/55121468-02fc8000-50d1-11e9-9bea-b3313c082765.jpg)
-![clear_all_outputs-800x111](https://user-images.githubusercontent.com/558905/55121469-02fc8000-50d1-11e9-9f20-49c8f64f6699.jpg)
+
 
 ![creating_an_interpreter_1-800x337](https://user-images.githubusercontent.com/558905/55121472-02fc8000-50d1-11e9-8cd1-3114f492e538.jpg)
 ![creating_an_interpreter_2-800x308](https://user-images.githubusercontent.com/558905/55121473-03951680-50d1-11e9-8045-da7c88888319.jpg)
