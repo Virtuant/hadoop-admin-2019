@@ -1,6 +1,6 @@
 ## Spark SQL with Zeppelin
 
-In this two-part lab, we will first introduce you to Apache Spark SQL. Spark SQL is a higher-level Spark module that allows you to operate on DataFrames and Datasets, which we will cover in more detail later. At the end of the tutorial we will provide you a Zeppelin Notebook to import into Zeppelin Environment.
+In this two-part lab, we will first introduce you to Apache Spark SQL. Spark SQL is a higher-level Spark module that allows you to operate on DataFrames and Datasets, which we will cover in more detail later. At the end of the lab we will provide you a Zeppelin Notebook to import into Zeppelin Environment.
 
 In the second part of the lab, we will explore an airline dataset using high-level SQL API. We will visualize the dataset and write SQL queries to find insights on when and where we can expect highest delays in flight arrivals and departures.
 
@@ -16,7 +16,7 @@ In part two of the lab, we will create a temporary view to store our DataFrame i
 
 We will wrap up by persisting our results to a permanent table that can then be shared with other people.
 
-One thing to remember is that in both part one and part two of the lab the queries on Datasets/DataFrames or the temporary view will translate to an underlying optimized form of Spark Resilient Distributed Datasets (RDDs) assuring that all code is executed in a parallel/distributed fashion. To learn more about RDDs, which are beyond the scope of this tutorial, see the Spark docs.
+One thing to remember is that in both part one and part two of the lab the queries on Datasets/DataFrames or the temporary view will translate to an underlying optimized form of Spark Resilient Distributed Datasets (RDDs) assuring that all code is executed in a parallel/distributed fashion.
 
 ### Using DataFrame and Dataset API to Analyze Airline Data
 
