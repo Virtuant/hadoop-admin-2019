@@ -1,12 +1,31 @@
-Apache Zeppelin is a web-based notebook that enables interactive data analytics. With Zeppelin, you can make beautiful data-driven, interactive and collaborative documents with a rich set of pre-built language back-ends (or interpreters) such as Scala (with Apache Spark), Python (with Apache Spark), SparkSQL, Hive, Markdown, Angular, and Shell.
+## Apache Zeppelin 
+
+**Objective**: Begin to get acquainted with Hadoops file system. And manipulate files in HDFS, the Hadoop Distributed File System.
+
+**Exercise directory**: `~/data`
+
+**HDFS paths:** `/user/[user-name]`
+
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>1.
+
+![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) 
+
+
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) 
+
+
+
+Zeppelin is a web-based notebook that enables interactive data analytics. With Zeppelin, you can make beautiful data-driven, interactive and collaborative documents with a rich set of pre-built language back-ends (or interpreters) such as Scala (with Apache Spark), Python (with Apache Spark), SparkSQL, Hive, Markdown, Angular, and Shell.
 
 With a focus on Enterprise, Zeppelin has the following important features:
 
-    Livy integration (REST interface for interacting with Spark)
-    Security:
-        Execute jobs as authenticated user
-        Zeppelin authentication against LDAP
-        Notebook authorization
+* Livy integration (REST interface for interacting with Spark)
+* Security:
+    * Execute jobs as authenticated user
+    * Zeppelin authentication against LDAP
+    * Notebook authorization
 
 The purpose of this lab is to guide you through basic functionalities of Zeppelin so that you may create your own data analysis applications or import existent Zeppelin Notebooks; additionally, you will learn advanced features of Zeppelin like creating and binding interpreters, and importing external libraries.
 
@@ -15,11 +34,10 @@ This lab is the fundamental base which will be used in future Spark labs and cov
 ### Launching Zeppelin
 
 There are two ways to access Zeppelin in the HDP environment, the first is through Amabari’s Quick Links and the second is by navigating to Zeppelin’s dedicated port on your browser.
-Launching Zeppelin through Ambari
+
+### Launching Zeppelin through Ambari
 
 Login to Ambari (operations console) using amy_ds/amy_ds as a username/password combination.
-
-    NOTE: Recall that Ambari is accessible at http://sandbox-hdp.hortonworks.com:8080 on your browser while the Sandbox is running. If you’re new to the HDP Sandbox environment, make sure to review Learning the Ropes of the HDP Sandbox.
 
 
 ![binding_interpreter_example-800x397](https://user-images.githubusercontent.com/558905/55121467-02fc8000-50d1-11e9-9b70-b427d4c207be.jpg)
@@ -32,12 +50,10 @@ Login to Ambari (operations console) using amy_ds/amy_ds as a username/password 
 
 ![export_notebook-800x120](https://user-images.githubusercontent.com/558905/55121476-03951680-50d1-11e9-8ad7-2595d8bfc641.jpg)
 
-
 ![interpreter_examples-800x373](https://user-images.githubusercontent.com/558905/55121485-04c64380-50d1-11e9-9c7a-4c0ff3f05c52.jpg)
 ![running_a_paragraph-800x115](https://user-images.githubusercontent.com/558905/55121487-04c64380-50d1-11e9-83a3-5d2737c305e0.jpg)
 ![running_paragraphs-800x115](https://user-images.githubusercontent.com/558905/55121488-04c64380-50d1-11e9-8fcd-6b17b45a7eb2.jpg)
 ![welcome-to-zepp-800x426](https://user-images.githubusercontent.com/558905/55121490-04c64380-50d1-11e9-9958-ee74caacb7b2.jpg)
-
 
 
 
@@ -83,7 +99,7 @@ Great, now you know how to create a notebook from scratch. Before we being codin
 
 Instead of creating a new notebook, you may want to import an existing one.
 
-There are two ways to import Zeppelin notebooks, either by pointing to json notebook file local to your environment or by providing a url to raw file hosted elsewhere, e.g. on github. We’ll cover both ways of importing those files.
+There are two ways to import Zeppelin notebooks, either by pointing to `json` notebook file local to your environment or by providing a url to raw file hosted elsewhere, e.g. on github. We’ll cover both ways of importing those files.
 
 1. Importing a JSON file
 
