@@ -10,11 +10,9 @@
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>1.
 
-![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) 
 
 
 > ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) 
-
 
 
 Zeppelin is a web-based notebook that enables interactive data analytics. With Zeppelin, you can make beautiful data-driven, interactive and collaborative documents with a rich set of pre-built language back-ends (or interpreters) such as Scala (with Apache Spark), Python (with Apache Spark), SparkSQL, Hive, Markdown, Angular, and Shell.
@@ -34,22 +32,6 @@ This lab is the fundamental base which will be used in future Spark labs and cov
 ### Launching Zeppelin
 
 There are two ways to access Zeppelin in the HDP environment, the first is through Amabari’s Quick Links and the second is by navigating to Zeppelin’s dedicated port on your browser.
-
-![binding_interpreter_example-800x397](https://user-images.githubusercontent.com/558905/55121467-02fc8000-50d1-11e9-9b70-b427d4c207be.jpg)
-![clear_a_paragraph_output-800x305](https://user-images.githubusercontent.com/558905/55121468-02fc8000-50d1-11e9-9bea-b3313c082765.jpg)
-![clear_all_outputs-800x111](https://user-images.githubusercontent.com/558905/55121469-02fc8000-50d1-11e9-9f20-49c8f64f6699.jpg)
-
-![creating_an_interpreter_1-800x337](https://user-images.githubusercontent.com/558905/55121472-02fc8000-50d1-11e9-8cd1-3114f492e538.jpg)
-![creating_an_interpreter_2-800x308](https://user-images.githubusercontent.com/558905/55121473-03951680-50d1-11e9-8045-da7c88888319.jpg)
-![creating_an_interpreter_3-800x454](https://user-images.githubusercontent.com/558905/55121474-03951680-50d1-11e9-978a-ce460edfd44d.jpg)
-
-![export_notebook-800x120](https://user-images.githubusercontent.com/558905/55121476-03951680-50d1-11e9-8ad7-2595d8bfc641.jpg)
-
-![interpreter_examples-800x373](https://user-images.githubusercontent.com/558905/55121485-04c64380-50d1-11e9-9c7a-4c0ff3f05c52.jpg)
-![running_a_paragraph-800x115](https://user-images.githubusercontent.com/558905/55121487-04c64380-50d1-11e9-83a3-5d2737c305e0.jpg)
-![running_paragraphs-800x115](https://user-images.githubusercontent.com/558905/55121488-04c64380-50d1-11e9-8fcd-6b17b45a7eb2.jpg)
-
-
 
 Once you are in Ambari click on Zeppelin Notebook select Zeppelin UI under Quick Links.
 
@@ -160,6 +142,21 @@ Or click below to add the new paragraph after the current paragraph.
 
 Okay, now that you have either created or imported a notebook and wrote paragraphs, the next step is to run the paragraphs.
 
+![binding_interpreter_example-800x397](https://user-images.githubusercontent.com/558905/55121467-02fc8000-50d1-11e9-9b70-b427d4c207be.jpg)
+![clear_a_paragraph_output-800x305](https://user-images.githubusercontent.com/558905/55121468-02fc8000-50d1-11e9-9bea-b3313c082765.jpg)
+![clear_all_outputs-800x111](https://user-images.githubusercontent.com/558905/55121469-02fc8000-50d1-11e9-9f20-49c8f64f6699.jpg)
+
+![creating_an_interpreter_1-800x337](https://user-images.githubusercontent.com/558905/55121472-02fc8000-50d1-11e9-8cd1-3114f492e538.jpg)
+![creating_an_interpreter_2-800x308](https://user-images.githubusercontent.com/558905/55121473-03951680-50d1-11e9-8045-da7c88888319.jpg)
+![creating_an_interpreter_3-800x454](https://user-images.githubusercontent.com/558905/55121474-03951680-50d1-11e9-978a-ce460edfd44d.jpg)
+
+![export_notebook-800x120](https://user-images.githubusercontent.com/558905/55121476-03951680-50d1-11e9-8ad7-2595d8bfc641.jpg)
+
+![interpreter_examples-800x373](https://user-images.githubusercontent.com/558905/55121485-04c64380-50d1-11e9-9c7a-4c0ff3f05c52.jpg)
+![running_a_paragraph-800x115](https://user-images.githubusercontent.com/558905/55121487-04c64380-50d1-11e9-83a3-5d2737c305e0.jpg)
+![running_paragraphs-800x115](https://user-images.githubusercontent.com/558905/55121488-04c64380-50d1-11e9-8fcd-6b17b45a7eb2.jpg)
+
+
 ### Running a Paragraph
 
 There are two ways of running a paragraph in a Zeppelin Notebook, step 1 and 2 covers how to run individual paragraphs. Step 3 will show you how to you all paragraphs with one click.
@@ -208,7 +205,7 @@ next, issue the following command:
 /usr/hdp/current/zeppelin-server/bin/install-interpreter.sh --name shell,jdbc,python...
 ```
 
-    Note: In this example we are highlighting shell, jdbc, and python; however, any community supported interpreter can be installed this way.
+![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) in this example we are highlighting shell, jdbc, and python; however, any community supported interpreter can be installed this way.
 
 Output you should see:
 
