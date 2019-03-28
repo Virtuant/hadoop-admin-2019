@@ -1,4 +1,19 @@
-Introduction
+![files-view-2](https://user-images.githubusercontent.com/558905/55126455-80c98700-50e3-11e9-8843-02c299cfa5c2.jpg)
+![intellij-auto-folders-800x591](https://user-images.githubusercontent.com/558905/55126456-80c98700-50e3-11e9-9f9f-49c48b823799.jpg)
+![intellij-edit-configurations](https://user-images.githubusercontent.com/558905/55126457-80c98700-50e3-11e9-974f-142518fffbd2.jpg)
+![intellij-live-debug-address-800x503](https://user-images.githubusercontent.com/558905/55126459-80c98700-50e3-11e9-98f3-2a660728b556.jpg)
+![intellij-maven-auto-import-800x326](https://user-images.githubusercontent.com/558905/55126460-81621d80-50e3-11e9-8966-cb2ee68a66a5.jpg)
+![intellij-module-version](https://user-images.githubusercontent.com/558905/55126463-81fab400-50e3-11e9-9461-f50e6f5e3fe1.jpg)
+![intellij-new-java-project-800x439](https://user-images.githubusercontent.com/558905/55126465-82934a80-50e3-11e9-807d-3ece50fd6cbe.jpg)
+![intellij-new-project-finish](https://user-images.githubusercontent.com/558905/55126467-83c47780-50e3-11e9-9891-583294b530df.jpg)
+![intellij-new-project-name-artifact](https://user-images.githubusercontent.com/558905/55126468-83c47780-50e3-11e9-91ef-84db95a13cdb.jpg)
+![intellij-project-version-800x390](https://user-images.githubusercontent.com/558905/55126469-83c47780-50e3-11e9-9b53-d8e6019b3c8a.jpg)
+![new-java-class](https://user-images.githubusercontent.com/558905/55126470-83c47780-50e3-11e9-86ec-c20b31d9b411.jpg)
+![part-one-word-count](https://user-images.githubusercontent.com/558905/55126471-83c47780-50e3-11e9-82fe-b1e14eb20b8b.jpg)
+![spark-submit-debug-800x147](https://user-images.githubusercontent.com/558905/55126472-83c47780-50e3-11e9-8023-0cd9553c843d.jpg)
+
+
+## Spark Dev using Java
 
 This tutorial will teach you how to set up a full development environment for developing and debugging Spark applications. For this tutorial we’ll be using Java, but Spark also supports development with Scala, Python and R.
 
