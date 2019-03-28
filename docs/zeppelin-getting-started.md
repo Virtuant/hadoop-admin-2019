@@ -87,7 +87,7 @@ Now you should see your imported notebook among other notebooks on the main Zepp
 
 Click Import note.
 
-import-note
+![import-note-800x426](https://user-images.githubusercontent.com/558905/55121483-042dad00-50d1-11e9-9993-1045d2bb25bd.jpg)
 
 Next, click Add from URL button:
 
