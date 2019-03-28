@@ -19,7 +19,8 @@ We will wrap up by persisting our results to a permanent table that can then be 
 One thing to remember is that in both part one and part two of the lab the queries on Datasets/DataFrames or the temporary view will translate to an underlying optimized form of Spark Resilient Distributed Datasets (RDDs) assuring that all code is executed in a parallel/distributed fashion. To learn more about RDDs, which are beyond the scope of this tutorial, see the Spark docs.
 
 Using DataFrame and Dataset API to Analyze Airline Data
-Datasets and DataFrames
+
+### Datasets and DataFrames
 
 A Dataset is a distributed collection of data. Dataset provides the benefits of strong typing, ability to use powerful lambda functions with the benefits of (Spark SQL’s) optimized execution engine. A Dataset can be constructed from JVM objects and then manipulated using functional transformations (map, flatMap, filter, etc.). The Dataset API is available in Scala and Java.
 
@@ -64,24 +65,27 @@ In this lab we will be using a large record of airplane flights including the da
 
 Through the use of user defined functions in the Notebook you will find the percentage of delayed flights:
 
-percent-delayed-flights
+![image](https://user-images.githubusercontent.com/558905/55120572-02fa8100-50cd-11e9-9448-ff3a257451d6.png)
 
 We found out some of the information that we needed; however, we can do better. Zeppelin has powerful visualization tools such as graphs and tables that we can use to present our newly found data in a more appealing format. In the second part of the tutorial we explore different ways in which we can present data.
-Using SQL API to Analyze the Airline Data
+
+### Using SQL API to Analyze the Airline Data
 
 As you can see, the data displayed in Part 1 of the notebook included can be more interactive. To have a more dynamic experience, a temporary (in-memory) view is created and it is used to query and interact with the data via tables or graphs. The temporary view will allow us to execute SQL queries against it for as long as the Spark session is alive.
 
 Here is a preview of the temporary table used in this tutorial’s Zeppelin Notebook:
 
-flightsview-temp-table-preview
+![image](https://user-images.githubusercontent.com/558905/55120583-0d1c7f80-50cd-11e9-9337-19290806b756.png)
+
 
 Making use of Zeppelin’s visualization tools let’s compare the total number of delayed flights and the delay time by carrier:
 
-flightsview-visualization-preview
+![image](https://user-images.githubusercontent.com/558905/55120596-173e7e00-50cd-11e9-824b-bdd76190cbd3.png)
+
 
 Great! we found what we were looking for. Now that we know the basics we can extrapolate some more useful data; for example, we would like to know when the optimal time to travel is:
 
-delay-per-hour
+![image](https://user-images.githubusercontent.com/558905/55120614-202f4f80-50cd-11e9-98cf-197dbfb06bc1.png)
 
 ### Putting It All Together
 
