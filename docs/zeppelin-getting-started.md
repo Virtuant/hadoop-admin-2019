@@ -53,11 +53,8 @@ Login to Ambari (operations console) using amy_ds/amy_ds as a username/password 
 ![interpreter_examples-800x373](https://user-images.githubusercontent.com/558905/55121485-04c64380-50d1-11e9-9c7a-4c0ff3f05c52.jpg)
 ![running_a_paragraph-800x115](https://user-images.githubusercontent.com/558905/55121487-04c64380-50d1-11e9-83a3-5d2737c305e0.jpg)
 ![running_paragraphs-800x115](https://user-images.githubusercontent.com/558905/55121488-04c64380-50d1-11e9-8fcd-6b17b45a7eb2.jpg)
-![welcome-to-zepp-800x426](https://user-images.githubusercontent.com/558905/55121490-04c64380-50d1-11e9-9958-ee74caacb7b2.jpg)
 
 
-
-![scr1-login-800x529](https://user-images.githubusercontent.com/558905/55121489-04c64380-50d1-11e9-909e-d2522a63f363.jpg)
 
 Once you are in Ambari click on Zeppelin Notebook select Zeppelin UI under Quick Links.
 
@@ -65,7 +62,8 @@ Once you are in Ambari click on Zeppelin Notebook select Zeppelin UI under Quick
 
 Voila, you should see default Zeppelin menu.
 
-scr3-zeppelin-main
+![welcome-to-zepp-800x426](https://user-images.githubusercontent.com/558905/55121490-04c64380-50d1-11e9-9958-ee74caacb7b2.jpg)
+
 
 ### Launching Zeppelin from URL
 
