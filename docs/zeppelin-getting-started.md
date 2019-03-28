@@ -41,15 +41,6 @@ Voila, you should see default Zeppelin menu.
 
 ![welcome-to-zepp-800x426](https://user-images.githubusercontent.com/558905/55121490-04c64380-50d1-11e9-9958-ee74caacb7b2.jpg)
 
-
-### Launching Zeppelin from URL
-
-The second option to launch a Zeppelin instance is by opening a browser and navigating to http://sandbox-hdp.hortonworks.com:9995 while your Sandbox is running.
-
-    NOTE: For this approach to work you must have already renamed the sandbox IP address in your hosts file. If you need assistance renaming your default IP in the hosts file this visit the Learning the Ropes of the HDP Sandbox Tutorial
-
-![welcome-to-zepp-url-800x480](https://user-images.githubusercontent.com/558905/55121491-055eda00-50d1-11e9-8fd2-0405189f76c9.jpg)
-
 Now let’s create your first notebook.
 
 ### Creating a Notebook
