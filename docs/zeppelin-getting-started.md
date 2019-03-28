@@ -35,9 +35,6 @@ This lab is the fundamental base which will be used in future Spark labs and cov
 
 There are two ways to access Zeppelin in the HDP environment, the first is through Amabari’s Quick Links and the second is by navigating to Zeppelin’s dedicated port on your browser.
 
-### Launching Zeppelin through Ambari
-
-Login to Ambari (operations console) using amy_ds/amy_ds as a username/password combination.
 
 
 ![binding_interpreter_example-800x397](https://user-images.githubusercontent.com/558905/55121467-02fc8000-50d1-11e9-9b70-b427d4c207be.jpg)
