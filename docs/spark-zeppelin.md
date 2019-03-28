@@ -18,16 +18,13 @@ We will wrap up by persisting our results to a permanent table that can then be 
 
 One thing to remember is that in both part one and part two of the lab the queries on Datasets/DataFrames or the temporary view will translate to an underlying optimized form of Spark Resilient Distributed Datasets (RDDs) assuring that all code is executed in a parallel/distributed fashion. To learn more about RDDs, which are beyond the scope of this tutorial, see the Spark docs.
 
-Using DataFrame and Dataset API to Analyze Airline Data
-
-### Datasets and DataFrames
+### Using DataFrame and Dataset API to Analyze Airline Data
 
 A Dataset is a distributed collection of data. Dataset provides the benefits of strong typing, ability to use powerful lambda functions with the benefits of (Spark SQL’s) optimized execution engine. A Dataset can be constructed from JVM objects and then manipulated using functional transformations (map, flatMap, filter, etc.). The Dataset API is available in Scala and Java.
 
 A DataFrame is a Dataset organized into named columns. It is conceptually equivalent to a table in a relational database or a data frame in R/Python, but with richer optimizations under the hood. DataFrames can be constructed from a wide array of sources such as: structured data files, tables in Hive, external databases, or existing RDDs. The DataFrame API is available in Scala, Java, Python, and R. In Scala and Java, a DataFrame is represented by a Dataset of Rows. In the Scala API, DataFrame is simply a type alias of Dataset[Row]. (Note that in Scala type parameters (generics) are enclosed in square brackets.)
 
 Throughout this document, we will often refer to Scala/Java Datasets of Rows as DataFrames. You can view the reference documentation at Apache Spark.
-Dataset description
 
 In this lab we will be using a large record of airplane flights including the date of flight, departure time, arrival time, among other data-points to infer which flights are likely to be delayed and find out what the delay time is on average, this is the full description of the data:
 
@@ -67,7 +64,7 @@ Through the use of user defined functions in the Notebook you will find the perc
 
 ![image](https://user-images.githubusercontent.com/558905/55120572-02fa8100-50cd-11e9-9448-ff3a257451d6.png)
 
-We found out some of the information that we needed; however, we can do better. Zeppelin has powerful visualization tools such as graphs and tables that we can use to present our newly found data in a more appealing format. In the second part of the tutorial we explore different ways in which we can present data.
+We found out some of the information that we needed; however, we can do better. Zeppelin has powerful visualization tools such as graphs and tables that we can use to present our newly found data in a more appealing format. In the second part of the lab we explore different ways in which we can present data.
 
 ### Using SQL API to Analyze the Airline Data
 
@@ -77,11 +74,9 @@ Here is a preview of the temporary table used in this tutorial’s Zeppelin Note
 
 ![image](https://user-images.githubusercontent.com/558905/55120583-0d1c7f80-50cd-11e9-9337-19290806b756.png)
 
-
 Making use of Zeppelin’s visualization tools let’s compare the total number of delayed flights and the delay time by carrier:
 
 ![image](https://user-images.githubusercontent.com/558905/55120596-173e7e00-50cd-11e9-824b-bdd76190cbd3.png)
-
 
 Great! we found what we were looking for. Now that we know the basics we can extrapolate some more useful data; for example, we would like to know when the optimal time to travel is:
 
@@ -108,7 +103,9 @@ flightsWithDelays.write.format("orc")
 
 ### What is an ORC file format?
 
-ORC (Optimized Row-Column) is a self-describing, type-aware columnar file format designed for Hadoop workloads. It is optimized for large streaming reads, but with integrated support for finding required rows quickly. Storing data in a columnar format lets the reader read, decompress, and process only the values that are required for the current query. Because ORC files are type-aware, the writer chooses the most appropriate encoding for the type and builds an internal index as the file is written. More information [here](https://orc.apache.org/).
+ORC (Optimized Row-Column) is a self-describing, type-aware columnar file format designed for Hadoop workloads. It is optimized for large streaming reads, but with integrated support for finding required rows quickly. Storing data in a columnar format lets the reader read, decompress, and process only the values that are required for the current query. 
+
+Because ORC files are type-aware, the writer chooses the most appropriate encoding for the type and builds an internal index as the file is written. More information [here](https://orc.apache.org/).
 
 ```scala
 mode(SaveMode.Overwrite)
