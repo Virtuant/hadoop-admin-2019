@@ -79,7 +79,7 @@ The lab guide is [here](https://virtuant.github.io/hadoop-overview-spark-hwx/lab
 
 #### Lab [33](https://virtuant.github.io/hadoop-overview-spark-hwx/dataframes-datasets.html) DataFrames and DataSets [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/dataframes-datasets.pdf)
 
-#### Lab [34](https://virtuant.github.io/hadoop-overview-spark-hwx/spark-splitting.html) Spark Develop with Java [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/spark-splitting.pdf)
+#### Lab [34](https://virtuant.github.io/hadoop-overview-spark-hwx/spark-splitting.html) Splitting Data with Spark [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/spark-splitting.pdf)
 
 #### Lab [35](https://virtuant.github.io/hadoop-overview-spark-hwx/spark-dev-java.html) Spark Develop with Java [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/spark-dev-java.pdf)
 
