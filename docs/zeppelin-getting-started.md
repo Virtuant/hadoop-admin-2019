@@ -4,16 +4,6 @@
 
 **Exercise directory**: `~/data`
 
-**HDFS paths:** `/user/[user-name]`
-
-
-<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
-<h4>1.
-
-
-
-
-
 Zeppelin is a web-based notebook that enables interactive data analytics. With Zeppelin, you can make beautiful data-driven, interactive and collaborative documents with a rich set of pre-built language back-ends (or interpreters) such as Scala (with Apache Spark), Python (with Apache Spark), SparkSQL, Hive, Markdown, Angular, and Shell.
 
 With a focus on Enterprise, Zeppelin has the following important features:
@@ -259,14 +249,17 @@ To export a notebook that you have been working on you can do so by simply going
 
 1. Click the download icon shown in the image below:
 
-### Export Notebook
+![export_notebook-800x120](https://user-images.githubusercontent.com/558905/55121476-03951680-50d1-11e9-8ad7-2595d8bfc641.jpg)
 
 This will download the notebook as a JSON file into your local computer.
-Importing External Libraries
+
+### Importing External Libraries
 
 As you explore Zeppelin you will probably want to use one or more external libraries. For example, to run Magellan you need to import its dependencies; you will need to include the Magellan library in your environment. There are three ways to include an external dependency in a Zeppelin notebook:
 
-1.Using the %dep interpreter (Note: This will only work for libraries that are published to Maven.)
+1.Using the `%dep` interpreter 
+
+> Note: This will only work for libraries that are published to Maven.
 
 ```scala
 %dep
@@ -293,17 +286,6 @@ z.addRepo("Spark Packages Repo").url("http://dl.bintray.com/spark-packages/maven
 z.load("com.esri.geometry:esri-geometry-api:1.2.1")
 z.load("harsha2010:magellan:1.0.3-s_2.10")
 ```
-
-
-
-
-
-
-![export_notebook-800x120](https://user-images.githubusercontent.com/558905/55121476-03951680-50d1-11e9-8ad7-2595d8bfc641.jpg)
-
-
-
-
 
 ### Results
 
