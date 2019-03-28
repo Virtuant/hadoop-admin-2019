@@ -8,10 +8,11 @@ With a focus on Enterprise, Zeppelin has the following important features:
         Zeppelin authentication against LDAP
         Notebook authorization
 
-The purpose of this tutorial is to guide you through basic functionalities of Zeppelin so that you may create your own data analysis applications or import existent Zeppelin Notebooks; additionally, you will learn advanced features of Zeppelin like creating and binding interpreters, and importing external libraries.
+The purpose of this lab is to guide you through basic functionalities of Zeppelin so that you may create your own data analysis applications or import existent Zeppelin Notebooks; additionally, you will learn advanced features of Zeppelin like creating and binding interpreters, and importing external libraries.
 
-This tutorial is the fundamental base which will be used in future Spark tutorials and covers important topics such as creating notebooks, importing and expanding existing notebooks, and binding different back-ends to your environment so that you may use Zeppelin to it’s full potential.
-Launching Zeppelin
+This lab is the fundamental base which will be used in future Spark labs and covers important topics such as creating notebooks, importing and expanding existing notebooks, and binding different back-ends to your environment so that you may use Zeppelin to it’s full potential.
+
+### Launching Zeppelin
 
 There are two ways to access Zeppelin in the HDP environment, the first is through Amabari’s Quick Links and the second is by navigating to Zeppelin’s dedicated port on your browser.
 Launching Zeppelin through Ambari
@@ -20,8 +21,7 @@ Login to Ambari (operations console) using amy_ds/amy_ds as a username/password 
 
     NOTE: Recall that Ambari is accessible at http://sandbox-hdp.hortonworks.com:8080 on your browser while the Sandbox is running. If you’re new to the HDP Sandbox environment, make sure to review Learning the Ropes of the HDP Sandbox.
 
-![add-paragraph-hover-above-800x228](https://user-images.githubusercontent.com/558905/55121465-0263e980-50d1-11e9-838a-33907a5a1062.jpg)
-![add-paragraph-hover-below-800x228](https://user-images.githubusercontent.com/558905/55121466-0263e980-50d1-11e9-8164-138cf6175e2d.jpg)
+
 ![binding_interpreter_example-800x397](https://user-images.githubusercontent.com/558905/55121467-02fc8000-50d1-11e9-9b70-b427d4c207be.jpg)
 ![clear_a_paragraph_output-800x305](https://user-images.githubusercontent.com/558905/55121468-02fc8000-50d1-11e9-9bea-b3313c082765.jpg)
 ![clear_all_outputs-800x111](https://user-images.githubusercontent.com/558905/55121469-02fc8000-50d1-11e9-9f20-49c8f64f6699.jpg)
@@ -33,8 +33,6 @@ Login to Ambari (operations console) using amy_ds/amy_ds as a username/password 
 ![export_notebook-800x120](https://user-images.githubusercontent.com/558905/55121476-03951680-50d1-11e9-8ad7-2595d8bfc641.jpg)
 
 
-
-![install-interpreter-shell-800x454](https://user-images.githubusercontent.com/558905/55121484-042dad00-50d1-11e9-9dcc-303d89065272.jpg)
 ![interpreter_examples-800x373](https://user-images.githubusercontent.com/558905/55121485-04c64380-50d1-11e9-9c7a-4c0ff3f05c52.jpg)
 ![running_a_paragraph-800x115](https://user-images.githubusercontent.com/558905/55121487-04c64380-50d1-11e9-83a3-5d2737c305e0.jpg)
 ![running_paragraphs-800x115](https://user-images.githubusercontent.com/558905/55121488-04c64380-50d1-11e9-8fcd-6b17b45a7eb2.jpg)
@@ -136,22 +134,24 @@ Various icons will appear including a trashcan.
 A prompt will ask you if you want to Move this note to trash?, click OK.
 
 The notebook has now been moved to the Zeppelin’s trash folder. You can always restore the notebook back by clicking on the Trash folder, hover over the notebook you want to restore, there you will see two options a curved arrow that says Restore note and an x that allows you to remove items permanently. If you want to restore an notebook click on Restore note and on x to delete the item permanently from Zeppelin.
-Adding a Paragraph
+
+### Adding a Paragraph
 
 By now you must be eager to begin coding or expanding on the notebook you imported. Adding a paragraph in Zeppelin is very simple. Begin by opening the notebook that you want to work on, for this part of the tutorial we will use the Spark On HDP Notebook we created earlier.
 
-Next, hover over either the lower or upper edge of an existent paragraph and you will see the option to add a paragraph appear.
+Next, hover over either the lower or upper edge of an existent paragraph and you will see the option to add a paragraph appear:
 
-add-paragraph-hover-above
+![add-paragraph-hover-above-800x228](https://user-images.githubusercontent.com/558905/55121465-0263e980-50d1-11e9-838a-33907a5a1062.jpg)
 
-Click above to add the new paragraph before the existent one.
+Click above to add the new paragraph before the existent one:
 
-add-paragraph-hover-below
+![add-paragraph-hover-below-800x228](https://user-images.githubusercontent.com/558905/55121466-0263e980-50d1-11e9-8164-138cf6175e2d.jpg)
 
 Or click below to add the new paragraph after the current paragraph.
 
 Okay, now that you have either created or imported a notebook and wrote paragraphs, the next step is to run the paragraphs.
-Running a Paragraph
+
+### Running a Paragraph
 
 There are two ways of running a paragraph in a Zeppelin Notebook, step 1 and 2 covers how to run individual paragraphs. Step 3 will show you how to you all paragraphs with one click.
 
@@ -164,7 +164,8 @@ Running Paragraphs
 3.Click the play button (blue) triangle at the top of the Zeppelin Notebook as shown on the image below.
 
 Running Paragraphs
-Clearing Paragraph Output
+
+### Clearing Paragraph Output
 
 To clear the output of a specific paragraph:
 
@@ -179,7 +180,8 @@ This will clear the output of that specific paragraph
 To clear the output of the whole Zeppelin Notebook go to the top of the Notebook and select the eraser icon. A prompt will appear asking Do you want to clear all output? Press OK.
 
 Clearing the Output of all Paragraphs
-Installing an Interpreter
+
+### Installing an Interpreter
 
 In this section we will review how to install a Zeppelin interpreter for use in the Zeppelin UI. Please note the supported interpreters to ensure that the interpreter you want to install.
 
@@ -187,22 +189,27 @@ Open Web Shell by navigating to http://sandbox-hdp.hortonworks.com:4200
 
 To display a list of the available interpreters issue the following command:
 
+```
 /usr/hdp/current/zeppelin-server/bin/install-interpreter.sh --list
+```
 
 next, issue the following command:
 
+```
 /usr/hdp/current/zeppelin-server/bin/install-interpreter.sh --name shell,jdbc,python...
+```
 
     Note: In this example we are highlighting shell, jdbc, and python; however, any community supported interpreter can be installed this way.
 
 Output you should see:
 
-install-interpreter-shell
+![install-interpreter-shell-800x454](https://user-images.githubusercontent.com/558905/55121484-042dad00-50d1-11e9-9dcc-303d89065272.jpg)
 
-Restart Zeppelin from Ambari UI.
+### Restart Zeppelin from Ambari UI.
 
 Refer to creating an interpreter section to enable usage on the Zeppelin Web Application.
-Creating an Interpreter
+
+### Creating an Interpreter
 
 Zeppelin Notebooks supports various interpreters which allow you to perform many operations on your data. Below are just a few of operations you can do with Zeppelin interpreters:
 
@@ -213,13 +220,15 @@ Zeppelin Notebooks supports various interpreters which allow you to perform many
     Analysis
     Processing
 
-These are some of the interpreters that will be utilized throughout our various Spark tutorials.
-Interpreter 	Description
-%spark2 	Spark interpreter to run Spark 2.x code written in Scala
-%spark2.sql 	Spark SQL interpreter (to execute SQL queries against temporary tables in Spark)
-%sh 	Shell interpreter to run shell commands like move files
-%angular 	Angular interpreter to run Angular and HTML code
-%md 	Markdown for displaying formatted text, links, and images
+These are some of the interpreters that will be utilized throughout our various Spark labs.
+
+|Interpreter |Description|
+|---|---|
+|%spark2 	|Spark interpreter to run Spark 2.x code written in Scala|
+|%spark2.sql 	|Spark SQL interpreter (to execute SQL queries against temporary tables in Spark)|
+|%sh 	|Shell interpreter to run shell commands like move files|
+|%angular 	|Angular interpreter to run Angular and HTML code|
+|%md 	|Markdown for displaying formatted text, links, and images|
 
 Note the % at the beginning of each interpreter. Each paragraph needs to start with % followed by the interpreter name. The image below showcases three interpreters, Markdown, Spark and Shell.
 
@@ -248,11 +257,14 @@ This will bring up the Create new interpreter option. We will use the shell inte
 Creating Interpreter Part 3
 
 Once you are done creating the interpreter you need to bind it to the notebook you will be using it in. The next section will cover how to bind the interpreter into a notebook.
-Binding an Interpreter
+
+### Binding an Interpreter
 
 To bind the interpreter you just created you need to reopen the notebook you want to bind your new interpreter in.
 
-1. Click on the gear at the top right side of your Zeppelin Notebook. Note that when you click on that gear it says Interpreter binding
+1. Click on the gear at the top right side of your Zeppelin Notebook. Note that when you click on that gear it says 
+
+### Interpreter binding
 
 The settings section appears and you can see your newly created interpreter, in our case the shell interpreter sh.
 
@@ -269,7 +281,7 @@ To export a notebook that you have been working on you can do so by simply going
 
 1. Click the download icon shown in the image below:
 
-Export Notebook
+### Export Notebook
 
 This will download the notebook as a JSON file into your local computer.
 Importing External Libraries
@@ -278,25 +290,33 @@ As you explore Zeppelin you will probably want to use one or more external libra
 
 1.Using the %dep interpreter (Note: This will only work for libraries that are published to Maven.)
 
+```scala
 %dep
 z.load("group:artifact:version")
+```
 
 2. Using the %spark2 interpreter
 
+```scala
 %spark2
+```
 
 3. Using the import statement
 
+```scala
 import ...
+```
 
 Here is an example that imports the dependency for Magellan using %dep interpreter:
 
+```scala
 %dep
 z.addRepo("Spark Packages Repo").url("http://dl.bintray.com/spark-packages/maven")
 z.load("com.esri.geometry:esri-geometry-api:1.2.1")
 z.load("harsha2010:magellan:1.0.3-s_2.10")
+```
 
-Summary
+### Results
 
 Congratulations! You now know the basic functionalities of Zeppelin. Now you can create, import, delete and run a Zeppelin Notebook. Additionally, you know how to create and bind an interpreter, export a notebook and import external libraries.
 
