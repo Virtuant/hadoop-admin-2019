@@ -81,9 +81,9 @@ The lab guide is [here](https://virtuant.github.io/hadoop-overview-spark-hwx/lab
 
 #### Lab [34](https://virtuant.github.io/hadoop-overview-spark-hwx/spark-splitting.html) Splitting Data with Spark [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/spark-splitting.pdf)
 
-#### Lab [35](https://virtuant.github.io/hadoop-overview-spark-hwx/spark-dev-java.html) Spark Develop with Java [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/spark-dev-java.pdf)
+#### Lab [35](https://virtuant.github.io/hadoop-overview-spark-hwx/hive-orc-spark.html) Hive ORC to Spark [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/hive-orc-spark.pdf)
 
-#### Lab [36](https://virtuant.github.io/hadoop-overview-spark-hwx/hive-orc-spark.html) Hive ORC to Spark [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/hive-orc-spark.pdf)
+#### Lab [36](https://virtuant.github.io/hadoop-overview-spark-hwx/spark-catalyst.html) Spark Catalyst [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/spark-catalyst.pdf)
 
 #### Lab [37](https://virtuant.github.io/hadoop-overview-spark-hwx/zeppelin-hbase.html) Zeppelin & Phoenix on HBase [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/zeppelin-hbase.pdf)
 
