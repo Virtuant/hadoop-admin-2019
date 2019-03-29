@@ -39,13 +39,13 @@ SparkContext available as sc, HiveContext available as sqlContext.
 [u'We the People of the United States, in Order to form a more
 perfect ']
 ```
-> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) your results may vary
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) your results may vary. Where you see `code` try to handle the coding yourself.
 
 
 Break the full lines down into a collection of words.
 
 ```scala
->>> justWords = baseFile.flatMap(lambda line: line.split(' '))
+>>> justWords = baseFile.flatMap( code )
 >>> justWords.take(5)
 [u'We', u'the', u'People', u'of', u'the']
 ```
@@ -55,7 +55,7 @@ Map the words with a count of "1" for each.
 Count up the words; sorting them in reverse.
 
 ```scala
->>> wordCounts = mappedWords.reduceByKey(lambda a,b:a+b).sortByKey(ascending=False)
+>>> wordCounts = mappedWords.reduceByKey(lambda a,b:a+b).sortByKey( code )
 >>> wordCounts.take(10)
 [(u'years;', 1), (u'years', 9), (u'year,', 1), (u'year', 1),
 (u'written', 6), (u'writs', 1), (u'writing,', 1), (u'would', 2),
@@ -118,7 +118,7 @@ u'August,M,Illinois,1.42']
 Filter out just the male customers.
 
 ```scala
->>> justMales = custFile.map(lambda line:line.split(',')).filter(lambda line: line[1] == 'M')
+>>> justMales = custFile.map(lambda code ).filter(lambda line: line[1] == 'M')
 >>> justMales.take(2)
 [[u'Irvin', u'M', u'Maryland', u'5.06'], [u'Owen', u'M',
 u'Illinois', u'2.01']]
@@ -137,7 +137,7 @@ Jersey', 1)]
 Count up the number of customers by state.
 
 ```scala
->>> nbrCustsByState = mapByStateCode.reduceByKey(lambda a,b: a+b)
+>>> nbrCustsByState = mapByStateCode.reduceByKey(lambda code )
 >>> nbrCustsByState.take(4)
 [(u'Wisconsin', 2), (u'New Jersey', 4), (u'Michigan', 8),
 (u'Pennsylvania', 2)]
@@ -158,8 +158,7 @@ Flip the KVP pair back to state and count plus add an index to represent
 the ordering sequence.
 
 ```scala
->>> stateCountIndexedHighToLow = highToLowCountAndState.map(lambda
-(a,b): (b,a)).zipWithIndex()
+>>> stateCountIndexedHighToLow = highToLowCountAndState.map(lambda (a,b): (b,a)).zipWithIndex()
 >>> stateCountIndexedHighToLow.take(6)
 [((u'Michigan', 8), 0), ((u'Maryland', 8), 1), ((u'Illinois', 7),
 2), ((u'Nebraska', 5), 3), ((u'New Jersey', 4), 4), ((u'Indiana',
@@ -169,8 +168,7 @@ the ordering sequence.
 Eliminate all records except for the top 5.
 
 ```scala
->>> topFive = stateCountIndexedHighToLow.filter(lambda ((a,b),c):
-c<5)
+>>> topFive = stateCountIndexedHighToLow.filter(lambda ((a,b),c):c<5)
 >>> topFive.collect()
 [((u'Michigan', 8), 0), ((u'Maryland', 8), 1), ((u'Illinois', 7),
 2), ((u'Nebraska', 5), 3), ((u'New Jersey', 4), 4)]
@@ -179,7 +177,7 @@ c<5)
 Eliminate the index and the counts to just return the top 5 state names.
 
 ```scala
->>> top5Names = topFive.map(lambda ((a,b),c): a)
+>>> top5Names = topFive.map(lambda code )
 >>> top5Names.collect()
 [u'Michigan', u'Maryland', u'Illinois', u'Nebraska', u'New
 Jersey']
