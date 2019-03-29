@@ -57,11 +57,11 @@ Use DUMP on A_count to view the result.
 
 What is the count?
 
-{ %comment% }
+{% comment %}
 
 (rowcount,447598)
 
-( %endcomment% }
+(% endcomment %}
 
 We can now conclude that there are 447,598 rows of text in `visits.txt`.
 
