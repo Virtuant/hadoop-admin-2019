@@ -186,9 +186,7 @@ where info_comment like "%RECEP%"
 and info_comment like "%GEN%";
 ```
 
-Notice there are 2,697 visits to the POTUS with `GEN RECEP` in the
-comment field, which is about 12% of the 21,819 total visits to the
-POTUS in our dataset.
+What is the count of visitors to POTUS?
 
 > ![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) More importantly, these results show that the conclusion from our first
 query, where we found that the most likely reason to visit the President
@@ -238,8 +236,7 @@ The result should look like this:
 Modify the script again, this time to run a query that counts the number
 of records with `WHO` and `EOP` in the comments, and run the query.
 
-You should get 1,687 visits, or 7.7% of the visitors to the POTUS. So
-`GENERAL RECEPTION` still appears to be the most frequent comment.
+What is the count?
 
 ### Find the Most Visits
 
@@ -266,4 +263,13 @@ You have written several Hive queries to analyze the White House visitor data. T
 goal is for you to become comfortable with working with Hive, so hopefully you now
 feel like you can tackle a Hive problem and be able to answer questions about your
 big data stored in Hive.
+
+Notice there are 2,697 visits to the POTUS with `GEN RECEP` in the
+comment field, which is about 12% of the 21,819 total visits to the
+POTUS in our dataset.
+
+You should get 1,687 visits, or 7.7% of the visitors to the POTUS. So
+`GENERAL RECEPTION` still appears to be the most frequent comment.
+
+
 
