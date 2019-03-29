@@ -1,42 +1,54 @@
-About this Lab
-Objective: Use Pig to navigate through HDFS and explore a dataset.
-File locations: whitehouse/visits.txt in HDFS
-Successful
-outcome:
-You will have written several Pig scripts that analyze and
-query the White House visitors’ data, including a list of
+## Analyzing Big Data with Pig
+
+**Objective:** Use Pig to navigate through HDFS and explore a dataset. You will have written several Pig scripts that analyze and query the White House visitors’ data, including a list of
 people who visited the President.
-Before you begin: At a minimum, complete steps 1 and 2 of the Getting Started
-with Pig
-lab.
-Related lesson: Introduction to Pig
-Lab Steps
-1 ) Load the White House Visitor Data
-a. If not already done, open a Terminal in your VM and type "ssh sandbox".
-b. You will use the TextLoader to load the visits.txt file. From the Pig Grunt
-shell, define the following LOAD relation:
-# pig
-grunt> A = LOAD '/user/root/whitehouse/' USING TextLoader();
-2 ) Count the Number of Lines
-a. Define a new relation named B that is a group of all the records in A:
-grunt> B = GROUP A ALL;
-b. Use DESCRIBE to view the schema of B.
-grunt> DESCRIBE B;
-What is the datatype of the group field? _____________________
-Where did this datatype come from? ________________________
-Answer: The group field is a chararray because it is just the string “all”
+
+---
+
+### Load the White House Visitor Data
+
+You will use the TextLoader to load the file. From the Pig Grunt
+shell, define a LOAD relation:
+
+```
+A = LOAD '/user/student/data/whitehouse' USING TextLoader();
+```
+
+### Count the Number of Lines
+
+Define a new relation that is a group of all records.
+
+```
+B = GROUP A ALL;
+```
+
+Use DESCRIBE to view the schema of B:
+
+```
+DESCRIBE B;
+```
+
+What is the datatype of the group field? 
+Where did this datatype come from? 
+
+> Answer: The group field is a chararray because it is just the string “all”
 and is a result of performing a GROUP ALL.
 
-Why does the A field of B contain no schema? ______________________
-Answer: The A field of B contains no schema because the A relation has
+Why does the A field of B contain no schema? 
+
+> Answer: The A field of B contains no schema because the A relation has
 no schema.
-How many groups are in the relation B? ______________
-Answer: The B relation can only contain one group because it a
+
+How many groups are in the relation B? 
+
+> Answer: The B relation can only contain one group because it a
 grouping of every single record. Note that the A field is a bag, and A will
 contain any number of tuples.
-c. The A field of the B tuple is a bag of all of the records in visits.txt. Use the
+
+The A field of the B tuple is a bag of all of the records in `visits.txt`. Use the
 COUNT function on this bag to determine how many lines of text are in
-visits.txt:
+`visits.txt`.
+
 grunt> A_count = FOREACH B GENERATE 'rowcount', COUNT(A);
 Note
 The ‘rowcount’ string in the FOREACH statement is simply to demonstrate
