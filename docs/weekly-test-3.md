@@ -207,3 +207,5 @@ Jersey']
 
 Successful use of Spark Core and RDD to read files and perform data analysis.
 
+Find the solution [here](https://virtuant.github.io/hadoop-overview-spark-hwx/weekly-test-2.html)
+
