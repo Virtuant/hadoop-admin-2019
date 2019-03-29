@@ -63,7 +63,7 @@ What is the count?
 
 (rowcount,447598)
 
-(% endcomment %}
+{% endcomment %}
 
 We can now conclude that there are 447,598 rows of text in `visits.txt`.
 
