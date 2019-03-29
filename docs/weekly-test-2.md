@@ -3,7 +3,7 @@
 **Objective:** Analyze the White House visitor data. You will have discovered several useful pieces of
 information about the White House visitor data.
 
-**Data Set** [Constitution.txt] (https://mapr.com/products/mapr-sandbox-hadoop/tutorials/hue-tutorial-file-browser-metastore-manager-beeswax/assets/constitution.txt)
+**Data Set** [White House](https://www.dropbox.com/s/7ds7dxksspk09sh/whitehouse_visits.zip?dl=0) visits
 
 ----
 
