@@ -37,6 +37,8 @@ SparkContext available as sc, HiveContext available as sqlContext.
 [u'We the People of the United States, in Order to form a more
 perfect ']
 ```
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) your results may vary
+
 
 Break the full lines down into a collection of words.
 
@@ -61,10 +63,11 @@ Count up the words; sorting them in reverse.
 Chain all the method invocations into a single operation, as is more the
 normal usage pattern. 
 
-NOTE: Type as a single line without the new line
+![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) Type as a single line without the new line
 or "\" characters.
->>> asOneLine =
-sc.textFile("hdfs://sandbox:8020/user/root/spark/constitution.txt"
+
+```scala
+>>> asOneLine = sc.textFile("hdfs://sandbox:8020/user/root/spark/constitution.txt"
 ) \
 .flatMap(lambda line: line.split(' ')) \
 .map(lambda word: (word, 1)) \
@@ -74,8 +77,14 @@ sc.textFile("hdfs://sandbox:8020/user/root/spark/constitution.txt"
 [(u'years;', 1), (u'years', 9), (u'year,', 1), (u'year', 1),
 (u'written', 6), (u'writs', 1), (u'writing,', 1), (u'would', 2),
 (u'work', 1), (u'witnesses', 2)]
-i. Exit out of the pyspark REPL.
+```
+
+Exit out of the pyspark REPL.
+
+```scala
 >>> quit()
+```
+
 2 ) On a simple customer file, find the top 5 states with the most male customers.
 a. Upload customer.csv and explore its format of name, gender, state and
 duration.
