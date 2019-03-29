@@ -9,7 +9,7 @@ people who visited the President.
 
 ### Load the White House Visitor Data
 
-You will use the TextLoader to load the file. From the Pig Grunt
+You will use the `TextLoader()` to load the file. From the Pig Grunt
 shell, define a LOAD relation:
 
 ```
