@@ -2,6 +2,8 @@
 
 **Objective:** Read and manipulate HDFS files with Spark. You will have processed several HDFS file via Spark Core.
 
+**Data Set:** [constitution.txt](https://mapr.com/products/mapr-sandbox-hadoop/tutorials/hue-tutorial-file-browser-metastore-manager-beeswax/assets/constitution.txt) and [customer.csv](https://mapr.com/products/mapr-sandbox-hadoop/tutorials/hue-tutorial-file-browser-metastore-manager-beeswax/assets/customers.csv)
+
 ----
 
 ### Execute a WordCount with Spark
