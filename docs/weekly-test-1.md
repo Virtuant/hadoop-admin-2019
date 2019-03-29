@@ -59,8 +59,6 @@ Use DUMP on A_count to view the result.
 
 What is the count?
 
-We can now conclude that there are 447,598 rows of text in `visits.txt`.
-
 ### Analyze the Data’s Contents
 
 We now know how many records are in the data, but we still do not have
@@ -235,6 +233,6 @@ DUMP, and STORE.
 
 {% comment %}
 
-(rowcount,447598)
+We can now conclude that there are 447,598 rows of text in `visits.txt`.
 
 {% endcomment %}
