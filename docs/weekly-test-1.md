@@ -158,13 +158,6 @@ the potus relation from the previous step as a starting point. You will
 need to use GROUP ALL and then a FOREACH projection that uses the COUNT
 function.
 
-{ %comment% }
-
-21,819 as the number of visitors to the
-White House who visited the President.
-
-( %endcomment% }
-
 How many people saw the President?
 
 ### Finding People Who Visited the President
@@ -235,4 +228,6 @@ DUMP, and STORE.
 
 We can now conclude that there are 447,598 rows of text in `visits.txt`.
 
+21,819 as the number of visitors to the
+White House who visited the President.
 {% endcomment %}
