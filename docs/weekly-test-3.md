@@ -40,7 +40,7 @@ perfect ']
 
 Break the full lines down into a collection of words.
 
-```pyspark
+```scala
 >>> justWords = baseFile.flatMap(lambda line: line.split(' '))
 >>> justWords.take(5)
 [u'We', u'the', u'People', u'of', u'the']
@@ -50,7 +50,7 @@ Map the words with a count of "1" for each.
 
 Count up the words; sorting them in reverse.
 
-```
+```scala
 >>> wordCounts = mappedWords.reduceByKey(lambda a,b:a+b).sortByKey(ascending=False)
 >>> wordCounts.take(10)
 [(u'years;', 1), (u'years', 9), (u'year,', 1), (u'year', 1),
@@ -59,7 +59,9 @@ Count up the words; sorting them in reverse.
 ```
 
 Chain all the method invocations into a single operation, as is more the
-normal usage pattern. NOTE: Type as a single line without the new line
+normal usage pattern. 
+
+NOTE: Type as a single line without the new line
 or "\" characters.
 >>> asOneLine =
 sc.textFile("hdfs://sandbox:8020/user/root/spark/constitution.txt"
