@@ -9,7 +9,7 @@ information about the White House visitor data.
 
 ### Find the First Visit
 
-Using touch, create a new text file named `whitehouse.hive` and save it.
+Using `touch`, create a new text file named `whitehouse.hive` and save it
 
 In this step, you will instruct the hive script to find the first visitor to the
 White House (based on our dataset). This will involve some clever
@@ -24,46 +24,51 @@ select * from wh_visits where time_of_arrival != ""
 ```
 
 To find the first visit, we need to sort the result. This requires converting
-the time_of_arrival string into a timestamp. We will use the
+the `time_of_arrival` string into a timestamp. We will use the
 unix_timestamp function to accomplish this. Add the following order by
 clause (again, no ";" at the end of the line):
 order by unix_timestamp(time_of_arrival,
 'MM/dd/yyyy hh:mm')
-e. Since we are only looking for one result, we certainly don’t need to
+
+Since we are only looking for one result, we certainly don’t need to
 return every row. Let’s limit the result to 10 rows, so we can view the first
 10 visitors (this finishes the query, so will end with the ";" character):
-limit 10;
-f. Save your changes to whitehouse.hive.
+limit 10.
 
-Execute the script whitehouse.hive and wait for the results to be
-displayed:
-# cd ~/devph/labs/Lab7.2
-# hive -f whitehouse.hive
-h. The results should be 10 visitors, and the first visit should be in 2009,
-since that is when the dataset begins. The first visitors are Charles Kahn
-and Carol Keehan on 3/5/2009.
-2 ) Find the Last Visit
-a. This one is easy: just take the previous query and reverse the order by
-adding desc to the order by clause:
-order by unix_timestamp(time_of_arrival,
-'MM/dd/yyyy hh:mm') desc
-b. Run the query again, and you should see that the most recent visit was
-Jackie Walker on 3/18/2011.
-# hive -f whitehouse.hive
-3 ) Find the Most Common Comment
-a. In this step, you will explore the info_comment field and try to determine
+Save your changes to `whitehouse.hive`.
+
+Execute the script `whitehouse.hive` and wait for the results to be
+displayed.
+
+The results should be 10 visitors, and the first visit should be in what year?
+The first visitors are Charles Kahn and Carol Keehan on 3/5/2009.
+
+### Find the Last Visit
+
+This one is easy: just take the previous query and reverse the order by
+adding desc to the order by clause. What is it?
+
+Run the query again, and you should see that the most recent visit was who in what year?
+
+
+### Find the Most Common Comment
+
+In this step, you will explore the `info_comment` field and try to determine
 the most common comment. You will use some of Hive’s aggregate
-functions to accomplish this. Start by using gedit to create a new text file
-named comments.hive and save it in ~/devph/labs/Lab7.2 folder.
-b. You will now create a query that displays the 10 most frequently
-occurring comments. Start with the following select clause:
-from wh_visits
-select count(*) as comment_count, info_comment
+functions to accomplish this. 
+
+You will now create a similar query that displays the 10 most frequently
+occurring comments.
+
 This runs the aggregate count function on each group (which you will define later in
-the query) and names the result comment_count. For example, if “OPEN HOUSE” occurs
-five times then comment_count will be five for that group.
+the query) and names the result `comment_count`. For example, if “OPEN HOUSE” occurs
+five times then `comment_count` will be five for that group.
+
 Notice we are also selecting the info_comment column so we can see what the
 comment is.
+
+### Group Results
+
 c. Group the results of the query by the info_comment column:
 group by info_comment
 
