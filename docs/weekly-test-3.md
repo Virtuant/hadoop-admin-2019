@@ -6,18 +6,14 @@
 
 ### Execute a WordCount with Spark
 
-b. Copy the constitution.txt file to HDFS.
-[root@sandbox ~]# cd ~/devph/labs/Spark
-[root@sandbox Spark]# hdfs dfs -mkdir spark
-[root@sandbox Spark]# hdfs dfs -put
-~/devph/labs/demos/constitution.txt spark/
-[root@sandbox Spark]# hdfs dfs -ls spark
-Found 1 items
--rw-r--r-- 1 root hdfs 45489 2015-11-09 09:39
-spark/constitution.txt
+Copy the `constitution.txt` file into HDFS.
 
-Launch the Python Spark Shell. NOTE: "INFO" comments will be
-removed from the output in this lab guide going forward.
+Launch the Python Spark Shell. 
+
+> NOTE: "INFO" comments will be
+removed from the output in this lab guide going forward:
+
+```
 [root@sandbox ~]# pyspark
 Python 2.6.6 (r266:84292, Jul 23 2015, 15:22:56)
 [GCC 4.4.7 20120313 (Red Hat 4.4.7-11)] on linux2
@@ -31,14 +27,19 @@ _\ \/ _ \/ _ `/ __/ '_/
 Using Python version 2.6.6 (r266:84292, Jul 23 2015 15:22:56)
 SparkContext available as sc, HiveContext available as sqlContext.
 >>>
-d. Read in the file as a RDD.
->>> baseFile =
-sc.textFile("hdfs://sandbox:8020/user/root/spark/constitution.txt"
-)
+```
+
+### Read in the file as a RDD
+
+```scala
+>>> baseFile = sc.textFile("hdfs://sandbox:8020/user/root/spark/constitution.txt")
 >>> baseFile.take(1)
 [u'We the People of the United States, in Order to form a more
 perfect ']
-e. Break the full lines down into a collection of words.
+```
+
+Break the full lines down into a collection of words.
+
 >>> justWords = baseFile.flatMap(lambda line: line.split(' '))
 >>> justWords.take(5)
 [u'We', u'the', u'People', u'of', u'the']
