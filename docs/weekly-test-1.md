@@ -207,6 +207,8 @@ The output should be in a comma-delimited format and should contain
 the last name, first name, time of arrival (if available), and the string
 POTUS.
 
+How many visitors to POTUS were there?
+
 ### View the Pig Log Files
 
 Each time you executed a DUMP or STORE command, a MapReduce job is
