@@ -130,11 +130,12 @@ appear.
 
 ### Analyze the Data Inconsistencies
 
-a. Analyzing the results of the most- and least-frequent comments, it
+Analyzing the results of the most- and least-frequent comments, it
 appears that several variations of GENERAL RECEPTION occur. In this step,
 you will try to determine the number of visits to the POTUS involving a
 general reception by trying to clean up some of these inconsistencies in
 the data.
+
 Note
 Inconsistencies like these are very common in big data, especially when
 human input is involved. In this dataset, we likely have different people
