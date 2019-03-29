@@ -25,10 +25,13 @@ select * from wh_visits where time_of_arrival != ""
 
 To find the first visit, we need to sort the result. This requires converting
 the `time_of_arrival` string into a timestamp. We will use the
-unix_timestamp function to accomplish this. Add the following order by
+`unix_timestamp` function to accomplish this. Add the following order by
 clause (again, no ";" at the end of the line):
+
+```sql
 order by unix_timestamp(time_of_arrival,
 'MM/dd/yyyy hh:mm')
+```
 
 Since we are only looking for one result, we certainly don’t need to
 return every row. Let’s limit the result to 10 rows, so we can view the first
@@ -41,7 +44,6 @@ Execute the script `whitehouse.hive` and wait for the results to be
 displayed.
 
 The results should be 10 visitors, and the first visit should be in what year?
-The first visitors are Charles Kahn and Carol Keehan on 3/5/2009.
 
 ### Find the Last Visit
 
@@ -69,49 +71,48 @@ comment is.
 
 ### Group Results
 
-c. Group the results of the query by the info_comment column:
+Group the results of the query by the info_comment column:
+
+```sql
 group by info_comment
+```
 
-Order the results by comment_count, because we are only interested in
+Order the results by `comment_count`, because we are only interested in
 comments that appear most frequently:
+
+```sql
 order by comment_count DESC
-e. We only want the top results, so limit the result set to 10:
-limit 10;
-f. Save your changes to comments.hive and execute the script. Wait for the
+```
+
+Again, we only want the top results, so limit the result set to 10.
+
+Save your changes to `comments.hive` and execute the script. Wait for the
 MapReduce job to execute.
-# hive -f comments.hive
-g. The output will be 10 comments and should look like:
-9036
-1253 HOLIDAY BALL ATTENDEES/
-894 WHO EOP RECEP 2
-700 WHO EOP 1 RECEPTION/
-601 RESIDENCE STAFF HOLIDAY RECEPTION/
-586 PRESS RECEPTION ONE (1)/
-580 GENERAL RECEPTION 1
-540 HANUKKAH RECEPTION./
-540 GEN RECEP 5/
-516 GENERAL RECEPTION 3
-h. It appears that a blank comment is the most frequent comment, followed
+
+The output will be 10 comments. What is the count of the top entry?
+
+It appears that a blank comment is the most frequent comment, followed
 by the HOLIDAY BALL, then a variation of other receptions.
-i. Modify the query so that it ignores empty comments. If it works, the
+
+Modify the query so that it ignores empty comments. If it works, the
 comment “GEN RECEP 6/” will show up in your output.
-Solution:
---In comments.hive, insert the following line between your select
-and group statements:
-where info_comment != ""
-Save the changes, then back at the command line, re-run the query:
-# hive -f comments.hive
 
 
-Least Frequent Comment
-a. Run the previous query again, but this time, find the 10 least occurring
+### Least Frequent Comment
+
+Run the previous query again, but this time, find the 10 least occurring
 comments.
---Remove DESC from your order statement so that it looks like
+
+Remove DESC from your order statement so that it looks like
 this:
+
+```sql
 order by comment_count
-Save the changes, then back at the command line, re-run the query:
-# hive -f comments.hive
+```
+
 The output should look something like:
+
+```sql
 1 CONGRESSIONAL BALL/
 1 CONG BALL/
 1 merged to u59031
@@ -122,9 +123,13 @@ The output should look something like:
 1 DROP BY VISIT
 1 WHO EOP/
 1 "POTUS LUNCH WITH WASHINGTON
+```
+
 This seems accurate since 1 is the least number of times a comment can
 appear.
-5 ) Analyze the Data Inconsistencies
+
+### Analyze the Data Inconsistencies
+
 a. Analyzing the results of the most- and least-frequent comments, it
 appears that several variations of GENERAL RECEPTION occur. In this step,
 you will try to determine the number of visits to the POTUS involving a
