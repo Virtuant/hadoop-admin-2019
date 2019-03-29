@@ -39,7 +39,7 @@ SparkContext available as sc, HiveContext available as sqlContext.
 [u'We the People of the United States, in Order to form a more
 perfect ']
 ```
-> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) your results may vary. Where you see `code` try to handle the coding yourself.
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) your results may vary. Where you see the word `code` try to handle the coding yourself.
 
 
 Break the full lines down into a collection of words.
@@ -69,7 +69,7 @@ normal usage pattern.
 or "\" characters.
 
 ```scala
->>> asOneLine = sc.textFile("hdfs://sandbox:8020/user/root/spark/constitution.txt"
+>>> asOneLine = sc.textFile("hdfs://localhost:8020/user/student/spark/constitution.txt"
 ) \
 .flatMap(lambda line: line.split(' ')) \
 .map(lambda word: (word, 1)) \
@@ -168,7 +168,7 @@ the ordering sequence.
 Eliminate all records except for the top 5.
 
 ```scala
->>> topFive = stateCountIndexedHighToLow.filter(lambda ((a,b),c):c<5)
+>>> topFive = stateCountIndexedHighToLow.filter(lambda code:c<5)
 >>> topFive.collect()
 [((u'Michigan', 8), 0), ((u'Maryland', 8), 1), ((u'Illinois', 7),
 2), ((u'Nebraska', 5), 3), ((u'New Jersey', 4), 4)]
