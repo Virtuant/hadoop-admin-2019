@@ -1,25 +1,29 @@
-Lab: Analyzing Big Data with Hive
-About this Lab
-Objective: Analyze the White House visitor data.
-File locations: /root/devph/labs/Lab7.2
-Successful
-outcome:
-You will have discovered several useful pieces of
+## Analyzing Big Data with Hive
+
+**Objective:** Analyze the White House visitor data. You will have discovered several useful pieces of
 information about the White House visitor data.
-Before you begin: Complete the Understanding Hive Tables Lab.
-Related lesson: Hive Programming
-Lab Steps
-1 ) Find the First Visit
-a. If not already done, open a Terminal in your VM and type "ssh sandbox".
-b. Using gedit, create a new text file named whitehouse.hive and save it in
-your ~/devph/labs/Lab7.2 folder.
-c. In this step, you will instruct the hive script to find the first visitor to the
+
+**Data Set** [Constitution.txt] (https://mapr.com/products/mapr-sandbox-hadoop/tutorials/hue-tutorial-file-browser-metastore-manager-beeswax/assets/constitution.txt)
+
+----
+
+### Find the First Visit
+
+Using touch, create a new text file named `whitehouse.hive` and save it.
+
+In this step, you will instruct the hive script to find the first visitor to the
 White House (based on our dataset). This will involve some clever
 handling of timestamps. This will be a long query, so enter it on multiple
-lines (note the lack of a ";" at the end of this first step). Start by selecting
+lines (note the lack of a ";" at the end of this first step). 
+
+Start by selecting
 all columns where the time_of_arrival is not empty:
+
+```sql
 select * from wh_visits where time_of_arrival != ""
-d. To find the first visit, we need to sort the result. This requires converting
+```
+
+To find the first visit, we need to sort the result. This requires converting
 the time_of_arrival string into a timestamp. We will use the
 unix_timestamp function to accomplish this. Add the following order by
 clause (again, no ";" at the end of the line):
