@@ -226,7 +226,7 @@ Each time you executed a DUMP or STORE command, a MapReduce job is
 executed on your cluster.
 
 You can view the log files of these jobs in the JobHistory UI. Point your
-browser to http://master1:19888/ and click on the job’s ID to view the details of the job and its log files.
+browser to http://master1.hadoop.com:19888/jobhistory and click on the job’s ID to view the details of the job and its log files.
 
 ![image](https://user-images.githubusercontent.com/558905/55203355-6950d380-51a1-11e9-8351-7044f35853d7.png)
 
