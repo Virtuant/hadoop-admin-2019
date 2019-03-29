@@ -3,6 +3,8 @@
 **Objective:** Use Pig to navigate through HDFS and explore a dataset. You will have written several Pig scripts that analyze and query the White House visitors’ data, including a list of
 people who visited the President.
 
+**Data Set** [White House](https://www.dropbox.com/s/7ds7dxksspk09sh/whitehouse_visits.zip?dl=0) visits
+
 ---
 
 ### Load the White House Visitor Data
