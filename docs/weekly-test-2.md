@@ -92,7 +92,7 @@ MapReduce job to execute.
 The output will be 10 comments. What is the count of the top entry?
 
 It appears that a blank comment is the most frequent comment, followed
-by the HOLIDAY BALL, then a variation of other receptions.
+by the `HOLIDAY BALL`, then a variation of other receptions.
 
 Modify the query so that it ignores empty comments. If it works, the
 comment “GEN RECEP 6/” will show up in your output.
@@ -131,7 +131,7 @@ appear.
 ### Analyze the Data Inconsistencies
 
 Analyzing the results of the most- and least-frequent comments, it
-appears that several variations of GENERAL RECEPTION occur. In this step,
+appears that several variations of `GENERAL RECEPTION` occur. In this step,
 you will try to determine the number of visits to the POTUS involving a
 general reception by trying to clean up some of these inconsistencies in
 the data.
@@ -150,8 +150,8 @@ where info_comment rlike '.*GEN.*\\s+RECEP.*'
 
 Change the limit clause from 10 to 30.
 
-Notice there are several GENERAL RECEPTION entries that only differ by a
-number at the end or use the GEN RECEP abbreviation:
+Notice there are several `GENERAL RECEPTION` entries that only differ by a
+number at the end or use the `GEN RECEP` abbreviation:
 
 ```sql
 580 GENERAL RECEPTION 1
@@ -166,7 +166,7 @@ number at the end or use the GEN RECEP abbreviation:
 13 GENERAL RECEPTION 1
 ```
 
-Let’s try one more query to try and narrow GENERAL RECEPTION visit.
+Let’s try one more query to try and narrow `GENERAL RECEPTION` visit.
 Modify the WHERE clause in comments.hive to include “%GEN%”:
 
 ```sql
@@ -176,7 +176,7 @@ and info_comment like "%GEN%"
 
 Leave the limit at 30, save your changes, and run the query again.
 
-The output this time reveals all the variations of GEN and RECEP. Next, let’s
+The output this time reveals all the variations of `GEN` and `RECEP`. Next, let’s
 add up the total number of them by running the following query:
 
 ```sql
@@ -186,13 +186,13 @@ where info_comment like "%RECEP%"
 and info_comment like "%GEN%";
 ```
 
-Notice there are 2,697 visits to the POTUS with GEN RECEP in the
+Notice there are 2,697 visits to the POTUS with `GEN RECEP` in the
 comment field, which is about 12% of the 21,819 total visits to the
 POTUS in our dataset.
 
 > ![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) More importantly, these results show that the conclusion from our first
 query, where we found that the most likely reason to visit the President
-was the HOLIDAY BALL with 1,253 attendees, is incorrect. This type of
+was the `HOLIDAY BALL` with 1,253 attendees, is incorrect. This type of
 analysis is common in big data, and it shows how data analysts need to
 be creative and thorough when researching their data.
 
@@ -209,7 +209,7 @@ You should be able to undo changes to comments.hive and restore
 it to the state before the last lab. Then make the following two
 additional edits:
 
-* Change the where clause to match WHO and EOP
+* Change the where clause to match `WHO` and `EOP`
 
 * Add the DESC command back to the end of the order statement
 
@@ -236,10 +236,10 @@ The result should look like this:
 ```
 
 Modify the script again, this time to run a query that counts the number
-of records with WHO and EOP in the comments, and run the query.
+of records with `WHO` and `EOP` in the comments, and run the query.
 
 You should get 1,687 visits, or 7.7% of the visitors to the POTUS. So
-GENERAL RECEPTION still appears to be the most frequent comment.
+`GENERAL RECEPTION` still appears to be the most frequent comment.
 
 ### Find the Most Visits
 
