@@ -40,20 +40,23 @@ perfect ']
 
 Break the full lines down into a collection of words.
 
+```pyspark
 >>> justWords = baseFile.flatMap(lambda line: line.split(' '))
 >>> justWords.take(5)
 [u'We', u'the', u'People', u'of', u'the']
-f. Map the words with a count of "1" for each.
->>> mappedWords = justWords.map(lambda word: (word, 1))
->>> mappedWords.take(5)
-[(u'We', 1), (u'the', 1), (u'People', 1), (u'of', 1), (u'the', 1)]
-g. Count up the words; sorting them in reverse.
->>> wordCounts = mappedWords.reduceByKey(lambda a,b:
-a+b).sortByKey(ascending=False)
+```
+
+Map the words with a count of "1" for each.
+
+Count up the words; sorting them in reverse.
+
+```
+>>> wordCounts = mappedWords.reduceByKey(lambda a,b:a+b).sortByKey(ascending=False)
 >>> wordCounts.take(10)
 [(u'years;', 1), (u'years', 9), (u'year,', 1), (u'year', 1),
 (u'written', 6), (u'writs', 1), (u'writing,', 1), (u'would', 2),
 (u'work', 1), (u'witnesses', 2)]
+```
 
 Chain all the method invocations into a single operation, as is more the
 normal usage pattern. NOTE: Type as a single line without the new line
