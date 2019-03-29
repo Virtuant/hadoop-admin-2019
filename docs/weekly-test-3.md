@@ -1,13 +1,11 @@
-About this Lab
-Objective: Read and manipulate HDFS files with Spark.
-File locations: /root/devph/labs/Spark
-Successful outcome: You will have processed several HDFS file via Spark Core.
-Before you begin: Your HDP 2.3 cluster should be up and running within your
-VM.
-Related lesson: Programming with Apache Spark
-Lab Steps
-1 ) Execute a WordCount with Spark.
-a. If not already done, open a Terminal in your VM and type "ssh sandbox".
+## Use Spark to do Data Analysis
+
+**Objective:** Read and manipulate HDFS files with Spark. You will have processed several HDFS file via Spark Core.
+
+----
+
+### Execute a WordCount with Spark
+
 b. Copy the constitution.txt file to HDFS.
 [root@sandbox ~]# cd ~/devph/labs/Spark
 [root@sandbox Spark]# hdfs dfs -mkdir spark
