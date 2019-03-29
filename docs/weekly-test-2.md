@@ -136,21 +136,24 @@ you will try to determine the number of visits to the POTUS involving a
 general reception by trying to clean up some of these inconsistencies in
 the data.
 
-Note
-Inconsistencies like these are very common in big data, especially when
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) Inconsistencies like these are very common in big data, especially when
 human input is involved. In this dataset, we likely have different people
 entering similar comments but using their own abbreviations.
-b. Modify the query in comments.hive. Instead of searching for empty
-comments. Search for comments that contain variations of the string
-“GEN RECEP.”
-where info_comment rlike '.*GEN.*\\s+RECEP.*'
 
-Change the limit clause from 10 to 30:
-limit 30;
-d. Run the query again.
-# hive -f comments.hive
-e. Notice there are several GENERAL RECEPTION entries that only differ by a
+Modify the query in `comments.hive`. Instead of searching for empty
+comments, search for comments that contain variations of the string
+“GEN RECEP.”
+
+```sql
+where info_comment rlike '.*GEN.*\\s+RECEP.*'
+```
+
+Change the limit clause from 10 to 30.
+
+Notice there are several GENERAL RECEPTION entries that only differ by a
 number at the end or use the GEN RECEP abbreviation:
+
+```sql
 580 GENERAL RECEPTION 1
 540 GEN RECEP 5/
 516 GENERAL RECEPTION 3
@@ -161,52 +164,66 @@ number at the end or use the GEN RECEP abbreviation:
 20 GENERAL RECEPTION 6
 20 GENERAL RECEPTION 5
 13 GENERAL RECEPTION 1
-f. Let’s try one more query to try and narrow GENERAL RECEPTION visit.
+```
+
+Let’s try one more query to try and narrow GENERAL RECEPTION visit.
 Modify the WHERE clause in comments.hive to include “%GEN%”:
+
+```sql
 where info_comment like "%RECEP%"
 and info_comment like "%GEN%"
-g. Leave the limit at 30, save your changes, and run the query again.
-# hive -f comments.hive
-h. The output this time reveals all the variations of GEN and RECEP. Next, let’s
+```
+
+Leave the limit at 30, save your changes, and run the query again.
+
+The output this time reveals all the variations of GEN and RECEP. Next, let’s
 add up the total number of them by running the following query:
+
+```sql
 from wh_visits
 select count(*)
 where info_comment like "%RECEP%"
 and info_comment like "%GEN%";
---Then save your changes and run the query again from the command
-line:
-# hive -f comments.hive
-i. Notice there are 2,697 visits to the POTUS with GEN RECEP in the
+```
+
+Notice there are 2,697 visits to the POTUS with GEN RECEP in the
 comment field, which is about 12% of the 21,819 total visits to the
 POTUS in our dataset.
 
-Note
-More importantly, these results show that the conclusion from our first
+> ![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) More importantly, these results show that the conclusion from our first
 query, where we found that the most likely reason to visit the President
 was the HOLIDAY BALL with 1,253 attendees, is incorrect. This type of
 analysis is common in big data, and it shows how data analysts need to
 be creative and thorough when researching their data.
-6 ) Verify the Result
-a. We have 12% of visitors to the POTUS going for a general reception, but
+
+### Verify the Result
+
+We have 12% of visitors to the POTUS going for a general reception, but
 there were a lot of statements in the comments that contained WHO and
-EOP. Modify the query from the last step and display the top 30
+EOP. 
+
+Modify the query from the last step and display the top 30
 comments that contain “WHO” and “EOP.”
---You should be able to undo changes to comments.hive and restore
+
+You should be able to undo changes to comments.hive and restore
 it to the state before the last lab. Then make the following two
 additional edits:
---Change the where clause to match WHO and EOP
-where info_comment like "%WHO%"
-and info_comment like "%EOP%";
---Add the DESC command back to the end of the order statement
-order by comment_count DESC
---Finally, double-check select count(*) as comment_count,
-info_count
---Make sure the "as..." portion is there
---Then save your changes and run the query again from the command
-line:
-# hive -f comments.hive
 
-The result should look like:
+* Change the where clause to match WHO and EOP
+
+* Add the DESC command back to the end of the order statement
+
+* Finally, double-check select count(*) as comment_count,
+info_count
+
+* Make sure the "as..." portion is there
+
+Then save your changes and run the query again from the command
+line.
+
+The result should look like this:
+
+```sql
 894 WHO EOP RECEP 2
 700 WHO EOP 1 RECEPTION/
 43 WHO EOP RECEP/
@@ -216,17 +233,15 @@ The result should look like:
 7 WHO EOP RECEP
 1 WHO EOP/
 1 WHO EOP RECLEAR
-b. Modify the script again, this time to run a query that counts the number
-of records with WHO and EOP in the comments, and run the query:
-from wh_visits
-select count(*)
-where info_comment like "%WHO%"
-and info_comment like "%EOP%";
---Run the query from the command line:
-# hive -f comments.hive
+```
+
+Modify the script again, this time to run a query that counts the number
+of records with WHO and EOP in the comments, and run the query.
+
 You should get 1,687 visits, or 7.7% of the visitors to the POTUS. So
 GENERAL RECEPTION still appears to be the most frequent comment.
-7 ) Find the Most Visits
+
+### Find the Most Visits
 a. See if you can write a Hive script that finds the top 20 individuals who
 visited the POTUS most. Use the Hive command from Step 3 earlier in
 this lab as a guide.
