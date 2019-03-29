@@ -59,12 +59,6 @@ Use DUMP on A_count to view the result.
 
 What is the count?
 
-{% comment %}
-
-(rowcount,447598)
-
-{% endcomment %}
-
 We can now conclude that there are 447,598 rows of text in `visits.txt`.
 
 ### Analyze the Data’s Contents
@@ -239,3 +233,8 @@ visitors’ log. You should now be comfortable with writing Pig scripts with the
 shell and using common Pig commands like LOAD, GROUP, FOREACH, FILTER, LIMIT,
 DUMP, and STORE.
 
+{% comment %}
+
+(rowcount,447598)
+
+{% endcomment %}
