@@ -1,4 +1,4 @@
-## Use Spark to do Data Analysis
+## Use Spark to do Data Analysis (Solution)
 
 **Objective:** Read and manipulate HDFS files with Spark. You will have processed several HDFS file via Spark Core.
 
