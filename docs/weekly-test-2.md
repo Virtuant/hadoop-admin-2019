@@ -136,7 +136,7 @@ you will try to determine the number of visits to the POTUS involving a
 general reception by trying to clean up some of these inconsistencies in
 the data.
 
-> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) Inconsistencies like these are very common in big data, especially when
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) inconsistencies like these are very common in big data, especially when
 human input is involved. In this dataset, we likely have different people
 entering similar comments but using their own abbreviations.
 
@@ -242,42 +242,26 @@ You should get 1,687 visits, or 7.7% of the visitors to the POTUS. So
 GENERAL RECEPTION still appears to be the most frequent comment.
 
 ### Find the Most Visits
-a. See if you can write a Hive script that finds the top 20 individuals who
-visited the POTUS most. Use the Hive command from Step 3 earlier in
-this lab as a guide.
-Tip
-Use a grouping by both fname and lname.
-The following script will accomplish the intention of the previous step:
-from wh_visits
-select count(*) as most_visit, fname, lname
-group by fname, lname
-order by most_visit DESC
-limit 20;
 
-To verify that your script worked, here are the top 20 individuals who
+See if you can write a Hive script that finds the top 20 individuals who
+visited the POTUS most.
+
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) use a grouping by both fname and lname.
+
+To verify that your script worked, here are the top 5 individuals who
 visited the POTUS along with the number of visits (your output may vary
 slightly due to randomization of names):
+
+```sql
 16 ALAN PRATHER
 15 CHRISTOPHER FRANKE
 15 ANNAMARIA MOTTOLA
 14 ROBERT BOGUSLAW
 14 CHARLES POWERS
-12 SARAH HART
-12 JACKIE WALKER
-12 JASON FETTIG
-12 SHENGTSUNG WANG
-12 FERN SATO
-12 DIANA FISH
-11 JANET BAILEY
-11 PETER WILSON
-11 GLENN DEWEY
-11 MARCIO BOTELHO
-11 DONNA WILLINGHAM
-10 DAVID AXELROD
-10 CLAUDIA CHUDACOFF
-10 VALERIE JARRETT
-10 MICHAEL COLBURN
-Result
+```
+
+### Results
+
 You have written several Hive queries to analyze the White House visitor data. The
 goal is for you to become comfortable with working with Hive, so hopefully you now
 feel like you can tackle a Hive problem and be able to answer questions about your
