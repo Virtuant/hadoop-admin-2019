@@ -99,6 +99,10 @@ The lab guide is [here](https://virtuant.github.io/hadoop-overview-spark-hwx/lab
 
 ----
 
+#### Test [1](https://virtuant.github.io/hadoop-overview-spark-hwx/weekly-test-1.html) Data Analysis with Pig [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/weekly-test-1.pdf)
+
+#### Test [2](https://virtuant.github.io/hadoop-overview-spark-hwx/weekly-test-2.html) Data Analysis with Hive [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/weekly-test-2.pdf)
+
 {% comment %}
 
 #### Lab [22](https://virtuant.github.io/hadoop-overview-spark-hwx/import-iot.html) Importing Data to HBase [pdf](https://virtuant.github.io/hadoop-overview-spark-hwx/import-iot.pdf)
