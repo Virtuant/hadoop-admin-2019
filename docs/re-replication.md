@@ -2,7 +2,7 @@
 
 ### Goals
 
-* Let us suppose that you want to decrease the replication factor of your existing 5 node cluster (that you have created earlier) from 3 to 2. 
+* Let us suppose that you want to decrease the replication factor of your existing 4 node cluster (that you have created earlier) from 3 to 2. 
 * We can do the same by modifying hdfs-site.xml without even introducing downtime in the cluster.
 
 **HDFS Files:** `hdfs-site.xml`
@@ -71,8 +71,23 @@ hdfs dfs -stat %r /testdata/sample
 The above command will upload the file with RF=2. Now assume you want to change RF to 1. You can do it using `-setrep` command as shown below: 
 
 ```console
-hdfs dfs -setrep 1 /data1/sample hdfs dfs -stat %r /testdata/
+hdfs dfs -setrep 1 /data1/sample 
+hdfs dfs -stat %r /testdata/
 ```
+
+<img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
+<h4>5. Dynamically Setting up Replication Factor</h4>
+
+During Specific file upload you can also set the replication factor. This can be done using the following command: 
+
+```console
+hdfs dfs -D dfs.replication=1 \
+-copyFromLocal /home/hadoop/sample /testdata/sample2
+```
+
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) the `\` in the command is a continuation 
+character. You may leave it out if you wish.
+
 
 ### Results
 
