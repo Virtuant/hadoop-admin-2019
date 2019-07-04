@@ -25,7 +25,7 @@ Open `hdfs-site.xml` in node1 (remember where it is?) and add the following prop
 <img src="https://user-images.githubusercontent.com/558905/40613898-7a6c70d6-624e-11e8-9178-7bde851ac7bd.png" align="left" width="50" height="50" title="ToDo Logo" />
 <h4>2. Put the modified config on other nodes</h4>
 
-Copy the modified hdfs-site.xml file in the remaining nodes. 
+Copy the modified `hdfs-site.xml` file in the remaining nodes. 
 
 ```console
 scp -r /home/hadoop/hadoop2/
@@ -33,7 +33,7 @@ scp -r /home/hadoop/hadoop2/
 
 > ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png)  Your system output may look a little different
 
-You shoud see soemething like:
+You shoud see something like:
 
 ```console
 etc/hadoop/hdfs-site.xml 
