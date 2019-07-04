@@ -25,11 +25,13 @@ The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide.ht
 
 #### Lab [5](https://virtuant.github.io/hadoop-admin-2019/understanding-block-storage.html) Understanding Block Storage [pdf](https://virtuant.github.io/hadoop-admin-2019/understanding-block-storage.pdf)
 
-#### Lab [X](https://virtuant.github.io/hadoop-admin-2019/re-replication.html) Change Replcation Factor [pdf](https://virtuant.github.io/hadoop-admin-2019/re-replication.pdf)
+#### Lab [X](https://virtuant.github.io/hadoop-admin-2019/re-replication.html) Change Replication Factor [pdf](https://virtuant.github.io/hadoop-admin-2019/re-replication.pdf)
 
 #### Lab [X](https://virtuant.github.io/hadoop-admin-2019/decommissioning-whitelisting.html) Change Replcation Factor [pdf](https://virtuant.github.io/hadoop-admin-2019/decommissioning-whitelisting.pdf)
 
 #### Lab [X](https://virtuant.github.io/hadoop-admin-2019/safemode.html) Safemode Operation [pdf](https://virtuant.github.io/hadoop-admin-2019/safemode.pdf)
+
+#### Lab [X](https://virtuant.github.io/hadoop-admin-2019/adding-nodes-realtime.html) Adding Data Nodes in Realtime [pdf](https://virtuant.github.io/hadoop-admin-2019/adding-nodes-realtime.pdf)
 
 
 #### Lab [6](https://virtuant.github.io/hadoop-admin-2019/understanding-mapreduce.html) Understanding MapReduce [pdf](https://virtuant.github.io/hadoop-admin-2019/understanding-mapreduce.pdf)
