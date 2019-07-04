@@ -1,1 +1,1 @@
-# hadoop-administration-2019
+# hadoop-admin-2019
