@@ -25,6 +25,8 @@ The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide.ht
 
 #### Lab [5](https://virtuant.github.io/hadoop-admin-2019/understanding-block-storage.html) Understanding Block Storage [pdf](https://virtuant.github.io/hadoop-admin-2019/understanding-block-storage.pdf)
 
+#### Lab [X](https://virtuant.github.io/hadoop-admin-2019/re-replication.html) Change Replcation Factor [pdf](https://virtuant.github.io/hadoop-admin-2019/re-replication.pdf)
+
 #### Lab [6](https://virtuant.github.io/hadoop-admin-2019/understanding-mapreduce.html) Understanding MapReduce [pdf](https://virtuant.github.io/hadoop-admin-2019/understanding-mapreduce.pdf)
 
 #### Lab [7](https://virtuant.github.io/hadoop-admin-2019/understanding-pig.html) Understanding Apache Pig [pdf](https://virtuant.github.io/hadoop-admin-2019/understanding-pig.pdf)
