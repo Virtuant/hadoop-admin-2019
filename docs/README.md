@@ -2,8 +2,8 @@
 This is several lab environments put together:
 
 1. Labguide:
-	With AWS labguide-aws.md
-	Without AWS labguide-no-aws.md
+	With AWS labguide-aws.md  (comes in HDP 2 or 3)
+	Without AWS labguide-no-aws.md 
 	Original labguide.md
 2.
 
@@ -16,9 +16,11 @@ The problem domain is [gump.io](https://virtuant.github.io/hadoop-admin-2019/gum
 The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide-no-aws.html) and a [pdf](https://virtuant.github.io/hadoop-admin-2019/pdfs/labguide-no-aws.pdf) version exists as well.
 
 The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide.html) and a [pdf](https://virtuant.github.io/hadoop-admin-2019/pdfs/labguide.pdf) version exists as well.
+
+The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide-aws-3.html) and a [pdf](https://virtuant.github.io/hadoop-admin-2019/pdfs/labguide-aws-3.pdf) version exists as well.
 {% endcomment %}
 
-The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide-aws.html) and a [pdf](https://virtuant.github.io/hadoop-admin-2019/pdfs/labguide-aws.pdf) version exists as well.
+The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide-aws-2.html) and a [pdf](https://virtuant.github.io/hadoop-admin-2019/pdfs/labguide-aws-2.pdf) version exists as well.
 
 ----
 

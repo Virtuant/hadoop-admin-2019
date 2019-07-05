@@ -1,4 +1,3 @@
-
 ## Getting Started
 
 **Data directory**: `~/data`
@@ -13,7 +12,7 @@ Our training courses usually use the Hortonworks Sandbox on an AWS Linux distrib
 
 Depending on your company's IT preferences we also have a Docker image. If so when logged into the host you must treat the container as an SSH login. Use port 2222 in that case.
 
->Note: the user and hostname will be different based on circumstances.
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) the user and hostname may be different based on circumstances
 
 ----
 
@@ -61,6 +60,8 @@ Once logged in to the instance, you'll reset the AWS device in `/etc/hosts` with
 	::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 	X.X.X.X  master1.hdp.com master1
 ```
+
+> ![tip](https://user-images.githubusercontent.com/558905/40528496-37bfadac-5fbf-11e8-8b5a-8bea2634f284.png) your instructor will give you the valid master names.
 	
 and change the IP in the file tor the IP address (centos@ip-X-X-X-X) that your instance shows:
 
@@ -73,7 +74,7 @@ and change the IP in the file tor the IP address (centos@ip-X-X-X-X) that your i
 	
 Save the file.
 	
->Note: on AWS usually you'll use the internal IP address.
+![note](https://user-images.githubusercontent.com/558905/40528492-37597500-5fbf-11e8-96a1-f4d206df64ab.png) on AWS usually you'll use the internal IP address
 	
 Now do a restart of the Ambari service:
 	
