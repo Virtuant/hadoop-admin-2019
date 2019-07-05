@@ -4,6 +4,7 @@ This is several lab environments put together:
 1. Labguide:
 	With AWS labguide-aws.md
 	Without AWS labguide-no-aws.md
+	Original labguide.md
 2.
 
 {% endcomment %}
@@ -11,7 +12,13 @@ This is several lab environments put together:
 
 The problem domain is [gump.io](https://virtuant.github.io/hadoop-admin-2019/gump-io.html). It is your job to figure out how to get data, save and manipulate it with Hortonworks and Hadoop. 
 
+{% comment %}
+The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide-no-aws.html) and a [pdf](https://virtuant.github.io/hadoop-admin-2019/pdfs/labguide-no-aws.pdf) version exists as well.
+
 The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide.html) and a [pdf](https://virtuant.github.io/hadoop-admin-2019/pdfs/labguide.pdf) version exists as well.
+{% endcomment %}
+
+The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide-aws.html) and a [pdf](https://virtuant.github.io/hadoop-admin-2019/pdfs/labguide-aws.pdf) version exists as well.
 
 ----
 
