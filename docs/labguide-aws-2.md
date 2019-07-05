@@ -42,7 +42,7 @@ Depending on your company's IT preferences we also have a Docker image. If so wh
 	
 ### Set Up using Ambari
 
-	The `ec2-user.pem` file is [here](https://virtuant.github.io/gump.io/docs/ec2-user.pem).
+The `ec2-user.pem` file is [here](https://virtuant.github.io/gump.io/docs/ec2-user.pem).
 	
 	
 ### IP Address
