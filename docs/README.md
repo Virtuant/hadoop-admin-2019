@@ -16,9 +16,9 @@ The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide-aw
 
 ----
 
-#### Lab [1](https://virtuant.github.io/hadoop-admin-2019/using-hdfs.html) Using HDFS [pdf](https://virtuant.github.io/hadoop-admin-2019/pdfs/using-hdfs.pdf)
+#### Lab [1](https://virtuant.github.io/hadoop-admin-2019/using-hdfs.html) Using HDFS [pdf](https://virtuant.github.io/hadoop-admin-2019/using-hdfs.pdf)
 
-#### Lab [2](https://virtuant.github.io/hadoop-admin-2019/using-hdfs-commands.html) Using HDFS Commands [pdf](https://virtuant.github.io/hadoop-admin-2019/pdfs/using-hdfs-commands.pdf)
+#### Lab [2](https://virtuant.github.io/hadoop-admin-2019/using-hdfs-commands.html) Using HDFS Commands [pdf](https://virtuant.github.io/hadoop-admin-2019/using-hdfs-commands.pdf)
 
 #### Lab [3](https://virtuant.github.io/hadoop-admin-2019/using-hdfs-ambari.html) Using HDFS with Ambari [pdf](https://virtuant.github.io/hadoop-admin-2019/using-hdfs-ambari.pdf)
 
