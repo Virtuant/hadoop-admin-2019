@@ -12,6 +12,15 @@ This is several lab environments put together:
 
 The problem domain is [gump.io](https://virtuant.github.io/hadoop-admin-2019/gump-io.html). It is your job to figure out how to get data, save and manipulate it with Hortonworks and Hadoop. 
 
+{% comment %}
+The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide-no-aws.html) and a [pdf](https://virtuant.github.io/hadoop-admin-2019/pdfs/labguide-no-aws.pdf) version exists as well.
+
+The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide.html) and a [pdf](https://virtuant.github.io/hadoop-admin-2019/pdfs/labguide.pdf) version exists as well.
+
+The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide-aws-3.html) and a [pdf](https://virtuant.github.io/hadoop-admin-2019/pdfs/labguide-aws-3.pdf) version exists as well.
+
+{% endcomment %}
+
 The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide-aws-2.html) and a [pdf](https://virtuant.github.io/hadoop-admin-2019/pdfs/labguide-aws-2.pdf) version exists as well.
 
 ----
@@ -26,31 +35,31 @@ The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide-aw
 
 #### Lab [5](https://virtuant.github.io/hadoop-admin-2019/understanding-block-storage.html) Understanding Block Storage [pdf](https://virtuant.github.io/hadoop-admin-2019/understanding-block-storage.pdf)
 
-#### Lab [X](https://virtuant.github.io/hadoop-admin-2019/re-replication.html) Change Replication Factor [pdf](https://virtuant.github.io/hadoop-admin-2019/re-replication.pdf)
+#### Lab [a](https://virtuant.github.io/hadoop-admin-2019/re-replication.html) Change Replication Factor [pdf](https://virtuant.github.io/hadoop-admin-2019/re-replication.pdf)
 
-#### Lab [X](https://virtuant.github.io/hadoop-admin-2019/decommissioning-whitelisting.html) Change Replcation Factor [pdf](https://virtuant.github.io/hadoop-admin-2019/decommissioning-whitelisting.pdf)
+#### Lab [b](https://virtuant.github.io/hadoop-admin-2019/decommissioning-whitelisting.html) Change Replcation Factor [pdf](https://virtuant.github.io/hadoop-admin-2019/decommissioning-whitelisting.pdf)
 
-#### Lab [X](https://virtuant.github.io/hadoop-admin-2019/safemode.html) Safemode Operation [pdf](https://virtuant.github.io/hadoop-admin-2019/safemode.pdf)
+#### Lab [c](https://virtuant.github.io/hadoop-admin-2019/safemode.html) Safemode Operation [pdf](https://virtuant.github.io/hadoop-admin-2019/safemode.pdf)
 
-#### Lab [X](https://virtuant.github.io/hadoop-admin-2019/adding-nodes-realtime.html) Adding Data Nodes in Realtime [pdf](https://virtuant.github.io/hadoop-admin-2019/adding-nodes-realtime.pdf)
+#### Lab [d](https://virtuant.github.io/hadoop-admin-2019/adding-nodes-realtime.html) Adding Data Nodes in Realtime [pdf](https://virtuant.github.io/hadoop-admin-2019/adding-nodes-realtime.pdf)
 
-#### Lab [X](https://virtuant.github.io/hadoop-admin-2019/accessing-cluster.html) Accessing your Cluster [pdf](https://virtuant.github.io/hadoop-admin-2019/accessing-cluster.pdf)
+#### Lab [e](https://virtuant.github.io/hadoop-admin-2019/accessing-cluster.html) Accessing your Cluster [pdf](https://virtuant.github.io/hadoop-admin-2019/accessing-cluster.pdf)
 
-#### Lab [X](https://virtuant.github.io/hadoop-admin-2019/security-use-case.html) Security Use Case [pdf](https://virtuant.github.io/hadoop-admin-2019/security-use-case.pdf)
+#### Lab [f](https://virtuant.github.io/hadoop-admin-2019/security-use-case.html) Security Use Case [pdf](https://virtuant.github.io/hadoop-admin-2019/security-use-case.pdf)
 
-#### Lab [X](https://virtuant.github.io/hadoop-admin-2019/security-options.html) Security Options [pdf](https://virtuant.github.io/hadoop-admin-2019/security-options.pdf)
+#### Lab [g](https://virtuant.github.io/hadoop-admin-2019/security-options.html) Security Options [pdf](https://virtuant.github.io/hadoop-admin-2019/security-options.pdf)
 
-#### Lab [X](https://virtuant.github.io/hadoop-admin-2019/kerberize-cluster.html) Kerberize your Cluster [pdf](https://virtuant.github.io/hadoop-admin-2019/kerberize-cluster.pdf)
+#### Lab [h](https://virtuant.github.io/hadoop-admin-2019/kerberize-cluster.html) Kerberize your Cluster [pdf](https://virtuant.github.io/hadoop-admin-2019/kerberize-cluster.pdf)
 
-#### Lab [X](https://virtuant.github.io/hadoop-admin-2019/ranger-install.html) Ranger Installation [pdf](https://virtuant.github.io/hadoop-admin-2019/ranger-install.pdf)
+#### Lab [i](https://virtuant.github.io/hadoop-admin-2019/ranger-install.html) Ranger Installation [pdf](https://virtuant.github.io/hadoop-admin-2019/ranger-install.pdf)
 
-#### Lab [X](https://virtuant.github.io/hadoop-admin-2019/ranger-encrypt-setup.html) Ranger Encrypt Setup [pdf](https://virtuant.github.io/hadoop-admin-2019/ranger-encrypt-setup.pdf)
+#### Lab [j](https://virtuant.github.io/hadoop-admin-2019/ranger-encrypt-setup.html) Ranger Encrypt Setup [pdf](https://virtuant.github.io/hadoop-admin-2019/ranger-encrypt-setup.pdf)
 
-#### Lab [X](https://virtuant.github.io/hadoop-admin-2019/secured-exercises.html) Exercises  with Security Enabled [pdf](https://virtuant.github.io/hadoop-admin-2019/secured-exercises.pdf)
+#### Lab [k](https://virtuant.github.io/hadoop-admin-2019/secured-exercises.html) Exercises  with Security Enabled [pdf](https://virtuant.github.io/hadoop-admin-2019/secured-exercises.pdf)
 
-#### Lab [X](https://virtuant.github.io/hadoop-admin-2019/knox-intro.html) Knox Introduction [pdf](https://virtuant.github.io/hadoop-admin-2019/knox-intro.pdf)
+#### Lab [l](https://virtuant.github.io/hadoop-admin-2019/knox-intro.html) Knox Introduction [pdf](https://virtuant.github.io/hadoop-admin-2019/knox-intro.pdf)
 
-#### Lab [X](https://virtuant.github.io/hadoop-admin-2019/ambari-views.html) Ambari Views [pdf](https://virtuant.github.io/hadoop-admin-2019/ambari-views.pdf)
+#### Lab [m](https://virtuant.github.io/hadoop-admin-2019/ambari-views.html) Ambari Views [pdf](https://virtuant.github.io/hadoop-admin-2019/ambari-views.pdf)
 
 
 
