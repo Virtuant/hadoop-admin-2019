@@ -37,7 +37,7 @@ The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide-aw
 
 #### Lab [a](https://virtuant.github.io/hadoop-admin-2019/re-replication.html) Change Replication Factor [pdf](https://virtuant.github.io/hadoop-admin-2019/re-replication.pdf)
 
-#### Lab [b](https://virtuant.github.io/hadoop-admin-2019/decommissioning-whitelisting.html) Change Replcation Factor [pdf](https://virtuant.github.io/hadoop-admin-2019/decommissioning-whitelisting.pdf)
+#### Lab [b](https://virtuant.github.io/hadoop-admin-2019/decommissioning-whitelisting.html) Decommission & Whitelisting [pdf](https://virtuant.github.io/hadoop-admin-2019/decommissioning-whitelisting.pdf)
 
 #### Lab [c](https://virtuant.github.io/hadoop-admin-2019/safemode.html) Safemode Operation [pdf](https://virtuant.github.io/hadoop-admin-2019/safemode.pdf)
 
