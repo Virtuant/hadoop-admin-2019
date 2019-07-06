@@ -12,7 +12,7 @@ Credentials will be provided for these services by the instructor:
 - Right click to download [this ppk key](https://github.com/Virtuant/hadoop-admin-2019/raw/master/training-keypair.ppk) > Save link as > save to Downloads folder
 - Use putty to connect to your node using the ppk key:
   - Connection > SSH > Auth > Private key for authentication > Browse... > Select training-keypair.ppk
-![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/putty.png)
+![Image](screenshots/putty.png)
 
 - Make sure to click "Save" on the session page before logging in
 - When connecting, it will prompt you for username. Enter `centos`
