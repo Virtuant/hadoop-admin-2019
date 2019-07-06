@@ -12,7 +12,6 @@ This is several lab environments put together:
 
 The problem domain is [gump.io](https://virtuant.github.io/hadoop-admin-2019/gump-io.html). It is your job to figure out how to get data, save and manipulate it with Hortonworks and Hadoop.
 
-The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide-aws-2.html) and a [pdf](https://virtuant.github.io/hadoop-admin-2019/labguide-aws-2.pdf) version exists as well.
 
 ----
 
