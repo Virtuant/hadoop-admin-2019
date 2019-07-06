@@ -18,8 +18,8 @@
     - Ranger KMS DB password: `BadPass#1` 
     - DBA password: `BadPass#1`
     - KMS master secret password: `BadPass#1`
-     ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ambari-KMS-enhancedconfig1.png) 
-     ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ambari-KMS-enhancedconfig2.png) 
+     ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ambari-KMS-enhancedconfig1.png) 
+     ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ambari-KMS-enhancedconfig2.png) 
     
         
   - Custom kms-site (to avoid adding one at a time, you can use 'bulk add' mode):
@@ -36,7 +36,7 @@
       - hadoop.kms.proxyuser.keyadmin.groups=*
       - hadoop.kms.proxyuser.keyadmin.hosts=*
       - hadoop.kms.proxyuser.keyadmin.users=*      
-        ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ambari-KMS-proxy.png) 
+        ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ambari-KMS-proxy.png) 
 
 - Click Next > Proceed Anyway to proceed with the wizard
 
@@ -59,12 +59,12 @@
 
 - (Optional) Add another KMS:
   - Ambari > Ranger KMS > Service Actions > Add Ranger KMS Server > Pick any host
-  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ambari-add-KMS.png) 
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ambari-add-KMS.png) 
   - After it is installed, you can start it by:
     - Ambari > Ranger KMS > Service Actions > Start
     
   - Once started you will see multiple KMS Servers running in Ambari:  
-  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ambari-multiple-KMS.png) 
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ambari-multiple-KMS.png) 
 
 ------------------
 
@@ -162,13 +162,13 @@
 - Add user `hadoopadmin` to default KMS key policy
   - Click Access Manager tab
   - Click Service Manager > KMS > (clustername)_kms link
-  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-KMS-policy.png)
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-KMS-policy.png)
 
   - Edit the default policy
-  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-KMS-edit-policy.png)
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-KMS-edit-policy.png)
   
   - Under 'Select User', Add `hadoopadmin` user and click Save
-   ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-KMS-policy-add-nn.png)
+   ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-KMS-policy-add-nn.png)
   
     - Note that:
       - `hdfs` user  needs `GetMetaData` and `GenerateEEK` privilege - HDP 2.5
@@ -247,7 +247,7 @@ sudo -u sales1      hdfs dfs -cat /zone_encr/test1.log
 ```
 
 - Check the Ranger > Audit page and notice that the request from hadoopadmin was allowed but the request from sales1 was denied
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-KMS-audit.png)
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-KMS-audit.png)
 
 - Now lets test deleting and copying files between EZs - ([Reference doc](https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.3.4/bk_hdfs_admin_tools/content/copy-to-from-encr-zone.html))
 ```
