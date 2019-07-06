@@ -80,22 +80,22 @@
   - Add the user hadoopadmin to the Ranger HDFS global policies. 
     - Access Manager > HDFS > (clustername)_hdfs   
     - This will open the list of HDFS policies
-   ![Image](screenshots/Ranger-KMS-HDFS-list.png) 
+   ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/screenshots/Ranger-KMS-HDFS-list.png) 
     - Edit the 'all - path' global policy (the first one) and add hadoopadmin to global HDFS policy and Save 
-    ![Image](screenshots/Ranger-KMS-HDFS-add-hadoopadmin.png) 
+    ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/screenshots/Ranger-KMS-HDFS-add-hadoopadmin.png) 
     - Your policy now includes hadoopadmin
-    ![Image](screenshots/Ranger-KMS-HDFS-list-after.png) 
+    ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/screenshots/Ranger-KMS-HDFS-list-after.png) 
     
   - Add the user hadoopadmin to the Ranger Hive global policies. (Hive has two global policies: one on Hive tables, and one on Hive UDFs)
     - Access Manager > HIVE > (clustername)_hive   
     - This will open the list of HIVE policies
-    [Image](screenshots/Ranger-KMS-HIVE-list.png) 
+    [Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/screenshots/Ranger-KMS-HIVE-list.png) 
     - Edit the 'all - database, table, column' global policy (the first one) and add hadoopadmin to global HIVE policy and Save  
-    ![Image](screenshots/Ranger-KMS-HIVE-add-hadoopadmin-table.png) 
+    ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/screenshots/Ranger-KMS-HIVE-add-hadoopadmin-table.png) 
     - Edit the 'all - database, udf' global policy (the second one) and add hadoopadmin to global HIVE policy and Save 
-    ![Image](screenshots/Ranger-KMS-HIVE-add-hadoopadmin-udf.png) 
+    ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/screenshots/Ranger-KMS-HIVE-add-hadoopadmin-udf.png) 
     - Your policies now includes hadoopadmin
-     ![Image](screenshots/Ranger-KMS-HIVE-list-after.png) 
+     ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/screenshots/Ranger-KMS-HIVE-list-after.png) 
      
   - Add policy for keyadmin to be able to access /ranger/audit/kms
     - First Create the hdfs directory for Ranger KMS Audit
@@ -126,16 +126,16 @@
     - Access Manager > HDFS > (clustername)_hdfs   
     - This will open the list of HDFS policies
     - Create a new policy for keyadmin to be able to access /ranger/audit/kms and Save 
-     ![Image](screenshots/Ranger-KMS-HDFS-keyadmin.png) 
+     ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/screenshots/Ranger-KMS-HDFS-keyadmin.png) 
     - Your policy has been added
-     ![Image](screenshots/Ranger-KMS-HDFS-keyadmin.png) 
+     ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/screenshots/Ranger-KMS-HDFS-keyadmin.png) 
   
   - Give keyadmin permission to view Audits screen in Ranger:
     - Settings tab > Permissions
-     ![Image](screenshots/Ranger-user-permissions.png)
+     ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/screenshots/Ranger-user-permissions.png)
     - Click 'Audit' to change users who have access to Audit screen
     - Under 'Select User', add 'keyadmin' user
-     ![Image](screenshots/Ranger-user-permissions-audits.png)
+     ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/screenshots/Ranger-user-permissions-audits.png)
     - Save
   
     
@@ -144,7 +144,7 @@
 - Login to Ranger as keyadmin/keyadmin
 - Confirm the KMS repo was setup correctly
   - Under Service Manager > KMS > Click the Edit icon (next to the trash icon) to edit the KMS repo
-  ![Image](screenshots/Ranger-KMS-edit-repo.png) 
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/screenshots/Ranger-KMS-edit-repo.png) 
   - Click 'Test connection' and confirm it works
 
 - Create a key called testkey - for reference: see [doc](http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.5.0/bk_security/content/use_ranger_kms.html)
@@ -152,7 +152,7 @@
   - Select KMS service > pick your kms > Add new Key
     - if an error is thrown, go back and test connection as described in previous step
   - Create a key called `testkey` > Save
-  ![Image](screenshots/Ranger-KMS-createkey.png)
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/screenshots/Ranger-KMS-createkey.png)
 
 - Similarly, create another key called `testkey2`
   - Select Encryption > Key Management
