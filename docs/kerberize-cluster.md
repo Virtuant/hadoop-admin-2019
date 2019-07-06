@@ -3,10 +3,10 @@
 ### Run Ambari Kerberos Wizard against Active Directory environment
 
 - Enable kerberos using Ambari security wizard (under 'Admin' tab > Kerberos > Enable kerberos > proceed). 
-  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ambari-start-kerberos-wizard.png)
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ambari-start-kerberos-wizard.png)
 
 - Select "Existing Active Directory" and check all the boxes
-  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ambari-kerberos-wizard-1.png)
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ambari-kerberos-wizard-1.png)
   
 - Enter the below details:
 
@@ -21,23 +21,23 @@
     - Admin principal: `hadoopadmin@LAB.HORTONWORKS.NET`
     - Admin password: `BadPass#1`
 
-  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ambari-kerberos-wizard-2.png)
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ambari-kerberos-wizard-2.png)
   - Notice that the "Save admin credentials" checkbox is available, clicking the check box will save the "admin principal".
   - Sometimes the "Test Connection" button may fail (usually related to AWS issues), but if you previously ran the "Configure name resolution & certificate to Active Directory" steps *on all nodes*, you can proceed.
   
 - Now click Next on all the following screens to proceed with all the default values  
 
-  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ambari-kerberos-wizard-3.png)
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ambari-kerberos-wizard-3.png)
 
-  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ambari-kerberos-wizard-4.png)
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ambari-kerberos-wizard-4.png)
 
-  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ambari-kerberos-wizard-5.png)
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ambari-kerberos-wizard-5.png)
 
-  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ambari-kerberos-wizard-6.png)
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ambari-kerberos-wizard-6.png)
 
-  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ambari-kerberos-wizard-7.png)
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ambari-kerberos-wizard-7.png)
 
-  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ambari-kerberos-wizard-8.png)
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ambari-kerberos-wizard-8.png)
 
   - Note if the wizard fails after completing more than 90% of "Start and test services" phase, you can just click "Complete" and manually start any unstarted services (e.g. WebHCat or HBase master)
 
@@ -327,7 +327,7 @@ sudo chmod 440 /etc/security/http_secret
 - Restart all services that require restart (HDFS, Mapreduce, YARN, HBase). You can use the 'Actions' > 'Restart All Required' button to restart all the services in one shot
 
 
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ambari-restart-services.png)
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ambari-restart-services.png)
 
 - Now when you try to open any of the web UIs like below you will get `401: Authentication required`
   - HDFS: Namenode UI

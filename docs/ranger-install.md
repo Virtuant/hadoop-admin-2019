@@ -65,40 +65,40 @@ This should already be installed on your cluster. If not, refer to appendix [her
   - Ranger DB Host = FQDN of host where Mysql is running (e.g. ip-172-30-0-242.us-west-2.compute.internal)
   - Enter passwords: BadPass#1
   - Click 'Test Connection' button
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/ali/ranger-213-setup/ranger-213-1.png)
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/ali/ranger-213-setup/ranger-213-2.png)
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/ali/ranger-213-setup/ranger-213-1.png)
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/ali/ranger-213-setup/ranger-213-2.png)
 
 2. Ranger User info tab
   - 'Sync Source' = LDAP/AD 
   - Common configs subtab
     - Enter password: BadPass#1
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/ali/ranger-213-setup/ranger-213-3.png)
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/ali/ranger-213-setup/ranger-213-3.5.png)
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/ali/ranger-213-setup/ranger-213-3.png)
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/ali/ranger-213-setup/ranger-213-3.5.png)
 
 3. Ranger User info tab 
   - User configs subtab
     - User Search Base = `ou=CorpUsers,dc=lab,dc=hortonworks,dc=net`
     - User Search Filter = `(objectcategory=person)`
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/ali/ranger-213-setup/ranger-213-4.png)
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/ali/ranger-213-setup/ranger-213-5.png)
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/ali/ranger-213-setup/ranger-213-4.png)
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/ali/ranger-213-setup/ranger-213-5.png)
 
 4. Ranger User info tab 
   - Group configs subtab
     - Make sure Group sync is disabled
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/ali/ranger-213-setup/ranger-213-6.png)
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/ali/ranger-213-setup/ranger-213-6.png)
 
 5. Ranger plugins tab
   - Enable all plugins
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/ali/ranger-213-setup/ranger-213-7.png)
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/ali/ranger-213-setup/ranger-213-7.png)
 
 6. Ranger Audits tab 
   - SolrCloud = ON
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/ali/ranger-213-setup/ranger-213-8.png)
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/ali/ranger-213-setup/ranger-213-9.png)
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/ali/ranger-213-setup/ranger-213-8.png)
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/ali/ranger-213-setup/ranger-213-9.png)
 
 7.Advanced tab
   - No changes needed (skipping configuring Ranger authentication against AD for now)
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/ali/ranger-213-setup/ranger-213-10.png)
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/ali/ranger-213-setup/ranger-213-10.png)
 
 - Click Next > Proceed Anyway to proceed
     
@@ -106,7 +106,7 @@ This should already be installed on your cluster. If not, refer to appendix [her
   - Admin principal: `hadoopadmin@LAB.HORTONWORKS.NET`
   - Admin password: BadPass#1
   - Notice that you can now save the admin credentials. Check this box too
-  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ambari-configureidentities.png)
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ambari-configureidentities.png)
   
 - Click Next > Deploy to install Ranger
 
@@ -132,18 +132,18 @@ https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.1/bk_security/content/abo
 
 - Open Ranger UI at http://RANGERHOST_PUBLIC_IP:6080 using admin/admin
 - Confirm that repos for HDFS, YARN, Hive, HBase, Knox appear under 'Access Manager tab'
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-AccessManager.png)
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-AccessManager.png)
 
 - Confirm that audits appear under 'Audit' > 'Access' tab
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-audits.png)
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-audits.png)
 
   - If audits do not show up here, you may need to restart Solr from Ambari
   
 - Confirm that plugins for HDFS, YARN, Hive etc appear under 'Audit' > 'Plugins' tab 
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-plugins.png)
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-plugins.png)
 
 - Confirm users/group sync from AD into Ranger are working by clicking 'Settings' > 'Users/Groups tab' in Ranger UI and noticing AD users/groups are present
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-user-groups.png)
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-user-groups.png)
 
 - Confirm HDFS audits working by querying the audits dir in HDFS:
 
@@ -177,5 +177,5 @@ curl "http://localhost:6083/solr/ranger_audits/select?q=*%3A*&df=id&wt=csv"
 - Confirm Banana dashboard has started to show HDFS audits - SKIP
 http://PUBLIC_IP_OF_SOLRLEADER_NODE:6083/solr/banana/index.html#/dashboard
 
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Banana-audits.png)
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Banana-audits.png)
 --->

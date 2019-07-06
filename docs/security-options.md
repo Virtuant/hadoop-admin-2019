@@ -71,7 +71,7 @@ Ambari Server 'setup' completed successfully.
 hadoop.proxyuser.ambari-server.groups=*
 hadoop.proxyuser.ambari-server.hosts=* 
 ```
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ambari-proxyuser.png)
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ambari-proxyuser.png)
 
 - Save and restart HDFS
   - Ambari will show that other components need restarting too but you can proceed without restarting those for now to save time (we will restart those later)
@@ -183,9 +183,9 @@ sudo ambari-server start
 
 - Note that the browser will not trust the new self signed ambari certificate. You will need to trust that cert first.
   - If Firefox, you can do this by clicking on 'i understand the risk' > 'Add Exception...'
-  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/firefox-untrusted.png)  
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/firefox-untrusted.png)  
   - If Chome, you can do this by clicking on 'Advanced' > 'Proceed to xxxxxx'
-  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/chrome-untrusted.png)  
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/chrome-untrusted.png)  
 
 
 ### Setup Ambari/AD sync
@@ -219,7 +219,7 @@ ad_user="cn=ldap-reader,ou=ServiceUsers,dc=lab,dc=hortonworks,dc=net"
     --ldap-bind-anonym=false \
     --ldap-referral=
   ```
-   ![Image](screenshots/Ambari-setup-LDAP-new.png)
+   ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ambari-setup-LDAP-new.png)
 
 - Restart Ambari server
   ```
@@ -234,7 +234,7 @@ ad_user="cn=ldap-reader,ou=ServiceUsers,dc=lab,dc=hortonworks,dc=net"
   ```
   
   - This should show a summary of what objects were created
-  ![Image](screenshots/Ambari-run-LDAPsync.png)
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ambari-run-LDAPsync.png)
   
 - Give 'hadoop-admin' admin permissions in Ambari to allow the user to manage the cluster
   - Login to Ambari as your local 'admin' user (i.e. admin/BadPass#1)
@@ -243,7 +243,7 @@ ad_user="cn=ldap-reader,ou=ServiceUsers,dc=lab,dc=hortonworks,dc=net"
     - Click 'Manage Ambari'
     - Under 'Users', select 'hadoopadmin'
     - Change 'Ambari Admin' to Yes 
-    ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ambari-make-user-admin.png)    
+    ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ambari-make-user-admin.png)    
     
 - Sign out and then log back into Ambari, this time as 'hadoopadmin' and verify the user has rights to monitor/manage the cluster
 
