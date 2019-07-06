@@ -39,32 +39,6 @@ The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide-aw
 
 #### Lab [5](https://virtuant.github.io/hadoop-admin-2019/understanding-block-storage.html) Understanding Block Storage [pdf](https://virtuant.github.io/hadoop-admin-2019/understanding-block-storage.pdf)
 
-#### Lab [a](https://virtuant.github.io/hadoop-admin-2019/re-replication.html) Change Replication Factor [pdf](https://virtuant.github.io/hadoop-admin-2019/re-replication.pdf)
-
-#### Lab [b](https://virtuant.github.io/hadoop-admin-2019/decommissioning-whitelisting.html) Decommission & Whitelisting [pdf](https://virtuant.github.io/hadoop-admin-2019/decommissioning-whitelisting.pdf)
-
-#### Lab [c](https://virtuant.github.io/hadoop-admin-2019/safemode.html) Safemode Operation [pdf](https://virtuant.github.io/hadoop-admin-2019/safemode.pdf)
-
-#### Lab [d](https://virtuant.github.io/hadoop-admin-2019/adding-nodes-realtime.html) Adding Data Nodes in Realtime [pdf](https://virtuant.github.io/hadoop-admin-2019/adding-nodes-realtime.pdf)
-
-#### Lab [e](https://virtuant.github.io/hadoop-admin-2019/accessing-cluster.html) Accessing your Cluster [pdf](https://virtuant.github.io/hadoop-admin-2019/accessing-cluster.pdf)
-
-#### Lab [f](https://virtuant.github.io/hadoop-admin-2019/security-use-case.html) Security Use Case [pdf](https://virtuant.github.io/hadoop-admin-2019/security-use-case.pdf)
-
-#### Lab [g](https://virtuant.github.io/hadoop-admin-2019/security-options.html) Security Options [pdf](https://virtuant.github.io/hadoop-admin-2019/security-options.pdf)
-
-#### Lab [h](https://virtuant.github.io/hadoop-admin-2019/kerberize-cluster.html) Kerberize your Cluster [pdf](https://virtuant.github.io/hadoop-admin-2019/kerberize-cluster.pdf)
-
-#### Lab [i](https://virtuant.github.io/hadoop-admin-2019/ranger-install.html) Ranger Installation [pdf](https://virtuant.github.io/hadoop-admin-2019/ranger-install.pdf)
-
-#### Lab [j](https://virtuant.github.io/hadoop-admin-2019/ranger-encrypt-setup.html) Ranger Encrypt Setup [pdf](https://virtuant.github.io/hadoop-admin-2019/ranger-encrypt-setup.pdf)
-
-#### Lab [k](https://virtuant.github.io/hadoop-admin-2019/secured-exercises.html) Exercises  with Security Enabled [pdf](https://virtuant.github.io/hadoop-admin-2019/secured-exercises.pdf)
-
-#### Lab [l](https://virtuant.github.io/hadoop-admin-2019/knox-intro.html) Knox Introduction [pdf](https://virtuant.github.io/hadoop-admin-2019/knox-intro.pdf)
-
-#### Lab [m](https://virtuant.github.io/hadoop-admin-2019/ambari-views.html) Ambari Views [pdf](https://virtuant.github.io/hadoop-admin-2019/ambari-views.pdf)
-
 
 
 #### Lab [6](https://virtuant.github.io/hadoop-admin-2019/understanding-mapreduce.html) Understanding MapReduce [pdf](https://virtuant.github.io/hadoop-admin-2019/understanding-mapreduce.pdf)
