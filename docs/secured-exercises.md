@@ -63,20 +63,20 @@ hdfs dfs -ls /sales
   - User: `sales1`
   
 - Notice that Ranger captured the access attempt and since there is currently no policy to allow the access, it was "Denied"
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-audit-HDFS-denied.png)
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-audit-HDFS-denied.png)
 
 - To create an HDFS Policy in Ranger, follow below steps:
   - On the 'Access Manager' tab click HDFS > (clustername)_hadoop
-  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-HDFS-policy.png)
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-HDFS-policy.png)
   - This will open the list of HDFS policies
-  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-HDFS-edit-policy.png)
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-HDFS-edit-policy.png)
   - Click 'Add New Policy' button to create a new one allowing `sales` group users access to `/sales` dir:
     - Policy Name: `sales dir`
     - Resource Path: `/sales`
     - Group: `sales`
     - Permissions : `Execute Read Write`
     - Add
-  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-HDFS-create-policy.png)
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-HDFS-create-policy.png)
 
 - Wait 30s for policy to take effect
   
@@ -90,7 +90,7 @@ hdfs dfs -ls /sales
   - User: sales1
   
 - Notice that Ranger captured the access attempt and since this time there is a policy to allow the access, it was `Allowed`
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-audit-HDFS-allowed.png)  
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-audit-HDFS-allowed.png)  
 
   - You can also see the details that were captured for each request:
     - Policy that allowed the access
@@ -105,7 +105,7 @@ hdfs dfs -ls /sales
     - Event count
     
 - For any allowed requests, notice that you can quickly check the details of the policy that allowed the access by clicking on the policy number in the 'Policy ID' column
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-audit-policy-details.png)  
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-audit-policy-details.png)  
 
 - Now let's check whether non-sales users can access the directory
 
@@ -139,7 +139,7 @@ hdfs dfs -ls /sales
   - initial request by sales1 user was denied 
   - subsequent request by sales1 user was allowed (once the policy was created)
   - request by hr1 user was denied
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-audit-HDFS-summary.png)  
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-audit-HDFS-summary.png)  
 
 - Logout as hr1
 ```
@@ -216,13 +216,13 @@ beeline> select code, description from sample_07;
   - User: `sales1`
   
 - Notice that Ranger captured the access attempt and since there is currently no policy to allow the access, it was `Denied`
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-audit-HIVE-denied.png)
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-audit-HIVE-denied.png)
 
 - To create an HIVE Policy in Ranger, follow below steps:
   - On the 'Access Manager' tab click HIVE > (clustername)_hive
-  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-HIVE-policy.png)
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-HIVE-policy.png)
   - This will open the list of HIVE policies
-  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-HIVE-edit-policy.png)
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-HIVE-edit-policy.png)
   - Click 'Add New Policy' button to create a new one allowing `sales` group users access to `code` and `description` columns in `sample_07` dir:
     - Policy Name: `sample_07`
     - Hive Database: `default`
@@ -231,7 +231,7 @@ beeline> select code, description from sample_07;
     - Group: `sales`
     - Permissions : `select`
     - Add
-  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-HIVE-create-policy.png)
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-HIVE-create-policy.png)
   
 - Notice that as you typed the name of the DB and table, Ranger was able to look these up and autocomplete them
   -  This was done using the rangeradmin principal we provided during Ranger install
@@ -252,7 +252,7 @@ beeline> select code, description from sample_07;
   - User: sales1
   
 - Notice that Ranger captured the access attempt and since this time there is a policy to allow the access, it was `Allowed`
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-audit-HIVE-allowed.png)  
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-audit-HIVE-allowed.png)  
 
   - You can also see the details that were captured for each request:
     - Policy that allowed the access
@@ -267,7 +267,7 @@ beeline> select code, description from sample_07;
     - Event count
     
 - For any allowed requests, notice that you can quickly check the details of the policy that allowed the access by clicking on the policy number in the 'Policy ID' column
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-audit-HIVE-policy-details.png)  
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-audit-HIVE-policy-details.png)  
 
 - Exit beeline
 ```
@@ -303,7 +303,7 @@ beeline> select code, description from sample_07;
   
 - Here you can see the request by sales1 was allowed but hr1 was denied
 
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-audit-HIVE-summary.png)  
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-audit-HIVE-summary.png)  
 
 - Exit beeline
 ```
@@ -371,13 +371,13 @@ hbase> create 'sales', 'cf'
   - User: `sales1`
   
 - Notice that Ranger captured the access attempt and since there is currently no policy to allow the access, it was `Denied`
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-audit-HBASE-denied.png)
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-audit-HBASE-denied.png)
 
 - To create an HBASE Policy in Ranger, follow below steps:
   - On the 'Access Manager' tab click HBASE > (clustername)_hbase
-  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-HBASE-policy.png)
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-HBASE-policy.png)
   - This will open the list of HBASE policies
-  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-HBASE-edit-policy.png)
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-HBASE-edit-policy.png)
   - Click 'Add New Policy' button to create a new one allowing `sales` group users access to `sales` table in HBase:
     - Policy Name: `sales`
     - Hbase Table: `sales`
@@ -386,7 +386,7 @@ hbase> create 'sales', 'cf'
     - Group : `sales`    
     - Permissions : `Admin` `Create` `Read` `Write`
     - Add
-  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-HBASE-create-policy.png)
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-HBASE-create-policy.png)
   
 - Wait 30s for policy to take effect
   
@@ -400,7 +400,7 @@ hbase> create 'sales', 'cf'
   - User: sales1
   
 - Notice that Ranger captured the access attempt and since this time there is a policy to allow the access, it was `Allowed`
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-audit-HBASE-allowed.png)  
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-audit-HBASE-allowed.png)  
 
   - You can also see the details that were captured for each request:
     - Policy that allowed the access
@@ -415,7 +415,7 @@ hbase> create 'sales', 'cf'
     - Event count
     
 - For any allowed requests, notice that you can quickly check the details of the policy that allowed the access by clicking on the policy number in the 'Policy ID' column
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-audit-HBASE-policy-details.png)  
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-audit-HBASE-policy-details.png)  
 
 - Exit hbase shell
 ```
@@ -446,7 +446,7 @@ hbase> describe 'sales'
 hbase> list 'default'
 ```
 
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-hbase-sales.png)
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-hbase-sales.png)
 
 - Try to create a table as hr1 and it fails with `org.apache.hadoop.hbase.security.AccessDeniedException: Insufficient permissions`
 ```
@@ -458,7 +458,7 @@ hbase> create 'sales', 'cf'
 
 - Here you can see the request by sales1 was allowed but hr1 was denied
 
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-audit-HBASE-summary.png)  
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-audit-HBASE-summary.png)  
 
 - Exit hbase shell
 ```
@@ -477,7 +477,7 @@ logout
 <!---
 - **TODO: fix for 2.5. Skip for now** At this point your Silk/Banana audit dashboard should show audit data from multiple Hadoop components e.g. http://54.68.246.157:6083/solr/banana/index.html#/dashboard
 
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-audit-banana.png)  
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-audit-banana.png)  
 --->
 
 #### (Optional) Use Sqoop to import 
@@ -519,7 +519,7 @@ logout
 - Create Ranger policy to allow `sales` group `all permissions` on `persons` table in Hive
   - Access Manager > Hive > (cluster)_hive > Add new policy
   - Create new policy as below and click Add:
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-HIVE-create-policy-persons.png) 
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-HIVE-create-policy-persons.png) 
 
 - Create Ranger policy to allow `sales` group `all permissions` on `/ranger/audit/kms` dir in HDFS
   - Access Manager > HDFS > (cluster)_hdfs > Add new policy
@@ -532,7 +532,7 @@ logout
   - Login to Ranger http://RANGER_PUBLIC_IP:6080 with keyadmin/keyadmin
   - Access Manager > KMS > (cluster)_KMS > Add new policy
   - Create new policy as below and click Add:
-  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-KMS-create-policy-testkey.png)  
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-KMS-create-policy-testkey.png)  
   - Log out of Ranger and re-login as admin/admin
 
 - Login as sales1
@@ -576,7 +576,7 @@ beeline> select * from persons;
 - Ranger audit should show the request was allowed:
   - Under Ranger > Audit > query for
     - Service type: HIVE
-![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-HIVE-audit-persons.png)
+![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-HIVE-audit-persons.png)
 
 
 ##### Drop Encrypted Hive tables 
