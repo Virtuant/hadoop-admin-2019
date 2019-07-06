@@ -1,4 +1,0 @@
-language: generic
-rvm:
-- 2.1
-script: "bundle exec jekyll build"
