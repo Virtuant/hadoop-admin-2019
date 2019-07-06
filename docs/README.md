@@ -44,6 +44,8 @@ The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide-aw
 
 #### Lab [X](https://virtuant.github.io/hadoop-admin-2019/accessing-cluster.html) Accessing your Cluster [pdf](https://virtuant.github.io/hadoop-admin-2019/accessing-cluster.pdf)
 
+#### Lab [X](https://virtuant.github.io/hadoop-admin-2019/security-use-case.html) Security Use Case [pdf](https://virtuant.github.io/hadoop-admin-2019/security-use-case.pdf)
+
 #### Lab [6](https://virtuant.github.io/hadoop-admin-2019/understanding-mapreduce.html) Understanding MapReduce [pdf](https://virtuant.github.io/hadoop-admin-2019/understanding-mapreduce.pdf)
 
 #### Lab [7](https://virtuant.github.io/hadoop-admin-2019/understanding-pig.html) Understanding Apache Pig [pdf](https://virtuant.github.io/hadoop-admin-2019/understanding-pig.pdf)
