@@ -22,6 +22,7 @@ The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide.ht
 
 The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide-aws-3.html) and a [pdf](https://virtuant.github.io/hadoop-admin-2019/pdfs/labguide-aws-3.pdf) version exists as well.
 
+
 {% endcomment %}
 
 The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide-aws-2.html) and a [pdf](https://virtuant.github.io/hadoop-admin-2019/pdfs/labguide-aws-2.pdf) version exists as well.
