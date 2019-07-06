@@ -238,7 +238,7 @@ Goal: In this lab we will configure Apache Knox for AD authentication and make W
   - Permission: check Allow
   - Add
 
-  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-knox-webhdfs-policy.png)
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-knox-webhdfs-policy.png)
 
 #### WebHDFS over Knox exercises 
 
@@ -274,7 +274,7 @@ curl -ik -u hr1:BadPass#1 https://localhost:8443/gateway/default/webhdfs/v1/?op=
 - Check in Ranger Audits to confirm the requests were audited:
   - Ranger > Audit > Service type: KNOX
 
-  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-knox-webhdfs-audit.png)
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-knox-webhdfs-audit.png)
 
 
 - Other things to access WebHDFS with Knox
@@ -308,7 +308,7 @@ curl -ik -u hr1:BadPass#1 https://localhost:8443/gateway/default/webhdfs/v1/?op=
     curl -ik -u sales1:BadPass#1 -X GET https://localhost:8443/gateway/default/webhdfs/v1/tmp/testfile.txt?op=OPEN
     ```
       - Look at value of Location header. This will contain a long url 
-      ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/knox-location.png)
+      ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/knox-location.png)
             
     - Access contents of file /tmp/testfile.txt by passing the value from the above Location header
     ```
@@ -335,9 +335,9 @@ curl -ik -u hr1:BadPass#1 https://localhost:8443/gateway/default/webhdfs/v1/?op=
     - Open the URL via browser
     - Login as sales1/BadPass#1
     
-     ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/knox-webhdfs-browser1.png)
-     ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/knox-webhdfs-browser2.png)
-     ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/knox-webhdfs-browser3.png)
+     ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/knox-webhdfs-browser1.png)
+     ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/knox-webhdfs-browser2.png)
+     ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/knox-webhdfs-browser3.png)
       
 
 - We have shown how you can use Knox to avoid the end user from having to know about internal details of cluster
@@ -370,7 +370,7 @@ sudo chmod o+r /usr/hdp/current/knox-server/data/security/keystores/gateway.jks
   - Permission: check Allow
   - Add
 
-  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-knox-hive-policy.png)
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-knox-hive-policy.png)
 
 
 ##### Use Hive for Knox
@@ -415,7 +415,7 @@ beeline -u "jdbc:hive2://KnoxserverInternalHostName:8443/;ssl=true;transportMode
 
 - Check in Ranger Audits to confirm the requests were audited:
   - Ranger > Audit > Service type: KNOX
-  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ranger-audit-KNOX-hive-summary.png)
+  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ranger-audit-KNOX-hive-summary.png)
 
 
 - This shows how Knox helps end users access Hive securely over HTTPS using Ranger to set authorization policies and for audits
