@@ -42,6 +42,7 @@ The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide-aw
 
 #### Lab [X](https://virtuant.github.io/hadoop-admin-2019/adding-nodes-realtime.html) Adding Data Nodes in Realtime [pdf](https://virtuant.github.io/hadoop-admin-2019/adding-nodes-realtime.pdf)
 
+#### Lab [X](https://virtuant.github.io/hadoop-admin-2019/accessing-cluster.html) Accessing your Cluster [pdf](https://virtuant.github.io/hadoop-admin-2019/accessing-cluster.pdf)
 
 #### Lab [6](https://virtuant.github.io/hadoop-admin-2019/understanding-mapreduce.html) Understanding MapReduce [pdf](https://virtuant.github.io/hadoop-admin-2019/understanding-mapreduce.pdf)
 
