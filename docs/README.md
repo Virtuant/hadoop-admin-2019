@@ -15,13 +15,13 @@ This is several lab environments put together:
 
 The problem domain is [gump.io](https://virtuant.github.io/hadoop-admin-2019/gump-io.html). It is your job to figure out how to get data, save and manipulate it with Hortonworks and Hadoop. 
 
-The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide-aws-2.html) and a [pdf](https://virtuant.github.io/hadoop-admin-2019/pdfs/labguide-aws-2.pdf) version exists as well.
+The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide-aws-2.html) and a [pdf](https://virtuant.github.io/hadoop-admin-2019/labguide-aws-2.pdf) version exists as well.
 
 ----
 
-#### Lab [1](https://virtuant.github.io/hadoop-admin-2019/using-hdfs.html) Using HDFS [pdf](https://virtuant.github.io/hadoop-admin-2019/pdfs/using-hdfs.pdf)
+#### Lab [1](https://virtuant.github.io/hadoop-admin-2019/using-hdfs.html) Using HDFS [pdf](https://virtuant.github.io/hadoop-admin-2019/using-hdfs.pdf)
 
-#### Lab [2](https://virtuant.github.io/hadoop-admin-2019/using-hdfs-commands.html) Using HDFS Commands [pdf](https://virtuant.github.io/hadoop-admin-2019/pdfs/using-hdfs-commands.pdf)
+#### Lab [2](https://virtuant.github.io/hadoop-admin-2019/using-hdfs-commands.html) Using HDFS Commands [pdf](https://virtuant.github.io/hadoop-admin-2019/using-hdfs-commands.pdf)
 
 #### Lab [3](https://virtuant.github.io/hadoop-admin-2019/using-hdfs-ambari.html) Using HDFS with Ambari [pdf](https://virtuant.github.io/hadoop-admin-2019/using-hdfs-ambari.pdf)
 
@@ -138,11 +138,11 @@ The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide-aw
 #### Lab [m](https://virtuant.github.io/hadoop-admin-2019/ambari-views.html) Ambari Views [pdf](https://virtuant.github.io/hadoop-admin-2019/ambari-views.pdf)
 
 
-The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide-no-aws.html) and a [pdf](https://virtuant.github.io/hadoop-admin-2019/pdfs/labguide-no-aws.pdf) version exists as well.
+The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide-no-aws.html) and a [pdf](https://virtuant.github.io/hadoop-admin-2019/labguide-no-aws.pdf) version exists as well.
 
-The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide.html) and a [pdf](https://virtuant.github.io/hadoop-admin-2019/pdfs/labguide.pdf) version exists as well.
+The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide.html) and a [pdf](https://virtuant.github.io/hadoop-admin-2019/labguide.pdf) version exists as well.
 
-The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide-aws-3.html) and a [pdf](https://virtuant.github.io/hadoop-admin-2019/pdfs/labguide-aws-3.pdf) version exists as well.
+The lab guide is [here](https://virtuant.github.io/hadoop-admin-2019/labguide-aws-3.html) and a [pdf](https://virtuant.github.io/hadoop-admin-2019/labguide-aws-3.pdf) version exists as well.
 
 
 
