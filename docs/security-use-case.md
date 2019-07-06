@@ -31,16 +31,16 @@ We will run through a series of labs and step by step, achieve all of the above 
   - CorpUsers OU, which contains:
     - business users and groups (e.g. it1, hr1, legal1) and 
     - hadoopadmin: Admin user (for AD, Ambari, ...)
-  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/AD-corpusers.png)
+  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/AD-corpusers.png)
   
   - ServiceUsers OU: service users - that would not be created by Ambari  (e.g. rangeradmin, ambari etc)
-  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/AD-serviceusers.png)
+  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/AD-serviceusers.png)
   
   - HadoopServices OU: hadoop service principals (will be created by Ambari)
-  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/AD-hadoopservices.png)  
+  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/AD-hadoopservices.png)  
   
   - HadoopNodes OU: list of nodes registered with AD
-  ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/AD-hadoopnodes.png)
+  ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/AD-hadoopnodes.png)
 
 - In addition, the below steps would have been completed in advance [per doc](http://docs.hortonworks.com/HDPDocuments/Ambari-2.2.2.0/bk_Ambari_Security_Guide/content/_use_an_existing_active_directory_domain.html):
   - Ambari Server and cluster hosts have network access to, and be able to resolve the DNS names of, the Domain Controllers.
@@ -66,7 +66,7 @@ echo "${ad_ip} ad01.lab.hortonworks.net ad01" | sudo tee -a /etc/hosts
 2. Add your CA certificate (if using self-signed & not already configured)
   - In this case we have pre-exported the CA cert from our AD and made available for download. 
    ```
-cert_url=https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/extras/ca.crt
+cert_url=https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/extras/ca.crt
 sudo yum -y install openldap-clients ca-certificates
 sudo curl -sSL "${cert_url}" -o /etc/pki/ca-trust/source/anchors/hortonworks-net.crt
 

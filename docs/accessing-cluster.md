@@ -9,10 +9,10 @@ Credentials will be provided for these services by the instructor:
 
 ### To connect using Putty from Windows laptop
 
-- Right click to download [this ppk key](https://github.com/Virtuant/hadoop-admin-2019/raw/master/training-keypair.ppk) > Save link as > save to Downloads folder
+- Right click to download [this ppk key](https://github.com/HortonworksUniversity/Security_Labs/raw/master/training-keypair.ppk) > Save link as > save to Downloads folder
 - Use putty to connect to your node using the ppk key:
   - Connection > SSH > Auth > Private key for authentication > Browse... > Select training-keypair.ppk
-![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/putty.pngscreenshots/putty.png)
+![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/putty.pngscreenshots/putty.png)
 
 - Make sure to click "Save" on the session page before logging in
 - When connecting, it will prompt you for username. Enter `centos`
@@ -20,7 +20,7 @@ Credentials will be provided for these services by the instructor:
 ### To connect from Linux/MacOSX laptop
 
 - SSH into Ambari node of your cluster using below steps:
-- Right click to download [this pem key](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/training-keypair.pem)  > Save link as > save to Downloads folder
+- Right click to download [this pem key](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/training-keypair.pem)  > Save link as > save to Downloads folder
   - Copy pem key to ~/.ssh dir and correct permissions
   ```
   cp ~/Downloads/training-keypair.pem ~/.ssh/
@@ -80,15 +80,15 @@ Credentials will be provided for these services by the instructor:
   
   - From Ambari how do I check the cluster name?
     - It is displayed on the top left of the Ambari dashboard, next to the Ambari logo. If the name appears truncated, you can hover over it to produce a helptext dialog with the full name
-    ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/clustername.png)
+    ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/clustername.png)
   
   - From Ambari how can I find external hostname of node where a component (e.g. Resource Manager or Hive) is installed?
     - Click the parent service (e.g. YARN) and *hover over* the name of the component. The external hostname will appear.
-    ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ambari-RM-public-host.png)  
+    ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ambari-RM-public-host.png)  
 
   - From Ambari how can I find internal hostname of node where a component (e.g. Resource Manager or Hive) is installed?
     - Click the parent service (e.g. YARN) and *click on* the name of the component. It will take you to hosts page of that node and display the internal hostname on the top.
-    ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ambari-YARN-internal-host.png)  
+    ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ambari-YARN-internal-host.png)  
   
   - In future labs you may need to provide private or public hostname of nodes running a particular component (e.g. YARN RM or Mysql or HiveServer)
   
@@ -101,8 +101,8 @@ Credentials will be provided for these services by the instructor:
   - Download and import data
   ```
   cd /tmp
-  wget https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/labdata/sample_07.csv
-  wget https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/labdata/sample_08.csv
+  wget https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/labdata/sample_07.csv
+  wget https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/labdata/sample_08.csv
   ```
   - Create user dir for admin, sales1 and hr1
   ```
@@ -207,7 +207,7 @@ curl -sk -L "http://$(hostname -f):50070/webhdfs/v1/user/?op=LISTSTATUS"
     - Reason: in a later lab after we enable SSL for Ambari, it will run on port 8443
   - When prompted for the `Knox Master Secret`, set it to `knox`
   - Do *not* use password with special characters (like #, $ etc) here as seems beeline may have problem with it
-   ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ambari-Knox-install.png)
+   ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ambari-Knox-install.png)
   - Click Next > Proceed Anyway > Deploy to accept all defaults
 
 - We will use Knox further in a later exercise.
@@ -219,9 +219,9 @@ curl -sk -L "http://$(hostname -f):50070/webhdfs/v1/user/?op=LISTSTATUS"
 - Ensure Tez is installed on all nodes where Pig clients are installed. This is done to ensure Pig service checks do not fail later on.
  - Ambari > Pig > click the 'Pig clients' link
  - This tell us which nodes have Pig clients installed
-   ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ambari-pig-nodes.png)
+   ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ambari-pig-nodes.png)
  - For each node that has Pig installed:
    - Click on the hyperlink of the node name to view that shows all the services running on that particular node
    - Click '+Add' and select 'Tez client' > Confirm add 
      - If 'Tez client'does not appear in the list, it is already installed on this host, so you can skip this host
-   ![Image](https://raw.githubusercontent.com/Virtuant/hadoop-admin-2019/master/screenshots/Ambari-host-add-tez.png)   
+   ![Image](https://raw.githubusercontent.com/HortonworksUniversity/Security_Labs/master/screenshots/Ambari-host-add-tez.png)   
