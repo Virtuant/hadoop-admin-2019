@@ -1,7 +1,7 @@
 theme: jekyll-theme-cayman
 plugins:
   - jemoji
-title: Hadoop Ecosystem Administration
+title: Hadoop Ecosystem
 description: Labs for 2019
 github:
   is_project_page: false
